@@ -1,0 +1,16 @@
+<?php
+
+
+namespace Toast;
+
+
+class ToastHooks
+{
+
+
+    public static function StaticPageRouter_feedRequestUri(array &$uri2Page)
+    {
+        $uri2Page["/toast"] = "toast.php";
+        $uri2Page["/"] = "home.php";
+    }
+}

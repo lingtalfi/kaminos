@@ -1,0 +1,27 @@
+Kamille
+    Architecture
+    Services
+    Modules and hooks
+    MVC
+
+Admin tools
+    create datatables tools
+    create form tools
+    create generator tools (autoadmin)
+
+Theme implementation
+    test MVC - no css framework (basic html) - redo basic zilu interface
+    test MVC - bootstrap - https://colorlib.com/polygon/gentelella/index.html
+
+Nullos MVC
+    création système import module
+    création modules basiques de test
+
+Module e-commerce
+    conception module e-commerce
+    implémentation maquette front - https://www.boulanger.com/
+    implémentation pages backoffice
+
+
+
+

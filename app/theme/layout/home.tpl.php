@@ -1,4 +1,4 @@
-Salut <?php echo $v->name; ?>
+Salut <?php echo $v['name']; ?>
 
 
-<?php $l->widget('group'); ?>
+<?php $l->widget('form'); ?>

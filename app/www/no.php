@@ -5,8 +5,7 @@ use Kamille\Ling\Z;
 use Kamille\Mvc\Layout\HtmlLayout;
 use Kamille\Mvc\Loader\FileLoader;
 use Kamille\Mvc\Renderer\PhpLayoutRenderer;
-use Kamille\Mvc\Widget\GroupWidget;
-use Kamille\Mvc\Widget\Widget;
+use KamilleWidgets\FormWidget\FormWidget;
 
 require_once __DIR__ . "/../init.php";
 
@@ -26,27 +25,48 @@ $commonRenderer = PhpLayoutRenderer::create();
 //HtmlPageHelper::js("/js/lib/sarah", null, null, false);
 
 
+
+$vars = [
+    'form' => [
+        'htmlAttributes' => [],
+    ],
+    'controls' => [
+        [
+            'type' => 'input',
+            'htmlAttributes' => [
+                'name' => 'name',
+                'type' => 'text',
+                'value' => '',
+                'placeholder' => 'Type your name',
+            ],
+            'hint' => 'Your name is used to identify you',
+            /**
+             *
+             * A setting at the widget level determines whether or not only the first error message should be
+             * displayed, or all error messages.
+             * Also, there will be some "trick" to grab all error messages and display them in a centralized place
+             * rather than on a per control basis, also depending on a widget level setting.
+             *
+             */
+            'errors' => [],
+        ],
+    ],
+];
+
+
+
+
 echo HtmlLayout::create()
     ->setTemplate("home")
     ->setLoader(FileLoader::create()
         ->addDir(Z::appDir() . "/theme/layout")
     )
     ->setRenderer($commonRenderer)
-    ->bindWidget("group", GroupWidget::create()
-        ->setTemplate("group/group")
+    ->bindWidget("form", FormWidget::create()
+        ->setVariables($vars)
+        ->setTemplate("kamillewidgets/form/form")
         ->setLoader($wloader)
         ->setRenderer($commonRenderer)
-        ->bindWidget("meteo", Widget::create()
-            ->setTemplate("meteo/meteo")
-            ->setVariables(['level' => "good"])
-            ->setLoader($wloader)
-            ->setRenderer($commonRenderer)
-        )
-        ->bindWidget("kart", Widget::create()
-            ->setTemplate("kart/kart")
-            ->setLoader($wloader)
-            ->setRenderer($commonRenderer)
-        )
     )
     ->render([
         "name" => 'Pierre',

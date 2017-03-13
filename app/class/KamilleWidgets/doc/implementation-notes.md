@@ -29,8 +29,11 @@ The main idea is to ultimately pass this kind of array to the setVariables metho
 ```php 
 
 $vars = [
+    'form' => [
+        'htmlAttributes' => [],
+    ],
     'controls' => [
-        [
+        "myidentifier" => [
             'type' => 'input',
             'htmlAttributes' => [
                 'name' => 'name',
@@ -71,6 +74,10 @@ Basically, the type is the html tag, at least for common controls.
 If you have super controls which do not refer to a particular tag, you can still use the "type" property,
 but you will have to create your own names.
 
+Note the key referencing the control array. In the example above, the "myidentifier" is used.
+You could use the default numeric keys (implicitly set by php) if you wanted to, the only reason identifiers
+are handy is when you want to have more control on the controls order (as we will see later).
+
 
 
 Controls
@@ -78,16 +85,68 @@ Controls
 So that being said, here are the available properties available for a given control:
  
  
-- type: the type of the control. For common controls, it's the name of the html tag
-- htmlAttributes: html attributes to add to the control (which might/might not be a common html control)
-- hint: a message to display to help the user filling the control correctly
-- errors: an array of errors relating to this control. Note, the displaying of how many errors to display,
+- type: string, the type of the control. For common controls, it's the name of the html tag
+- htmlAttributes: array, html attributes to add to the control (which might/might not be a common html control)
+- hint: string|null, a message to display to help the user filling the control correctly
+- errors: array, an array of errors relating to this control. Note, the displaying of how many errors to display,
                 and where to display them is decided elsewhere, but the errors property of the control
                 is the only place where errors related to this control should be
 - ...: might be more coming
 
 
+Note: for all controls, those properties defined above are mandatory.
+
+
 Form
 ---------
- 
+Then there is the form tag to create.
+As for the controls, we will use a property in an array: the form property.
+This form entry will be an array with the following properties:
+
+- htmlAttributes: the html attributes to set on the form
+
+
+Order
+----------
+Although the controls property will hold the list of controls to display,
+we also should be able to control the order in which those controls are displayed.
+By default, they will be displayed in the order they appear in the controls array.
+However, in some cases it might be useful to have a separated list to control the order.
+So, the order property will be used for that. 
+Why we use a separated "order" property makes more sense when you're aware that we can group controls; that's the
+topic of the next section.
+
+
+
+Groups
+----------
+Do you recall the fieldset tag?
+
+This tag allow us to visually group controls in a form, creating nice and clean sections.
+
+The idea of a group is serves the same purpose.
+However, we use groups instead of fieldsets, because fieldset is the name of a specific html tag,
+while a group is just the semantical idea of grouping controls, it doesn't specify how controls
+will be grouped together (fieldset, div, other things...).
+
+
+
+Error handling
+----------------
+
+There are different ways we can handle form errors.
+The two following questions can help us:
+
+- do we display all the errors at the top (or bottom) of the form, or do we display
+        an error at a control level?
+
+- do we display all the errors at once, or one by one? At the form level, and control level?
+        
+
+Those two questions will give us the following variables:
+
+- formErrorPosition: (control|central)=control
+- displayFirstErrorOnly: bool=false
+
+
 

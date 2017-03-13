@@ -25,13 +25,12 @@ $commonRenderer = PhpLayoutRenderer::create();
 //HtmlPageHelper::js("/js/lib/sarah", null, null, false);
 
 
-
 $vars = [
     'form' => [
         'htmlAttributes' => [],
     ],
     'controls' => [
-        [
+        "myidentifier" => [
             'type' => 'input',
             'htmlAttributes' => [
                 'name' => 'name',
@@ -52,8 +51,6 @@ $vars = [
         ],
     ],
 ];
-
-
 
 
 echo HtmlLayout::create()

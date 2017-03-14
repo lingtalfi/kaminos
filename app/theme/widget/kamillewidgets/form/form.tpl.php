@@ -32,6 +32,7 @@ function wrapControl($s, array $control, $identifier)
 
 
     $hint = $control['hint'];
+    $label = $control['label'];
     $errors = $control['errors'];
     $sError = "";
 
@@ -48,9 +49,16 @@ function wrapControl($s, array $control, $identifier)
             $sError = wrapOneControlError($error);
         }
     }
+
+
+    if (null !== $label) {
+        $label = '<label>' . $label . '</label>';
+    }
+
     $ret = '
 <div class="type-' . $control['type'] . ' id-' . $identifier . '" data-id="' . $identifier . '">
 ' . $hint . '
+' . $label . '
 ' . $s . '
 ' . $sError . '
 </div>';
@@ -89,13 +97,14 @@ function wrapOneFormError($error)
 }
 
 
-function di(array $elements){
-
+function displayForm(array $elements)
+{
+    echo
 }
 
 
 //--------------------------------------------
-// DISPLAY FORM TOP
+// CONFIGURE FORM TOP
 //--------------------------------------------
 $formOpeningTag = '';
 $formHtmlAttributes = [];
@@ -141,7 +150,7 @@ endforeach;
 
 
 //--------------------------------------------
-// DISPLAYING THE ERRORS AT A CENTRALIZED PLACE
+// CREATING THE ERRORS AT A CENTRALIZED PLACE
 //--------------------------------------------
 $sFormErrors = "";
 if ('central' === $formErrorPosition && count($errors) > 0) {

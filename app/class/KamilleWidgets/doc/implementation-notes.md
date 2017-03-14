@@ -86,6 +86,7 @@ So that being said, here are the available properties available for a given cont
  
  
 - type: string, the type of the control. For common controls, it's the name of the html tag
+- label: string|null, the label of the control, defaults to the identifier if not set
 - htmlAttributes: array, html attributes to add to the control (which might/might not be a common html control)
 - hint: string|null, a message to display to help the user filling the control correctly
 - errors: array, an array of errors relating to this control. Note, the displaying of how many errors to display,
@@ -110,11 +111,22 @@ Order
 ----------
 Although the controls property will hold the list of controls to display,
 we also should be able to control the order in which those controls are displayed.
-By default, they will be displayed in the order they appear in the controls array.
+By default, if the order property is not an array, 
+they will be displayed in the order they appear in the controls array.
+
 However, in some cases it might be useful to have a separated list to control the order.
 So, the order property will be used for that. 
 Why we use a separated "order" property makes more sense when you're aware that we can group controls; that's the
 topic of the next section.
+
+Example using order:
+
+```txt
+- order:
+----- identifier1:
+----- identifier4:
+----- identifier5:
+```
 
 
 
@@ -129,24 +141,70 @@ However, we use groups instead of fieldsets, because fieldset is the name of a s
 while a group is just the semantical idea of grouping controls, it doesn't specify how controls
 will be grouped together (fieldset, div, other things...).
 
+You specify the groups one by one in an array held by the "groups" property, like the following for instance:
+
+```txt
+- groups:
+----- identifier1:
+--------- identifier2
+--------- identifier3
+----- identifier4:
+--------- identifier7
+--------- identifier8
+----- identifier8
+--------- identifier9
+--------- identifier10
+```
+
+Note: recursion is allowed, as in the example above (identifier 8 is a nested group)
 
 
-Error handling
+Error displaying
 ----------------
 
-There are different ways we can handle form errors.
-The two following questions can help us:
+There are different ways we can display form errors.
+The following questions can help us:
 
-- do we display all the errors at the top (or bottom) of the form, or do we display
-        an error at a control level?
+- do we display the control errors at the top (or bottom) of the form, or do we display
+        a control error at a control level?
 
 - do we display all the errors at once, or one by one? At the form level, and control level?
-        
 
+      
 Those two questions will give us the following variables:
 
 - formErrorPosition: (control|central)=control
 - displayFirstErrorOnly: bool=false
+
+
+
+
+Form messages
+--------------
+
+Sometimes, errors are not related to any control in particular.
+For instance: there is a problem with the database, the form could'nt be saved.
+
+In general, we should be able to display some messages in the form, like success messages
+(the item has been successfully recorded in the databse), or warning messages.
+
+All messages are stored in the messages property, which contains an array of messages to display.
+Each item of the array is an array with two entries: the message, and the message type (success, warning, info, error).
+Generally, we will use only one entry, but I prefer to anticipate the fact that one day someone will
+need to display more than one message.
+
+Here is how it looks like:
+
+```txt
+- messages:
+----- [ The data was successfully recorded in the database, success ],
+----- [ I sent an email to the administrator too (as per config.sendMailToAdmin), info ],
+
+```
+
+
+
+
 
 
 

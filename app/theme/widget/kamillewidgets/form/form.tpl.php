@@ -14,8 +14,20 @@
  */
 use Bat\StringTool;
 
-$formErrorPosition = $v['formErrorPosition'];
-$displayFirstErrorOnly = $v['displayFirstErrorOnly'];
+
+$formErrorPosition = "control";
+$displayFirstErrorOnly = false;
+if (array_key_exists('form', $v)) {
+    if (array_key_exists('formErrorPosition', $v['form'])) {
+        $formErrorPosition = $v['form']['formErrorPosition'];
+    }
+    if (array_key_exists('displayFirstErrorOnly', $v['form'])) {
+        $displayFirstErrorOnly = $v['form']['displayFirstErrorOnly'];
+    }
+}
+
+define("FORM_ERROR_POSITION", $formErrorPosition);
+define("DISPLAY_FIRST_ERROR_ONLY", $displayFirstErrorOnly);
 
 
 //--------------------------------------------
@@ -28,12 +40,12 @@ $displayFirstErrorOnly = $v['displayFirstErrorOnly'];
 function wrapControl($s, array $control, $identifier)
 {
 
-    global $formErrorPosition, $displayFirstErrorOnly;
+
+    $hint = array_key_exists('hint', $control) ? $control['hint'] : null;
+    $label = array_key_exists('label', $control) ? $control['label'] : null;
+    $errors = array_key_exists('errors', $control) ? $control['errors'] : [];
 
 
-    $hint = $control['hint'];
-    $label = $control['label'];
-    $errors = $control['errors'];
     $sError = "";
 
     if (null !== $hint) {
@@ -41,8 +53,8 @@ function wrapControl($s, array $control, $identifier)
     }
 
 
-    if ('control' === $formErrorPosition && count($errors) > 0) {
-        if (false === $displayFirstErrorOnly) {
+    if ('control' === FORM_ERROR_POSITION && count($errors) > 0) {
+        if (false === DISPLAY_FIRST_ERROR_ONLY) {
             $sError = wrapAllControlErrors($errors);
         } else {
             $error = array_shift($errors);
@@ -67,39 +79,104 @@ function wrapControl($s, array $control, $identifier)
 
 function wrapHint($hint)
 {
-    return '<div class="hint">' . $hint . '</div>';
+    return '<div class="hint">' . $hint . '</div>' . PHP_EOL;
 }
 
 function wrapAllControlErrors(array $errors)
 {
     $s = '';
-    $s .= '<ul class="errors">';
+    $s .= '<ul class="errors">' . PHP_EOL;
     foreach ($errors as $error) {
-        $s .= '<li class="error">' . $error . '</li>';
+        $s .= '<li class="error">' . $error . '</li>' . PHP_EOL;
     }
-    $s .= '</ul>';
+    $s .= '</ul>' . PHP_EOL;
     return $s;
 }
 
 function wrapOneControlError($error)
 {
-    return '<div class="error">' . $error . '</div>';
+    return '<div class="error">' . $error . '</div>' . PHP_EOL;
 }
 
-function wrapAllFormErrors(array $errors)
+function wrapAllFormErrors(array $errors, array $controls)
 {
-    return wrapAllControlErrors($errors);
+    $ret = flattenControlErrors($errors, $controls);
+    return wrapAllControlErrors($ret);
 }
 
-function wrapOneFormError($error)
+function wrapOneFormError($identifier, $error, array $controls)
 {
-    return wrapOneControlError($error);
+    $ret = flattenControlErrors([$identifier => $error], $controls);
+    $first = array_shift($ret);
+    return wrapOneControlError($first);
+}
+
+function flattenControlErrors(array $errors, array $controls)
+{
+    $ret = [];
+    foreach ($errors as $identifier => $_errors) {
+        $name = $identifier;
+        if (
+            array_key_exists($identifier, $controls) &&
+            array_key_exists("htmlAttributes", $controls[$identifier]) &&
+            array_key_exists("name", $controls[$identifier]['htmlAttributes'])
+        ) {
+            $name = $controls[$identifier]["htmlAttributes"]['name'];
+        }
+        foreach ($_errors as $_error) {
+            $ret[] = $name . ": " . $_error;
+        }
+    }
+    return $ret;
+}
+
+function onControlNotFound($identifier)
+{
+    return "Control not found: $identifier";
+}
+
+function wrapGroup($groupIdentifier, array $groupInfo, array $controls, array $groups, array &$allGroups)
+{
+
+    $children = [];
+    if (array_key_exists("children", $groupInfo) && null !== $groupInfo['children']) {
+        $children = $groupInfo['children'];
+    }
+    $sLegend = "";
+    if (array_key_exists("label", $groupInfo) && null !== $groupInfo['label']) {
+        $sLegend = '<legend>' . htmlspecialchars($groupInfo['label']) . '</legend>' . PHP_EOL;
+    }
+
+    $s = '<fieldset>' . PHP_EOL;
+    $s .= $sLegend;
+    foreach ($children as $childIdentifier) {
+        if (array_key_exists($childIdentifier, $controls)) {
+            $s .= $controls[$childIdentifier];
+        } elseif (array_key_exists($childIdentifier, $allGroups)) {
+            $s .= $allGroups[$childIdentifier];
+        } elseif (array_key_exists($childIdentifier, $groups)) {
+            $s .= wrapGroup($childIdentifier, $groups[$childIdentifier], $controls, $groups, $allGroups);
+        } else {
+            $s .= onControlNotFound($groupIdentifier);
+        }
+    }
+    $s .= '</fieldset>' . PHP_EOL;
+    return $s;
 }
 
 
-function displayForm(array $elements)
+function wrapFormMessages(array $formMessages)
 {
-    echo
+    $s = '';
+    if (count($formMessages) > 0) {
+        $s .= '<ul class="form-messages">' . PHP_EOL;
+        foreach ($formMessages as $msgInfo) {
+            list($msg, $type) = $msgInfo;
+            $s .= '<li class="form-message form-message-' . $type . '">' . $msg . '</li>' . PHP_EOL;
+        }
+        $s .= '</ul>' . PHP_EOL;
+    }
+    return $s;
 }
 
 
@@ -115,7 +192,7 @@ if (array_key_exists('form', $v)) {
     }
 }
 
-$formOpeningTag = '<form' . StringTool::htmlAttributes($formHtmlAttributes) . '>';
+$formOpeningTag = '<form' . StringTool::htmlAttributes($formHtmlAttributes) . '>' . PHP_EOL;
 
 
 //--------------------------------------------
@@ -123,10 +200,9 @@ $formOpeningTag = '<form' . StringTool::htmlAttributes($formHtmlAttributes) . '>
 //--------------------------------------------
 $errors = [];
 foreach ($v['controls'] as $identifier => $control) {
-    if (count($control['errors']) > 0) {
+    if (array_key_exists('errors', $control) && count($control['errors']) > 0) {
         $errors[$identifier] = $control['errors'];
     }
-
 }
 
 
@@ -139,7 +215,89 @@ foreach ($v['controls'] as $identifier => $control):
     $sControl = "";
     switch ($control['type']) {
         case 'input':
-            $sControl = '<input' . StringTool::htmlAttributes($htmlAttributes) . '>';
+            $htmlType = "text";
+            if (array_key_exists("type", $htmlAttributes)) {
+                $htmlType = $htmlAttributes["type"];
+            }
+            if ('text' === $htmlType || "submit" === $htmlType || 'file' === $htmlType) {
+                $sControl = '<input' . StringTool::htmlAttributes($htmlAttributes) . '>' . PHP_EOL;
+            } elseif (
+                'checkbox' === $htmlType ||
+                'radio' === $htmlType
+            ) {
+
+                $isRadio = ('radio' === $htmlType);
+
+                if (false === $isRadio) {
+                    $keyWord = "checked";
+                    $values = (array_key_exists("value", $control)) ? $control['value'] : [];
+                } elseif (true === $isRadio) {
+                    $keyWord = "checked";
+                    $values = (array_key_exists("value", $control)) ? $control['value'] : null;
+                }
+
+
+                $cpt = 0;
+                $items = (array_key_exists("items", $control)) ? $control['items'] : [];
+                $labelLeftSide = (array_key_exists("labelLeftSide", $control)) ? $control['labelLeftSide'] : true;
+                foreach ($items as $value => $label) {
+
+                    $itemHtmlAttributes = $htmlAttributes;
+
+                    $id = $value . "-" . $cpt++;
+                    $itemHtmlAttributes["value"] = htmlspecialchars($value);
+                    $itemHtmlAttributes["id"] = $id;
+
+
+                    if (
+                        (false === $isRadio && in_array($value, $values, true)) ||
+                        (true === $isRadio && $value === $values)
+                    ) {
+                        $itemHtmlAttributes[$keyWord] = $keyWord;
+                    }
+
+
+                    $sInput = '<input ' . StringTool::htmlAttributes($itemHtmlAttributes) . '>' . PHP_EOL;
+                    $sLabel = '<label for="' . $id . '">' . $label . '</label>' . PHP_EOL;
+                    if (true === $labelLeftSide) {
+                        $sControl .= $sLabel . $sInput;
+                    } else {
+                        $sControl .= $sInput . $sLabel;
+                    }
+                }
+
+            } else {
+                $sControl = "Unknown control type: " . $control['type'] . '(' . $htmlType . ')';
+            }
+            break;
+        case 'select':
+            $sControl = '<select' . StringTool::htmlAttributes($htmlAttributes) . '>' . PHP_EOL;
+            $items = (array_key_exists("items", $control)) ? $control['items'] : [];
+
+
+            $isMultiple = (in_array("multiple", $htmlAttributes, true));
+
+            if (false === $isMultiple) {
+                $val = (array_key_exists("value", $control)) ? $control['value'] : "";
+                foreach ($items as $value => $label) {
+                    $s = ($val === $value) ? ' selected="selected"' : "";
+                    $sControl .= '<option' . $s . ' value="' . htmlspecialchars($value) . '">' . $label . '</option>' . PHP_EOL;
+                }
+            } else {
+                $values = (array_key_exists("value", $control)) ? $control['value'] : [];
+                foreach ($items as $value => $label) {
+                    $s = (in_array($value, $values, true)) ? ' selected="selected"' : "";
+                    $sControl .= '<option' . $s . ' value="' . htmlspecialchars($value) . '">' . $label . '</option>' . PHP_EOL;
+                }
+            }
+
+            $sControl .= '</select>' . PHP_EOL;
+            break;
+        case 'textarea':
+            $sControl = '<textarea' . StringTool::htmlAttributes($htmlAttributes) . '>';
+            $val = (array_key_exists("value", $control)) ? $control['value'] : "";
+            $sControl .= $val;
+            $sControl .= '</textarea>' . PHP_EOL;
             break;
         default:
             $sControl = "Unknown control type: " . $control['type'];
@@ -150,25 +308,69 @@ endforeach;
 
 
 //--------------------------------------------
+// CAPTURING THE GROUPS
+//--------------------------------------------
+$allGroups = [];
+$groups = [];
+if (array_key_exists('groups', $v) && is_array($v['groups'])) {
+    $groups = $v['groups'];
+}
+
+foreach ($groups as $groupIdentifier => $groupInfo) {
+    $allGroups[$groupIdentifier] = wrapGroup($groupIdentifier, $groupInfo, $controls, $groups, $allGroups);
+}
+
+
+//--------------------------------------------
 // CREATING THE ERRORS AT A CENTRALIZED PLACE
 //--------------------------------------------
 $sFormErrors = "";
 if ('central' === $formErrorPosition && count($errors) > 0) {
-    if (false === $displayFirstErrorOnly) {
-        $error = array_shift($errors);
-        $sFormErrors = wrapOneFormError($error);
+    if (true === DISPLAY_FIRST_ERROR_ONLY) {
+        reset($errors);
+        $identifier = key($errors);
+        $error = current($errors);
+        $sFormErrors = wrapOneFormError($identifier, $error, $v['controls']);
     } else {
-        $sFormErrors = wrapAllFormErrors($errors);
+        $sFormErrors = wrapAllFormErrors($errors, $v['controls']);
     }
 }
 
 
 //--------------------------------------------
-// DISPLAYING THE CONTROLS
+// COLLECTING ALL CONTROLS IN ORDER
 //--------------------------------------------
-foreach ($controls as $identifier => $sControl) {
-    echo $sControl;
+$allControls = [];
+$sAllControls = "";
+if (array_key_exists('order', $v) && is_array($v['order'])) {
+    $allControls = $v['order'];
+} else {
+    $allControls = array_keys($controls);
+}
+foreach ($allControls as $identifier) {
+    if (array_key_exists($identifier, $allGroups)) {
+        $sAllControls .= $allGroups[$identifier];
+    } elseif (array_key_exists($identifier, $controls)) {
+        $sAllControls .= $controls[$identifier];
+    } else {
+        $sAllControls .= onControlNotFound($identifier);
+    }
 }
 
 
+//--------------------------------------------
+// COLLECTING FORM MESSAGES
+//--------------------------------------------
+$sFormMessages = '';
+if (array_key_exists('form', $v) && array_key_exists('messages', $v['form'])) {
+    $sFormMessages = wrapFormMessages($v['form']['messages']);
+}
+
+//--------------------------------------------
+// DISPLAYING THE WHOLE FORM
+//--------------------------------------------
+echo $formOpeningTag;
+echo $sFormMessages;
+echo $sFormErrors;
+echo $sAllControls;
 echo '</form>';

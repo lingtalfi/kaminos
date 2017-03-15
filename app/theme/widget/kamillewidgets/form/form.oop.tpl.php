@@ -13,6 +13,7 @@
  *
  */
 use Bat\StringTool;
+use KamilleWidgets\FormWidget\Kris\TemplateHelper\TemplateHelperInterface;
 
 
 $formErrorPosition = "control";
@@ -26,150 +27,15 @@ if (array_key_exists('form', $v)) {
     }
 }
 
-define("FORM_ERROR_POSITION", $formErrorPosition);
-define("DISPLAY_FIRST_ERROR_ONLY", $displayFirstErrorOnly);
 
-
-//--------------------------------------------
-// FUNCTION DECLARATION - WRAPPING CONTROLS
-//--------------------------------------------
 /**
- * If you change the template, perhaps the only thing you need to change is this wrapControl
- * function, and its children wrapHint and wrapErrors function.
+ * @var TemplateHelperInterface $templateHelper
  */
-function wrapControl($s, array $control, $identifier)
-{
+$templateHelper = $v['templateHelper'];
+$templateHelper->setDisplayFirstErrorOnly($displayFirstErrorOnly);
+$templateHelper->setFormErrorPosition($formErrorPosition);
 
 
-    $hint = array_key_exists('hint', $control) ? $control['hint'] : null;
-    $label = array_key_exists('label', $control) ? $control['label'] : null;
-    $errors = array_key_exists('errors', $control) ? $control['errors'] : [];
-
-
-    $sError = "";
-
-    if (null !== $hint) {
-        $hint = wrapHint($hint);
-    }
-
-
-    if ('control' === FORM_ERROR_POSITION && count($errors) > 0) {
-        if (false === DISPLAY_FIRST_ERROR_ONLY) {
-            $sError = wrapAllControlErrors($errors);
-        } else {
-            $error = array_shift($errors);
-            $sError = wrapOneControlError($error);
-        }
-    }
-
-
-    if (null !== $label) {
-        $label = '<label>' . $label . '</label>';
-    }
-
-    $ret = '
-<div class="type-' . $control['type'] . ' id-' . $identifier . '" data-id="' . $identifier . '">
-' . $hint . '
-' . $label . '
-' . $s . '
-' . $sError . '
-</div>';
-    return $ret;
-}
-
-function wrapHint($hint)
-{
-    return '<div class="hint">' . $hint . '</div>' . PHP_EOL;
-}
-
-function wrapAllControlErrors(array $errors)
-{
-    $s = '';
-    $s .= '<ul class="errors">' . PHP_EOL;
-    foreach ($errors as $error) {
-        $s .= '<li class="error">' . $error . '</li>' . PHP_EOL;
-    }
-    $s .= '</ul>' . PHP_EOL;
-    return $s;
-}
-
-function wrapOneControlError($error)
-{
-    return '<div class="error">' . $error . '</div>' . PHP_EOL;
-}
-
-function wrapAllFormErrors(array $errors)
-{
-    return wrapAllControlErrors($errors);
-}
-
-function wrapOneFormError($errorMsg)
-{
-    return wrapOneControlError($errorMsg);
-}
-
-
-function onControlNotFound($identifier)
-{
-    return "Control not found: $identifier";
-}
-
-function wrapGroup($groupIdentifier, array $groupInfo, array $controls, array $groups, array &$allGroups)
-{
-
-    $children = [];
-    if (array_key_exists("children", $groupInfo) && null !== $groupInfo['children']) {
-        $children = $groupInfo['children'];
-    }
-    $sLegend = "";
-    if (array_key_exists("label", $groupInfo) && null !== $groupInfo['label']) {
-        $sLegend = '<legend>' . htmlspecialchars($groupInfo['label']) . '</legend>' . PHP_EOL;
-    }
-
-    $s = '<fieldset>' . PHP_EOL;
-    $s .= $sLegend;
-    foreach ($children as $childIdentifier) {
-        if (array_key_exists($childIdentifier, $controls)) {
-            $s .= $controls[$childIdentifier];
-        } elseif (array_key_exists($childIdentifier, $allGroups)) {
-            $s .= $allGroups[$childIdentifier];
-        } elseif (array_key_exists($childIdentifier, $groups)) {
-            $s .= wrapGroup($childIdentifier, $groups[$childIdentifier], $controls, $groups, $allGroups);
-        } else {
-            $s .= onControlNotFound($groupIdentifier);
-        }
-    }
-    $s .= '</fieldset>' . PHP_EOL;
-    return $s;
-}
-
-
-function wrapFormMessages(array $formMessages)
-{
-    $s = '';
-    if (count($formMessages) > 0) {
-        $s .= '<ul class="form-messages">' . PHP_EOL;
-        foreach ($formMessages as $msgInfo) {
-            list($msg, $type) = $msgInfo;
-            $s .= '<li class="form-message form-message-' . $type . '">' . $msg . '</li>' . PHP_EOL;
-        }
-        $s .= '</ul>' . PHP_EOL;
-    }
-    return $s;
-}
-
-
-function formatCentralizedError($identifier, $errorMsg, array $controls)
-{
-    $name = $identifier;
-    if (
-        array_key_exists($identifier, $controls) &&
-        array_key_exists("label", $controls[$identifier])
-    ) {
-        $name = $controls[$identifier]["label"];
-    }
-    return "$name: " . $errorMsg;
-}
 
 //--------------------------------------------
 // CONFIGURE FORM TOP
@@ -294,7 +160,7 @@ foreach ($v['controls'] as $identifier => $control):
             $sControl = "Unknown control type: " . $control['type'];
             break;
     }
-    $controls[$identifier] = wrapControl($sControl, $control, $identifier);
+    $controls[$identifier] = $templateHelper->wrapControl($sControl, $control, $identifier);
 endforeach;
 
 
@@ -308,7 +174,7 @@ if (array_key_exists('groups', $v) && is_array($v['groups'])) {
 }
 
 foreach ($groups as $groupIdentifier => $groupInfo) {
-    $allGroups[$groupIdentifier] = wrapGroup($groupIdentifier, $groupInfo, $controls, $groups, $allGroups);
+    $allGroups[$groupIdentifier] = $templateHelper->wrapGroup($groupIdentifier, $groupInfo, $controls, $groups, $allGroups);
 }
 
 
@@ -318,20 +184,20 @@ foreach ($groups as $groupIdentifier => $groupInfo) {
 $sFormErrors = "";
 
 if ('central' === $formErrorPosition && count($errors) > 0) {
-    if (true === DISPLAY_FIRST_ERROR_ONLY) {
+    if (true === $displayFirstErrorOnly) {
         reset($errors);
         $identifier = key($errors);
         $errorMsg = current(current($errors));
-        $error = formatCentralizedError($identifier, $errorMsg, $v['controls']);
-        $sFormErrors = wrapOneFormError($error);
+        $error = $templateHelper->formatCentralizedError($identifier, $errorMsg, $v['controls']);
+        $sFormErrors = $templateHelper->wrapOneFormError($error);
     } else {
         $tmpErrors = [];
         foreach ($errors as $identifier => $error) {
             foreach ($error as $err) {
-                $tmpErrors[] = formatCentralizedError($identifier, $err, $v['controls']);
+                $tmpErrors[] = $templateHelper->formatCentralizedError($identifier, $err, $v['controls']);
             }
         }
-        $sFormErrors = wrapAllFormErrors($tmpErrors);
+        $sFormErrors = $templateHelper->wrapAllFormErrors($tmpErrors);
     }
 }
 
@@ -352,7 +218,7 @@ foreach ($allControls as $identifier) {
     } elseif (array_key_exists($identifier, $controls)) {
         $sAllControls .= $controls[$identifier];
     } else {
-        $sAllControls .= onControlNotFound($identifier);
+        $sAllControls .= $templateHelper->onControlNotFound($identifier);
     }
 }
 
@@ -362,7 +228,7 @@ foreach ($allControls as $identifier) {
 //--------------------------------------------
 $sFormMessages = '';
 if (array_key_exists('form', $v) && array_key_exists('messages', $v['form'])) {
-    $sFormMessages = wrapFormMessages($v['form']['messages']);
+    $sFormMessages = $templateHelper->wrapFormMessages($v['form']['messages']);
 }
 
 //--------------------------------------------

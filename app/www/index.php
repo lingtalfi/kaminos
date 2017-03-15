@@ -12,7 +12,7 @@ require_once __DIR__ . "/../init.php";
 
 
 WebApplication::inst()
-    ->set('layout_root_url', "/gentelella")
+    ->set('theme', "gentelella") // this application uses a theme
     ->addListener(RouterRequestListener::create()->addRouter(StaticPageRouter::create()))
     ->addListener(ControllerExecuterRequestListener::create())
     ->addListener(ResponseExecuterListener::create())

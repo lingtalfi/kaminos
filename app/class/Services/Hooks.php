@@ -2,6 +2,7 @@
 
 
 namespace Services;
+use Router\AppRouter;
 
 
 /**
@@ -20,5 +21,6 @@ class Hooks
     public static function StaticPageRouter_feedRequestUri(array &$uri2Page)
     {
         \Toast\ToastHooks::StaticPageRouter_feedRequestUri($uri2Page);
+        AppRouter::StaticPageRouter_feedRequestUri($uri2Page);
     }
 }

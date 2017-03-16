@@ -2,8 +2,8 @@
 
 
 namespace Services;
-use Kamille\Architecture\Application\Web\WebApplication;
 
+use Kamille\Architecture\Application\Web\WebApplication;
 
 
 /**
@@ -36,10 +36,25 @@ class X
 {
 
 
-    public static function StaticPageRouter_getStaticPageController()
+    public static function getStaticPageRouter_StaticPageController()
     {
         $o = new \Kamille\Architecture\Controller\Web\StaticPageController();
         $o->setPagesDir(WebApplication::inst()->get('app_dir') . "/pages");
         return $o;
+    }
+
+    public static function getStaticPageRouter_Uri2Page()
+    {
+        $uri2Page = [];
+        Hooks::StaticPageRouter_feedUri2Page($uri2Page);
+        return $uri2Page;
+    }
+
+
+    public static function getStaticObjectRouter_Uri2Controller()
+    {
+        $uri2Controller = [];
+        Hooks::StaticObjectRouter_feedUri2Controller($uri2Controller);
+        return $uri2Controller;
     }
 }

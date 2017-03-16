@@ -2,6 +2,7 @@
 
 
 namespace Services;
+
 use Router\AppRouter;
 
 
@@ -18,9 +19,14 @@ use Router\AppRouter;
 class Hooks
 {
 
-    public static function StaticPageRouter_feedRequestUri(array &$uri2Page)
+    public static function StaticPageRouter_feedUri2Page(array &$uri2Page)
     {
-        \Toast\ToastHooks::StaticPageRouter_feedRequestUri($uri2Page);
-        AppRouter::StaticPageRouter_feedRequestUri($uri2Page);
+        \Toast\ToastHooks::StaticPageRouter_feedUri2Page($uri2Page);
+        AppRouter::StaticPageRouter_feedUri2Page($uri2Page);
+    }
+
+    public static function StaticObjectRouter_feedUri2Controller(array &$uri2Controller)
+    {
+        AppRouter::StaticObjectRouter_feedUri2Controller($uri2Controller);
     }
 }

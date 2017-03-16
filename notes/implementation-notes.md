@@ -23,37 +23,86 @@ Here are my thoughts about it and how I will personally implement those kind of 
 Controller (at least I couldn't think of a system that would benefit having multiple possible Controllers for 
 a given Request, maybe I'm wrong)
 
-- once a Controller is chosen, it will only call one layout (template), which could change with the theme
+- once a Controller is chosen, it can choose which layout (template) to call. 
+        And that layout can also be changed with the theme.
+        
+        For instance, if a form post is successful, a controller can decide to display layoutOne (which shows a success message),
+        but if the same form post (same request but different data) is a failure, the controller might decide to display
+        layoutTwo, which shows the form.
+        
+        
 
 
 
-Controller states
----------------------
+A picture of a themable application
+------------------------------------
 
-My image for making those decisions was the following: a page with a login form, with a link to a signup form,
-but the link is just a javascript trigger that slides from the login form to the signup form (i.e., there is
-only one html page).
 
-After thinking about this example, I found out that in this case there was three different types of request:
-- the request to display the form(s)
-- the request to log in the user (create the session vars), which has two possible outcomes (either a success or a failure)
-- the request to create a new user account, which returns either a success response, or an error response (maybe different possible error messages)
+So we use a themable application: an application which defines a theme parameter used by all other objects beyond.
 
-So, in this case, I will say that there are three controllers, one per request.
-
-Although we can change the template and the theme, at the application level I believe that each controller should return
-the same type of response, which I call states.
+When the request enters the router, a controller will be chosen.
  
-For instance, the request to display the form(s) will display a form (we can change the template or the theme, but it has
-to display the signin/signup form), so this is only one possible state for the controller.
+Imagine we have two pages: an e-commerce product page: /kettle-bell, and a login form page: /login.
+
+
+So the user accesses /kettle-bell via her browser.
  
- 
- 
-Now for the request to log in the user, the parameters will probably be passed via $_POST, but the controller output
-can be either a success message, or an error message, so one state per type of response: success or failure (which might have
-different variations, but basically use the same template). 
- 
+The router request listener dispatches the request to its own internal loop, and a router matches the /kettle-bell
+uri with a product controller, and productId=654 (i.e. kettle-bell=654 in an imaginary database).
+
+The product controller will fetch the info corresponding to product id=654 and pass those info to the product layout,
+which will display those info.
+
+
+Now for the /login page.
+
+So the user accesses the /login uri via her browser.
+
+A router will match /login with the displayForm controller. The displayForm controller will simply call the form layout,
+without passing any particular data to it.
+
+But now, the user posts the form.
+The requested page could be different than /login, or it could be /login as well.
+
+Let's see both cases.
+First, if /login is called.
+
+This time, the router will match /login, but will also detect that some $_POST parameters exist,
+and therefore will choose the handleForm controller.
+
+The handleForm controller will treat the data, probably updating the state of the database, and then call 
+a layout. In the case of a form, it makes sense to call the same layout than the one that was used to display the form 
+in the first place, especially if there was a form error, so that we can emulate form data persistence (i.e. the data
+written by the user are still written in the form).
+
+So, the handleForm controller will call the form layout (same as the displayForm controller).
+Note: we can display a different layout in case of success if we want to. Which means that the same controller can
+decide which layout to use, depending on the request (or user data).
+
+
+Now, if another page was called, for instance /form-success.
+
+Then the router would match a displayFormSuccess controller, which in turn would call a displayFormSuccess layout, just
+basic chain here.
+
+
+So, as page creators, we need some kind of visual representation of all this.
+Below, I will draw what I have in mind about this topic. If you have a better representation, please share.
+Hope this helps.
 
 
 
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 

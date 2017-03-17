@@ -2,22 +2,24 @@
 
 
 use Kamille\Architecture\Application\Web\WebApplication;
+use Kamille\Architecture\ApplicationParameters\Web\WebApplicationParameters;
 use Kamille\Architecture\Request\Web\HttpRequest;
 use Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener;
 use Kamille\Architecture\RequestListener\Web\ResponseExecuterListener;
 use Kamille\Architecture\RequestListener\Web\RouterRequestListener;
 use Kamille\Architecture\Router\Web\StaticObjectRouter;
-use Kamille\Architecture\Router\Web\StaticPageRouter;
 use Services\X;
 
 
 require_once __DIR__ . "/../init.php";
 
+WebApplicationParameters::boot();
 
-$app = WebApplication::inst(); // be sure to instantiate app first, so that other objects can use app params
 
 
-$app
+
+
+WebApplication::inst()
     ->set('theme', "gentelella")// this application uses a theme
     ->addListener(RouterRequestListener::create()
         ->addRouter(StaticObjectRouter::create()->setUri2Controller(X::getStaticObjectRouter_Uri2Controller()))

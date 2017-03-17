@@ -142,6 +142,15 @@ So let's first do a module system.
 Module System
 ===============
 
+What's a module?
+
+A module is a piece of code, possibly spread across multiple files, which modifies the behavior of an application.
+Once installed, it's part of the code of the application.
+A module has no limitation: it can do all an application do, and even more. 
+Then to remove the functionality brought by a module, one need to uninstall that module.
+
+
+
 To install a module, you need to import it first.
 
 To import a module, you copy paste its directory into the class-modules directory of the app, done.
@@ -155,33 +164,49 @@ The installation of a module is a separate process that can be done even if the 
 
 
 Application parameters should be available at any time (not only when the application is instantiated).
-That's because modules will need them (app_root_dir, admin root dir, other things...)
+That's because modules will need them (app_root_dir, admin root dir, other things...).
+
+So I thought of this a bit.
+
+Here is the new architecture, including the modules in the picture.
+
+
+At the beginning there is nothing.
+
+First we will create the application environment, and then we will instantiate and launch the application.
+
+# Application environment
+
+The application environment is the environment in which the application can be instantiated and launched. 
+
+The first thing you do is to define the application parameters (ApplicationParameters).
+Then, the X service container is there. You've got nothing special to do, as it's already there as part of the environment.
+Note that the X container services are mainly services injected (statically) by modules.
+ 
+Once you have the ApplicationParameters set and the X container ready, then you've got what's called the Application environment.
+
+
+# Application launch
+
+So now the application environment is set.
+We can safely instantiate and launch the application.
+
+In a web application, we do this from the index.php file.
+The code inside the index file instantiate the web application and starts listening to the request.
 
 
 
 
+The picture below might help understanding this.
+
+
+[![kaminos-modular-architecture.jpg](https://s19.postimg.org/f722z5hlv/kaminos_modular_architecture.jpg)](https://postimg.org/image/q6naar80v/)
 
 
 
+ModuleInstaller: a service to install a module
+--------------------------------------------------
 
-
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 
 

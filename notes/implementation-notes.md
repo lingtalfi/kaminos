@@ -142,63 +142,24 @@ So let's first do a module system.
 Module System
 ===============
 
-I have a very basic idea of what a module system should be, here are some features I want:
+To install a module, you need to import it first.
 
-- ability to import modules with a one line terminal command
-- A module class with two methods: install, uninstall
+To import a module, you copy paste its directory into the class-modules directory of the app, done.
+Once imported in your app, you can install a module by calling its module installer's install method (and uninstall the
+module by calling it's module installer uninstall method).
+
+The installation of a module is a separate process that can be done even if the application is off
+(but you can do hot installation on an alive application instance if you want too).
 
 
-The idea of installing and uninstalling encompasses the databases/tables installation (if necessary), or/and the
-files, and maybe other things I didn't think of yet.
 
-So actually, those are two totally different ideas, which deserve proper conception each.
 
-The two ideas are:
+Application parameters should be available at any time (not only when the application is instantiated).
+That's because modules will need them (app_root_dir, admin root dir, other things...)
 
-- a repository/system which lists all modules, and permits access to them. My import idea should be bound to this system.
-- then the next idea is the idea of the life cycle of a module within an application.
-    The install/uninstall methods are related to this area.
-    But also arises a new question: who (which object) is responsible for triggering the 
-    module install/uninstall methods?
-    
-    
-So, all those problems to solve.
-    
-Let's start by the module within the application.
-    
-    
-    
-A Module within an application
----------------------------------
 
-Assuming that calling a given module's install/uninstall method will take care of all the details of 
-installing/uninstalling a module, the question remains: who is responsible for calling the triggering of 
-those precious methods?
- 
-I don't want to parasite the Application with the notion of modules, as not all applications might need modules.
-  
-However, a first simple idea is to list all modules as a parameter of the application 
-(like theme for themable applications).
-  
-However, let's keep in mind that modules will be installed/uninstalled, and we should be able to keep track
-of the installed module list at any time (because some modules might depend on other modules, so this information
-could be useful in this case).
 
-Rather than risking to update the userland index file, we could create a module.txt file at the application root level,
-which would contain the list of modules actually installed.
- 
-This would give us at least two things:
 
-- we can simply open that file to see which modules are/aren't installed
-- it feels safer to update an isolated text file rather than an userland index file
-
-But that's just the how, it doesn't affect the WHERE question, which still remains unanswered (and the goal of this
-section by the way).
-
-So: where?
-
-Does it make more sense to have the list of modules as an application parameters, or to have some kind of 
-dedicated ModulesList object responsible for that?
 
 
 

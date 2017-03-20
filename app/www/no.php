@@ -2,11 +2,18 @@
 
 
 use Kamille\Architecture\ApplicationParameters\Web\WebApplicationParameters;
-use Kamille\Services\XModuleInstaller;
+use Services\X;
+use Services\XConfig;
+
 
 require_once __DIR__ . "/../init.php";
 
 
 
+
+
 WebApplicationParameters::boot();
-XModuleInstaller::inst()->install("Connexion");
+a(XConfig::get("Connexion.favoriteColor"));
+
+
+//XModuleInstaller::inst()->install("Connexion");

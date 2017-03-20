@@ -4,26 +4,19 @@
 namespace Connexion;
 
 
-use Kamille\Module\Exception\ModuleException;
-use Kamille\Module\ModuleInterface;
-use Kamille\Utils\StepTracker\StepTrackerAwareInterface;
-use Kamille\Utils\StepTracker\StepTrackerInterface;
+use Kamille\Module\StepTrackerAwareModule;
 
-class ConnexionModule implements ModuleInterface, StepTrackerAwareInterface
+class ConnexionModule extends StepTrackerAwareModule
 {
 
-    /**
-     * @var StepTrackerInterface $stepTracker
-     */
-    private $stepTracker;
 
     public function install()
     {
         a("connexion module install");
-
-
-        $this->stepTracker->startStep("connexion module install");
-        $this->stepTracker->startStep("connexion module install");
+        $this->stepTracker->startStep('files');
+        $this->stepTracker->stopStep('files');
+        $this->stepTracker->startStep('db');
+        $this->stepTracker->stopStep('db');
     }
 
     public function uninstall()
@@ -31,9 +24,12 @@ class ConnexionModule implements ModuleInterface, StepTrackerAwareInterface
         a("connexion module uninstall");
     }
 
-    public function setStepTracker(StepTrackerInterface $stepTracker)
+    protected function getStepsList()
     {
-        $this->stepTracker=$stepTracker;
+        return [
+            'files' => "Installing files",
+            'db' => "Installing tables in database",
+        ];
     }
 
 

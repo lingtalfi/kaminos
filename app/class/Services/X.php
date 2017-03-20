@@ -4,6 +4,7 @@
 namespace Services;
 
 use Kamille\Architecture\Application\Web\WebApplication;
+use Kamille\Services\AbstractX;
 
 
 /**
@@ -32,7 +33,7 @@ use Kamille\Architecture\Application\Web\WebApplication;
  *
  *
  */
-class X
+class X extends AbstractX
 {
 
 
@@ -57,4 +58,18 @@ class X
         Hooks::StaticObjectRouter_feedUri2Controller($uri2Controller);
         return $uri2Controller;
     }
+
+
+
+    //--------------------------------------------
+    // BELOW THIS LINE, LET THE BOT DO ITS JOB
+    //--------------------------------------------
+    public static function Connexion_getSomeService()
+    {
+        return [
+            "pou" => 6,
+        ];
+    }
+
+
 }

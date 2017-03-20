@@ -204,9 +204,134 @@ The picture below might help understanding this.
 
 
 
-ModuleInstaller: a service to install a module
---------------------------------------------------
+X 
+===========
+2017-03-20
+
+In kam, there is the idea of providing static services, which allows the developer to use auto-completion
+by auto-recognition of the hint (thanks to the ide).
+
+I went trough the pros and cons again, and basically, I now prefer to have a common get method.
+Let's see why.
+
+
+Pros of having a container with direct access to static services:
+- auto-completion
+- (and therefore) faster development
+
+Cons:
+- the services are dispatched
+
+
+Pros of having a centralized get method:
+- one method only (simpler)
+- no hard (php) dependencies 
+
+Cons:
+- (negligeable?) loss of performance
+
+
+
+Trying to create a module system, my biggest concern is to have a simple/comprehensible model to work with.
+Since modules bring most of the functionality of an application, the new conception of X is remodeled to work with them.
+
+
+So basically, what makes me change my mind is that despite both technique create dependencies to "modules",
+the one with the centralized get method allows us to encapsulate the dependencies error.
+ 
+The problem I had with the non centralized model is that I couldn't get around the php limitation: if the class
+and method you call is not there: it will create a php error. Maybe you can catch it somehow and convert it to an 
+exception, but it might require to change the php ini settings, and THAT makes it impossible for me to accept,
+as I don't want to force any php setting.
+
+So I had to found another solution, and here it is: X.
 
 
 
 
+
+The basic idea: to install and uninstall modules
+---------------------
+
+The main idea is this:
+when you install a module: it becomes available, when you uninstall a module: it becomes unavailable.
+In terms of code, this means that the services also become available/unavailable as the modules are installed/uninstalled.
+
+
+Then there is the idea of two objects:
+
+- XConfig
+- XServices
+
+
+
+XConfig holds the parameters of the modules.
+It has a main get static method, which allows access to the configuration of all modules.
+XConfig is fed/unfed as the modules are installed/uninstalled.
+
+It allows the implementation of retrieving parameters one by one.
+ 
+Then there is XServices, which is also fed by modules, and also contains a get centralized method (so that we can 
+encapsulate unavailability errors).
+ 
+ 
+In terms of implementation, I thought about a system which would allow:
+ 
+- creation of parameters using a simple php? parameter file, the benefit being that this would be centralized, 
+        and so easier to develop/maintain for the author.
+        
+- creation of services using an internal (in the module package) Service class, which services get exported automatically
+        when the module is installed.
+        
+        
+The second main idea is this: modules communication passes via services.
+This idea ensures that there will not be hard dependencies; all dependencies are controlled because they pass via
+services.
+
+
+
+
+Then there is the concept of being agnostic.
+I generally like this concept.
+
+But implementing X (XServices and XConfig), I need at least a verbal justification.
+
+Even if I did a container instance implementing a container interface, I would need to create an interface,
+so, having an interface let us have more choice than using X, but in the end, we still have to use a container.
+
+
+But then, if you think about it again, you don't have to use those, it's just one suggestion (that I will be using
+all the time, but still). So, you could create a totally different system if you wanted to.
+But related to modules, X is the proposed default implementation, so this is a bold, non agnostic choice,
+a step in a direction trying to make things happen.
+
+
+Ethically, the question can be put in a simplest form: does an application need to use a service container?
+Or, is a service container more like a singleton service, always available, and used by convention?
+        
+This question has been already answered in the kaminos modular architecture schema (https://s19.postimg.org/f722z5hlv/kaminos_modular_architecture.jpg):
+the container exists BEFORE the application is even instantiated.
+
+
+In fact, the XConfig object can be thought as a helper for the XServices container, and 
+thus the kaminos modular architecture schema is still accurate.
+ 
+ 
+ 
+So, in my kaminos implementation, the main "line" will be XServices and XConfig.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

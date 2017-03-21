@@ -324,10 +324,48 @@ So, in my kaminos implementation, the main "line" will be XServices and XConfig.
 
 
 
+Install module
+===================
+2017-03-21
+
+
+The install module process in kaminos uses the UserError system (an UserErrorException is thrown to signal
+an error to the user).
+
+This means that modules installation can throw UserErrorException to signal something to the user.
 
 
 
 
+Boot - Init: two complementary scripts
+=========================================
+2017-03-21
+
+
+While working in the kamille moduleInstaller script, I had this error where the module complained about
+a class being not loaded.
+Right, I forgot to autoload the classes. But how to autoload them properly?
+
+I was wondering how to boot the target application.
+ 
+Starting from the kaminos modular architecture schema again, we see that a kaminos app is split in two parts:
+the application environment, and then the application instance.
+
+The init.php file, that I was used to ship with any application was just not enough anymore. 
+
+Then I figured that a file per "part" would do the trick: a boot.php file would prepare the application environment
+part, while the init.php file will be re-allocated/dedicated to only the application instance part, which makes 
+even more sense to me.
+
+The benefit of this is that now my module installer script can call the boot.php script without worrying about 
+accidentally including some init.php code.
+
+
+The boot script's role is to setup the application environment.
+The application environment is all modules need to install/uninstall themselves.
+
+So, I could update my schema now and annotate each "part" with the corresponding script. 
+But, I don't want to rush things.
 
 
 

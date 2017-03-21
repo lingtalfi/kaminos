@@ -2,46 +2,13 @@
 
 
 /**
- * Welcome to the init file.
- * =============================
+ * This is the init file.
+ * It configures the application preferences (just before the application is launched).
  *
- * The init file is responsible for setting the environment in which the app
- * will be executed.
  */
 
 
-use BumbleBee\Autoload\ButineurAutoloader;
 use Kamille\Architecture\Environment\Web\Environment;
-
-
-//------------------------------------------------------------------------------/
-// AUTOLOADER
-//------------------------------------------------------------------------------/
-/**
- * In this section, we create the necessary autoloaders for our application.
- * By default, I'm using the universe autoloader (bigbang).
- *
- */
-require_once __DIR__ . '/class-planets/BumbleBee/Autoload/BeeAutoloader.php';
-require_once __DIR__ . '/class-planets/BumbleBee/Autoload/ButineurAutoloader.php';
-ButineurAutoloader::getInst()
-    ->addLocation(__DIR__ . "/class")
-    ->addLocation(__DIR__ . "/class-core")
-    ->addLocation(__DIR__ . "/class-modules")
-    ->addLocation(__DIR__ . "/class-planets");
-ButineurAutoloader::getInst()->start();
-// require_once __DIR__ . '/vendor/autoload.php';
-
-
-
-//--------------------------------------------
-// FUNCTIONS
-//--------------------------------------------
-require_once __DIR__ . "/functions/main-functions.php";
-
-
-
-
 
 
 $environment = Environment::getEnvironment();

@@ -670,3 +670,11 @@
 127.0.0.1 - - [20/Mar/2017:16:55:27 +0100] "GET /no.php HTTP/1.1" 200 44
 127.0.0.1 - - [20/Mar/2017:17:16:16 +0100] "GET /no.php HTTP/1.1" 200 192
 127.0.0.1 - - [20/Mar/2017:17:16:34 +0100] "GET /no.php HTTP/1.1" 200 18
+127.0.0.1 - - [21/Mar/2017:07:22:40 +0100] "GET /login HTTP/1.1" 200 4055
+127.0.0.1 - - [21/Mar/2017:07:22:41 +0100] "GET /gentelella/vendors/nprogress/nprogress.css HTTP/1.1" 200 1458
+127.0.0.1 - - [21/Mar/2017:07:22:41 +0100] "GET /gentelella/vendors/animate.css/animate.min.css HTTP/1.1" 200 52789
+127.0.0.1 - - [21/Mar/2017:07:22:40 +0100] "GET /gentelella/vendors/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 29063
+127.0.0.1 - - [21/Mar/2017:07:22:40 +0100] "GET /gentelella/vendors/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 200 121200
+127.0.0.1 - - [21/Mar/2017:07:22:41 +0100] "GET /gentelella/build/css/custom.min.css HTTP/1.1" 200 62584
+127.0.0.1 - - [21/Mar/2017:07:22:41 +0100] "GET /gentelella/vendors/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 71896
+127.0.0.1 - - [21/Mar/2017:07:22:41 +0100] "GET /favicon.ico HTTP/1.1" 200 1150

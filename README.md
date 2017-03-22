@@ -17,4 +17,26 @@ In general, kaminos is a concrete application based on the [Kamille](https://git
 
 
 
+How to install?
+==================
+
+Using the [universe naive importer](https://github.com/lingtalfi/universe-naive-importer):
+```bash
+cd /path/to/app
+uni import Kaminos
+```
+
+Or otherwise just copy the planet to your planets directory.
+
+
+
+
+History Log
+------------------
+    
+- 1.0.0 -- 2017-03-22
+
+    - initial commit
+
+
 

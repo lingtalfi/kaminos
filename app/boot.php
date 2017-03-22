@@ -10,7 +10,7 @@
  */
 
 use BumbleBee\Autoload\ButineurAutoloader;
-use Kaminos\Architecture\ApplicationParameters\Web\WebApplicationParameters;
+use KaminosUtils\Architecture\ApplicationParameters\Web\WebApplicationParameters;
 
 
 //------------------------------------------------------------------------------/

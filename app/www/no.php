@@ -2,14 +2,22 @@
 
 
 use Packer\Packer;
+use TokenFun\TokenFinder\ParentClassNameTokenFinder;
+use TokenFun\TokenFinder\Tool\TokenFinderTool;
+use TokenFun\Tool\TokenTool;
 
-require_once __DIR__ . "/../boot.php";
+
+ini_set("display_errors", 1);
+require __DIR__ . "/../boot.php";
+
 
 
 
 $d = "/myphp/kamille-installer-tool/pprivate";
 $packer = new Packer();
-a($packer->pack($d));
+$c = $packer->pack($d);
+
+
 
 
 

@@ -1,11 +1,16 @@
 <?php
 
 
-
-
+use Packer\Packer;
 
 require_once __DIR__ . "/../boot.php";
-require_once __DIR__ . "/../init.php";
+
+
+
+$d = "/myphp/kamille-installer-tool/pprivate";
+$packer = new Packer();
+a($packer->pack($d));
+
 
 
 

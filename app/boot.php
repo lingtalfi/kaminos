@@ -25,8 +25,9 @@ require_once __DIR__ . '/class-planets/BumbleBee/Autoload/BeeAutoloader.php';
 require_once __DIR__ . '/class-planets/BumbleBee/Autoload/ButineurAutoloader.php';
 ButineurAutoloader::getInst()
     ->addLocation(__DIR__ . "/class")
-    ->addLocation(__DIR__ . "/class-core")
-    ->addLocation(__DIR__ . "/class-modules")
+    ->addLocation(__DIR__ . "/class-core", "Core")
+    ->addLocation(__DIR__ . "/class-controllers", "Controller")
+    ->addLocation(__DIR__ . "/class-modules", "Module")
     ->addLocation(__DIR__ . "/class-planets");
 ButineurAutoloader::getInst()->start();
 // require_once __DIR__ . '/vendor/autoload.php';

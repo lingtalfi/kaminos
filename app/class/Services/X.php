@@ -3,7 +3,9 @@
 
 namespace Services;
 
+
 use Kamille\Architecture\Application\Web\WebApplication;
+
 use Kamille\Services\AbstractX;
 
 
@@ -32,44 +34,48 @@ use Kamille\Services\AbstractX;
  *
  *
  *
+
  */
 class X extends AbstractX
+
 {
 
 
-    public static function getStaticPageRouter_StaticPageController()
-    {
-        $o = new \Kamille\Architecture\Controller\Web\StaticPageController();
-        $o->setPagesDir(WebApplication::inst()->get('app_dir') . "/pages");
-        return $o;
-    }
-
-    public static function getStaticPageRouter_Uri2Page()
-    {
-        $uri2Page = [];
-        Hooks::StaticPageRouter_feedUri2Page($uri2Page);
-        return $uri2Page;
-    }
-
-
-    public static function getStaticObjectRouter_Uri2Controller()
-    {
-        $uri2Controller = [];
-        Hooks::StaticObjectRouter_feedUri2Controller($uri2Controller);
-        return $uri2Controller;
-    }
-
-
+//    public static function getStaticPageRouter_StaticPageController()
+//    {
+//        $o = new \Kamille\Architecture\Controller\Web\StaticPageController();
+//        $o->setPagesDir(WebApplication::inst()->get('app_dir') . "/pages");
+//        return $o;
+//
+//    }
+//
+//
+//    public static function getStaticPageRouter_Uri2Page()
+//    {
+//        $uri2Page = [];
+//        Hooks::StaticPageRouter_feedUri2Page($uri2Page);
+//        return $uri2Page;
+//    }
+//
+//
+//    public static function getStaticObjectRouter_Uri2Controller()
+//    {
+//        $uri2Controller = [];
+//        Hooks::StaticObjectRouter_feedUri2Controller($uri2Controller);
+//        return $uri2Controller;
+//    }
 
     //--------------------------------------------
     // BELOW THIS LINE, LET THE BOT DO ITS JOB
     //--------------------------------------------
-    public static function Connexion_getSomeService()
-    {
-        return [
-            "pou" => 6,
-        ];
+
+	protected static function Connexion_foo(){
+        echo "pouddd";
     }
 
-
+	protected static function Connexion_doo(){
+        echo "pou";
+    }
 }
+
+

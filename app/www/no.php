@@ -1,26 +1,29 @@
 <?php
 
 
-use Packer\Packer;
-use TokenFun\TokenFinder\ParentClassNameTokenFinder;
-use TokenFun\TokenFinder\Tool\TokenFinderTool;
-use TokenFun\Tool\TokenTool;
+use MethodInjector\MethodInjector;
 
 
 ini_set("display_errors", 1);
 require __DIR__ . "/../boot.php";
 
 
-
-
-$d = "/myphp/kamille-installer-tool/pprivate";
-$packer = new Packer();
-$c = $packer->pack($d);
-
-
-
-
-
-
+//--------------------------------------------
+// KAMINOS EXAMPLE - ADDING MODULE SERVICE TO THE APPLICATION CONTAINER
+//--------------------------------------------
+/**
+ * Add public static method ConnexionServices::Connexion_doo
+ * to the Services\X class if it doesn't have it yet.
+ */
+$className = 'Module\Connexion\ConnexionServices';
+$method = "Connexion_doo";
+$o = new MethodInjector();
+$methods = $o->getMethodsList($className);
+foreach ($methods as $method) {
+    $m = $o->getMethodByName($className, $method);
+    if (false === $o->hasMethod($m, 'Services\X')) {
+        $o->appendMethod($m, 'Services\X');
+    }
+}
 
 

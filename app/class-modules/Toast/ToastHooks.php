@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Toast;
+namespace Module\Toast;
 
 
 class ToastHooks

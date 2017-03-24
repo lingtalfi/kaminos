@@ -14,6 +14,7 @@ use Kamille\Architecture\Environment\Web\Environment;
 $environment = Environment::getEnvironment();
 
 
+
 //--------------------------------------------
 // PHP CONF
 //--------------------------------------------

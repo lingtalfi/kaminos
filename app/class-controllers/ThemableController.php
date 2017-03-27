@@ -5,6 +5,7 @@ namespace Controller;
 
 
 use Kamille\Architecture\Application\Web\WebApplication;
+use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Architecture\Controller\ControllerInterface;
 use Kamille\Architecture\Response\Web\HttpResponse;
 use Kamille\Ling\Z;
@@ -23,12 +24,12 @@ class ThemableController implements ControllerInterface
 {
 
 
-    protected function renderLayout($templateName, array $vars=[])
+    protected function renderLayout($templateName, array $vars = [])
     {
         return HttpResponse::create(Layout::create()
             ->setTemplate($templateName)
             ->setLoader(FileLoader::create()
-                ->addDir(Z::appDir() . "/theme/" . WebApplication::inst()->get('theme') . "/layout")
+                ->addDir(Z::appDir() . "/theme/" . ApplicationParameters::get('theme') . "/layout")
             )
             ->setRenderer($this->getRenderer())
             ->render($vars));

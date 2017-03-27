@@ -18,6 +18,7 @@ The new relationships are now clearly defined, which makes the whole system easi
 - What's a module?
 - What's a service?
 - What's a hook?
+- What about params?
 
 
 
@@ -130,7 +131,6 @@ depending on the arguments that you sent to the call method in the first place).
 
 
 
-
 Conclusion
 =============
 
@@ -150,33 +150,73 @@ It is a simple idea which makes the whole system more understandable.
 
 
 
+Params
+==========
+2017-03-27
+
+But wait, what about params?
+I mean module params?
+
+All modules will need some configuration at some point.
+What I want is to be able to change the configuration of a module from a gui.
+So, in order to do this, I would like a simple system.
+
+Here is my idea about how module config should be implemented in kaminos.
+There is a XConfig class, which works like the X and Hooks class, but for module config parameters only.
+
+In the application, here is what I would like to build:
+
+
+```txt
+- app
+----- config
+--------- application-parameters.php
+--------- application-parameters-dev.php
+--------- modules
+------------- Module1.conf.php
+------------- Module2.conf.php
+- class-modules
+----- Module1
+--------- files
+------------- app
+----------------- config
+--------------------- modules
+------------------------- Module1.conf.php
+----- Module2
+--------- files
+------------- app
+----------------- config
+--------------------- modules
+------------------------- Module2.conf.php
+```
+
+
+So, when you install Module1, it copies its conf file to the application config directory
+(note that we used the files mechanism provided by the KaminosModule class).
+Of course, this is just a convention, and I don't want this to be the only option, but that's the one I'm going for
+personally. So, this feature will be implemented as a kaminosModule automatic feature: which means if your module
+extends the KaminosModule, it will follow this convention.
+
+So, a XConfig class is available for kaminos modules, basically.
+And the XConfig class will load config on a per-module basis (not on a per-parameter basis, as planned originally,
+since I like to have all module params stored as an array, and once an array is loaded, you get all its entries anyway).
+
+
+Note: modules config is centralized to the application config directory, so that the user can update it manually (or via 
+a gui). So yes, the modules config is meant to be modified by the user.
+A module however, shall always provide sensitive default parameters, so that the module can work "out of the box".
 
 
 
+Controllers
+===============
+2017-03-27
 
+What about controllers?
+To access module controllers, one shall use the X container.
+Remember, we want to be able to turn off/on the modules, so by delivering them via the services container, 
+we are ensured that a module's controller won't be accessible if the module is not installed.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In other words, it's our guarantee that we won't create a hard code dependency to a module controller directly.
+So this also means that modules' controllers stay in the module land (i.e. the class-modules directory), 
+not application land.

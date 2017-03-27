@@ -10,6 +10,9 @@ namespace Module\Core;
 
 class CoreServices
 {
+    public static function create(){
+        return new static();
+    }
     private static $cache;
 
     protected static function Core_webApplicationConfigurator()

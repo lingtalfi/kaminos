@@ -83,4 +83,8 @@ class X extends AbstractX
         }
         return self::$cache['Core_webApplicationConfigurator'];
     }
+
+	public static function create(){
+        return new static();
+    }
 }

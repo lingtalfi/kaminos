@@ -1,6 +1,7 @@
 <?php
 
 
+use MethodInjector\Method\Method;
 use MethodInjector\MethodInjector;
 
 
@@ -8,22 +9,12 @@ ini_set("display_errors", 1);
 require __DIR__ . "/../boot.php";
 
 
-//--------------------------------------------
-// KAMINOS EXAMPLE - ADDING MODULE SERVICE TO THE APPLICATION CONTAINER
-//--------------------------------------------
-/**
- * Add public static method ConnexionServices::Connexion_doo
- * to the Services\X class if it doesn't have it yet.
- */
-$className = 'Module\Connexion\ConnexionServices';
-$method = "Connexion_doo";
-$o = new MethodInjector();
-$methods = $o->getMethodsList($className);
-foreach ($methods as $method) {
-    $m = $o->getMethodByName($className, $method);
-    if (false === $o->hasMethod($m, 'Services\X')) {
-        $o->appendMethod($m, 'Services\X');
-    }
-}
 
 
+
+
+
+$m = new Method();
+$m->setName("Core_applicationConfigurator");
+
+MethodInjector::create()->removeMethod($m, '\Core\Services\X');

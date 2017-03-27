@@ -13,4 +13,11 @@ class ToastHooks
         $uri2Page["/toast"] = "toast.php";
         $uri2Page["/"] = "home.php";
     }
+
+    protected static function Core_feedUri2Controller(array &$uri2Controller)
+    {
+        $uri2Controller["/toast"] = "something";
+        $uri2Controller["/marshmallows"] = "something";
+    }
+
 }

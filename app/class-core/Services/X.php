@@ -1,10 +1,8 @@
 <?php
 
 
-namespace Services;
+namespace Core\Services;
 
-
-use Kamille\Architecture\Application\Web\WebApplication;
 
 use Kamille\Services\AbstractX;
 
@@ -37,7 +35,6 @@ use Kamille\Services\AbstractX;
 
  */
 class X extends AbstractX
-
 {
 
 
@@ -69,13 +66,21 @@ class X extends AbstractX
     // BELOW THIS LINE, LET THE BOT DO ITS JOB
     //--------------------------------------------
 
-	protected static function Connexion_foo(){
+    protected static function Connexion_foo()
+    {
         echo "pouddd";
     }
 
-	protected static function Connexion_doo(){
+    protected static function Connexion_doo()
+    {
         echo "pou";
     }
+
+	public static function Core_webApplicationConfigurator()
+    {
+        if (!array_key_exists('Core_webApplicationConfigurator', self::$cache)) {
+            self::$cache['Core_webApplicationConfigurator'] = new \Module\Core\ApplicationConfigurator\WebApplicationConfigurator();
+        }
+        return self::$cache['Core_webApplicationConfigurator'];
+    }
 }
-
-

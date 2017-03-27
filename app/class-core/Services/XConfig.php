@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Services;
+namespace Core\Services;
 
 use Kamille\Services\AbstractXConfig;
 

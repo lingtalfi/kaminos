@@ -22,7 +22,6 @@ class WebApplicationConfigurator
         Hooks::call("Core.feedUri2Controller", $uri2Controller);
 
 
-
         $app->addListener(RouterRequestListener::create()
             ->addRouter(StaticObjectRouter::create()
                 ->setDefaultController(XConfig::get("Core.defaultController"))

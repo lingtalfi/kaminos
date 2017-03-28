@@ -3,13 +3,13 @@
 use Kamille\Ling\Z;
 use Kamille\Mvc\Layout\HtmlLayout;
 use Kamille\Mvc\Loader\FileLoader;
+use Kamille\Mvc\Renderer\LawsPhpLayoutRenderer;
 use Kamille\Mvc\Renderer\PhpLayoutRenderer;
 use Kamille\Mvc\Widget\GroupWidget;
 use Kamille\Mvc\Widget\Widget;
 
 require_once __DIR__ . "/../boot.php";
 require_once __DIR__ . "/../init.php";
-
 
 
 //--------------------------------------------
@@ -31,7 +31,7 @@ require_once __DIR__ . "/../init.php";
  *
  */
 $wloader = FileLoader::create()->addDir(Z::appDir() . "/theme/widget");
-$commonRenderer = PhpLayoutRenderer::create();
+$commonRenderer = LawsPhpLayoutRenderer::create();
 
 
 //HtmlPageHelper::$title = "Coucou";
@@ -46,26 +46,21 @@ $commonRenderer = PhpLayoutRenderer::create();
 
 
 echo HtmlLayout::create()
-    ->setTemplate("home")
+    ->setTemplate("laws_home")
     ->setLoader(FileLoader::create()
         ->addDir(Z::appDir() . "/theme/layout")
     )
     ->setRenderer($commonRenderer)
-    ->bindWidget("group", GroupWidget::create()
-        ->setTemplate("group/group")
+    ->bindWidget("top.meteo", Widget::create()
+        ->setTemplate("meteo/meteo")
+        ->setVariables(['level' => "good"])
         ->setLoader($wloader)
         ->setRenderer($commonRenderer)
-        ->bindWidget("meteo", Widget::create()
-            ->setTemplate("meteo/meteo")
-            ->setVariables(['level' => "good"])
-            ->setLoader($wloader)
-            ->setRenderer($commonRenderer)
-        )
-        ->bindWidget("kart", Widget::create()
-            ->setTemplate("kart/kart")
-            ->setLoader($wloader)
-            ->setRenderer($commonRenderer)
-        )
+    )
+    ->bindWidget("top.kart", Widget::create()
+        ->setTemplate("kart/kart")
+        ->setLoader($wloader)
+        ->setRenderer($commonRenderer)
     )
     ->render([
         "name" => 'Pierre',

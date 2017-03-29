@@ -1,18 +1,71 @@
 <?php
 
+use ApplicationItemManager\Importer\GithubImporter;
+use ApplicationItemManager\Installer\KamilleModuleInstaller;
+use ApplicationItemManager\Installer\KamilleWidgetInstaller;
+use ApplicationItemManager\ItemList\KamilleModulesItemList;
+use ApplicationItemManager\ItemList\KamilleWidgetsItemList;
+use ApplicationItemManager\ItemList\LingUniverseItemList;
+use ApplicationItemManager\LingApplicationItemManager;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Ling\Z;
 use Kamille\Mvc\Layout\HtmlLayout;
 use Kamille\Mvc\Loader\FileLoader;
 use Kamille\Mvc\Renderer\LawsPhpLayoutRenderer;
-use Kamille\Mvc\Renderer\PhpLayoutRenderer;
-use Kamille\Mvc\Widget\GroupWidget;
 use Kamille\Mvc\Widget\Widget;
+use Output\ProgramOutput;
+use Output\WebProgramOutput;
 
 require_once __DIR__ . "/../boot.php";
 require_once __DIR__ . "/../init.php";
 
 
+//--------------------------------------------
+// KAMILLE WIDGETS APP MANAGER
+//--------------------------------------------
+$output = WebProgramOutput::create();
+$appDir = ApplicationParameters::get("app_dir");
+LingApplicationItemManager::create()
+    ->setOutput($output)
+    ->setInstaller(KamilleWidgetInstaller::create()->setOutput($output)->setApplicationDirectory($appDir))
+    ->bindImporter('KamilleWidgets', GithubImporter::create()->setGithubRepoName("KamilleWidgets"))
+    ->setDefaultImporter('KamilleWidgets')
+    ->setImportDirectory("/myphp/kaminos/app/class-widgets")
+    ->addItemList(KamilleWidgetsItemList::create())
+    ->install("BookedMeteo");
+
+az();
+
+
+//--------------------------------------------
+// KAMILLE MODULES APP MANAGER
+//--------------------------------------------
+$output = WebProgramOutput::create();
+$appDir = ApplicationParameters::get("app_dir");
+LingApplicationItemManager::create()
+    ->setOutput($output)
+    ->setInstaller(KamilleModuleInstaller::create()->setOutput($output)->setApplicationDirectory($appDir))
+    ->bindImporter('KamilleModules', GithubImporter::create()->setGithubRepoName("KamilleModules"))
+    ->setDefaultImporter('KamilleModules')
+    ->setImportDirectory("/myphp/kaminos/app/class-modules")
+    ->addItemList(KamilleModulesItemList::create())
+    ->install("Connexion");
+
+az();
+
+
+//--------------------------------------------
+// UNIVERSE APP MANAGER
+//--------------------------------------------
+LingApplicationItemManager::create()
+    ->setOutput(ProgramOutput::create())
+    ->bindImporter('ling', GithubImporter::create()->setGithubRepoName("lingtalfi"))
+    ->setDefaultImporter('ling')
+    ->setImportDirectory("/myphp/kaminos/app/planets")
+    ->addItemList(LingUniverseItemList::create())
+    ->import("AdminTable");
+
+az();
 //--------------------------------------------
 // LAWS: INTRODUCING POSITIONS TO THE LAYOUT-WIDGETS MODEL
 //--------------------------------------------
@@ -31,8 +84,7 @@ require_once __DIR__ . "/../init.php";
  *
  *
  */
-$theme = ApplicationParameters::get('theme');
-$wloader = FileLoader::create()->addDir(Z::appDir() . "/theme/$theme");
+$wloader = FileLoader::create()->addDir(Z::appDir() . "/theme/widget");
 $commonRenderer = LawsPhpLayoutRenderer::create();
 
 
@@ -48,25 +100,22 @@ $commonRenderer = LawsPhpLayoutRenderer::create();
 
 
 echo HtmlLayout::create()
-    ->setTemplate("modules/My/page1/layout.default")
+    ->setTemplate("laws_home")
     ->setLoader(FileLoader::create()
-        ->addDir(Z::appDir() . "/theme/$theme")
+        ->addDir(Z::appDir() . "/theme/layout")
     )
     ->setRenderer($commonRenderer)
     ->bindWidget("top.meteo", Widget::create()
-        ->setTemplate("modules/My/page1/widget.meteo.default")
+        ->setTemplate("meteo/meteo")
         ->setVariables(['level' => "good"])
         ->setLoader($wloader)
         ->setRenderer($commonRenderer)
     )
     ->bindWidget("top.kart", Widget::create()
-        ->setTemplate("modules/My/page1/widget.kart.default")
+        ->setTemplate("kart/kart")
         ->setLoader($wloader)
         ->setRenderer($commonRenderer)
     )
     ->render([
         "name" => 'Pierre',
     ]);
-
-
-

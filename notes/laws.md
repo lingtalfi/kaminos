@@ -70,20 +70,28 @@ Note that this is just a convention that I suggest (and will implement for mysel
 
 ```txt
 - themeName
------ layout
---------- layoutModel
-------------- moduleName.layoutModel.tpl.php
------ widget
---------- layoutModel
-------------- moduleName.layoutModel.tpl.php
------ position
---------- layoutModel
-------------- moduleName.layoutModel.tpl.php
---------- _common_      # an imaginary fallback directory, since it is not likely that every module brings its own position template(s) 
+----- modules
+--------- My
+------------- layoutModel                   # layoutModel is often the page name
+----------------- templateId.tpl.php        
+```
+
+
+The templateId depends on the type of template.
+Below is a formal notation for templateId. 
+
+```txt
+- templateId: <layoutTemplateId> | <widgetTemplateId> | <positionTemplateId>
+- layoutTemplateId: "layout" <.> <variationId> <.> "tpl.php"
+- widgetTemplateId: "widget" <.> <widgetName> <.> <variationId> <.> "tpl.php"
+- positionTemplateId: "position" <.> <positionName> <.> <variationId> <.> "tpl.php"
+- variationId: a string representing the current variation, by default, it could be the word "default"
+- widgetName: the Class of the Widget, without the Widget suffix, and the first letter lowercase
+- positionName: the position
 
 ```
 
-Note that the naming system above allow this idea that different modules can bring the same page.
+
 
 
 Modules which use the laws system will provide their (laws) conf during their installation phase.
@@ -182,6 +190,8 @@ If it's called via a position, then we have:
 ```txt
 widgetId: positionName.className(-index)
 ```
+
+Notice that the first letter of className is lowercase.
 
 The index optional suffix helps differentiate multiple instances of the same widgets
 used inside the same layout.

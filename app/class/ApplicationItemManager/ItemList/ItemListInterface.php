@@ -23,6 +23,18 @@ interface ItemListInterface
 
 
     /**
+     * Some items only make sense in the context of a parent item.
+     * So that if the parent item is removed, it doesn't make sense to keep the children items in the application.
+     *
+     * A hard dependency is the term used for this type of relationship.
+     *
+     * An child item with a hard dependency to a parent item is uninstalled when the parent is uninstalled.
+     *
+     */
+    public function getHardDependencyTree($item);
+
+
+    /**
      * Returns whether or not the list contains the given item.
      */
     public function has($item);

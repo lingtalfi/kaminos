@@ -14,7 +14,7 @@ class KamilleModulesItemList extends AbstractItemList
         return [
             'KamilleModules.Connexion' => [
                 'deps' => [
-                    'KamilleModules.GentelellaWebDirectory',
+                    '+KamilleModules.GentelellaWebDirectory',
                 ],
                 'description' => <<<EEE
 This module allows the user to log into the application, via a login form.

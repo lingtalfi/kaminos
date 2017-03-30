@@ -8,11 +8,15 @@ use ApplicationItemManager\Exception\ApplicationItemManagerException;
 /**
  * A dependency map is an array of item => array of dependencies.
  * Eah dependency is an item.
+ * Hard dependencies are prefixed with a plus symbol (+)
  *
  *
  * A meta map is an array of item => metas.
  * Metas is an array of key => value.
  * Most common keys is description, but you can also have other keys like description.
+ *
+ *
+ *
  *
  */
 abstract class AbstractItemList implements ItemListInterface
@@ -43,11 +47,29 @@ abstract class AbstractItemList implements ItemListInterface
     {
         $tree = [];
         $this->collectDependencyTree($item, $tree);
+        $tree = array_map(function ($v) {
+            return ltrim($v, '+');
+        }, $tree);
+        $tree = array_unique($tree);
+        return $tree;
+    }
+
+    public function getHardDependencyTree($item)
+    {
+        $tree = [];
+        $this->collectDependencyTree($item, $tree, function ($v) {
+            if (0 === strpos($v, '+')) {
+                return true;
+            }
+            return false;
+        });
+        $tree = array_map(function ($v) {
+            return ltrim($v, '+');
+        }, $tree);
         $tree = array_unique($tree);
         return $tree;
 
     }
-
 
     public function has($item)
     {
@@ -143,23 +165,26 @@ abstract class AbstractItemList implements ItemListInterface
     }
 
 
-    private function collectDependencyTree($planets, array &$tree)
+    private function collectDependencyTree($items, array &$tree, callable $filter = null)
     {
         $dependencyMap = $this->getDependencyMap();
-        if (is_string($planets)) {
-            $moduleName = $planets;
-            $tree[] = $moduleName;
-            if (array_key_exists($moduleName, $dependencyMap)) {
-                $deps = $dependencyMap[$moduleName];
+        if (is_string($items)) {
+            $itemName = $items;
+            $tree[] = $itemName;
+            if (array_key_exists($itemName, $dependencyMap)) {
+                $deps = $dependencyMap[$itemName];
                 foreach ($deps as $dep) {
                     if (!in_array($dep, $tree, true)) {
                         $this->collectDependencyTree($dep, $tree);
                     }
                 }
             }
-        } elseif (is_array($planets)) {
-            foreach ($planets as $moduleName) {
-                $this->collectDependencyTree($moduleName, $tree);
+        } elseif (is_array($items)) {
+            foreach ($items as $item) {
+                if (null !== $filter && false === call_user_func($filter, $item)) {
+                    continue;
+                }
+                $this->collectDependencyTree($item, $tree);
             }
         }
     }

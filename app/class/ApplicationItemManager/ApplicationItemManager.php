@@ -88,9 +88,9 @@ class ApplicationItemManager
      */
     public function import($item, $force = false)
     {
-        $this->msg("importingItem", $item);
+        $this->msg("preparingImportItem", $item);
         $item = $this->normalizeItem($item);
-        $itemName = $this->getItemNamedByItem($item);
+        $itemName = $this->getItemNameByItem($item);
 
         if (false === $force && true === $this->isImported($itemName)) {
             $this->msg("itemAlreadyImported", $item);
@@ -100,7 +100,7 @@ class ApplicationItemManager
                     $tree = $itemList->getDependencyTree($item);
                     $this->msg("collectTree", $tree);
                     foreach ($tree as $treeItem) {
-                        $treeItemName = $this->getItemNamedByItem($treeItem);
+                        $treeItemName = $this->getItemNameByItem($treeItem);
                         if (true === $this->isImported($treeItemName)) {
                             $this->msg("itemAlreadyImported", $treeItem);
                         } else {
@@ -120,9 +120,14 @@ class ApplicationItemManager
 
     public function install($item, $force = false)
     {
-        $this->msg("installingItem", $item);
+
+        $debug = true;
+
+
+        $quiet = (false === $debug) ? true : false;
+        $this->msg("preparingItemInstall", $item);
         $item = $this->normalizeItem($item);
-        $itemName = $this->getItemNamedByItem($item);
+        $itemName = $this->getItemNameByItem($item);
 
         if (true === $force || false === $this->installer->isInstalled($itemName)) {
 
@@ -131,10 +136,16 @@ class ApplicationItemManager
                 $tree = $itemList->getDependencyTree($item);
                 $itemsToInstall = $tree;
                 $this->msg("collectTree", $tree);
-                foreach ($tree as $treeItem) {
-                    $this->doImport($treeItem, $force, true);
+                foreach ($tree as $k => $treeItem) {
+                    $treeItemName = $this->getItemNameByItem($treeItem);
+                    if (false === $this->isImported($treeItemName)) {
+                        if (false === $this->doImport($treeItem, $force, $quiet)) {
+                            unset($itemsToInstall[$k]);
+                            $this->msg("cannotImportItem", $treeItem);
+                        }
+                    }
                 }
-            } else {
+            } else { // useful for items that are not registered yet (i.e. local development)
                 $itemsToInstall[] = $item;
                 $this->msg("itemNotFoundInList", $item);
             }
@@ -142,10 +153,11 @@ class ApplicationItemManager
 
             // ath this point, all items are imported, we install non installed items
             foreach ($itemsToInstall as $itemToInstall) {
-                $itemName = $this->getItemNamedByItem($itemToInstall);
+                $itemName = $this->getItemNameByItem($itemToInstall);
                 if (false === $force && true === $this->installer->isInstalled($itemName)) {
                     $this->msg("alreadyInstalled", $itemToInstall);
                 } elseif (true === $force || false === $this->installer->isInstalled($itemName)) {
+                    $this->msg("installingItem", $itemToInstall);
                     $this->installer->install($itemName, $force);
                     $this->msg("itemInstalled", $itemToInstall);
                 }
@@ -157,21 +169,53 @@ class ApplicationItemManager
     }
 
 
+    public function uninstall($item)
+    {
+        $this->msg("preparingItemUninstall", $item);
+        $item = $this->normalizeItem($item);
+        $itemName = $this->getItemNameByItem($item);
+        if (false === $this->installer->isInstalled($itemName)) {
+            $this->msg("alreadyUninstalled", $item);
+        } else {
+            $itemsToUninstall = [];
+            if (false !== ($itemList = $this->findItemList($item))) {
+                $tree = $itemList->getHardDependencyTree($item);
+                $itemsToUninstall = $tree;
+            } else { // useful for items that are not registered yet (i.e. local development)
+                $itemsToUninstall[] = $item;
+                $this->msg("itemNotFoundInList", $item);
+            }
+            $this->msg("collectHardTree", $itemsToUninstall);
+
+            foreach ($itemsToUninstall as $itemToUninstall) {
+                $itemName = $this->getItemNameByItem($itemToUninstall);
+                if (false === $this->installer->isInstalled($itemName)) {
+                    $this->msg("alreadyUninstalled", $itemToUninstall);
+                } else {
+                    $this->msg("uninstallingItem", $itemToUninstall);
+                    $this->installer->uninstall($itemName);
+                    $this->msg("itemUninstalled", $itemToUninstall);
+                }
+            }
+        }
+    }
+
+
     //--------------------------------------------
     //
     //--------------------------------------------
     protected function doImport($item, $force = false, $quiet = false)
     {
         if (false !== ($importer = $this->findImporter($item))) {
-            $itemName = $this->getItemNamedByItem($item);
+            $itemName = $this->getItemNameByItem($item);
+            $this->msg("importingItem", $item);
             $importer->import($itemName, $this->importDirectory, $force);
             if (false === $quiet) {
                 $this->msg("itemImported", $item);
             }
+            return true;
         } else {
-            if (false === $quiet) {
-                $this->msg("importerNotFound", $item);
-            }
+            $this->msg("importerNotFound", $item);
         }
         return false;
     }
@@ -212,38 +256,80 @@ class ApplicationItemManager
     protected function msg($type, $param = null)
     {
         $msg = "";
+        $level = "info";
         switch ($type) {
-            case 'importingItem':
+            case 'preparingImportItem':
                 $msg = "Preparing import for item $param";
+                $level = "info";
+                break;
+            case 'importingItem':
+                $msg = "Importing item $param";
+                $level = "info";
                 break;
             case 'importerNotFound':
                 $msg = "No importer was found for item $param";
+                $level = "error";
                 break;
             case 'itemNotFoundInList':
                 $msg = "Item not found in any list: $param";
+                $level = "error";
                 break;
             case 'itemAlreadyImported':
                 $msg = "$param: Item already imported";
+                $level = "info";
                 break;
             case 'itemImported':
                 $msg = "$param: Item imported";
+                $level = "success";
+                break;
+            case 'cannotImportItem':
+                $msg = "$param: Could not import this item";
+                $level = "error";
                 break;
             case 'collectTree':
                 $msg = "Collecting dependencies: " . implode(', ', $param);
+                $level = "info";
+                break;
+            case 'collectHardTree':
+                $msg = "Collecting hard dependencies: " . implode(', ', $param);
+                $level = "info";
+                break;
+            case 'preparingItemInstall':
+                $msg = "Preparing installation for item $param";
+                $level = "info";
                 break;
             case 'installingItem':
-                $msg = "Preparing installation for item $param";
+                $msg = "Installing item $param";
+                $level = "info";
                 break;
             case 'alreadyInstalled':
                 $msg = "$param: Item already installed";
+                $level = "info";
                 break;
             case 'itemInstalled':
                 $msg = "$param: Item installed";
+                $level = "success";
+                break;
+            case 'preparingItemUninstall':
+                $msg = "Preparing un-installation for item $param";
+                $level = "success";
+                break;
+            case 'alreadyUninstalled':
+                $msg = "$param: Item already uninstalled";
+                $level = "info";
+                break;
+            case 'uninstallingItem':
+                $msg = "Uninstalling item $param";
+                $level = "info";
+                break;
+            case 'itemUninstalled':
+                $msg = "$param: Item uninstalled";
+                $level = "success";
                 break;
             default:
                 break;
         }
-        echo $msg . PHP_EOL;
+        $this->write($msg, $level);
     }
 
     //--------------------------------------------
@@ -258,7 +344,7 @@ class ApplicationItemManager
         throw new ApplicationItemManagerException("Invalid item notation: the format of an item is: importerId.itemName");
     }
 
-    private function getItemNamedByItem($item)
+    private function getItemNameByItem($item)
     {
         $p = explode('.', $item, 2);
         if (2 === count($p)) {
@@ -273,5 +359,10 @@ class ApplicationItemManager
             $item = $this->defaultImporter . '.' . $item;
         }
         return $item;
+    }
+
+    protected function write($msg, $type)
+    {
+        echo $msg . PHP_EOL;
     }
 }

@@ -36,5 +36,8 @@ class LingApplicationItemManager extends ApplicationItemManager
         return parent::setInstaller($installer);
     }
 
-
+    protected function write($msg, $type)
+    {
+        echo $this->output->$type($msg);
+    }
 }

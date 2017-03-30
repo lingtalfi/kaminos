@@ -28,6 +28,7 @@ ButineurAutoloader::getInst()
     ->addLocation(__DIR__ . "/class-core", "Core")
     ->addLocation(__DIR__ . "/class-controllers", "Controller")
     ->addLocation(__DIR__ . "/class-modules", "Module")
+    ->addLocation(__DIR__ . "/class-widgets", "Widget")
     ->addLocation(__DIR__ . "/planets");
 ButineurAutoloader::getInst()->start();
 // require_once __DIR__ . '/vendor/autoload.php';

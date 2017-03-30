@@ -49,7 +49,8 @@ LingApplicationItemManager::create()
     ->setDefaultImporter('KamilleModules')
     ->setImportDirectory("/myphp/kaminos/app/class-modules")
     ->addItemList(KamilleModulesItemList::create())
-    ->install("Connexion");
+//    ->install("Connexion");
+    ->uninstall("Connexion");
 
 az();
 

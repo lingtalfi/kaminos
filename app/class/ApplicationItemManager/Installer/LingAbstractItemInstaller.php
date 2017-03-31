@@ -3,6 +3,8 @@
 namespace ApplicationItemManager\Installer;
 
 
+use ApplicationItemManager\Exception\ApplicationItemManagerException;
+use ApplicationItemManager\Installer\Exception\InstallerException;
 use Output\ProgramOutputAwareInterface;
 use Output\ProgramOutputInterface;
 
@@ -70,9 +72,9 @@ abstract class LingAbstractItemInstaller implements InstallerInterface
     }
 
 
-    public function install($item)
+    public function install($itemName)
     {
-        if (false !== ($oClass = $this->getInstallerInstance($item))) {
+        if (false !== ($oClass = $this->getInstallerInstance($itemName))) {
             if ($oClass instanceof ProgramOutputAwareInterface) {
                 $oClass->setProgramOutput($this->output);
             }
@@ -80,37 +82,44 @@ abstract class LingAbstractItemInstaller implements InstallerInterface
             $oClass->$installMethod();
 
 
-            $this->msg("installed", $item);
+            $this->msg("installed", $itemName);
             $list = $this->getList();
-            if (!in_array($item, $list)) {
-                $list[] = $item;
+            if (!in_array($itemName, $list)) {
+                $list[] = $itemName;
             }
-            $this->writeList($list);
+            if (false !== $this->writeList($list)) {
+                return true;
+            }
         }
+        return false;
     }
 
-    public function isInstalled($item)
+    public function isInstalled($itemName)
     {
         $list = $this->getList();
-        return in_array($item, $list, true);
+        return in_array($itemName, $list, true);
     }
 
-    public function uninstall($item)
+    public function uninstall($itemName)
     {
-        if (false !== ($oClass = $this->getInstallerInstance($item))) {
+        if (false !== ($oClass = $this->getInstallerInstance($itemName))) {
             if ($oClass instanceof ProgramOutputAwareInterface) {
                 $oClass->setProgramOutput($this->output);
             }
             $uninstallMethod = $this->uninstallMethod;
             $oClass->$uninstallMethod();
 
-            $this->msg("uninstalled", $item);
+            $this->msg("uninstalled", $itemName);
             $list = $this->getList();
-            if (false !== ($pos = array_search($item, $list))) {
+            if (false !== ($pos = array_search($itemName, $list))) {
                 unset($list[$pos]);
-                $this->writeList($list);
+
+                if (false !== $this->writeList($list)) {
+                    return true;
+                }
             }
         }
+        return false;
     }
 
     //--------------------------------------------
@@ -145,7 +154,7 @@ abstract class LingAbstractItemInstaller implements InstallerInterface
     private function writeList(array $list)
     {
         $f = $this->getFile();
-        file_put_contents($f, implode(PHP_EOL, $list));
+        return file_put_contents($f, implode(PHP_EOL, $list));
     }
 
     private function getInstallerInstance($item)
@@ -154,7 +163,7 @@ abstract class LingAbstractItemInstaller implements InstallerInterface
         if (class_exists($class)) {
             return new $class;
         }
-        return false;
+        throw new InstallerException("Instance of $class not found");
     }
 
 }

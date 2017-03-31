@@ -5,22 +5,22 @@ namespace ApplicationItemManager;
 
 
 use ApplicationItemManager\Exception\ApplicationItemManagerException;
+use ApplicationItemManager\Importer\Exception\ImporterException;
 use ApplicationItemManager\Importer\ImporterInterface;
 use ApplicationItemManager\Installer\InstallerInterface;
-use ApplicationItemManager\ItemList\RepositoryInterface;
+use ApplicationItemManager\Repository\RepositoryInterface;
 
 
-/**
- * - item: (importerId.)itemName
- *          If importerId is omitted and a default importerId is set, then the default importerId is used.
- */
 class ApplicationItemManager implements ApplicationItemManagerInterface
 {
+
+
     /**
      * @var ImporterInterface[]
      *
      */
     protected $importers;
+
 
     /**
      * @var InstallerInterface
@@ -30,15 +30,23 @@ class ApplicationItemManager implements ApplicationItemManagerInterface
     /**
      * @var RepositoryInterface[]
      */
-    protected $itemLists;
+    protected $repositories;
     private $importDirectory;
-    private $defaultImporter;
+
+    private $favoriteRepositoryId;
+    private $debugMode;
+
+    /**
+     * @var array repositories, no aliases
+     */
+    private $_repositories;
 
 
     public function __construct()
     {
+        $this->repositories = [];
         $this->importers = [];
-        $this->itemLists = [];
+        $this->debugMode = false;
     }
 
 
@@ -47,21 +55,42 @@ class ApplicationItemManager implements ApplicationItemManagerInterface
         return new static();
     }
 
-    public function bindImporter($importerId, ImporterInterface $importer)
+    /**
+     * @return ApplicationItemManager
+     */
+    public function bindImporter($repositoryId, ImporterInterface $importer)
     {
-        $this->importers[$importerId] = $importer;
+        $this->importers[$repositoryId] = $importer;
         return $this;
     }
 
+    /**
+     * @return ApplicationItemManager
+     */
     public function setInstaller(InstallerInterface $installer)
     {
         $this->installer = $installer;
         return $this;
     }
 
-    public function addItemList(RepositoryInterface $itemList)
+    /**
+     * @return ApplicationItemManager
+     */
+    public function addRepository(RepositoryInterface $repository, array $aliases = [])
     {
-        $this->itemLists[] = $itemList;
+
+        $name = $repository->getName();
+
+        $this->repositories[$name] = $repository;
+
+        if (!in_array($name, $this->repositories, true)) {
+            $this->_repositories[] = $name;
+        }
+
+        // let's flatten all aliases right now, because why not?
+        foreach ($aliases as $alias) {
+            $this->repositories[$alias] = $repository;
+        }
         return $this;
     }
 
@@ -71,48 +100,123 @@ class ApplicationItemManager implements ApplicationItemManagerInterface
         return $this;
     }
 
-    public function setDefaultImporter($defaultImporter)
+    public function setFavoriteRepositoryId($favoriteRepositoryId)
     {
-        $this->defaultImporter = $defaultImporter;
+        $this->favoriteRepositoryId = $favoriteRepositoryId;
         return $this;
     }
+
+    public function setDebugMode($debugMode)
+    {
+        $this->debugMode = $debugMode;
+        return $this;
+    }
+
+
 
     //--------------------------------------------
     //
     //--------------------------------------------
-    /**
-     * Import an item and its dependencies in the import directory.
-     * If force is false, will not try to replace already imported items.
-     * If force is true, will remove an already imported item before importing it.
-     *
-     */
+    public function listAvailable($repoId = null, array $keys = null)
+    {
+        $repoIds = [];
+        if (null === $repoId) {
+            $repoIds = $this->_repositories;
+        } else {
+            if (false === array_key_exists($repoId, $this->repositories)) {
+                throw new ApplicationItemManagerException("Repo id doesn't exist: $repoId");
+            }
+            $repoIds = [$repoId];
+        }
+
+
+        $ret = [];
+        if (null === $keys) {
+            // returning flat items
+            foreach ($repoIds as $repoId) {
+                $repo = $this->repositories[$repoId];
+                $all = $repo->all($keys);
+                $ret = array_merge($ret, $all);
+            }
+        } else {
+            // returning combined items
+            foreach ($repoIds as $repoId) {
+                $repo = $this->repositories[$repoId];
+                $all = $repo->all($keys);
+                $repoName = $repo->getName();
+                foreach ($all as $itemName => $metas) {
+                    $ret[$repoName . "." . $itemName] = $metas;
+                }
+            }
+        }
+        return $ret;
+    }
+
+
+    public function listImported()
+    {
+        $d = $this->importDirectory;
+        $files = scandir($d);
+        $ret = [];
+        foreach ($files as $f) {
+            if ('.' !== $f && '..' !== $f) {
+                if (is_dir($d . "/" . $f)) {
+                    $ret[] = $f;
+                }
+            }
+        }
+        return $ret;
+    }
+
+
+    public function listInstalled()
+    {
+        if (null === $this->installer) {
+            throw new ApplicationItemManagerException("Not applicable: no installer set");
+        }
+        return $this->installer->getList();
+    }
+
+    public function search($text, array $keys = null, $repoId = null)
+    {
+        $repoIds = [];
+        if (null === $repoId) {
+            $repoIds = $this->_repositories;
+        } else {
+            if (false === array_key_exists($repoId, $this->repositories)) {
+                throw new ApplicationItemManagerException("Repo id doesn't exist: $repoId");
+            }
+            $repoIds = [$repoId];
+        }
+
+        $ret = [];
+        if (null === $keys) {
+            // returning flat items
+            foreach ($repoIds as $repoId) {
+                $repo = $this->repositories[$repoId];
+                $all = $repo->search($text, $keys);
+                $ret = array_merge($ret, $all);
+            }
+        } else {
+            // returning combined items
+            foreach ($repoIds as $repoId) {
+                $repo = $this->repositories[$repoId];
+                $all = $repo->search($text, $keys);
+                $repoName = $repo->getName();
+                foreach ($all as $itemName => $metas) {
+                    $ret[$repoName . "." . $itemName] = $metas;
+                }
+            }
+        }
+        return $ret;
+    }
+
+
     public function import($item, $force = false)
     {
-        $this->msg("preparingImportItem", $item);
-        $item = $this->normalizeItem($item);
-        $itemName = $this->getItemNameByItem($item);
-
-        if (false === $force && true === $this->isImported($itemName)) {
-            $this->msg("itemAlreadyImported", $item);
-        } else {
-            if (false !== ($importer = $this->findImporter($item))) {
-                if (false !== ($itemList = $this->findItemList($item))) {
-                    $tree = $itemList->getDependencyTree($item);
-                    $this->msg("collectTree", $tree);
-                    foreach ($tree as $treeItem) {
-                        $treeItemName = $this->getItemNameByItem($treeItem);
-                        if (false === $force && true === $this->isImported($treeItemName)) {
-                            $this->msg("itemAlreadyImported", $treeItem);
-                        } else {
-                            $this->doImport($treeItem, $force);
-                        }
-                    }
-                } else {
-                    $this->msg("itemNotFoundInList", $item);
-                }
-            } else {
-                $this->msg("importerNotFound", $item);
-            }
+        if (false !== ($repoId = $this->getRepoId($item))) {
+            $this->msg("importingItem", $item);
+            return $this->handleProcedure("import", $item, $repoId, $force);
         }
         return false;
     }
@@ -120,50 +224,9 @@ class ApplicationItemManager implements ApplicationItemManagerInterface
 
     public function install($item, $force = false)
     {
-
-        $debug = true;
-
-
-        $quiet = (false === $debug) ? true : false;
-        $this->msg("preparingItemInstall", $item);
-        $item = $this->normalizeItem($item);
-        $itemName = $this->getItemNameByItem($item);
-
-        if (true === $force || false === $this->installer->isInstalled($itemName)) {
-
-            $itemsToInstall = [];
-            if (false !== ($itemList = $this->findItemList($item))) {
-                $tree = $itemList->getDependencyTree($item);
-                $itemsToInstall = $tree;
-                $this->msg("collectTree", $tree);
-                foreach ($tree as $k => $treeItem) {
-                    $treeItemName = $this->getItemNameByItem($treeItem);
-                    if (false === $this->isImported($treeItemName)) {
-                        if (false === $this->doImport($treeItem, $force, $quiet)) {
-                            unset($itemsToInstall[$k]);
-                            $this->msg("cannotImportItem", $treeItem);
-                        }
-                    }
-                }
-            } else { // useful for items that are not registered yet (i.e. local development)
-                $itemsToInstall[] = $item;
-                $this->msg("itemNotFoundInList", $item);
-            }
-
-
-            // ath this point, all items are imported, we install non installed items
-            foreach ($itemsToInstall as $itemToInstall) {
-                $itemName = $this->getItemNameByItem($itemToInstall);
-                if (false === $force && true === $this->installer->isInstalled($itemName)) {
-                    $this->msg("alreadyInstalled", $itemToInstall);
-                } elseif (true === $force || false === $this->installer->isInstalled($itemName)) {
-                    $this->msg("installingItem", $itemToInstall);
-                    $this->installer->install($itemName, $force);
-                    $this->msg("itemInstalled", $itemToInstall);
-                }
-            }
-        } else {
-            $this->msg("alreadyInstalled", $item);
+        if (false !== ($repoId = $this->getRepoId($item))) {
+            $this->msg("installingItem", $item);
+            return $this->handleProcedure("install", $item, $repoId, $force);
         }
         return false;
     }
@@ -171,32 +234,49 @@ class ApplicationItemManager implements ApplicationItemManagerInterface
 
     public function uninstall($item)
     {
-        $this->msg("preparingItemUninstall", $item);
-        $item = $this->normalizeItem($item);
-        $itemName = $this->getItemNameByItem($item);
-        if (false === $this->installer->isInstalled($itemName)) {
-            $this->msg("alreadyUninstalled", $item);
-        } else {
-            $itemsToUninstall = [];
-            if (false !== ($itemList = $this->findItemList($item))) {
-                $tree = $itemList->getHardDependencyTree($item);
-                $itemsToUninstall = $tree;
-            } else { // useful for items that are not registered yet (i.e. local development)
-                $itemsToUninstall[] = $item;
-                $this->msg("itemNotFoundInList", $item);
-            }
-            $this->msg("collectHardTree", $itemsToUninstall);
+        if (false !== ($repoId = $this->getRepoId($item))) {
+            $this->msg("uninstallingItem", $item);
 
-            foreach ($itemsToUninstall as $itemToUninstall) {
-                $itemName = $this->getItemNameByItem($itemToUninstall);
-                if (false === $this->installer->isInstalled($itemName)) {
-                    $this->msg("alreadyUninstalled", $itemToUninstall);
+            $itemName = $this->getItemNameByItem($item);
+            $r = $this->doUninstall($itemName);
+            if (false === $r) {
+                return false;
+            } else {
+                if (null === $repoId) {
+                    return true;
+                } elseif (array_key_exists($repoId, $this->repositories)) {
+                    $itemName = $this->getItemNameByItem($item);
+
+                    $repo = $this->repositories[$repoId];
+                    $deps = $repo->getHardDependencies($itemName);
+
+                    $this->msg("checkingHardDependencies", $itemName, $deps);
+
+                    $allDepsOk = true;
+                    foreach ($deps as $dep) {
+                        $this->msg("uninstallingDependencyItem", $dep);
+                        $depName = $this->getItemNameByItem($dep);
+                        $r = $this->doUninstall($depName);
+                        if (false === $r) {
+                            $allDepsOk = false;
+                        }
+                    }
+                    return $allDepsOk;
                 } else {
-                    $this->msg("uninstallingItem", $itemToUninstall);
-                    $this->installer->uninstall($itemName);
-                    $this->msg("itemUninstalled", $itemToUninstall);
+                    throw new \LogicException("no repository set for repoId $repoId");
                 }
             }
+        }
+        return false;
+    }
+
+    private function doUninstall($itemName)
+    {
+        try {
+            return $this->installer->uninstall($itemName);
+        } catch (\Exception $e) {
+            $this->msg("uninstallProblem", $itemName, $e);
+            return false;
         }
     }
 
@@ -204,30 +284,71 @@ class ApplicationItemManager implements ApplicationItemManagerInterface
     //--------------------------------------------
     //
     //--------------------------------------------
-    protected function doImport($item, $force = false, $quiet = false)
+    protected function doInstall($itemName, $repoId = null, $force = false)
     {
-        if (false !== ($importer = $this->findImporter($item))) {
-            $itemName = $this->getItemNameByItem($item);
-            $this->msg("importingItem", $item);
-            $importer->import($itemName, $this->importDirectory, $force);
-            if (false === $quiet) {
-                $this->msg("itemImported", $item);
+        if (false === $force) {
+            // is already imported?
+            if (true === $this->isInstalled($itemName)) {
+                $this->msg("itemAlreadyInstalled", $itemName);
+                return true;
             }
-            return true;
-        } else {
-            $this->msg("importerNotFound", $item);
+        }
+
+        if (false === $this->isImported($itemName)) {
+            $this->msg("itemNotInstalledNotImported", $itemName);
+            $force = false; // we don't need to force imports
+            $this->doImport($itemName, $repoId, $force);
+        }
+
+        try {
+            if (true === $this->installer->install($itemName)) {
+                $this->msg("itemInstalled", $itemName);
+            } else {
+                $this->msg("itemNotInstalled", $itemName);
+            }
+        } catch (\Exception $e) {
+            $this->msg("installProblem", $itemName, $e);
         }
         return false;
     }
 
+
+    protected function doImport($itemName, $repoId = null, $force = false)
+    {
+        if (false === $force) {
+            // is already imported?
+            if (true === $this->isImported($itemName)) {
+                $this->msg("itemAlreadyImported", $itemName);
+                return true;
+            }
+        }
+
+        $this->msg("findingImporter");
+        if (false !== ($importer = $this->findImporter($repoId))) {
+            $this->msg("importerFound", $importer, $repoId);
+
+            try {
+                if (true === $importer->import($itemName, $this->importDirectory, $force)) {
+                    $this->msg("itemImported", $itemName, $repoId);
+                    return true;
+                }
+            } catch (ImporterException $e) {
+                $this->msg("importerProblem", $itemName, $e);
+            }
+        } else {
+            $this->msg("importerNotFound", $repoId);
+        }
+        return false;
+    }
+
+
     /**
      * @return ImporterInterface|false
      */
-    protected function findImporter($item)
+    protected function findImporter($repoId)
     {
-        $importerId = $this->getImporterIdByItem($item);
-        if (array_key_exists($importerId, $this->importers)) {
-            return $this->importers[$importerId];
+        if (array_key_exists($repoId, $this->importers)) {
+            return $this->importers[$repoId];
         }
         return false;
     }
@@ -244,7 +365,7 @@ class ApplicationItemManager implements ApplicationItemManagerInterface
      */
     protected function findItemList($item)
     {
-        foreach ($this->itemLists as $itemList) {
+        foreach ($this->repositories as $itemList) {
             if (true === $itemList->has($item)) {
                 return $itemList;
             }
@@ -252,117 +373,259 @@ class ApplicationItemManager implements ApplicationItemManagerInterface
         return false;
     }
 
-
-    protected function msg($type, $param = null)
+    protected function msg($type, $param = null, $param2 = null)
     {
         $msg = "";
         $level = "info";
         switch ($type) {
-            case 'preparingImportItem':
-                $msg = "Preparing import for item $param";
-                $level = "info";
+            //--------------------------------------------
+            // IMPORT/INSTALL
+            //--------------------------------------------
+            case 'checkingRepo':
+                $msg = "checking repo from $param...";
+                $level = "debug";
+                break;
+            case 'noRepositoryFound':
+                $msg = "repo not found for $param";
+                $level = "debug";
+                break;
+            case 'invalidRepository':
+                $msg = "invalid repository $param";
+                $level = "error";
+                break;
+            case 'repositoryFound':
+                $msg = "repo found for $param: $param2";
+                $level = "debug";
                 break;
             case 'importingItem':
-                $msg = "Importing item $param";
-                $level = "info";
-                break;
-            case 'importerNotFound':
-                $msg = "No importer was found for item $param";
-                $level = "error";
-                break;
-            case 'itemNotFoundInList':
-                $msg = "Item not found in any list: $param";
-                $level = "error";
-                break;
-            case 'itemAlreadyImported':
-                $msg = "$param: Item already imported";
-                $level = "info";
-                break;
-            case 'itemImported':
-                $msg = "$param: Item imported";
-                $level = "success";
-                break;
-            case 'cannotImportItem':
-                $msg = "$param: Could not import this item";
-                $level = "error";
-                break;
-            case 'collectTree':
-                $msg = "Collecting dependencies: " . implode(', ', $param);
-                $level = "info";
-                break;
-            case 'collectHardTree':
-                $msg = "Collecting hard dependencies: " . implode(', ', $param);
-                $level = "info";
-                break;
-            case 'preparingItemInstall':
-                $msg = "Preparing installation for item $param";
+                $msg = "importing item $param";
                 $level = "info";
                 break;
             case 'installingItem':
-                $msg = "Installing item $param";
+                $msg = "installing item $param";
                 $level = "info";
                 break;
-            case 'alreadyInstalled':
-                $msg = "$param: Item already installed";
+            case 'checkingDependencies':
+                $msg = "checking dependencies for $param:";
+                if (count($param2) > 0) {
+                    $br = PHP_EOL;
+                    $msg .= $br;
+                    $msg .= "- ";
+                    $msg .= implode($br . "- ", $param2);
+                } else {
+                    $msg .= " none";
+                }
+                $level = "info";
+                break;
+            case 'importingDependencyItem':
+                $msg = "importing dependency item $param";
+                $level = "info";
+                break;
+            case 'installingDependencyItem':
+                $msg = "installing dependency item $param";
+                $level = "info";
+                break;
+            //--------------------------------------------
+            // DO IMPORT
+            //--------------------------------------------
+            case 'itemAlreadyImported':
+                $msg = "$param already imported";
+                $level = "success";
+                break;
+            case 'findingImporter':
+                $msg = "finding importer...";
+                $level = "debug";
+                break;
+            case 'importerFound':
+                $msg = "importer found: " . get_class($param);
+                $level = "debug";
+                break;
+            case 'itemImported':
+                $msg = "$param imported from repository $param2";
+                $level = "success";
+                break;
+            case 'importerProblem':
+                $msg = "A problem occurred with the import: " . $param2->getMessage();
+                $level = "error";
+                break;
+            case 'importerNotFound':
+                $msg = "no importer is able to handle repository $param";
+                $level = "error";
+                break;
+            //--------------------------------------------
+            // DO INSTALL
+            //--------------------------------------------
+            case 'itemAlreadyInstalled':
+                $msg = "$param already installed";
+                $level = "success";
+                break;
+            case 'itemNotInstalledNotImported':
+                $msg = "$param not installed and not imported. Trying to import $param";
                 $level = "info";
                 break;
             case 'itemInstalled':
-                $msg = "$param: Item installed";
+                $msg = "$param installed";
                 $level = "success";
                 break;
-            case 'preparingItemUninstall':
-                $msg = "Preparing un-installation for item $param";
-                $level = "success";
+            case 'installProblem':
+                $msg = "a problem occurred with the install: " . $param2->getMessage();
+                $level = "error";
                 break;
-            case 'alreadyUninstalled':
-                $msg = "$param: Item already uninstalled";
-                $level = "info";
+            case 'itemNotInstalled':
+                $msg = "item $param couldn't be installed: no reason was given.";
+                $level = "error";
                 break;
+            //--------------------------------------------
+            // UNINSTALL
+            //--------------------------------------------
             case 'uninstallingItem':
-                $msg = "Uninstalling item $param";
+                $msg = "uninstalling " . $param;
                 $level = "info";
                 break;
-            case 'itemUninstalled':
-                $msg = "$param: Item uninstalled";
-                $level = "success";
+            case 'checkingHardDependencies':
+                $msg = "checking hard dependencies for $param:";
+                if (count($param2) > 0) {
+                    $br = PHP_EOL;
+                    $msg .= $br;
+                    foreach ($param2 as $dep) {
+                        $msg .= "- $dep" . $br;
+                    }
+                } else {
+                    $msg .= " none";
+                }
+                $level = "info";
+                break;
+            case 'uninstallingDependencyItem':
+                $msg = "uninstalling dependency " . $param;
+                $level = "info";
+                break;
+            case 'uninstallProblem':
+                $msg = "uninstall problem: " . $param2->getMessage();
+                $level = "error";
                 break;
             default:
                 break;
         }
+
+
+        $levelsOff = ['debug'];
+        if (false === $this->debugMode && in_array($level, $levelsOff, true)) {
+            return;
+        }
         $this->write($msg, $level);
-    }
-
-    //--------------------------------------------
-    //
-    //--------------------------------------------
-    private function getImporterIdByItem($item)
-    {
-        $p = explode('.', $item, 2);
-        if (2 === count($p)) {
-            return $p[0];
-        }
-        throw new ApplicationItemManagerException("Invalid item notation: the format of an item is: importerId.itemName");
-    }
-
-    private function getItemNameByItem($item)
-    {
-        $p = explode('.', $item, 2);
-        if (2 === count($p)) {
-            return $p[1];
-        }
-        throw new ApplicationItemManagerException("Invalid item notation: the format of an item is: importerId.itemName");
-    }
-
-    private function normalizeItem($item)
-    {
-        if (false === strpos($item, '.') && null !== $this->defaultImporter) {
-            $item = $this->defaultImporter . '.' . $item;
-        }
-        return $item;
     }
 
     protected function write($msg, $type)
     {
         echo $msg . PHP_EOL;
     }
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    private function getItemNameByItem($item)
+    {
+        $p = explode('.', $item, 2);
+        if (2 === count($p)) {
+            return $p[1];
+        }
+        return $item;
+    }
+
+    private function getRepoId($item)
+    {
+        $this->msg("checkingRepo", $item);
+        $repoId = $this->findRepo($item, $this->favoriteRepositoryId);
+        if (null === $repoId) {
+            $this->msg("noRepositoryFound", $item);
+            if (false !== strpos($item, '.')) {
+                $p = explode('.', $item);
+                $this->msg("invalidRepository", $p[0]);
+                return false;
+            }
+        } else {
+            $this->msg("repositoryFound", $item, $repoId);
+        }
+        return $repoId;
+    }
+
+    private function findRepo($item, $favoriteRepositoryId)
+    {
+        // itemId, the choice is non negotiable
+        if (false !== strpos($item, '.')) {
+            $p = explode(".", $item, 2);
+            $repoId = $p[0];
+            if (array_key_exists($repoId, $this->repositories)) {
+                return $this->repositories[$repoId]->getName();
+            }
+        } else {
+            // itemName
+            // do we have a favorite choice?
+            if (null !== $favoriteRepositoryId) {
+                if (array_key_exists($favoriteRepositoryId, $this->repositories)) {
+                    $repo = $this->repositories[$favoriteRepositoryId];
+                    if (true === $repo->has($item)) {
+                        return $repo->getName();
+                    }
+                }
+            }
+
+            // fallback solution, ask all repos
+            foreach ($this->repositories as $repository) {
+                if (true === $repository->has($item)) {
+                    return $repository->getName();
+                }
+            }
+        }
+        return null;
+    }
+
+
+    private function handleProcedure($type, $item, $repoId, $force)
+    {
+
+        if ('install' === $type) {
+            $method = 'doInstall';
+            $msgType = "installingDependencyItem";
+        } else {
+            $method = 'doImport';
+            $msgType = "importingDependencyItem";
+        }
+
+        $itemName = $this->getItemNameByItem($item);
+
+        $r = $this->$method($itemName, $repoId, $force);
+        if (false === $r) {
+            return false;
+        } else {
+            if (null === $repoId) {
+                return true;
+            } elseif (array_key_exists($repoId, $this->repositories)) {
+                $itemName = $this->getItemNameByItem($item);
+
+                $repo = $this->repositories[$repoId];
+                $deps = $repo->getDependencies($itemName);
+
+                $this->msg("checkingDependencies", $itemName, $deps);
+                $allDepsOk = true;
+                foreach ($deps as $dep) {
+                    $this->msg($msgType, $dep);
+                    $depName = $this->getItemNameByItem($dep);
+                    $r = $this->$method($depName, $repoId);
+                    if (false === $r) {
+                        $allDepsOk = false;
+                    }
+                }
+                return $allDepsOk;
+            } else {
+                throw new \LogicException("no repository set for repoId $repoId");
+            }
+        }
+    }
+
+    private function isInstalled($itemName)
+    {
+        return $this->installer->isInstalled($itemName);
+    }
+
 }

@@ -6,11 +6,23 @@ namespace ApplicationItemManager\Installer;
 interface InstallerInterface
 {
 
-    public function install($item);
+    /**
+     * @return bool
+     */
+    public function install($itemName);
 
-    public function isInstalled($item);
+    /**
+     * @return bool
+     */
+    public function isInstalled($itemName);
 
-    public function uninstall($item);
+    /**
+     * @return bool
+     */
+    public function uninstall($itemName);
 
+    /**
+     * @return array of itemNames
+     */
     public function getList();
 }

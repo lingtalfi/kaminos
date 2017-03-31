@@ -9,8 +9,8 @@ kamille list {importerAlias}?               # list available modules
 kamille listd {importerAlias}?              # list available modules with their description if any
 kamille listimported                        # list imported modules
 kamille listinstalled                       # list installed modules
-kamille search {importerAlias}?             # search through available modules names
-kamille searchd {importerAlias}?            # search through available modules names and/or description
+kamille search {term} {importerAlias}?      # search through available modules names
+kamille searchd {term} {importerAlias}?     # search through available modules names and/or description
 kamille clean                               # removes the .git, .gitignore, .idea and .DS_Store files at the top level of your modules' directories
 kamille cleanr                              # removes the .git, .gitignore, .idea and .DS_Store files in your modules directories, recursively
 

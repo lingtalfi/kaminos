@@ -6,20 +6,9 @@ namespace ApplicationItemManager\Repository;
 use ApplicationItemManager\Exception\ApplicationItemManagerException;
 
 /**
- * A dependency map is an array of item => array of dependencies.
- * Eah dependency is an item.
- * Hard dependencies are prefixed with a plus symbol (+)
- *
- *
- * A meta map is an array of item => metas.
- * Metas is an array of key => value.
- * Most common keys is description, but you can also have other keys like description.
- *
- *
- *
- *
+ * Hard dependencies are prefixed with a plus symbol (+).
  */
-abstract class AbstractItemList implements RepositoryInterface
+abstract class AbstractRepository implements RepositoryInterface
 {
     private $metaMap;
     private $dependencyMap;
@@ -43,38 +32,26 @@ abstract class AbstractItemList implements RepositoryInterface
     }
 
 
-    public function getDependencyTree($item)
+    public function getDependencies($itemName)
     {
         $tree = [];
-        $this->collectDependencyTree($item, $tree);
-        $tree = array_map(function ($v) {
-            return ltrim($v, '+');
-        }, $tree);
-        $tree = array_unique($tree);
+        $this->collectDependencyTree($itemName, $tree);
         return $tree;
     }
 
-    public function getHardDependencyTree($item)
+
+    public function getHardDependencies($itemName)
     {
         $tree = [];
-        $this->collectDependencyTree($item, $tree, function ($v) {
-            if (0 === strpos($v, '+')) {
-                return true;
-            }
-            return false;
-        });
-        $tree = array_map(function ($v) {
-            return ltrim($v, '+');
-        }, $tree);
-        $tree = array_unique($tree);
+        $this->collectDependencyTree($itemName, $tree, true);
         return $tree;
 
     }
 
-    public function has($item)
+    public function has($itemName)
     {
         $d = $this->getDependencyMap();
-        return array_key_exists($item, $d);
+        return array_key_exists($itemName, $d);
     }
 
     public function search($text, array $in = null)
@@ -165,29 +142,32 @@ abstract class AbstractItemList implements RepositoryInterface
     }
 
 
-    private function collectDependencyTree($items, array &$tree, callable $filter = null)
+    private function collectDependencyTree($itemName, array &$tree, $collectHardOnly = false)
     {
         $dependencyMap = $this->getDependencyMap();
-        if (is_string($items)) {
-            $itemName = $items;
-            $tree[] = $itemName;
-            if (array_key_exists($itemName, $dependencyMap)) {
-                $deps = $dependencyMap[$itemName];
-                foreach ($deps as $dep) {
-                    if (!in_array($dep, $tree, true)) {
-                        $this->collectDependencyTree($dep, $tree);
+        if (array_key_exists($itemName, $dependencyMap)) {
+            $deps = $dependencyMap[$itemName];
+            $repoName = $this->getName();
+            foreach ($deps as $dep) {
+                $isHard = false;
+                if ('+' === substr($dep, 0, 1)) {
+                    $isHard = true;
+                    $dep = substr($dep, 1);
+                }
+                if (!in_array($dep, $tree, true)) {
+                    if (true === $collectHardOnly && false === $isHard) {
+                        continue;
+                    }
+                    $tree[] = $dep;
+                    // we can only recurse on items in our repository
+                    if (0 === strpos($dep, $repoName . ".")) {
+                        $this->collectDependencyTree($dep, $tree, $collectHardOnly);
                     }
                 }
             }
-        } elseif (is_array($items)) {
-            foreach ($items as $item) {
-                if (null !== $filter && false === call_user_func($filter, $item)) {
-                    continue;
-                }
-                $this->collectDependencyTree($item, $tree);
-            }
         }
     }
+
 
     private function getCombinedArray(array $in, array $meta)
     {

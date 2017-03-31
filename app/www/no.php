@@ -3,10 +3,9 @@
 use ApplicationItemManager\Importer\GithubImporter;
 use ApplicationItemManager\Installer\KamilleModuleInstaller;
 use ApplicationItemManager\Installer\KamilleWidgetInstaller;
-use ApplicationItemManager\ItemList\KamilleModulesItemList;
-use ApplicationItemManager\ItemList\KamilleWidgetsItemList;
-use ApplicationItemManager\ItemList\LingUniverseItemList;
 use ApplicationItemManager\LingApplicationItemManager;
+use ApplicationItemManager\Repository\KamilleModulesRepository;
+use ApplicationItemManager\Repository\LingUniverseRepository;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Ling\Z;
 use Kamille\Mvc\Layout\HtmlLayout;
@@ -19,6 +18,46 @@ use Output\WebProgramOutput;
 require_once __DIR__ . "/../boot.php";
 require_once __DIR__ . "/../init.php";
 
+
+
+
+
+$output = WebProgramOutput::create();
+$importDir = "/app/importDir";
+$manager = LingApplicationItemManager::create()
+    ->setOutput($output)
+    ->addRepository(LingUniverseRepository::create(), ['km'])
+    ->setFavoriteRepositoryId('ling')
+    ->bindImporter('ling', GithubImporter::create()->setGithubRepoName("lingtalfi"))
+    ->setImportDirectory($importDir)
+;
+
+
+
+
+$manager->search("ba"); // search the term "ba" in the available items
+$manager->listAvailable(); // list the available items
+$manager->install("Bat"); // install the Bat item (will import it if necessary)
+$manager->import("AdminTable"); // import the AdminTable item
+$manager->listImported(); // list the imported items
+$manager->listInstalled(); // list the installed items
+
+
+
+
+
+az();
+
+
+//--------------------------------------------
+// TESTING REPOSITORIES
+//--------------------------------------------
+a(KamilleModulesRepository::create()->getDependencies("KamilleModules.Connexion"));
+a(KamilleModulesRepository::create()->getHardDependencies("KamilleModules.Connexion"));
+a(LingUniverseRepository::create()->getDependencies("ling.ArrayStore"));
+
+
+az();
 
 //--------------------------------------------
 // KAMILLE WIDGETS APP MANAGER

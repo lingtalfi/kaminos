@@ -18,9 +18,9 @@ class KamilleWidgetInstaller extends LingAbstractItemInstaller
     //--------------------------------------------
     //
     //--------------------------------------------
-    protected function getInstallerClass($item)
+    protected function getInstallerClass($itemName)
     {
-        return 'Widget\\' . $item . '\\' . $item . "WidgetInstaller";
+        return 'Widget\\' . $itemName . '\\' . $itemName . "WidgetInstaller";
     }
 
     protected function getFile()

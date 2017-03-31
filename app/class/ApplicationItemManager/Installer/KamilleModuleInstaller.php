@@ -18,9 +18,9 @@ class KamilleModuleInstaller extends LingAbstractItemInstaller
     //--------------------------------------------
     //
     //--------------------------------------------
-    protected function getInstallerClass($item)
+    protected function getInstallerClass($itemName)
     {
-        return 'Module\\' . $item . '\\' . $item . "Module";
+        return 'Module\\' . $itemName . '\\' . $itemName . "Module";
     }
 
     protected function getFile()

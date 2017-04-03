@@ -29,12 +29,4 @@ class Hooks extends AbstractHooks
 //    {
 //        AppRouter::StaticObjectRouter_feedUri2Controller($uri2Controller);
 //    }
-
-	public static function Core_feedUri2Controller(array &$uri2Controller)
-	{
-		// mit-start:Toast
-		$uri2Controller["/toast"] = "something";
-		$uri2Controller["/marshmallows"] = "something";
-		// mit-end:Toast
-	}
 }

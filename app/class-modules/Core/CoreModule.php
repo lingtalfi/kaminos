@@ -5,9 +5,9 @@ namespace Module\Core;
 
 
 
-use KaminosUtils\Module\KaminosModule;
+use Kamille\Module\KamilleModule;
 
-class CoreModule extends KaminosModule
+class CoreModule extends KamilleModule
 {
 
 }

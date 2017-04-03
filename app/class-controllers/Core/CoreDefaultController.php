@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Module\Core\Controller;
+namespace Controller\Core;
 
 
 use Kamille\Architecture\Controller\ControllerInterface;

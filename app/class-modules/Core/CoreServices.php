@@ -4,23 +4,16 @@
 namespace Module\Core;
 
 
-
-
-
-
 class CoreServices
 {
-    public static function create(){
-        return new static();
-    }
     private static $cache;
 
-    protected static function Core_webApplicationConfigurator()
+    protected static function Core_webApplicationHandler()
     {
-        if (!array_key_exists('Core_webApplicationConfigurator', self::$cache)) {
-            self::$cache['Core_webApplicationConfigurator'] = new \Module\Core\ApplicationConfigurator\WebApplicationConfigurator();
+        if (!array_key_exists('Core_webApplicationHandler', self::$cache)) {
+            self::$cache['Core_webApplicationHandler'] = new \Module\Core\ApplicationHandler\WebApplicationHandler();
         }
-        return self::$cache['Core_webApplicationConfigurator'];
+        return self::$cache['Core_webApplicationHandler'];
     }
 }
 

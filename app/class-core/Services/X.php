@@ -76,15 +76,11 @@ class X extends AbstractX
         echo "pou";
     }
 
-	public static function Core_webApplicationConfigurator()
+	public static function Core_webApplicationHandler()
     {
-        if (!array_key_exists('Core_webApplicationConfigurator', self::$cache)) {
-            self::$cache['Core_webApplicationConfigurator'] = new \Module\Core\ApplicationConfigurator\WebApplicationConfigurator();
+        if (!array_key_exists('Core_webApplicationHandler', self::$cache)) {
+            self::$cache['Core_webApplicationHandler'] = new \Module\Core\ApplicationHandler\WebApplicationHandler();
         }
-        return self::$cache['Core_webApplicationConfigurator'];
-    }
-
-	public static function create(){
-        return new static();
+        return self::$cache['Core_webApplicationHandler'];
     }
 }

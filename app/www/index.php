@@ -6,13 +6,12 @@ use Kamille\Architecture\Application\Web\WebApplication;
 use Kamille\Architecture\Request\Web\HttpRequest;
 use Kamille\Services\XInstalledModules;
 
-
 require_once __DIR__ . "/../boot.php";
 require_once __DIR__ . "/../init.php";
 
 
 
 $app = WebApplication::inst();
-X::get("Core.webApplicationConfigurator")->configure($app);
-$app->handleRequest(HttpRequest::create());
+X::get("Core.webApplicationHandler")->handle($app);
+
 

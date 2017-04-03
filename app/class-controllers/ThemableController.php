@@ -29,6 +29,7 @@ class ThemableController implements ControllerInterface
         return HttpResponse::create(Layout::create()
             ->setTemplate($templateName)
             ->setLoader(FileLoader::create()
+
                 ->addDir(Z::appDir() . "/theme/" . ApplicationParameters::get('theme') . "/layout")
             )
             ->setRenderer($this->getRenderer())

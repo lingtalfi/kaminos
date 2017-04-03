@@ -6,6 +6,7 @@ use ApplicationItemManager\Installer\KamilleWidgetInstaller;
 use ApplicationItemManager\LingApplicationItemManager;
 use ApplicationItemManager\Repository\KamilleModulesRepository;
 use ApplicationItemManager\Repository\LingUniverseRepository;
+use DirScanner\YorgDirScannerTool;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Ling\Z;
 use Kamille\Mvc\Layout\HtmlLayout;
@@ -21,91 +22,6 @@ require_once __DIR__ . "/../init.php";
 
 
 
-
-$output = WebProgramOutput::create();
-$importDir = "/app/importDir";
-$manager = LingApplicationItemManager::create()
-    ->setOutput($output)
-    ->addRepository(LingUniverseRepository::create(), ['km'])
-    ->setFavoriteRepositoryId('ling')
-    ->bindImporter('ling', GithubImporter::create()->setGithubRepoName("lingtalfi"))
-    ->setImportDirectory($importDir)
-;
-
-
-
-
-$manager->search("ba"); // search the term "ba" in the available items
-$manager->listAvailable(); // list the available items
-$manager->install("Bat"); // install the Bat item (will import it if necessary)
-$manager->import("AdminTable"); // import the AdminTable item
-$manager->listImported(); // list the imported items
-$manager->listInstalled(); // list the installed items
-
-
-
-
-
-az();
-
-
-//--------------------------------------------
-// TESTING REPOSITORIES
-//--------------------------------------------
-a(KamilleModulesRepository::create()->getDependencies("KamilleModules.Connexion"));
-a(KamilleModulesRepository::create()->getHardDependencies("KamilleModules.Connexion"));
-a(LingUniverseRepository::create()->getDependencies("ling.ArrayStore"));
-
-
-az();
-
-//--------------------------------------------
-// KAMILLE WIDGETS APP MANAGER
-//--------------------------------------------
-$output = WebProgramOutput::create();
-$appDir = ApplicationParameters::get("app_dir");
-LingApplicationItemManager::create()
-    ->setOutput($output)
-    ->setInstaller(KamilleWidgetInstaller::create()->setOutput($output)->setApplicationDirectory($appDir))
-    ->bindImporter('KamilleWidgets', GithubImporter::create()->setGithubRepoName("KamilleWidgets"))
-    ->setDefaultImporter('KamilleWidgets')
-    ->setImportDirectory("/myphp/kaminos/app/class-widgets")
-    ->addItemList(KamilleWidgetsItemList::create())
-    ->install("BookedMeteo");
-
-az();
-
-
-//--------------------------------------------
-// KAMILLE MODULES APP MANAGER
-//--------------------------------------------
-$output = WebProgramOutput::create();
-$appDir = ApplicationParameters::get("app_dir");
-LingApplicationItemManager::create()
-    ->setOutput($output)
-    ->setInstaller(KamilleModuleInstaller::create()->setOutput($output)->setApplicationDirectory($appDir))
-    ->bindImporter('KamilleModules', GithubImporter::create()->setGithubRepoName("KamilleModules"))
-    ->setDefaultImporter('KamilleModules')
-    ->setImportDirectory("/myphp/kaminos/app/class-modules")
-    ->addItemList(KamilleModulesItemList::create())
-//    ->install("Connexion");
-    ->uninstall("Connexion");
-
-az();
-
-
-//--------------------------------------------
-// UNIVERSE APP MANAGER
-//--------------------------------------------
-LingApplicationItemManager::create()
-    ->setOutput(ProgramOutput::create())
-    ->bindImporter('ling', GithubImporter::create()->setGithubRepoName("lingtalfi"))
-    ->setDefaultImporter('ling')
-    ->setImportDirectory("/myphp/kaminos/app/planets")
-    ->addItemList(LingUniverseItemList::create())
-    ->import("AdminTable");
-
-az();
 //--------------------------------------------
 // LAWS: INTRODUCING POSITIONS TO THE LAYOUT-WIDGETS MODEL
 //--------------------------------------------

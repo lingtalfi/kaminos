@@ -1,3 +1,4 @@
 Toast
 GentelellaWebDirectory
 Connexion
+Core

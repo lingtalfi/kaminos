@@ -6,4 +6,5 @@ $params = [
     'debug' => false,
     'theme' => 'laws_theme_demo',
     'theme' => 'gentelella', // this application uses a theme
+    'theme' => '_default_', // this application uses a theme
 ];

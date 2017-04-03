@@ -13,7 +13,6 @@ class CoreDefaultController implements ControllerInterface
 
     public function render()
     {
-        throw new \Exception("kkpp");
         return HttpResponse::create("I'm the default home page from the Core module's CoreDefaultController.");
     }
 }

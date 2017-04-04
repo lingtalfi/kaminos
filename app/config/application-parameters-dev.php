@@ -6,5 +6,5 @@ include __DIR__ . "/application-parameters.php";
 
 
 $params = array_merge($params, [
-    'debug' => false,
+    'debug' => true,
 ]);

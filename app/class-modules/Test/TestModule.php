@@ -5,9 +5,10 @@ namespace Module\Test;
 
 
 
-use KaminosUtils\Module\KaminosModule;
+use Kamille\Module\KamilleModule;
 
-class TestModule extends KaminosModule
+
+class TestModule extends KamilleModule
 {
 
 }

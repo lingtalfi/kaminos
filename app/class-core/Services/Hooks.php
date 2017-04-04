@@ -30,14 +30,42 @@ class Hooks extends AbstractHooks
 //        AppRouter::StaticObjectRouter_feedUri2Controller($uri2Controller);
 //    }
 
+
+
+
+
+
+
+
+
+
+	public static function Test_feedUri2Controller(array &$uri2Controller)
+	{
+		$uri2Controller["/login"] = "something";
+	}
+
+
+
+	public static function Core_addLoggerListener(\Module\Core\Logger\CoreLoggerInterface $coreLogger)
+	{
+		if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
+		$f = \Kamille\Services\XConfig::get("Core.logFile");
+		$coreLogger->addListener(\Logger\Listener\FileLoggerListener::create()
+		->setFormatter(\Logger\Formatter\TagFormatter::create())
+		->setIdentifiers(null)
+		->setPath($f));
+		}
+	}
+
 	public static function Core_feedUri2Controller(array &$uri2Controller)
 	{
 		// mit-start:Toast
 		$uri2Controller["/toast"] = "something";
 		$uri2Controller["/marshmallows"] = "something";
 		// mit-end:Toast
-		// mit-start:My
+		// mit-start:Test
 		$uri2Controller["/test"] = 'Controller\Test\TestController:doo';
-		// mit-end:My
+		$uri2Controller["/blaster"] = "something";
+		// mit-end:Test
 	}
 }

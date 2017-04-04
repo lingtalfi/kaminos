@@ -1,10 +1,10 @@
 I'm the oops widget. My level is {level}
-ff
+fff
 
 <?php
 
 
-throw new \Exception("pojp");
+throw new \Exception("pfojp");
 
 
 ?>

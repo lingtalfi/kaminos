@@ -9,15 +9,13 @@ $conf = [
         ],
     ],
     "widgets" => [
-        [
-            "id" => "top.one",
+        "top.one" => [
             "name" => "oops/default",
             "conf" => [
                 "level" => "so good",
             ],
         ],
-        [
-            "id" => "top.two",
+        "top.two" => [
             "name" => "reoops/default",
         ],
     ],

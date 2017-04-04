@@ -18,6 +18,7 @@ use Module\Core\Architecture\Router\ExceptionRouter;
 
 class WebApplicationHandler
 {
+
     public function handle(WebApplication $app)
     {
 
@@ -45,6 +46,7 @@ class WebApplicationHandler
 
         } catch (\Exception $e) {
 
+
             ObTool::cleanAll(); // clean all buffers to avoid content leaks
 
             $oldRequest = $app->get('request');
@@ -53,7 +55,9 @@ class WebApplicationHandler
                 ->set("exception", $e);
             $app->handleRequest($request);
         }
-
-
     }
+
+
+
+
 }

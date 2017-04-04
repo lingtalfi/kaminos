@@ -1,0 +1,2 @@
+[info]: Hello log
+[info]: Hello log

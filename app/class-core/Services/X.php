@@ -36,36 +36,9 @@ use Kamille\Services\AbstractX;
  */
 class X extends AbstractX
 {
-
-
-//    public static function getStaticPageRouter_StaticPageController()
-//    {
-//        $o = new \Kamille\Architecture\Controller\Web\StaticPageController();
-//        $o->setPagesDir(WebApplication::inst()->get('app_dir') . "/pages");
-//        return $o;
-//
-//    }
-//
-//
-//    public static function getStaticPageRouter_Uri2Page()
-//    {
-//        $uri2Page = [];
-//        Hooks::StaticPageRouter_feedUri2Page($uri2Page);
-//        return $uri2Page;
-//    }
-//
-//
-//    public static function getStaticObjectRouter_Uri2Controller()
-//    {
-//        $uri2Controller = [];
-//        Hooks::StaticObjectRouter_feedUri2Controller($uri2Controller);
-//        return $uri2Controller;
-//    }
-
     //--------------------------------------------
-    // BELOW THIS LINE, LET THE BOT DO ITS JOB
+    // BELOW THIS LINE ARE MODULES SERVICES, LET THE BOT DO ITS JOB
     //--------------------------------------------
-
     protected static function Connexion_foo()
     {
         echo "pouddd";
@@ -76,7 +49,7 @@ class X extends AbstractX
         echo "pou";
     }
 
-	public static function Core_webApplicationHandler()
+    public static function Core_webApplicationHandler()
     {
         if (!array_key_exists('Core_webApplicationHandler', self::$cache)) {
             self::$cache['Core_webApplicationHandler'] = new \Module\Core\ApplicationHandler\WebApplicationHandler();

@@ -4,6 +4,7 @@
 namespace Module\Core\ApplicationHandler;
 
 
+use Bat\ObTool;
 use Core\Services\Hooks;
 use Kamille\Services\XConfig;
 use Kamille\Architecture\Application\Web\WebApplication;
@@ -43,6 +44,9 @@ class WebApplicationHandler
 
 
         } catch (\Exception $e) {
+
+            ObTool::cleanAll(); // clean all buffers to avoid content leaks
+
             $oldRequest = $app->get('request');
             $request = FakeHttpRequest::create()
                 ->set("oldRequest", $oldRequest)

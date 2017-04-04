@@ -11,6 +11,7 @@
 
 use BumbleBee\Autoload\ButineurAutoloader;
 use Kamille\Architecture\ApplicationParameters\Web\WebApplicationParameters;
+use Kamille\Services\AbstractHooks;
 
 
 //------------------------------------------------------------------------------/
@@ -44,6 +45,7 @@ require_once __DIR__ . "/functions/main-functions.php";
 // BOOTING APPLICATION PARAMETERS
 //--------------------------------------------
 WebApplicationParameters::boot(__DIR__);
+
 
 
 

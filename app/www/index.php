@@ -10,8 +10,7 @@ require_once __DIR__ . "/../boot.php";
 require_once __DIR__ . "/../init.php";
 
 
-
 $app = WebApplication::inst();
-X::get("Core.webApplicationHandler")->handle($app);
+X::get("Core_webApplicationHandler")->handle($app);
 
 

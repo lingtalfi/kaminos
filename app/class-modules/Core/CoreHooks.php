@@ -4,8 +4,6 @@
 namespace Module\Core;
 
 
-
-
 class CoreHooks
 {
 
@@ -14,11 +12,11 @@ class CoreHooks
 
     }
 
-    protected static function Core_addLoggerListener(\Module\Core\Logger\CoreLoggerInterface $coreLogger)
+    protected static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
     {
         if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
             $f = \Kamille\Services\XConfig::get("Core.logFile");
-            $coreLogger->addListener(\Logger\Listener\FileLoggerListener::create()
+            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
                 ->setFormatter(\Logger\Formatter\TagFormatter::create())
                 ->setIdentifiers(null)
                 ->setPath($f));

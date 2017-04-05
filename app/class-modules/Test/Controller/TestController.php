@@ -12,7 +12,7 @@ class TestController extends KamilleController{
 
 
 
-    public function doo(){
+    public function render(){
         return $this->renderByViewId("meow");
     }
 

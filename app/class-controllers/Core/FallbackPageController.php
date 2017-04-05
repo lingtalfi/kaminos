@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Module\Core\Controller;
+namespace Controller\Core;
 
 
 use Kamille\Architecture\Controller\ControllerInterface;
 use Kamille\Architecture\Response\Web\HttpResponse;
 
-class CoreDefaultController implements ControllerInterface
+class FallbackPageController implements ControllerInterface
 {
 
 

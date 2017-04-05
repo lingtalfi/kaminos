@@ -13,24 +13,11 @@ class ExceptionController extends KamilleController
 
     public function render()
     {
-        $fn = function ($params) {
-            $msgType = $params[0];
-            switch ($msgType){
-                case 'widgetNameNotFound':
-                    XLog::error("todo: make XLog available...");
-                    break;
-                default:
-                    break;
-            }
-        };
-
-
         $request = WebApplication::inst()->get("request");
         $e = $request->get("exception");
-
         return $this->renderByViewId("exception", [
             "widgets" => [
-                "ff" => [
+                "main.any" => [
                     "conf" => [
                         "exception" => $e,
                     ],

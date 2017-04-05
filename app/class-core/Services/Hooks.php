@@ -39,6 +39,13 @@ class Hooks extends AbstractHooks
 
 
 
+
+
+
+
+
+
+
 	public static function Test_feedUri2Controller(array &$uri2Controller)
 	{
 		$uri2Controller["/login"] = "something";
@@ -46,11 +53,11 @@ class Hooks extends AbstractHooks
 
 
 
-	public static function Core_addLoggerListener(\Module\Core\Logger\CoreLoggerInterface $coreLogger)
+	public static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
 	{
 		if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
 		$f = \Kamille\Services\XConfig::get("Core.logFile");
-		$coreLogger->addListener(\Logger\Listener\FileLoggerListener::create()
+		$logger->addListener(\Logger\Listener\FileLoggerListener::create()
 		->setFormatter(\Logger\Formatter\TagFormatter::create())
 		->setIdentifiers(null)
 		->setPath($f));
@@ -64,7 +71,7 @@ class Hooks extends AbstractHooks
 		$uri2Controller["/marshmallows"] = "something";
 		// mit-end:Toast
 		// mit-start:Test
-		$uri2Controller["/test"] = 'Controller\Test\TestController:doo';
+		$uri2Controller["/test"] = 'Controller\Test\TestController:render';
 		$uri2Controller["/blaster"] = "something";
 		// mit-end:Test
 	}

@@ -4,3 +4,586 @@
 2017-04-04 09:16:09 - [info]: Hello log
 2017-04-04 09:16:09 - [info]: Hello log
 2017-04-04 12:19:41 - [info]: Hello log
+2017-04-04 21:37:00 - [warn]: sopiké
+2017-04-04 21:38:53 - [warn]: sopiké
+2017-04-04 21:58:36 - [error]: LawsUtil: name is not a valid key for widgetId ff
+2017-04-04 22:03:15 - [error]: LawsUtil: name is not a valid key for widgetId ff (viewId=exception)
+2017-04-04 22:52:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter
+2017-04-04 22:52:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter
+2017-04-04 22:53:08 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter
+2017-04-04 22:53:08 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter
+2017-04-04 22:54:04 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Array
+2017-04-04 22:54:04 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Array
+2017-04-04 22:54:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Array
+2017-04-04 22:54:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Array
+2017-04-04 22:55:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: :render
+2017-04-04 22:55:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: :render
+2017-04-04 22:55:56 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController:render
+2017-04-04 22:55:56 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController:render
+2017-04-04 23:00:47 - [debug]: WebApplicationHandler.handle
+2017-04-04 23:00:47 - [debug]: WebApplicationHandler.handle
+2017-04-04 23:00:47 - [debug]: WebApplicationHandler.handle
+2017-04-04 23:00:59 - [debug]: WebApplicationHandler.handle
+2017-04-04 23:00:59 - [debug]: WebApplicationHandler.handle
+2017-04-04 23:00:59 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:05 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:05 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:18 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:18 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:18 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:18 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:19 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:20 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:20 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:20 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:20 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:20 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:20 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:20 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:20 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:21 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:37:21 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:26 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:26 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:27 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:27 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:28 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:28 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:29 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:29 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:29 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:29 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:30 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:38:30 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:39:57 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:39:57 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:41:42 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:41:42 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:42:18 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:42:18 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:42:58 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:42:58 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:43:30 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:43:30 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:43:38 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:43:38 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:44:31 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:44:31 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:44:54 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:44:54 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:45:42 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:45:42 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:46:48 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:46:48 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:56:57 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:56:57 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:58:11 - [debug]: WebApplicationHandler.handle
+2017-04-05 04:58:11 - [debug]: WebApplicationHandler.handle
+2017-04-05 05:00:02 - [debug]: WebApplicationHandler.handle
+2017-04-05 05:00:02 - [debug]: WebApplicationHandler.handle
+2017-04-05 05:01:45 - [debug]: WebApplicationHandler.handle
+2017-04-05 05:01:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\CoreDefaultController:render
+2017-04-05 05:02:22 - [debug]: WebApplicationHandler.handle
+2017-04-05 05:02:22 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\CoreDefaultController:render
+2017-04-05 05:07:57 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:07:57 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\CoreDefaultController:render
+2017-04-05 05:10:24 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:10:24 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController:render
+2017-04-05 05:10:24 - [warn]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:10:24 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Exception\ExceptionController:render
+2017-04-05 05:15:21 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:15:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController:render
+2017-04-05 05:15:21 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 05:15:21 - [warn]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:15:21 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Exception\ExceptionController:render
+2017-04-05 05:15:21 - [debug]: [Controller Controller\Exception\ExceptionController] - renderByViewId with viewId exception
+2017-04-05 05:15:25 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:15:25 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController:render
+2017-04-05 05:15:25 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 05:15:25 - [warn]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:15:25 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Exception\ExceptionController:render
+2017-04-05 05:15:25 - [debug]: [Controller Controller\Exception\ExceptionController] - renderByViewId with viewId exception
+2017-04-05 05:20:45 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:20:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController:render
+2017-04-05 05:20:45 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 05:20:45 - [trace]: LawsUtil: layout
+2017-04-05 05:20:45 - [warn]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:20:45 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Exception\ExceptionController:render
+2017-04-05 05:20:45 - [debug]: [Controller Controller\Exception\ExceptionController] - renderByViewId with viewId exception
+2017-04-05 05:20:45 - [trace]: LawsUtil: layout
+2017-04-05 05:24:31 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:24:31 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController:render
+2017-04-05 05:24:31 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 05:24:31 - [trace]: LawsUtil trace:
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 05:24:31 - [warn]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:24:31 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Exception\ExceptionController:render
+2017-04-05 05:24:31 - [debug]: [Controller Controller\Exception\ExceptionController] - renderByViewId with viewId exception
+2017-04-05 05:24:31 - [trace]: LawsUtil trace:
+- layout: landpage/default
+- positions: 
+- widgets: exception/default
+2017-04-05 05:26:15 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:26:15 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController:render
+2017-04-05 05:26:15 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 05:26:15 - [trace]: LawsUtil trace (theme: _default_):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 05:26:15 - [warn]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:26:15 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Exception\ExceptionController:render
+2017-04-05 05:26:15 - [debug]: [Controller Controller\Exception\ExceptionController] - renderByViewId with viewId exception
+2017-04-05 05:26:15 - [trace]: LawsUtil trace (theme: _default_):
+- layout: landpage/default
+- positions: 
+- widgets: exception/default
+2017-04-05 05:32:57 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController:render
+2017-04-05 05:32:57 - [warn]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:32:57 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Exception\ExceptionController:render
+2017-04-05 05:36:54 - [warn]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:37:01 - [warn]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:38:09 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:38:19 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:38:19 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 05:38:19 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 05:38:19 - [trace]: LawsUtil trace (theme: _default_):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 05:38:19 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /test, redispatching to the fallback loop
+2017-04-05 05:38:19 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Exception\ExceptionController
+2017-04-05 05:38:19 - [debug]: [Controller Controller\Exception\ExceptionController] - renderByViewId with viewId exception
+2017-04-05 05:38:19 - [trace]: LawsUtil trace (theme: _default_):
+- layout: landpage/default
+- positions: 
+- widgets: exception/default
+2017-04-05 05:47:31 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:47:31 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 05:47:31 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 05:47:31 - [trace]: LawsUtil trace (theme: _default_):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 05:50:05 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:50:05 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 05:50:05 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 05:50:05 - [trace]: LawsUtil trace (theme: _default_):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 05:50:05 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default
+2017-04-05 05:59:18 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 05:59:18 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 05:59:18 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 05:59:18 - [trace]: LawsUtil trace (theme: _default_):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 05:59:18 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOvc7JSe:7
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include()
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Widget/Widget.php(68): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the oops wi...', Array)
+#2 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOGfnpLJ(5): Kamille\Mvc\Widget\Widget->render()
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Position/Position.php(72): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('ere\n<?php\n\nfore...', Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/LayoutProxy/LawsLayoutProxy.php(65): Kamille\Mvc\Position\Position->render(Array)
+#6 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOG1Kq97(12): Kamille\Mvc\LayoutProxy\LawsLayoutProxy->position('top')
+#7 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#8 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/Layout.php(96): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the MY layo...', Array)
+#9 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/HtmlLayout.php(22): Kamille\Mvc\Layout\Layout->render(Array)
+#10 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(135): Kamille\Mvc\Layout\HtmlLayout->render(Array)
+#11 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(31): Kamille\Utils\Laws\LawsUtil::renderLawsView(Array, 'meow')
+#12 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Controller/Web/KamilleController.php(36): Kamille\Utils\Laws\LawsUtil::renderLawsViewById('meow', Array, NULL)
+#13 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-controllers/Test/TestController.php(16): Kamille\Architecture\Controller\Web\KamilleController->renderByViewId('meow')
+#14 [internal function]: Controller\Test\TestController->render()
+#15 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#16 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#17 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(130): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#18 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#19 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#20 {main}
+2017-04-05 06:00:45 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 06:00:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 06:00:45 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 06:00:45 - [trace]: LawsUtil trace (theme: _default_):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 06:00:45 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOrNJsZn:7
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include()
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Widget/Widget.php(68): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the oops wi...', Array)
+#2 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOffOfU2(5): Kamille\Mvc\Widget\Widget->render()
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Position/Position.php(72): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('ere\n<?php\n\nfore...', Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/LayoutProxy/LawsLayoutProxy.php(65): Kamille\Mvc\Position\Position->render(Array)
+#6 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOO2sSmEQ(12): Kamille\Mvc\LayoutProxy\LawsLayoutProxy->position('top')
+#7 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#8 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/Layout.php(96): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the MY layo...', Array)
+#9 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/HtmlLayout.php(22): Kamille\Mvc\Layout\Layout->render(Array)
+#10 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(135): Kamille\Mvc\Layout\HtmlLayout->render(Array)
+#11 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(31): Kamille\Utils\Laws\LawsUtil::renderLawsView(Array, 'meow')
+#12 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Controller/Web/KamilleController.php(36): Kamille\Utils\Laws\LawsUtil::renderLawsViewById('meow', Array, NULL)
+#13 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-controllers/Test/TestController.php(16): Kamille\Architecture\Controller\Web\KamilleController->renderByViewId('meow')
+#14 [internal function]: Controller\Test\TestController->render()
+#15 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#16 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#17 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(130): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#18 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#19 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#20 {main}
+2017-04-05 06:02:01 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 06:02:01 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 06:02:01 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 06:02:01 - [trace]: LawsUtil trace (theme: _default_, viewId: meow):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 06:02:01 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOO7UiwRL:7
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include()
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Widget/Widget.php(68): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the oops wi...', Array)
+#2 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOONOgA4A(5): Kamille\Mvc\Widget\Widget->render()
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Position/Position.php(72): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('ere\n<?php\n\nfore...', Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/LayoutProxy/LawsLayoutProxy.php(65): Kamille\Mvc\Position\Position->render(Array)
+#6 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOaTCb59(12): Kamille\Mvc\LayoutProxy\LawsLayoutProxy->position('top')
+#7 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#8 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/Layout.php(96): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the MY layo...', Array)
+#9 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/HtmlLayout.php(22): Kamille\Mvc\Layout\Layout->render(Array)
+#10 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(135): Kamille\Mvc\Layout\HtmlLayout->render(Array)
+#11 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(31): Kamille\Utils\Laws\LawsUtil::renderLawsView(Array, 'meow')
+#12 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Controller/Web/KamilleController.php(36): Kamille\Utils\Laws\LawsUtil::renderLawsViewById('meow', Array, NULL)
+#13 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-controllers/Test/TestController.php(16): Kamille\Architecture\Controller\Web\KamilleController->renderByViewId('meow')
+#14 [internal function]: Controller\Test\TestController->render()
+#15 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#16 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#17 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(130): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#18 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#19 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#20 {main}
+2017-04-05 06:10:42 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 06:10:42 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 06:10:42 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 06:10:42 - [trace]: LawsUtil trace (theme: _default_, viewId: meow (/config/laws/meow.conf.php)):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 06:10:42 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOkG6fRI:7
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include()
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Widget/Widget.php(68): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the oops wi...', Array)
+#2 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOCH0IVJ(5): Kamille\Mvc\Widget\Widget->render()
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Position/Position.php(72): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('ere\n<?php\n\nfore...', Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/LayoutProxy/LawsLayoutProxy.php(65): Kamille\Mvc\Position\Position->render(Array)
+#6 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOtDTU19(12): Kamille\Mvc\LayoutProxy\LawsLayoutProxy->position('top')
+#7 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#8 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/Layout.php(96): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the MY layo...', Array)
+#9 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/HtmlLayout.php(22): Kamille\Mvc\Layout\Layout->render(Array)
+#10 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(142): Kamille\Mvc\Layout\HtmlLayout->render(Array)
+#11 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(31): Kamille\Utils\Laws\LawsUtil::renderLawsView(Array, 'meow', '/Volumes/Macint...')
+#12 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Controller/Web/KamilleController.php(36): Kamille\Utils\Laws\LawsUtil::renderLawsViewById('meow', Array, NULL)
+#13 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-controllers/Test/TestController.php(16): Kamille\Architecture\Controller\Web\KamilleController->renderByViewId('meow')
+#14 [internal function]: Controller\Test\TestController->render()
+#15 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#16 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#17 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(130): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#18 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#19 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#20 {main}
+2017-04-05 06:11:12 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 06:11:12 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 06:11:12 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 06:11:12 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 06:11:12 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOZk7ihv:7
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include()
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Widget/Widget.php(68): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the oops wi...', Array)
+#2 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOkGkYhr(5): Kamille\Mvc\Widget\Widget->render()
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Position/Position.php(72): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('ere\n<?php\n\nfore...', Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/LayoutProxy/LawsLayoutProxy.php(65): Kamille\Mvc\Position\Position->render(Array)
+#6 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOO0IBsM8(12): Kamille\Mvc\LayoutProxy\LawsLayoutProxy->position('top')
+#7 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#8 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/Layout.php(96): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the MY layo...', Array)
+#9 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/HtmlLayout.php(22): Kamille\Mvc\Layout\Layout->render(Array)
+#10 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(142): Kamille\Mvc\Layout\HtmlLayout->render(Array)
+#11 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(31): Kamille\Utils\Laws\LawsUtil::renderLawsView(Array, 'meow', '/Volumes/Macint...')
+#12 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Controller/Web/KamilleController.php(36): Kamille\Utils\Laws\LawsUtil::renderLawsViewById('meow', Array, NULL)
+#13 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-controllers/Test/TestController.php(16): Kamille\Architecture\Controller\Web\KamilleController->renderByViewId('meow')
+#14 [internal function]: Controller\Test\TestController->render()
+#15 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#16 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#17 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(130): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#18 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#19 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#20 {main}
+2017-04-05 07:06:58 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:06:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:06:58 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:06:58 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:06:58 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOYHwiz4:7
+2017-04-05 07:07:58 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:07:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:07:58 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:07:58 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:07:58 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOimglm4:7
+Stack trace:
+#0 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include()
+#1 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Widget/Widget.php(69): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the oops wi...', Array)
+#2 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOFzDk1B(5): Kamille\Mvc\Widget\Widget->render()
+#3 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#4 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Position/Position.php(72): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('ere\n<?php\n\nfore...', Array)
+#5 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/LayoutProxy/LawsLayoutProxy.php(65): Kamille\Mvc\Position\Position->render(Array)
+#6 /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOlwyL5N(12): Kamille\Mvc\LayoutProxy\LawsLayoutProxy->position('top')
+#7 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Renderer/PhpLayoutRenderer.php(73): include('/private/var/fo...')
+#8 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/Layout.php(96): Kamille\Mvc\Renderer\PhpLayoutRenderer->render('I'm the MY layo...', Array)
+#9 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Mvc/Layout/HtmlLayout.php(22): Kamille\Mvc\Layout\Layout->render(Array)
+#10 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(142): Kamille\Mvc\Layout\HtmlLayout->render(Array)
+#11 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Utils/Laws/LawsUtil.php(31): Kamille\Utils\Laws\LawsUtil::renderLawsView(Array, 'meow', '/Volumes/Macint...')
+#12 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Controller/Web/KamilleController.php(36): Kamille\Utils\Laws\LawsUtil::renderLawsViewById('meow', Array, NULL)
+#13 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-controllers/Test/TestController.php(16): Kamille\Architecture\Controller\Web\KamilleController->renderByViewId('meow')
+#14 [internal function]: Controller\Test\TestController->render()
+#15 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#16 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#17 /Volumes/Macintosh HD 2/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(130): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#18 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#19 /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#20 {main}
+2017-04-05 07:08:35 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:08:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:08:35 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:08:35 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:08:35 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOlY63Gh:7
+2017-04-05 07:11:58 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:11:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:11:58 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:11:58 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:24:16 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:24:16 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:24:16 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:24:16 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:24:16 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:24:16 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:24:16 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOQJG1pg:7
+2017-04-05 07:26:38 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:26:38 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:26:38 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:26:38 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:26:38 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:26:38 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:26:38 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOObicDDj:7
+2017-04-05 07:31:01 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:31:01 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:31:01 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:31:01 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: top.one: oops/default, top.two: reoops/default
+2017-04-05 07:31:01 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:31:01 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:31:01 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOxT5c4m:7
+2017-04-05 07:31:50 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:31:50 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:31:50 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:31:50 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: top.one => oops/default, top.two => reoops/default
+2017-04-05 07:31:50 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:31:50 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:31:50 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOIDZ7E4:7
+2017-04-05 07:32:00 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:32:00 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:32:01 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:32:01 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: top.one->oops/default, top.two->reoops/default
+2017-04-05 07:32:01 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:32:01 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:32:01 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOVz9TL5:7
+2017-04-05 07:32:29 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:32:29 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:32:29 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:32:29 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:32:29 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:32:29 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:32:29 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOCqqVF7:7
+2017-04-05 07:33:47 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:33:47 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:33:47 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:33:47 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:33:47 - [debug]: Rendering layout my/default
+2017-04-05 07:33:47 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:33:47 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:33:47 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOssofhO:7
+2017-04-05 07:34:39 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:34:39 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:34:39 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:34:39 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:34:39 - [debug]: Rendering layout my/default
+2017-04-05 07:34:39 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:34:39 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:34:39 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOFgFSD1:7
+2017-04-05 07:41:15 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:41:15 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:41:15 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:41:15 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:41:15 - [debug]: Rendering layout my/default
+2017-04-05 07:41:15 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:41:15 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:41:23 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:41:23 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:41:23 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:41:23 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:41:23 - [debug]: Rendering layout my/default
+2017-04-05 07:41:23 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:41:23 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:41:23 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOO5BqLZ:7
+2017-04-05 07:45:07 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:45:07 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:45:07 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:45:07 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:45:07 - [debug]: Rendering layout my/default
+2017-04-05 07:45:07 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:45:07 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:45:07 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOO1XCfDD:7
+2017-04-05 07:46:04 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:46:04 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:46:04 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:46:04 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:46:04 - [debug]: Rendering layout my/default
+2017-04-05 07:46:04 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:46:04 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:46:04 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOOi2OKZT:7
+2017-04-05 07:46:35 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:46:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:46:35 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:46:35 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:46:35 - [debug]: Rendering layout my/default
+2017-04-05 07:46:35 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:46:35 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:46:35 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template oops/default: Exception: pfojp in /private/var/folders/rl/nm8x2zqd3tjg1hgpwymsg0c40000gn/T/FOObhOWUf:7
+2017-04-05 07:47:13 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:47:13 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:47:13 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:47:13 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:47:13 - [debug]: Rendering layout my/default
+2017-04-05 07:47:13 - [error]: LayoutProxy: Widget not found: one
+2017-04-05 07:47:13 - [error]: LayoutProxy: Widget not found: two
+2017-04-05 07:47:25 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:47:25 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:47:25 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:47:25 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:47:25 - [debug]: Rendering layout my/default
+2017-04-05 07:47:30 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:47:30 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:47:30 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:47:30 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:47:30 - [debug]: Rendering layout my/default
+2017-04-05 07:48:08 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:48:08 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:48:08 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:48:08 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:48:08 - [debug]: Rendering layout my/default
+2017-04-05 07:49:16 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:49:16 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:49:16 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:49:16 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:49:16 - [debug]: Rendering layout my/default
+2017-04-05 07:54:07 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:54:07 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:54:07 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:54:07 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:54:07 - [debug]: Rendering layout my/default
+2017-04-05 07:59:32 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:59:32 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:59:32 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:59:32 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:59:32 - [debug]: Rendering layout my/default
+2017-04-05 07:59:46 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-05 07:59:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-05 07:59:46 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-05 07:59:46 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: top
+- widgets: oops/default, reoops/default
+2017-04-05 07:59:46 - [debug]: Rendering layout my/default

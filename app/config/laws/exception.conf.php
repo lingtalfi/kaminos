@@ -6,11 +6,9 @@ $conf = [
         "name" => "landpage/default",
     ],
     "widgets" => [
-        "main.any" => [
+        [
+            "id" => "main.any",
             "name" => "exception/default",
-            "conf" => [
-                "displayMode" => "trace",
-            ],
         ],
     ],
 ];

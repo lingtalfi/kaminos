@@ -6,6 +6,8 @@ namespace Module\Core\ApplicationHandler;
 
 use Bat\ObTool;
 use Core\Services\Hooks;
+use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
+use Kamille\Architecture\Request\Web\HttpRequestInterface;
 use Kamille\Services\XConfig;
 use Kamille\Architecture\Application\Web\WebApplication;
 use Kamille\Architecture\Request\Web\FakeHttpRequest;
@@ -14,6 +16,8 @@ use Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener;
 use Kamille\Architecture\RequestListener\Web\ResponseExecuterListener;
 use Kamille\Architecture\RequestListener\Web\RouterRequestListener;
 use Kamille\Architecture\Router\Web\StaticObjectRouter;
+use Kamille\Services\XLog;
+use Logger\Logger;
 use Module\Core\Architecture\Router\ExceptionRouter;
 
 class WebApplicationHandler
@@ -21,18 +25,26 @@ class WebApplicationHandler
 
     public function handle(WebApplication $app)
     {
-
-
-        $uri2Controller = [];
-        Hooks::call("Core.feedUri2Controller", $uri2Controller);
-
-
         try {
+
+
+            // initialize logger
+            $logger = Logger::create();
+            Hooks::call("Core_addLoggerListener", $logger);
+            XLog::setLogger($logger); // now XLog is initialized for the rest of the application :)
+
+            if (true === ApplicationParameters::get('debug')) {
+                XLog::debug("[Core module] - WebApplicationHandler.handle ");
+            }
+
+
+            $uri2Controller = [];
+            Hooks::call("Core_feedUri2Controller", $uri2Controller);
 
             $app->addListener(RouterRequestListener::create()
                 ->addRouter(ExceptionRouter::create()->setController(XConfig::get("Core.exceptionController")))
                 ->addRouter(StaticObjectRouter::create()
-                    ->setDefaultController(XConfig::get("Core.defaultController"))
+                    ->setDefaultController(XConfig::get("Core.fallbackPageController"))
                     ->setUri2Controller($uri2Controller))
 //        ->addRouter(StaticPageRouter::create()
 //            ->setStaticPageController(X::getStaticPageRouter_StaticPageController())
@@ -45,19 +57,20 @@ class WebApplicationHandler
 
 
         } catch (\Exception $e) {
-
+            /**
+             * @var $oldRequest HttpRequestInterface
+             */
+            $oldRequest = $app->get('request');
+            XLog::error("[Core module] - WebApplicationHandler: exception caught with uri ". $oldRequest->uri() .", redispatching to the fallback loop");
 
             ObTool::cleanAll(); // clean all buffers to avoid content leaks
 
-            $oldRequest = $app->get('request');
             $request = FakeHttpRequest::create()
                 ->set("oldRequest", $oldRequest)
                 ->set("exception", $e);
             $app->handleRequest($request);
         }
     }
-
-
 
 
 }

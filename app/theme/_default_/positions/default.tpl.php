@@ -1,4 +1,3 @@
-ere
 <?php
 
 foreach ($v['widgets'] as $widget):

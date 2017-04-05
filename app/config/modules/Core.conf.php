@@ -10,7 +10,7 @@ $conf = [
      * The default controller used by the static router (if no uri matches)
      * hint: WebApplicationHandler
      */
-    "defaultController" => 'Controller\Core\CoreDefaultController:render',
+    "fallbackPageController" => 'Controller\Core\FallbackPageController:render',
 
     /**
      * The exception controller used when an exception was caught at the
@@ -19,7 +19,7 @@ $conf = [
      *
      * hint: WebApplicationHandler
      */
-    "exceptionController" => 'Controller\Exception\ExceptionController:render',
+    "exceptionController" => 'Controller\Core\ExceptionController:render',
 
     /**
      * Whether or not to use the default useFileLoggerListener provided by the Core module.
@@ -28,7 +28,13 @@ $conf = [
      */
     "useFileLoggerListener" => true,
     /**
-     * This is the log
+     * This is the log file for the core module (which brings up XLog functionality)
      */
     "logFile" => $appDir . "/logs/kamille.log.txt",
+    /**
+     *
+     * Whether or not to show the exception trace in the logs.
+     * You can use the H::exceptionToString($e) method.
+     */
+    "showExceptionTrace" => true,
 ];

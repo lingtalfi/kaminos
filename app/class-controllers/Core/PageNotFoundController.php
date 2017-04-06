@@ -5,14 +5,17 @@ namespace Controller\Core;
 
 
 use Kamille\Architecture\Controller\ControllerInterface;
+use Kamille\Architecture\Controller\Web\KamilleController;
 use Kamille\Architecture\Response\Web\HttpResponse;
 
-class FallbackPageController implements ControllerInterface
+class PageNotFoundController extends KamilleController
 {
 
 
     public function render()
     {
-        return HttpResponse::create("I'm the default home page from the Core module's CoreDefaultController.");
+        return $this->renderByViewId("pageNotFound");
     }
+
+
 }

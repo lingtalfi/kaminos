@@ -587,3 +587,288 @@ Stack trace:
 - positions: top
 - widgets: oops/default, reoops/default
 2017-04-05 07:59:46 - [debug]: Rendering layout my/default
+2017-04-06 11:08:03 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 16:41:30 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 16:41:30 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /theme/layouts/sandwich_1c.default.css, redispatching to the fallback loop
+2017-04-06 16:41:30 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 16:41:30 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 16:41:30 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: landpage/default
+- positions: 
+- widgets: #0: exception/default, #main.exception: unknown
+2017-04-06 16:41:30 - [error]: LawsUtil: name is not a valid key for widgetId main.exception (viewId=exception)
+2017-04-06 16:41:30 - [debug]: Rendering layout landpage/default
+2017-04-06 16:42:58 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 16:42:58 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /www/theme/_default_/css/layouts/sandwich_1c.default.css, redispatching to the fallback loop
+2017-04-06 16:42:58 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 16:42:58 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 16:42:58 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: landpage/default
+- positions: 
+- widgets: #0: exception/default, #main.exception: unknown
+2017-04-06 16:42:58 - [error]: LawsUtil: name is not a valid key for widgetId main.exception (viewId=exception)
+2017-04-06 16:42:58 - [debug]: Rendering layout landpage/default
+2017-04-06 17:10:41 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:10:41 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:10:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:10:41 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:10:41 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: landpage/default
+- positions: 
+- widgets: #0: exception/default, #main.exception: unknown
+2017-04-06 17:10:41 - [error]: LawsUtil: name is not a valid key for widgetId main.exception (viewId=exception)
+2017-04-06 17:10:41 - [debug]: Rendering layout landpage/default
+2017-04-06 17:11:28 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:11:28 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:11:28 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:11:28 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:11:28 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: landpage/default
+- positions: 
+- widgets: #0: exception/default, #main.exception: unknown
+2017-04-06 17:11:28 - [error]: LawsUtil: name is not a valid key for widgetId main.exception (viewId=exception)
+2017-04-06 17:11:28 - [debug]: Rendering layout landpage/default
+2017-04-06 17:12:09 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:12:09 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:12:09 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:12:09 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:12:09 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #0: exception/default, #main.exception: unknown
+2017-04-06 17:12:09 - [error]: LawsUtil: name is not a valid key for widgetId main.exception (viewId=exception)
+2017-04-06 17:12:09 - [debug]: Rendering layout splash/default
+2017-04-06 17:12:38 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:12:38 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:12:38 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:12:38 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:12:38 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:12:38 - [debug]: Rendering layout splash/default
+2017-04-06 17:12:39 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template exception/default: exception 'Kamille\Architecture\RequestListener\Exception\RequestListenerException' with message 'The controller parameter was not found in the request' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php:55
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#1 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#3 {main}
+2017-04-06 17:16:00 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:16:00 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:16:00 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:16:00 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:16:00 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:16:00 - [debug]: Rendering layout splash/default
+2017-04-06 17:16:00 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template exception/default: exception 'Kamille\Architecture\RequestListener\Exception\RequestListenerException' with message 'The controller parameter was not found in the request' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php:55
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#1 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#3 {main}
+2017-04-06 17:19:46 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:19:46 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:19:46 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:19:59 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:19:59 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:19:59 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:20:39 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:20:39 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:20:39 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:20:39 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:20:39 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:20:39 - [debug]: Rendering layout splash/default
+2017-04-06 17:20:47 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:20:47 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:20:47 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:20:47 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:20:47 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:20:47 - [debug]: Rendering layout splash/default
+2017-04-06 17:20:47 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template exception/default: exception 'Kamille\Architecture\RequestListener\Exception\RequestListenerException' with message 'The controller parameter was not found in the request' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php:55
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#1 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#3 {main}
+2017-04-06 17:21:10 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:21:10 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:21:10 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:21:10 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:21:10 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:21:10 - [debug]: Rendering layout splash/default
+2017-04-06 17:21:30 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:21:30 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:21:30 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:21:30 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:21:30 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:21:30 - [debug]: Rendering layout splash/default
+2017-04-06 17:21:43 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:21:43 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:21:43 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:21:43 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:21:43 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:21:43 - [debug]: Rendering layout splash/default
+2017-04-06 17:21:43 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template exception/default: exception 'Kamille\Architecture\RequestListener\Exception\RequestListenerException' with message 'The controller parameter was not found in the request' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php:55
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#1 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#3 {main}
+2017-04-06 17:23:07 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:23:07 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:23:07 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:23:07 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:23:07 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:23:07 - [debug]: Rendering layout splash/default
+2017-04-06 17:23:07 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template exception/default: exception 'Kamille\Architecture\RequestListener\Exception\RequestListenerException' with message 'The controller parameter was not found in the request' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php:55
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#1 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#3 {main}
+2017-04-06 17:23:28 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:23:28 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:23:28 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:23:28 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:23:28 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:23:28 - [debug]: Rendering layout splash/default
+2017-04-06 17:23:52 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:23:52 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:23:52 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:23:52 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:23:52 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:23:52 - [debug]: Rendering layout splash/default
+2017-04-06 17:23:52 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template exception/default: exception 'Kamille\Architecture\RequestListener\Exception\RequestListenerException' with message 'The controller parameter was not found in the request' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php:55
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#1 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#3 {main}
+2017-04-06 17:24:01 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:24:01 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:24:01 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:24:01 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:24:01 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:24:01 - [debug]: Rendering layout splash/default
+2017-04-06 17:24:17 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:24:17 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:24:17 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:24:17 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:24:17 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:24:17 - [debug]: Rendering layout splash/default
+2017-04-06 17:24:38 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:24:38 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:24:38 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:24:38 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:24:38 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:24:38 - [debug]: Rendering layout splash/default
+2017-04-06 17:24:45 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:24:45 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:24:45 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:24:45 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:24:45 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:24:45 - [debug]: Rendering layout splash/default
+2017-04-06 17:24:48 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:24:48 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:24:48 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:24:48 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:24:48 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:24:48 - [debug]: Rendering layout splash/default
+2017-04-06 17:24:48 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template exception/default: exception 'Kamille\Architecture\RequestListener\Exception\RequestListenerException' with message 'The controller parameter was not found in the request' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php:55
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#1 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#3 {main}
+2017-04-06 17:25:00 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:25:00 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:25:00 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:25:00 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:25:00 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:25:00 - [debug]: Rendering layout splash/default
+2017-04-06 17:26:21 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:26:21 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:26:21 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:26:21 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:26:21 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:26:21 - [debug]: Rendering layout splash/default
+2017-04-06 17:26:26 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:26:26 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:26:26 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:26:26 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:26:26 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:26:26 - [debug]: Rendering layout splash/default
+2017-04-06 17:26:26 - [error]: Widget: Error with rendering of widget Kamille\Mvc\Widget\Widget and template exception/default: exception 'Kamille\Architecture\RequestListener\Exception\RequestListenerException' with message 'The controller parameter was not found in the request' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php:55
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#1 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#3 {main}
+2017-04-06 17:27:22 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:27:22 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:27:22 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:27:22 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:27:22 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:27:22 - [debug]: Rendering layout splash/default
+2017-04-06 17:27:37 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-06 17:27:37 - [error]: [Core module] - WebApplicationHandler: exception caught with uri /, redispatching to the fallback loop
+2017-04-06 17:27:37 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-06 17:27:37 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-06 17:27:37 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: #main.exception: exception/default
+2017-04-06 17:27:37 - [debug]: Rendering layout splash/default

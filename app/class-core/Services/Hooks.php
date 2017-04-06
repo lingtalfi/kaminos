@@ -63,6 +63,8 @@ class Hooks extends AbstractHooks
 
 
 
+
+
 	public static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
 	{
 		if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {

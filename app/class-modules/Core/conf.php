@@ -7,10 +7,10 @@ $appDir = ApplicationParameters::get('app_dir');
 
 $conf = [
     /**
-     * The default controller used by the static router (if no uri matches)
+     * The default controller called by the static router when no other page matches
      * hint: WebApplicationHandler
      */
-    "fallbackPageController" => 'Controller\Core\FallbackPageController:render',
+    "pageNotFoundController" => 'Controller\Core\PageNotFoundController:render',
 
     /**
      * The exception controller used when an exception was caught at the
@@ -37,4 +37,14 @@ $conf = [
      * You can use the H::exceptionToString($e) method.
      */
     "showExceptionTrace" => true,
+    /**
+     * Whether or not to autoload the css files based on their existence at the location defined
+     * in the laws system (part two).
+     * https://github.com/lingtalfi/laws
+     *
+     * Basically, when this is true, you don't need to call the stylesheet from your widget/layout code,
+     * this call will be made for you, as long as you create the stylesheet in the right
+     * location (defined in laws part 2).
+     */
+    "useCssAutoload" => true,
 ];

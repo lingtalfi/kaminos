@@ -1,25 +1,33 @@
 <?php
 
 
-namespace Module\Core\Controller;
+namespace Controller\Core;
 
 
-use Kamille\Architecture\Controller\ControllerInterface;
-use Kamille\Architecture\Response\Web\HttpResponse;
-use Kamille\Ling\Z;
+use Kamille\Architecture\Application\Web\WebApplication;
+use Kamille\Architecture\Controller\Web\KamilleController;
 
-class ExceptionController implements ControllerInterface
+class ExceptionController extends KamilleController
 {
 
 
     public function render()
     {
-        $exception = Z::requestParam("exception");
-        if ($exception instanceof \Exception) {
-            $msg = $exception->getMessage();
-        } else {
-            $msg = "exception key not found in Request";
-        }
-        return HttpResponse::create("An exception occurred with message: $msg");
+        $request = WebApplication::inst()->get("request");
+        $e = $request->get("exception");
+
+
+        // using lnc1.splash
+        return $this->renderByViewId("exception", [
+            "widgets" => [
+                "main.exception" => [
+                    "conf" => [
+                        "exception" => $e,
+                    ],
+                ],
+            ],
+        ]);
     }
+
+
 }

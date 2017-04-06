@@ -35,13 +35,13 @@ It also provides code level options, like for instance whether or not to display
 Configuration keys
 ====================
 
-- fallbackPageController      
-    - description: The default controller used by the static router (if no uri matches)
-    - default value: Controller\Core\FallbackPageController:render
+- pageNotFoundController      
+    - description: The default controller used by the static router when no other page matches
+    - default value: Controller\Core\PageNotFoundController:render
 
 - exceptionController
     - description: The exception controller used when an exception was caught at the WebApplicationHandler 
-            level (which is btw a bad thing as it should probably be caught earlier).
+            level (which is btw a bad thing as it should probably be caught earlier)
     - default value: Controller\Core\ExceptionController:render             
 - useFileLoggerListener
     - description: Whether or not to use the default useFileLoggerListener provided by the Core module. It will write logs to the file specified with the logFile parameter             
@@ -85,6 +85,10 @@ Others
 
 History Log
 ------------------
+    
+- 1.1.0 -- 2017-04-06
+
+    - changed FallbackController to PageNotFoundController
     
 - 1.0.0 -- 2017-04-05
 

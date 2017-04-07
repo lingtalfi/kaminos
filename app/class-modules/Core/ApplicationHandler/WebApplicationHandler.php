@@ -18,6 +18,7 @@ use Kamille\Architecture\RequestListener\Web\RouterRequestListener;
 use Kamille\Architecture\Router\Web\StaticObjectRouter;
 use Kamille\Services\XLog;
 use Logger\Logger;
+use Module\Core\Architecture\Router\EarlyRouter;
 use Module\Core\Architecture\Router\ExceptionRouter;
 
 class WebApplicationHandler
@@ -41,15 +42,21 @@ class WebApplicationHandler
             $uri2Controller = [];
             Hooks::call("Core_feedUri2Controller", $uri2Controller);
 
-            $app->addListener(RouterRequestListener::create()
-                ->addRouter(ExceptionRouter::create()->setController(XConfig::get("Core.exceptionController")))
-                ->addRouter(StaticObjectRouter::create()
-                    ->setDefaultController(XConfig::get("Core.pageNotFoundController"))
-                    ->setUri2Controller($uri2Controller))
+            $earlyRouter = EarlyRouter::create();
+            $earlyRouter->addRouter(ExceptionRouter::create()->setController(XConfig::get("Core.exceptionController")));
+            Hooks::call("Core_feedEarlyRouter", $earlyRouter);
+
+
+            $app
+                ->addListener(RouterRequestListener::create()
+                    ->addRouter($earlyRouter)
+                    ->addRouter(StaticObjectRouter::create()
+                        ->setDefaultController(XConfig::get("Core.pageNotFoundController"))
+                        ->setUri2Controller($uri2Controller))
 //        ->addRouter(StaticPageRouter::create()
 //            ->setStaticPageController(X::getStaticPageRouter_StaticPageController())
 //            ->setUri2Page(X::getStaticPageRouter_Uri2Page()))
-            )
+                )
                 ->addListener(ControllerExecuterRequestListener::create())
                 ->addListener(ResponseExecuterListener::create());
 

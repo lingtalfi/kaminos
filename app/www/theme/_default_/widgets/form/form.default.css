@@ -1,0 +1,86 @@
+.widget-form {
+}
+
+.widget-form .error {
+    color: red;
+}
+
+.widget-form .form-messages {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+.widget-form .form-message {
+    color: white;
+    padding: 10px;
+    margin-top: 1px;
+}
+
+.widget-form .form-message-success {
+    background: #489048;
+}
+
+.widget-form .form-message-warning {
+    background: #b66716;
+}
+
+.widget-form .form-message-info {
+    background: #3c5690;
+}
+
+.widget-form .form-message-error {
+    background: #720b14;
+}
+
+.widget-form .central-panel {
+}
+
+.widget-form .central-panel .error {
+    background: #c00;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+    margin-top: 1px;
+}
+
+.widget-form .central-panel .errors {
+    padding: 0px;
+}
+
+.widget-form fieldset {
+    background: rgba(240, 240, 240, 0.9);
+    margin-top: 10px;
+    border: 1px solid #bfbfbf;
+}
+
+.widget-form legend {
+    font-size: 1em;
+    background: #dbdbdb;
+    color: #666;;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #c3c3c3;
+}
+
+.widget-form .control {
+    margin: 10px 0;
+}
+
+/**
+ * Note: this styling will only work if the id of the control is set to submit!
+ */
+.widget-form .id-submit {
+    text-align: right;
+}
+
+.widget-form input[type=submit] {
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: 1px solid #cbcbcb;
+    padding: 5px;
+    cursor: pointer;
+}
+

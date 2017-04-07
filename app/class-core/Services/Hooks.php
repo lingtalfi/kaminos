@@ -87,4 +87,14 @@ class Hooks extends AbstractHooks
 		$uri2Controller["/blaster"] = "something";
 		// mit-end:Test
 	}
+
+	public static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
+	{
+        // mit-start:Core
+        
+        // mit-end:Core
+        // mit-start:Application
+        $router->addRouter(\Module\Application\Architecture\Router\MaintenanceRouter::create());
+        // mit-end:Application
+    }
 }

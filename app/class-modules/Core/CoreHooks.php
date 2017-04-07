@@ -22,6 +22,11 @@ class CoreHooks
                 ->setPath($f));
         }
     }
+
+    protected static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
+    {
+
+    }
 }
 
 

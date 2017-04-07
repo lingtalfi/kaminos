@@ -1195,3 +1195,329 @@ Stack trace:
 - widgets: 
 ----- id: main.httpError; tplName: httpError/default
 2017-04-07 07:17:57 - [debug]: Rendering layout splash/default
+2017-04-07 09:03:41 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 09:03:41 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 09:03:41 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 09:03:41 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 09:03:41 - [debug]: Rendering layout splash/default
+2017-04-07 09:03:55 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 09:03:55 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 09:03:55 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'k'. uri was /, redispatching to the fallback loop
+2017-04-07 09:03:55 - [trace]: exception 'Exception' with message 'k' in /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-controllers/Core/PageNotFoundController.php:14
+Stack trace:
+#0 [internal function]: Controller\Core\PageNotFoundController->render()
+#1 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#2 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#3 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#4 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#5 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#6 {main}
+2017-04-07 09:03:55 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-07 09:03:55 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-07 09:03:55 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-07 09:03:55 - [debug]: Rendering layout splash/default
+2017-04-07 09:04:27 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 09:04:27 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 09:04:27 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 09:04:27 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 09:04:27 - [debug]: Rendering layout splash/default
+2017-04-07 09:04:33 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 09:04:33 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 09:04:33 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'k'. uri was /, redispatching to the fallback loop
+2017-04-07 09:04:33 - [trace]: exception 'Exception' with message 'k' in /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-controllers/Core/PageNotFoundController.php:14
+Stack trace:
+#0 [internal function]: Controller\Core\PageNotFoundController->render()
+#1 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#2 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#3 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(131): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#4 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(56): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#5 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(14): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#6 {main}
+2017-04-07 09:04:33 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-07 09:04:33 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-07 09:04:33 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-07 09:04:33 - [debug]: Rendering layout splash/default
+2017-04-07 09:04:50 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 09:04:50 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 09:04:50 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'k'. uri was /, redispatching to the fallback loop
+2017-04-07 09:04:50 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-07 09:04:50 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-07 09:04:50 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-07 09:04:50 - [debug]: Rendering layout splash/default
+2017-04-07 09:29:52 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 09:29:52 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 09:29:52 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 09:29:52 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 09:29:52 - [debug]: Rendering layout splash/default
+2017-04-07 09:30:05 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 09:30:05 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 09:30:05 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'k'. uri was /, redispatching to the fallback loop
+2017-04-07 09:30:05 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\ExceptionRouter, controller: Controller\Core\ExceptionController
+2017-04-07 09:30:05 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-07 09:30:05 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-07 09:30:05 - [debug]: Rendering layout splash/default
+2017-04-07 09:30:09 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 09:30:09 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 09:30:09 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 09:30:09 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 09:30:09 - [debug]: Rendering layout splash/default
+2017-04-07 11:18:11 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 11:18:11 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 11:18:11 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 11:18:11 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 11:18:11 - [debug]: Rendering layout splash/default
+2017-04-07 11:21:09 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 11:21:09 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 11:21:09 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 11:21:09 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 11:21:09 - [debug]: Rendering layout splash/default
+2017-04-07 11:25:23 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 11:25:23 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 11:25:23 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 11:25:23 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 11:25:23 - [debug]: Rendering layout splash/default
+2017-04-07 11:25:32 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 11:25:32 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 11:25:32 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 11:25:32 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 11:25:32 - [debug]: Rendering layout splash/default
+2017-04-07 11:26:31 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 11:26:31 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 11:26:31 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 11:26:31 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 11:26:31 - [debug]: Rendering layout splash/default
+2017-04-07 11:27:25 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 11:27:25 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 11:27:25 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 11:27:25 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 11:27:25 - [debug]: Rendering layout splash/default
+2017-04-07 11:59:18 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 11:59:18 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 11:59:18 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 11:59:18 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 11:59:18 - [debug]: Rendering layout splash/default
+2017-04-07 13:40:09 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:40:10 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:40:10 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:40:10 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:40:10 - [debug]: Rendering layout splash/default
+2017-04-07 13:40:28 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:40:28 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\MaintenanceController:render
+2017-04-07 13:40:28 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, string given'. uri was /, redispatching to the fallback loop
+2017-04-07 13:40:28 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-07 13:40:28 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-07 13:40:28 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-07 13:40:28 - [debug]: Rendering layout splash/default
+2017-04-07 13:42:27 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:45:21 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:45:21 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Application\MaintenanceController
+2017-04-07 13:45:21 - [debug]: [Controller Controller\Application\MaintenanceController] - renderByViewId with viewId maintenance
+2017-04-07 13:45:21 - [trace]: LawsUtil trace with theme: _default_, viewId: maintenance (/config/laws/maintenance.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.maintenance; tplName: maintenance/default
+2017-04-07 13:45:21 - [debug]: Rendering layout splash/default
+2017-04-07 13:45:27 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:45:27 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:45:27 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:45:27 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:45:27 - [debug]: Rendering layout splash/default
+2017-04-07 13:47:44 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:47:44 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:47:44 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:47:44 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:47:44 - [debug]: Rendering layout splash/default
+2017-04-07 13:48:01 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:48:01 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Application\MaintenanceController
+2017-04-07 13:48:01 - [debug]: [Controller Controller\Application\MaintenanceController] - renderByViewId with viewId maintenance
+2017-04-07 13:48:01 - [trace]: LawsUtil trace with theme: _default_, viewId: maintenance (/config/laws/maintenance.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.maintenance; tplName: maintenance/default
+2017-04-07 13:48:01 - [debug]: Rendering layout splash/default
+2017-04-07 13:48:15 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:48:15 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:48:15 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:48:15 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:48:15 - [debug]: Rendering layout splash/default
+2017-04-07 13:49:07 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:49:07 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:49:07 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:49:07 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:49:07 - [debug]: Rendering layout splash/default
+2017-04-07 13:50:15 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:50:15 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:50:15 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:50:15 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:50:15 - [debug]: Rendering layout splash/default
+2017-04-07 13:50:19 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:50:19 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:50:19 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:50:19 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:50:19 - [debug]: Rendering layout splash/default
+2017-04-07 13:50:20 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:50:20 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:50:20 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:50:20 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:50:20 - [debug]: Rendering layout splash/default
+2017-04-07 13:50:29 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:50:29 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:50:29 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:50:29 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:50:29 - [debug]: Rendering layout splash/default
+2017-04-07 13:50:54 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:50:54 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:50:54 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:50:54 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:50:54 - [debug]: Rendering layout splash/default
+2017-04-07 13:51:25 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:51:25 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:51:25 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:51:25 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:51:25 - [debug]: Rendering layout splash/default
+2017-04-07 13:53:22 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:53:22 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:53:22 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:53:22 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:53:22 - [debug]: Rendering layout splash/default
+2017-04-07 13:53:26 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:53:26 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:53:26 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:53:26 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:53:26 - [debug]: Rendering layout splash/default
+2017-04-07 13:53:44 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:53:44 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Application\MaintenanceController
+2017-04-07 13:53:44 - [debug]: [Controller Controller\Application\MaintenanceController] - renderByViewId with viewId maintenance
+2017-04-07 13:53:44 - [trace]: LawsUtil trace with theme: _default_, viewId: maintenance (/config/laws/maintenance.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.maintenance; tplName: maintenance/default
+2017-04-07 13:53:44 - [debug]: Rendering layout splash/default
+2017-04-07 13:53:47 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 13:53:47 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 13:53:47 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 13:53:47 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 13:53:47 - [debug]: Rendering layout splash/default

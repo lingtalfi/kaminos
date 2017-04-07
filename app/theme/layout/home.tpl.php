@@ -1,4 +1,4 @@
 Salut <?php echo $v['name']; ?>
 
 
-<?php $l->widget('kart'); ?>
+<?php $l->widget('form'); ?>

@@ -12,6 +12,11 @@ Widget for displaying an exception.
 This is a widget for the [kamille framework](https://github.com/lingtalfi/Kamille).
 
 
+[![exception.png](https://s19.postimg.org/narypho0z/exception.png)](https://postimg.org/image/qudwfaqqn/)
+
+
+
+
 Install
 ===========
 using the [kamille installer tool](https://github.com/lingtalfi/kamille-installer-tool)
@@ -37,7 +42,46 @@ This model contains the following variables:
 
 
 
+Demo snippet
+===============
 
+```php
+<?php
+
+
+
+$e = null;
+try{
+    throw new \Exception("eee");
+}
+catch(\Exception $e){
+
+}
+
+
+$conf = [
+    "layout" => [
+        "name" => "splash/default",
+    ],
+    "widgets" => [
+        "main.exception" => [
+            "name" => "exception/default",
+            "conf" => [
+                /**
+                 * Normally, you would provide this exception from a controller or another mean,
+                 * but for this demo, I'm providing a self baked exception.
+                 */
+                "exception" => $e,
+                "showMessage" => true,
+                "showTrace" => true,
+                "showFile" => true,
+                "showCode" => true,
+                "showLine" => true,
+            ],
+        ],
+    ],
+];
+```
 
 
 
@@ -47,6 +91,10 @@ This model contains the following variables:
 
 History Log
 ------------------
+    
+- 1.1.0 -- 2017-04-07
+
+    - add css file
     
 - 1.0.0 -- 2017-04-04
 

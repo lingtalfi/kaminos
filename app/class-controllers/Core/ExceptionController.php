@@ -17,7 +17,6 @@ class ExceptionController extends ApplicationController
         $e = $request->get("exception");
 
 
-
         // using lnc1.splash
         return $this->renderByViewId("exception", [
             "widgets" => [

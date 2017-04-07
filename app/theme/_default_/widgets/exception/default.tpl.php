@@ -15,21 +15,6 @@
 
 
     ?>
-    <style>
-        .widget-exception table {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-
-        .widget-exception table tr,
-        .widget-exception table td {
-            border: 1px solid black;
-        }
-
-        .widget-exception table td {
-            padding: 5px;
-        }
-    </style>
     <table>
         <?php if ($showMessage): ?>
             <tr>

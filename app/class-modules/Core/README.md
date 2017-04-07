@@ -52,6 +52,12 @@ Configuration keys
 - showExceptionTrace
     - description: Whether or not to show the exception trace in the logs. You can use the H::exceptionToString($e) method.
     - default value: true
+- useCssAutoload
+    - description: Whether or not to autoload the css files based on their existence at the location defined in the 
+    laws system (part two https://github.com/lingtalfi/laws).
+    - default value: true
+    
+    
 
 
 
@@ -81,6 +87,29 @@ Services
 
 
 
+Controllers
+===============
+
+- ExceptionController, viewId=exception
+- PageNotFoundController, viewId=pageNotFound
+
+
+
+Widget Dependencies
+=========
+- [HttpError](https://github.com/KamilleWidgets/HttpError)
+- [Exception](https://github.com/KamilleWidgets/Exception)
+
+
+
+
+
+
+
+
+
+
+
 Others
 ==========
 - it uses [lnc1](https://github.com/lingtalfi/layout-naming-conventions#lnc_1) as the layout naming convention
@@ -91,6 +120,14 @@ Others
 History Log
 ------------------
     
+- 1.3.0 -- 2017-04-07
+
+    - add EarlyRouter
+    
+- 1.2.0 -- 2017-04-07
+
+    - add HttpError widget dependency
+
 - 1.1.0 -- 2017-04-06
 
     - changed FallbackController to PageNotFoundController

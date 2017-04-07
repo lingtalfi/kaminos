@@ -10,9 +10,11 @@ use Kamille\Services\XConfig;
 
 class ApplicationController extends KamilleController
 {
-    protected function renderByViewId($viewId, array $config = [])
+    protected function renderByViewId($viewId, array $config = [], $useCssAutoload = null)
     {
-        $useCssAutoload = XConfig::get("Core.useCssAutoload", false);
+        if (null === $useCssAutoload) {
+            $useCssAutoload = XConfig::get("Core.useCssAutoload", false);
+        }
         return parent::renderByViewId($viewId, $config, $useCssAutoload);
     }
 

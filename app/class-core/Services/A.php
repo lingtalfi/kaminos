@@ -13,7 +13,7 @@ use Kamille\Services\XConfig;
  * It provides some methods I found useful to have and didn't know where else to put them.
  *
  */
-class H
+class A
 {
     public static function exceptionToString(\Exception $e)
     {

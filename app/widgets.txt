@@ -1,2 +1,3 @@
 BookedMeteo
 Exception
+HttpError

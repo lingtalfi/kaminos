@@ -36,7 +36,7 @@ $conf = [
      * Whether or not to show the exception trace in the logs.
      * You can use the H::exceptionToString($e) method.
      */
-    "showExceptionTrace" => true,
+    "showExceptionTrace" => false,
     /**
      * Whether or not to autoload the css files based on their existence at the location defined
      * in the laws system (part two).

@@ -44,7 +44,7 @@ class WebApplicationHandler
             $app->addListener(RouterRequestListener::create()
                 ->addRouter(ExceptionRouter::create()->setController(XConfig::get("Core.exceptionController")))
                 ->addRouter(StaticObjectRouter::create()
-                    ->setDefaultController(XConfig::get("Core.fallbackPageController"))
+                    ->setDefaultController(XConfig::get("Core.pageNotFoundController"))
                     ->setUri2Controller($uri2Controller))
 //        ->addRouter(StaticPageRouter::create()
 //            ->setStaticPageController(X::getStaticPageRouter_StaticPageController())
@@ -61,7 +61,11 @@ class WebApplicationHandler
              * @var $oldRequest HttpRequestInterface
              */
             $oldRequest = $app->get('request');
-            XLog::error("[Core module] - WebApplicationHandler: exception caught with uri ". $oldRequest->uri() .", redispatching to the fallback loop");
+            XLog::error("[Core module] - WebApplicationHandler: exception caught with message: '" . $e->getMessage() . "'. uri was " . $oldRequest->uri() . ", redispatching to the fallback loop");
+
+            if (true === XConfig::get("Core.showExceptionTrace")) {
+                XLog::trace("$e");
+            }
 
             ObTool::cleanAll(); // clean all buffers to avoid content leaks
 

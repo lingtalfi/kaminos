@@ -59,9 +59,8 @@ Configuration keys
 Hooks
 =========
 
-- Core_addLoggerListener: add listeners to the LoggerInterface object (from the [Logger](https://github.com/lingtalfi/logger) planet), 
-                        which is then accessible via the XLog object
-- Core_feedUri2Controller: feed the array used by the StaticObjectRouter router
+- Core_addLoggerListener: add listeners to the LoggerInterface object (from the [Logger](https://github.com/lingtalfi/logger) planet), which is then accessible via the XLog object
+- Core_feedUri2Controller: add routes to the StaticObjectRouter router 
 
 
 
@@ -69,9 +68,15 @@ Hooks
 Services
 ===========
 
-- Core_webApplicationHandler: return a WebApplicationHandler instance, which has a handle(WebApplication) method.
-            This method wraps the dispatch loop, and basically starts the application instance.
-            It is therefore called right from the index.php.
+- Core_webApplicationHandler: return a WebApplicationHandler instance.
+    The WebApplicationHandler object handles any request by passing it to the WebApplication object (of the 
+    kamille framework), therefore you can and should use it right from the index.php file.
+    
+    Basically, the WebApplicationHandler wraps the WebApplication, so that it can make it available
+    to the modules land (i.e. modules can hook into the dispatch loop). 
+    It also adds its own exception handler (i.e. when an exception is uncaught at the dispatch loop level), 
+    and a pageNotFound controller, which by default displays a 404 page. 
+    
 
 
 

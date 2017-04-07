@@ -16,6 +16,7 @@ class CoreModule extends KamilleModule
             'KamilleWidgets.Exception',
         ];
     }
+
 }
 
 

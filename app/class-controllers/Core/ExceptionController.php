@@ -4,11 +4,10 @@
 namespace Controller\Core;
 
 
+use Core\Controller\ApplicationController;
 use Kamille\Architecture\Application\Web\WebApplication;
-use Kamille\Architecture\Controller\Web\KamilleController;
-use Kamille\Architecture\Response\Web\HttpResponse;
 
-class ExceptionController extends KamilleController
+class ExceptionController extends ApplicationController
 {
 
 

@@ -3,12 +3,18 @@
 
 $conf = [
     "layout" => [
-        "name" => "landpage/default",
+        "name" => "splash/default",
     ],
     "widgets" => [
-        [
-            "id" => "main.any",
+        "main.exception" => [
             "name" => "exception/default",
+            "conf" => [
+                "showMessage" => true,
+                "showTrace" => true,
+                "showFile" => true,
+                "showCode" => true,
+                "showLine" => true,
+            ],
         ],
     ],
 ];

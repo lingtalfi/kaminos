@@ -3,11 +3,13 @@
 
 $store = [
     'profiles' => [
-        "groups" => [
-            "group3",
+        "root" => [
+            "groups" => [
+                "group3",
+            ],
+            "badge1",
+            "badge2",
         ],
-        "badge1",
-        "badge2",
     ],
     'groups' => [
         "group1" => [

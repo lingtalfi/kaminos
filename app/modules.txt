@@ -4,3 +4,4 @@ Connexion
 Test
 Core
 Application
+Kaminos

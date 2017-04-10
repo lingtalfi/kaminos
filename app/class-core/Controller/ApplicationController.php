@@ -10,8 +10,9 @@ use Kamille\Services\XConfig;
 
 class ApplicationController extends KamilleController
 {
-    protected function renderByViewId($viewId, array $config = [], array $options = [])
+    protected function renderByViewId($viewId, $config = null, array $options = [])
     {
+
 
         if (false === array_key_exists("autoloadCss", $options)) {
             $options['autoloadCss'] = XConfig::get("Core.useCssAutoload", false);

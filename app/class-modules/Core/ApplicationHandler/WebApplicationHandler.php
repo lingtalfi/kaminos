@@ -51,7 +51,7 @@ class WebApplicationHandler
                 ->addListener(RouterRequestListener::create()
                     ->addRouter($earlyRouter)
                     ->addRouter(StaticObjectRouter::create()
-                        ->setDefaultController(XConfig::get("Core.pageNotFoundController"))
+                        ->setDefaultController(XConfig::get("Core.fallbackController"))
                         ->setUri2Controller($uri2Controller))
 //        ->addRouter(StaticPageRouter::create()
 //            ->setStaticPageController(X::getStaticPageRouter_StaticPageController())

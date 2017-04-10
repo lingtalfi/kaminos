@@ -10,7 +10,7 @@ $conf = [
      * The default controller called by the static router when no other page matches
      * hint: WebApplicationHandler
      */
-    "pageNotFoundController" => 'Controller\Core\PageNotFoundController:render',
+    "fallbackController" => 'Controller\Core\PageNotFoundController:render',
 
     /**
      * The exception controller used when an exception was caught at the

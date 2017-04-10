@@ -35,7 +35,7 @@ It also provides code level options, like for instance whether or not to display
 Configuration keys
 ====================
 
-- pageNotFoundController      
+- fallbackController      
     - description: The default controller used by the static router when no other page matches
     - default value: Controller\Core\PageNotFoundController:render
 
@@ -120,6 +120,10 @@ Others
 History Log
 ------------------
     
+- 1.4.0 -- 2017-04-08
+
+    - changed configuration key pageNotFoundController to fallbackController
+
 - 1.3.0 -- 2017-04-07
 
     - add EarlyRouter

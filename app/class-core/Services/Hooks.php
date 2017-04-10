@@ -32,37 +32,10 @@ class Hooks extends AbstractHooks
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public static function Test_feedUri2Controller(array &$uri2Controller)
 	{
 		$uri2Controller["/login"] = "something";
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	public static function Core_addLoggerListener(\Logger\LoggerInterface $logger)

@@ -1521,3 +1521,446 @@ Stack trace:
 - widgets: 
 ----- id: main.httpError; tplName: httpError/default
 2017-04-07 13:53:47 - [debug]: Rendering layout splash/default
+2017-04-07 21:33:24 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 21:37:17 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-07 21:37:17 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-07 21:37:17 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-07 21:37:17 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-07 21:37:17 - [debug]: Rendering layout splash/default
+2017-04-08 20:33:12 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:33:12 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-08 20:33:12 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-08 20:33:12 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-08 20:33:12 - [debug]: Rendering layout splash/default
+2017-04-08 20:34:56 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:34:56 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'The controller parameter was not found in the request'. uri was /, redispatching to the fallback loop
+2017-04-08 20:34:56 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-08 20:34:56 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-08 20:34:56 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-08 20:34:56 - [debug]: Rendering layout splash/default
+2017-04-08 20:35:16 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:35:16 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-08 20:35:16 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-08 20:35:16 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-08 20:35:16 - [debug]: Rendering layout splash/default
+2017-04-08 20:38:03 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:38:03 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-08 20:38:03 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-08 20:38:03 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-08 20:38:03 - [debug]: Rendering layout splash/default
+2017-04-08 20:40:43 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:40:43 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:40:43 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:40:43 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: my/default
+- positions: name: top; tplName: default
+- widgets: 
+----- id: top.one; tplName: oops/default
+----- id: top.two; tplName: reoops/default
+2017-04-08 20:40:43 - [debug]: Rendering layout my/default
+2017-04-08 20:41:48 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:41:48 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:41:48 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:41:48 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: name: top; tplName: default
+- widgets: 
+----- id: top.one; tplName: oops/default
+----- id: top.two; tplName: reoops/default
+2017-04-08 20:41:48 - [debug]: Rendering layout splash/default
+2017-04-08 20:42:08 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:42:08 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:42:08 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:42:08 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: top.one; tplName: oops/default
+----- id: top.two; tplName: reoops/default
+2017-04-08 20:42:08 - [debug]: Rendering layout splash/default
+2017-04-08 20:44:55 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:44:55 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:44:55 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:44:55 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:44:55 - [debug]: Rendering layout splash/default
+2017-04-08 20:46:03 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:46:03 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:46:03 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:46:03 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:46:03 - [debug]: Rendering layout splash/default
+2017-04-08 20:46:05 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:46:05 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:46:05 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:46:05 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:46:05 - [debug]: Rendering layout splash/default
+2017-04-08 20:47:07 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:47:07 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:47:07 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:47:07 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:47:07 - [debug]: Rendering layout splash/default
+2017-04-08 20:47:10 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:47:10 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:47:10 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:47:10 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:47:10 - [debug]: Rendering layout splash/default
+2017-04-08 20:47:11 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:47:11 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:47:11 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:47:11 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:47:11 - [debug]: Rendering layout splash/default
+2017-04-08 20:48:15 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:48:15 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:48:15 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:48:15 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:48:15 - [debug]: Rendering layout splash/default
+2017-04-08 20:48:16 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:48:16 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:48:16 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:48:16 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:48:16 - [debug]: Rendering layout splash/default
+2017-04-08 20:52:55 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:52:55 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:53:04 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:53:04 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:53:04 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:53:04 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:53:04 - [debug]: Rendering layout splash/default
+2017-04-08 20:57:29 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:57:29 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:57:31 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:57:31 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:57:32 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:57:32 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:58:05 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:58:05 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:58:55 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:58:55 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:59:13 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:59:13 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:59:20 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:59:20 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:59:20 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 20:59:20 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 20:59:20 - [debug]: Rendering layout splash/default
+2017-04-08 20:59:22 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:59:22 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 20:59:37 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 20:59:37 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:14:25 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:14:25 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:14:50 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:14:50 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:14:50 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 21:14:50 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 21:14:50 - [debug]: Rendering layout splash/default
+2017-04-08 21:14:52 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:14:52 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:14:59 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:14:59 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:14:59 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 21:14:59 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 21:14:59 - [debug]: Rendering layout splash/default
+2017-04-08 21:15:01 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:15:01 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:15:13 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:15:13 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:18:48 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:18:48 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:18:48 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:18:48 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:18:48 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 21:18:48 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 21:18:48 - [debug]: Rendering layout splash/default
+2017-04-08 21:18:54 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:18:54 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:18:54 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 21:18:54 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 21:18:54 - [debug]: Rendering layout splash/default
+2017-04-08 21:18:58 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:18:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:18:58 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:18:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:18:58 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 21:18:58 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 21:18:58 - [debug]: Rendering layout splash/default
+2017-04-08 21:19:00 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:19:00 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:19:00 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 21:19:00 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 21:19:00 - [debug]: Rendering layout splash/default
+2017-04-08 21:19:00 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-08 21:19:00 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-08 21:19:00 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-08 21:19:00 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-08 21:19:00 - [debug]: Rendering layout splash/default
+2017-04-09 08:27:54 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 08:27:54 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-09 08:27:54 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-09 08:27:54 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-09 08:27:54 - [debug]: Rendering layout splash/default
+2017-04-09 12:41:10 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 12:41:10 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 12:41:10 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-09 12:41:10 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-09 12:41:10 - [debug]: Rendering layout splash/default
+2017-04-09 12:46:38 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 12:46:38 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 12:46:38 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-09 12:46:38 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-09 12:46:38 - [debug]: Rendering layout splash/default
+2017-04-09 12:49:13 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 12:49:13 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 12:49:13 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId meow
+2017-04-09 12:49:13 - [trace]: LawsUtil trace with theme: _default_, viewId: meow (/config/laws/meow.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.one; tplName: form/default
+2017-04-09 12:49:13 - [debug]: Rendering layout splash/default
+2017-04-09 12:54:47 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 12:54:47 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 12:54:47 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 12:54:47 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 12:54:47 - [debug]: Rendering layout splash/default
+2017-04-09 12:56:21 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 12:56:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 12:56:21 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 12:56:21 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 12:56:21 - [debug]: Rendering layout splash/default
+2017-04-09 12:56:26 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 12:56:26 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 12:56:26 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 12:56:26 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 12:56:26 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 12:56:26 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 12:56:26 - [debug]: Rendering layout splash/default
+2017-04-09 12:56:31 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 12:56:31 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 12:56:31 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 12:56:31 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 12:56:31 - [debug]: Rendering layout splash/default
+2017-04-09 13:27:14 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 13:27:14 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 13:27:14 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 13:27:14 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: 
+- positions: 
+- widgets: 
+2017-04-09 13:27:14 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Template not set'. uri was /test, redispatching to the fallback loop
+2017-04-09 13:27:14 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-09 13:27:14 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-09 13:27:14 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-09 13:27:14 - [debug]: Rendering layout splash/default
+2017-04-09 13:28:12 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 13:28:12 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 13:28:12 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 13:28:12 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 13:28:12 - [debug]: Rendering layout splash/default
+2017-04-09 13:28:25 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 13:28:25 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 13:28:25 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 13:28:25 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 13:28:25 - [debug]: Rendering layout splash/default
+2017-04-09 13:30:21 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 13:30:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 13:30:21 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 13:30:21 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 13:30:21 - [debug]: Rendering layout splash/default
+2017-04-09 13:31:27 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 13:31:27 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 13:31:27 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 13:31:27 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 13:31:27 - [debug]: Rendering layout splash/default
+2017-04-09 13:31:33 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 13:31:33 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 13:31:33 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 13:31:33 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 13:31:33 - [debug]: Rendering layout splash/default
+2017-04-09 13:31:50 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 13:31:50 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 13:31:50 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 13:31:50 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 13:31:50 - [debug]: Rendering layout splash/default
+2017-04-09 14:12:36 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 14:12:36 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 14:12:36 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 14:12:36 - [error]: translation file not found: /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/functions/../lang/en/.php
+2017-04-09 14:12:36 - [error]: dictionary term not found: loginForm
+2017-04-09 14:12:36 - [error]: translation file not found: /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/functions/../lang/en/.php
+2017-04-09 14:12:36 - [error]: dictionary term not found: username
+2017-04-09 14:12:36 - [error]: translation file not found: /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/functions/../lang/en/.php
+2017-04-09 14:12:36 - [error]: dictionary term not found: password
+2017-04-09 14:12:36 - [error]: translation file not found: /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/functions/../lang/en/.php
+2017-04-09 14:12:36 - [error]: dictionary term not found: submit
+2017-04-09 14:12:36 - [error]: translation file not found: /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/functions/../lang/en/.php
+2017-04-09 14:12:36 - [error]: dictionary term not found: passwordLost
+2017-04-09 14:12:36 - [error]: translation file not found: /Volumes/Macintosh HD 2/it/php/projects/kaminos/app/functions/../lang/en/.php
+2017-04-09 14:12:36 - [error]: dictionary term not found: createAccount
+2017-04-09 14:12:36 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 14:12:36 - [debug]: Rendering layout splash/default
+2017-04-09 14:13:54 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 14:13:54 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 14:13:54 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 14:13:54 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 14:13:54 - [debug]: Rendering layout splash/default
+2017-04-09 14:27:00 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-09 14:27:00 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Test\TestController
+2017-04-09 14:27:00 - [debug]: [Controller Controller\Test\TestController] - renderByViewId with viewId loginForm
+2017-04-09 14:27:00 - [trace]: LawsUtil trace with theme: _default_, viewId: loginForm (/config/laws/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-09 14:27:00 - [debug]: Rendering layout splash/default

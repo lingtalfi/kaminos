@@ -7,8 +7,8 @@ $conf = [
         "conf" => [],
     ],
     "widgets" => [
-        "main.one" => [
-            "name" => "form/default",
+        "main.kaminosLoginForm" => [
+            "name" => "kaminosLoginForm/default",
             "conf" => [],
         ],
     ],

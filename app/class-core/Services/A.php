@@ -31,10 +31,14 @@ class A
     }
 
 
-    public static function has()
+    public static function has($badge)
     {
-        /**
-         * Todo: privilege framework: has right to do something
-         */
+        if (null !== ($grantor = X::get("Authenticate_grantor", null, false))) {
+            /**
+             * @var $grantor \Authenticate\Grant\GrantorInterface
+             */
+            return $grantor->has($badge);
+        }
+        return false;
     }
 }

@@ -29,31 +29,35 @@ use Kamille\Services\AbstractX;
  * see a clean top of the file, thank you by advance, ling.
  *
  *
- *
- *
- *
-
  */
 class X extends AbstractX
 {
     //--------------------------------------------
     // BELOW THIS LINE ARE MODULES SERVICES, LET THE BOT DO ITS JOB
     //--------------------------------------------
-    protected static function Connexion_foo()
+    protected static function Connexion_foo($s='iit)')
     {
         echo "pouddd";
     }
 
-    protected static function Connexion_doo()
+    protected function Connexion_doo()
     {
         echo "pou";
     }
 
-    public static function Core_webApplicationHandler()
+    protected static function Core_webApplicationHandler()
     {
         if (!array_key_exists('Core_webApplicationHandler', self::$cache)) {
             self::$cache['Core_webApplicationHandler'] = new \Module\Core\ApplicationHandler\WebApplicationHandler();
         }
         return self::$cache['Core_webApplicationHandler'];
     }
+
+    public static function pou(){
+
+    }
 }
+
+
+
+

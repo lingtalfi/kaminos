@@ -35,17 +35,16 @@ class X extends AbstractX
     //--------------------------------------------
     // BELOW THIS LINE ARE MODULES SERVICES, LET THE BOT DO ITS JOB
     //--------------------------------------------
-    protected static function Connexion_foo($s='iit)')
+
+
+
+
+    public static function Test_mymethodfff()
     {
-        echo "pouddd";
+        // pou
     }
 
-    protected function Connexion_doo()
-    {
-        echo "pou";
-    }
-
-    protected static function Core_webApplicationHandler()
+    public static function Core_webApplicationHandler()
     {
         if (!array_key_exists('Core_webApplicationHandler', self::$cache)) {
             self::$cache['Core_webApplicationHandler'] = new \Module\Core\ApplicationHandler\WebApplicationHandler();
@@ -53,11 +52,4 @@ class X extends AbstractX
         return self::$cache['Core_webApplicationHandler'];
     }
 
-    public static function pou(){
-
-    }
 }
-
-
-
-

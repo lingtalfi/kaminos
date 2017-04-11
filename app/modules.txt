@@ -1,8 +1,8 @@
 Toast
 GentelellaWebDirectory
 Connexion
-Test
-Core
 Application
 Kaminos
 Authenticate
+Test
+Core

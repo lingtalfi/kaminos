@@ -18,7 +18,6 @@ use Kamille\Services\AbstractHooks;
  */
 class Hooks extends AbstractHooks
 {
-
 //    public static function StaticPageRouter_feedUri2Page(array &$uri2Page)
 //    {
 //        \Toast\ToastHooks::StaticPageRouter_feedUri2Page($uri2Page);
@@ -26,48 +25,46 @@ class Hooks extends AbstractHooks
 //    }
 //
 //    public static function StaticObjectRouter_feedUri2Controller(array &$uri2Controller)
+
+
 //    {
 //        AppRouter::StaticObjectRouter_feedUri2Controller($uri2Controller);
 //    }
 
-
-
-	public static function Test_feedUri2Controller(array &$uri2Controller)
-	{
-		$uri2Controller["/login"] = "something";
-	}
-
-
-	public static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
-	{
-		if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
-		$f = \Kamille\Services\XConfig::get("Core.logFile");
-		$logger->addListener(\Logger\Listener\FileLoggerListener::create()
-		->setFormatter(\Logger\Formatter\TagFormatter::create())
-		->setIdentifiers(null)
-		->setPath($f));
-		}
-	}
-
-	public static function Core_feedUri2Controller(array &$uri2Controller)
-	{
+    public static function Core_feedUri2Controller(array &$uri2Controller)
+    {
 		// mit-start:Toast
-		$uri2Controller["/toast"] = "something";
-		$uri2Controller["/marshmallows"] = "something";
+        $uri2Controller["/toast"] = "something";
+        $uri2Controller["/marshmallows"] = "something";
 		// mit-end:Toast
-		// mit-start:Test
-		$uri2Controller["/test"] = 'Controller\Test\TestController:render';
-		$uri2Controller["/blaster"] = "something";
-		// mit-end:Test
-	}
 
-	public static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
-	{
-        // mit-start:Core
-        
-        // mit-end:Core
-        // mit-start:Application
-        $router->addRouter(\Module\Application\Architecture\Router\MaintenanceRouter::create());
-        // mit-end:Application
+		// mit-start:Test
+        $uri2Controller["/test"] = "something";
+		// mit-end:Test
+    }
+
+    public static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
+    {
+		if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
+            $f = \Kamille\Services\XConfig::get("Core.logFile");
+            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
+                ->setFormatter(\Logger\Formatter\TagFormatter::create())
+                ->setIdentifiers(null)
+                ->setPath($f));
+        }
+		// mit-start:Core
+        if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
+            $f = \Kamille\Services\XConfig::get("Core.logFile");
+            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
+                ->setFormatter(\Logger\Formatter\TagFormatter::create())
+                ->setIdentifiers(null)
+                ->setPath($f));
+        }
+		// mit-end:Core
+    }
+
+    public static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
+    {
     }
 }
+

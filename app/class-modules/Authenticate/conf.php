@@ -24,4 +24,13 @@ $conf = [
      * for more info).
      */
     "serviceBadgeStore" => "Authenticate_badgeStore",
+//    /**
+//     * If the router is active, then a non authenticated user will be redirected
+//     * to the login page.
+//     */
+    /**
+     * The controller to use for rendering the login form (which is displayed
+     * every time the user is not connected)
+     */
+    "controllerLoginForm" => 'Controller\Authenticate\AuthenticateController:renderForm',
 ];

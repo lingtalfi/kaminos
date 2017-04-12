@@ -24,4 +24,5 @@ $conf = [
      * for more info).
      */
     "serviceBadgeStore" => "Authenticate_badgeStore",
+    "controllerLoginForm" => 'Controller\Authenticate\AuthenticateController:renderForm',
 ];

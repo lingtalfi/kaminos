@@ -33,26 +33,18 @@ class Hooks extends AbstractHooks
 
     public static function Core_feedUri2Controller(array &$uri2Controller)
     {
-		// mit-start:Toast
+        // mit-start:Toast
         $uri2Controller["/toast"] = "something";
         $uri2Controller["/marshmallows"] = "something";
-		// mit-end:Toast
+        // mit-end:Toast
 
-		// mit-start:Test
+        // mit-start:Test
         $uri2Controller["/test"] = "something";
-		// mit-end:Test
+        // mit-end:Test
     }
 
     public static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
     {
-		if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
-            $f = \Kamille\Services\XConfig::get("Core.logFile");
-            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
-                ->setFormatter(\Logger\Formatter\TagFormatter::create())
-                ->setIdentifiers(null)
-                ->setPath($f));
-        }
-		// mit-start:Core
         if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
             $f = \Kamille\Services\XConfig::get("Core.logFile");
             $logger->addListener(\Logger\Listener\FileLoggerListener::create()
@@ -60,11 +52,22 @@ class Hooks extends AbstractHooks
                 ->setIdentifiers(null)
                 ->setPath($f));
         }
-		// mit-end:Core
+        // mit-start:Core
+        if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
+            $f = \Kamille\Services\XConfig::get("Core.logFile");
+            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
+                ->setFormatter(\Logger\Formatter\TagFormatter::create())
+                ->setIdentifiers(null)
+                ->setPath($f));
+        }
+        // mit-end:Core
     }
 
     public static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
     {
+        // mit-start:Authenticate
+        $router->addRouter(\Module\Authenticate\Architecture\Router\AuthenticateRouter::create());
+        // mit-end:Authenticate
     }
 }
 

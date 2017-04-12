@@ -9,7 +9,7 @@ class TestHooks
 
     protected static function Core_feedUri2Controller(array &$uri2Controller)
     {
-        $uri2Controller["/test"] = "something";
+        $uri2Controller["/test"] = "ff";
     }
 
 

@@ -31,43 +31,37 @@ class Hooks extends AbstractHooks
 //        AppRouter::StaticObjectRouter_feedUri2Controller($uri2Controller);
 //    }
 
-    public static function Core_feedUri2Controller(array &$uri2Controller)
-    {
-        // mit-start:Toast
-        $uri2Controller["/toast"] = "something";
+
+
+
+
+	protected static function Core_feedUri2Controller(array &$uri2Controller)
+	{
+		// mit-start:Toast
+		$uri2Controller["/toast"] = "something";
         $uri2Controller["/marshmallows"] = "something";
-        // mit-end:Toast
+		// mit-end:Toast
+	}
 
-        // mit-start:Test
-        $uri2Controller["/test"] = "something";
-        // mit-end:Test
-    }
-
-    public static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
-    {
-        if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
+	protected static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
+	{
+		if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
             $f = \Kamille\Services\XConfig::get("Core.logFile");
             $logger->addListener(\Logger\Listener\FileLoggerListener::create()
                 ->setFormatter(\Logger\Formatter\TagFormatter::create())
                 ->setIdentifiers(null)
                 ->setPath($f));
         }
-        // mit-start:Core
-        if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
-            $f = \Kamille\Services\XConfig::get("Core.logFile");
-            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
-                ->setFormatter(\Logger\Formatter\TagFormatter::create())
-                ->setIdentifiers(null)
-                ->setPath($f));
-        }
-        // mit-end:Core
-    }
+	}
 
-    public static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
-    {
-        // mit-start:Authenticate
-        $router->addRouter(\Module\Authenticate\Architecture\Router\AuthenticateRouter::create());
-        // mit-end:Authenticate
-    }
+	protected static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
+	{
+		// mit-start:Authenticate
+		$router->addRouter(\Module\Authenticate\Architecture\Router\AuthenticateRouter::create());
+		// mit-end:Authenticate
+	}
+
+	// 68
+    // 72
 }
 

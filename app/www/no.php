@@ -5,6 +5,7 @@ use Authenticate\UserStore\UserStoreInterface;
 use Authenticate\Util\UserToSessionConvertor;
 use ClassCooker\ClassCooker;
 use Core\Services\A;
+use Core\Services\Hooks;
 use Core\Services\X;
 use Kamille\Utils\ModuleUtils\ModuleInstallTool;
 
@@ -14,10 +15,13 @@ require_once __DIR__ . "/../init.php";
 
 
 
-//az(X::get("Authenticate_test", null, true, true, "pier", "hoo"));
-//header("content-type: text/plain");
+header("content-type: text/plain");
 //ModuleInstallTool::bindModuleHooks('Module\Core\CoreHooks');
-////ModuleInstallTool::bindModuleHooks('Module\Test\TestHooks');
+//ModuleInstallTool::bindModuleHooks('Module\Test\TestHooks');
+ModuleInstallTool::unbindModuleHooks('Module\Test\TestHooks');
+az();
+
+
 //
 //
 //

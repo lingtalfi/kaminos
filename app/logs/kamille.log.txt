@@ -2222,3 +2222,22 @@ Stack trace:
 ----- id: main.loginForm; tplName: loginForm/default
 2017-04-12 07:29:57 - [debug]: Rendering layout splash/default
 2017-04-12 07:29:57 - [debug]: Rendering layout splash/default
+2017-04-12 21:14:56 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-12 21:14:56 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-12 21:14:56 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-12 21:14:56 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-12 21:14:56 - [debug]: Rendering layout splash/default
+2017-04-12 21:14:56 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Failed to load template: notification/default'. uri was /, redispatching to the fallback loop
+2017-04-12 21:14:56 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-12 21:14:56 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-12 21:14:56 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-12 21:14:56 - [debug]: Rendering layout splash/default

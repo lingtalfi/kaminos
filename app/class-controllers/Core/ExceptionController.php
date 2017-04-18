@@ -14,7 +14,7 @@ class ExceptionController extends ApplicationController
     public function render()
     {
         $request = WebApplication::inst()->get("request");
-        $e = $request->get("exception");
+        $e = $request->get("exception"); 
 
 
         // using lnc1.splash

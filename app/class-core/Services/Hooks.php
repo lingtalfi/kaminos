@@ -35,12 +35,32 @@ class Hooks extends AbstractHooks
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	protected static function Core_feedUri2Controller(array &$uri2Controller)
 	{
 		// mit-start:Toast
 		$uri2Controller["/toast"] = "something";
         $uri2Controller["/marshmallows"] = "something";
 		// mit-end:Toast
+
+		// mit-start:Test
+		$uri2Controller["/test"] = "ff";
+		// mit-end:Test
 	}
 
 	protected static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
@@ -61,7 +81,11 @@ class Hooks extends AbstractHooks
 		// mit-end:Authenticate
 	}
 
-	// 68
-    // 72
+	protected static function Core_feedRoutes(\Kamille\Architecture\Routes\RoutesInterface $routes)
+	{
+		// mit-start:Authenticate
+		$routes->addRoute("Authenticate_");
+		// mit-end:Authenticate
+	}
 }
 

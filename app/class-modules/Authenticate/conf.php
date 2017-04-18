@@ -33,4 +33,23 @@ $conf = [
      * every time the user is not connected)
      */
     "controllerLoginForm" => 'Controller\Authenticate\AuthenticateController:renderForm',
+
+    /**
+     * If that key is found in the $_GET array,
+     * then it will redirect the user to the same uri, but with the disconnectGetKey
+     * parameter removed from the queryString.
+     *
+     */
+    "disconnectGetKey" => 'disconnect',
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    /**
+     * controller to use when the form is successfully posted
+     */
+    "controllerLoginFormSuccess" => 'disconnect',
+    /**
+     * uri to redirect to when the form is successfully posted
+     */
+    "uriLoginFormSuccess" => 'disconnect',
 ];

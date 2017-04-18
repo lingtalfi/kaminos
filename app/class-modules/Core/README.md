@@ -120,6 +120,10 @@ Others
 History Log
 ------------------
     
+- 1.5.0 -- 2017-04-18
+
+    - add RouteRouter as a router for the WebApplicationHandler
+    
 - 1.4.0 -- 2017-04-08
 
     - changed configuration key pageNotFoundController to fallbackController

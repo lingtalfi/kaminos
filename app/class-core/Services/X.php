@@ -42,13 +42,6 @@ class X extends AbstractX
         // pou
     }
 
-    public static function Core_webApplicationHandler()
-    {
-        if (!array_key_exists('Core_webApplicationHandler', self::$cache)) {
-            self::$cache['Core_webApplicationHandler'] = new \Module\Core\ApplicationHandler\WebApplicationHandler();
-        }
-        return self::$cache['Core_webApplicationHandler'];
-    }
 
     public static function Authenticate_userStore()
     {
@@ -73,5 +66,20 @@ class X extends AbstractX
     {
         a($name, $pass);
     }
+
+    public static function Core_webApplicationHandler()
+    {
+        return new \Module\Core\ApplicationHandler\WebApplicationHandler();
+    }
+
+    public static function Core_routes()
+    {
+        $routes =  new \Kamille\Architecture\Routes\Routes();
+        \Core\Services\Hooks::call("Core_feedRoutes", $routes);
+        return $routes;
+    }
+
+
+
 
 }

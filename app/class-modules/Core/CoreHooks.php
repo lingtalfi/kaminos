@@ -27,6 +27,11 @@ class CoreHooks
     {
 
     }
+
+    protected static function Core_feedRoutes(\Kamille\Architecture\Routes\RoutesInterface $routes)
+    {
+
+    }
 }
 
 

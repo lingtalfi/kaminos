@@ -14,21 +14,7 @@ $conf = [
              * Primary goal/intent of notification: be a companion for a form
              */
             "name" => "notification/default",
-            "conf" => [
-                /**
-                 * If null, the notification won't be displayed
-                 * warning, success, error, info
-                 */
-                "type" => null,
-                /**
-                 * Null will have sensible values for each type of notification
-                 */
-                "title" => "",
-                /**
-                 * Html text
-                 */
-                "text" => "",
-            ],
+            "conf" => [],
         ],
         "main.loginForm" => [
             "name" => "loginForm/default",

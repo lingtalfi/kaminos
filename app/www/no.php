@@ -7,19 +7,16 @@ use ClassCooker\ClassCooker;
 use Core\Services\A;
 use Core\Services\Hooks;
 use Core\Services\X;
+use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Utils\ModuleUtils\ModuleInstallTool;
+use KamillePacker\Config\Config;
+use KamillePacker\ModulePacker\ModulePacker;
+use KamillePacker\WidgetPacker\WidgetPacker;
 
 require_once __DIR__ . "/../boot.php";
 require_once __DIR__ . "/../init.php";
 
 
-
-
-header("content-type: text/plain");
-//ModuleInstallTool::bindModuleHooks('Module\Core\CoreHooks');
-//ModuleInstallTool::bindModuleHooks('Module\Test\TestHooks');
-ModuleInstallTool::unbindModuleHooks('Module\Test\TestHooks');
-az();
 
 
 //

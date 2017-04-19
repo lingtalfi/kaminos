@@ -2,16 +2,11 @@
 
 use Authenticate\SessionUser\SessionUser;
 use Authenticate\UserStore\UserStoreInterface;
-use Authenticate\Util\UserToSessionConvertor;
-use ClassCooker\ClassCooker;
-use Core\Services\A;
-use Core\Services\Hooks;
-use Core\Services\X;
-use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
-use Kamille\Utils\ModuleUtils\ModuleInstallTool;
-use KamillePacker\Config\Config;
-use KamillePacker\ModulePacker\ModulePacker;
-use KamillePacker\WidgetPacker\WidgetPacker;
+use Kamille\Architecture\Request\Web\WritableHttpRequest;
+use Kamille\Utils\Routsy\LinkGenerator\LinkGenerator;
+use Kamille\Utils\Routsy\RoutsyRouter;
+use Kamille\Utils\Routsy\Util\ConfigGenerator\ConfigGenerator;
+
 
 require_once __DIR__ . "/../boot.php";
 require_once __DIR__ . "/../init.php";
@@ -19,6 +14,48 @@ require_once __DIR__ . "/../init.php";
 
 
 
+
+
+
+$f = "/myphp/kaminos/app/config/routsy/routes.php";
+$modulesDir = "/myphp/kaminos/app/class-modules";
+a(ConfigGenerator::create()
+    ->setConfFile($f)
+    ->setModulesTargetDir($modulesDir)
+    ->generate());
+
+
+
+
+//$routes = [];
+//include "/myphp/kaminos/app/config/routsy/routes.php";
+//
+//$router = RoutsyRouter::create()->setRoutes($routes);
+//
+//
+//$_GET['disconnect'] = "pou";
+//$_GET['ee'] = "45";
+//$_GET['pou'] = "pl";
+//$_POST['disconnect'] = "pou";
+//$_POST['ee'] = "45";
+//$_POST['pou'] = "pl";
+//
+//a($router->match(WritableHttpRequest::create()->setUri("/pou")));
+//a($router->match(WritableHttpRequest::create()->setUri("/pou2")));
+//a($router->match(WritableHttpRequest::create()->setUri("/po/49/some")));
+//a($router->match(WritableHttpRequest::create()
+//    ->setIsHttps(true)
+//    ->setUri("/my/64/uri")
+//));
+//
+//
+//
+//a(LinkGenerator::create()->setRoutes($routes)->getUri("Core_myRouteId5", [
+//    'dynamic' => 46,
+//]));
+
+
+az();
 //
 //
 //

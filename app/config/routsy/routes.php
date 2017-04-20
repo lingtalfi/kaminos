@@ -1,12 +1,23 @@
 <?php
 use Kamille\Architecture\Request\Web\HttpRequestInterface;
 
+//--------------------------------------------
+// USER - BEFORE
+//--------------------------------------------
 
+
+//--------------------------------------------
+// STATIC
+//--------------------------------------------
 $routes["Core_myRouteId1"] = ["/pou", null, null, "?Controller:method"];
+
 $routes["Core_myRouteId2"] = ["/pou2", null, null, [
     "controller" => "?Controller:method",
     "myotherparamsIfNeeded" => "is it really needed? why not? from  a module perspective? maybe?",
 ]];
+
+
+
 $routes["Core_myRouteId3"] = ["/po/{dynamic}/some", [
     // ints
     'dynamic' => ">6",
@@ -22,6 +33,11 @@ $routes["Core_myRouteId3"] = ["/po/{dynamic}/some", [
 
 
 ], null, "?Controller:method"];
+
+
+//--------------------------------------------
+// DYNAMIC
+//--------------------------------------------
 $routes["Core_myRouteId4"] = ["/my/{dynamic}/uri", ['dynamic' => ["64", "65", "66"]], [
     'https' => true,
     'inGet' => ["disconnect", "pou"],
@@ -30,5 +46,12 @@ $routes["Core_myRouteId4"] = ["/my/{dynamic}/uri", ['dynamic' => ["64", "65", "6
     'postValues' => ["ee" => "45", "pou" => "pl"],
 ], "?Controller:method"];
 $routes["Core_myRouteId5"] = ["/my/{dynamic}/uris", null, function (HttpRequestInterface $request) {
+    $o = [];
     return true; // true if ok, false will make the match fails
 }, "?Controller:method"];
+
+
+//--------------------------------------------
+// USER - AFTER
+//--------------------------------------------
+

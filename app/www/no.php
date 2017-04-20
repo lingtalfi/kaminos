@@ -2,10 +2,9 @@
 
 use Authenticate\SessionUser\SessionUser;
 use Authenticate\UserStore\UserStoreInterface;
-use Kamille\Architecture\Request\Web\WritableHttpRequest;
-use Kamille\Utils\Routsy\LinkGenerator\LinkGenerator;
-use Kamille\Utils\Routsy\RoutsyRouter;
+use BabyYaml\BabyYamlUtil;
 use Kamille\Utils\Routsy\Util\ConfigGenerator\ConfigGenerator;
+use LinearFile\LineSetFinder\BiggestWrapLineSetFinder;
 
 
 require_once __DIR__ . "/../boot.php";
@@ -14,8 +13,20 @@ require_once __DIR__ . "/../init.php";
 
 
 
-
-
+//$f = "/myphp/kaminos/app/config/routsy/routes.php";
+//
+//$lines = file($f);
+//$pat = '!^\$routes\[([^\]]+)\]\s*=!';
+//a(BiggestWrapLineSetFinder::create()
+//    ->setPrepareNameCallback(function ($v) {
+//        return substr($v, 1, -1);
+//    })
+//    ->setNamePattern($pat)
+//    ->setStartPattern($pat)
+//    ->setPotentialEndPattern('!\];!')
+//    ->find($lines)
+//);
+//az();
 
 $f = "/myphp/kaminos/app/config/routsy/routes.php";
 $modulesDir = "/myphp/kaminos/app/class-modules";
@@ -23,8 +34,6 @@ a(ConfigGenerator::create()
     ->setConfFile($f)
     ->setModulesTargetDir($modulesDir)
     ->generate());
-
-
 
 
 //$routes = [];

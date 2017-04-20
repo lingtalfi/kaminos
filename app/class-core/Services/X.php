@@ -37,10 +37,6 @@ class X extends AbstractX
     //--------------------------------------------
 
 
-    public static function Test_mymethodfff()
-    {
-        // pou
-    }
 
 
     public static function Authenticate_userStore()
@@ -78,6 +74,78 @@ class X extends AbstractX
         \Core\Services\Hooks::call("Core_feedRoutes", $routes);
         return $routes;
     }
+
+    public static function Test_mymethodfff()
+    {
+        // pou
+    }
+
+    public static function Core_shouldNotAppear()
+    {
+        // pou
+    }
+
+    public static function Core_feedUri2Controller()
+    {
+        $uri2Controller["/test"] = "ffff";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

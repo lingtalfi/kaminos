@@ -87,5 +87,29 @@ class Hooks extends AbstractHooks
 		$routes->addRoute("Authenticate_");
 		// mit-end:Authenticate
 	}
+
+	protected static function Test_feedUri2Controller(array &$uri2Controller)
+	{
+		$uri2Controller["/login"] = "something";
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

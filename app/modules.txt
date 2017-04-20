@@ -4,5 +4,5 @@ Connexion
 Application
 Kaminos
 Authenticate
-Test
 Core
+Test

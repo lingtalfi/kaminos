@@ -2903,3 +2903,226 @@ Stack trace:
 - widgets: 
 ----- id: main.httpError; tplName: httpError/default
 2017-04-18 16:56:28 - [debug]: Rendering layout splash/default
+2017-04-20 16:20:13 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:20:13 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-20 16:20:13 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-20 16:20:13 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-20 16:20:13 - [debug]: Rendering layout splash/default
+2017-04-20 16:20:27 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:20:27 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-20 16:20:27 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:20:27 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-20 16:20:27 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-20 16:20:27 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-20 16:20:27 - [debug]: Rendering layout splash/default
+2017-04-20 16:20:35 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:20:35 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:20:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\Test\TestController:pou
+2017-04-20 16:20:35 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, string given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:20:35 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:20:35 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:20:35 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:20:35 - [debug]: Rendering layout splash/default
+2017-04-20 16:21:31 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:21:31 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:21:31 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: \Controller\Test\TestController:pou
+2017-04-20 16:21:31 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, string given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:21:31 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:21:31 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:21:31 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:21:31 - [debug]: Rendering layout splash/default
+2017-04-20 16:22:32 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:22:32 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:22:32 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: unknown controller type
+2017-04-20 16:22:32 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, array given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:22:32 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:22:32 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:22:32 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:22:32 - [debug]: Rendering layout splash/default
+2017-04-20 16:35:59 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:35:59 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-20 16:35:59 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-20 16:35:59 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-20 16:35:59 - [debug]: Rendering layout splash/default
+2017-04-20 16:36:03 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:36:03 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-20 16:36:03 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:36:03 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-20 16:36:03 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-20 16:36:03 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-20 16:36:03 - [debug]: Rendering layout splash/default
+2017-04-20 16:36:04 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:36:04 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-20 16:36:04 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-20 16:36:04 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-20 16:36:04 - [debug]: Rendering layout splash/default
+2017-04-20 16:36:07 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:36:07 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:36:07 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: unknown controller type
+2017-04-20 16:36:07 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, array given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:36:07 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:36:07 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:36:07 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:36:07 - [debug]: Rendering layout splash/default
+2017-04-20 16:36:42 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:36:42 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:36:42 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: unknown controller type
+2017-04-20 16:36:42 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, array given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:36:42 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:36:42 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:36:42 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:36:42 - [debug]: Rendering layout splash/default
+2017-04-20 16:36:55 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:36:55 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:36:55 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: unknown controller type
+2017-04-20 16:36:55 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, array given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:36:55 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:36:55 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:36:55 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:36:55 - [debug]: Rendering layout splash/default
+2017-04-20 16:37:16 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:37:16 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:37:16 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: unknown controller type
+2017-04-20 16:37:16 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, array given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:37:16 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:37:16 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:37:16 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:37:16 - [debug]: Rendering layout splash/default
+2017-04-20 16:37:37 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:37:37 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:37:37 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: unknown controller type
+2017-04-20 16:37:37 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, array given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:37:37 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:37:37 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:37:37 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:37:37 - [debug]: Rendering layout splash/default
+2017-04-20 16:38:59 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:38:59 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:38:59 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\Test\TestController
+2017-04-20 16:38:59 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, array given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:38:59 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:38:59 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:38:59 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:38:59 - [debug]: Rendering layout splash/default
+2017-04-20 16:39:01 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:39:01 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:39:01 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\Test\TestController
+2017-04-20 16:39:01 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, array given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:39:01 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:39:01 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:39:01 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:39:01 - [debug]: Rendering layout splash/default
+2017-04-20 16:39:16 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:39:16 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:39:16 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\Test\TestController
+2017-04-20 16:39:16 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Controller should be a callable, array given'. uri was /doo, redispatching to the fallback loop
+2017-04-20 16:39:16 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-20 16:39:16 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-20 16:39:16 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-20 16:39:16 - [debug]: Rendering layout splash/default
+2017-04-20 16:40:15 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:40:15 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:40:15 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\Test\TestController
+2017-04-20 16:41:58 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:41:58 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-20 16:41:59 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-20 16:41:59 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-20 16:41:59 - [debug]: Rendering layout splash/default
+2017-04-20 16:57:57 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:57:57 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-20 16:57:57 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-20 16:57:57 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-20 16:57:57 - [debug]: Rendering layout splash/default
+2017-04-20 16:58:00 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:58:00 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-20 16:58:00 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:58:00 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\StaticObjectRouter, controller: Controller\Core\PageNotFoundController
+2017-04-20 16:58:00 - [debug]: [Controller Controller\Core\PageNotFoundController] - renderByViewId with viewId pageNotFound
+2017-04-20 16:58:00 - [trace]: LawsUtil trace with theme: _default_, viewId: pageNotFound (/config/laws/pageNotFound.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.httpError; tplName: httpError/default
+2017-04-20 16:58:00 - [debug]: Rendering layout splash/default
+2017-04-20 16:58:05 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 16:58:05 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 16:58:05 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\Test\TestController
+2017-04-20 17:02:21 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 17:02:21 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
+2017-04-20 17:02:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\Test\TestController

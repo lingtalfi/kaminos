@@ -8,21 +8,17 @@ $tid = "widgets/loginForm/loginForm";
  */
 $conf = [
     "layout" => [
-        "name" => "splash/default",
+        "tpl" => "splash/default",
         "conf" => [],
     ],
     "widgets" => [
         "main.loginForm" => [
-            "name" => "loginForm/default",
+            "tpl" => "loginForm/default",
             "conf" => [
                 "title" => __("loginForm", $tid),
                 "formModel" => null, // to be set by the controller
-                "uriOnSuccess" => "/home",
-                "nameUserName" => "username",
-                "namePassword" => "password",
-                "textUserName" => __("username", $tid),
-                "textPassword" => __("password", $tid),
-                "textSubmit" => __("submit", $tid),
+
+
                 "showForgotPasswordLink" => true,
                 "uriForgotPassword" => "/password-forgotten",
                 "textForgotPassword" => __("passwordLost", $tid),

@@ -40,6 +40,10 @@ class AuthenticateRouter implements RouterInterface
                  * so that it doesn't loop the other routers.
                  */
                 return "";
+            } else {
+                if (true === XConfig::get("Authenticate.allowSessionRefresh")) {
+                    SessionUser::refresh();
+                }
             }
         }
     }

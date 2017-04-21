@@ -8,4 +8,5 @@ $defs = [
     'submit' => "Log in",
     'passwordLost' => "Lost your password?",
     'createAccount' => "Create Account",
+    'newToSite' => "New to site?",
 ];

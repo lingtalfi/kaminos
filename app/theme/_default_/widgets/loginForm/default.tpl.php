@@ -19,7 +19,7 @@
 
     <?php if (true === $v['showCreateAccountLink']): ?>
         <div>
-            New to site? <a href="{uriCreateAccount}">{textCreateAccount}</a>
+            {textNewToSite} <a href="{uriCreateAccount}">{textCreateAccount}</a>
         </div>
     <?php endif; ?>
 </div>

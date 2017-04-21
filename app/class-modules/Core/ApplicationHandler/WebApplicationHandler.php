@@ -12,6 +12,7 @@ use Kamille\Architecture\Request\Web\HttpRequestInterface;
 use Kamille\Architecture\Router\Web\ApplicationRoutsyRouter;
 use Kamille\Architecture\Router\Web\RouteRouter;
 use Kamille\Architecture\Routes\Routes;
+use Kamille\Mvc\HtmlPageHelper\HtmlPageHelper;
 use Kamille\Services\XConfig;
 use Kamille\Architecture\Application\Web\WebApplication;
 use Kamille\Architecture\Request\Web\FakeHttpRequest;
@@ -51,6 +52,8 @@ class WebApplicationHandler
             $earlyRouter->addRouter(ExceptionRouter::create()->setController(XConfig::get("Core.exceptionController")));
             Hooks::call("Core_feedEarlyRouter", $earlyRouter);
 
+
+            HtmlPageHelper::addMeta(['charset' => "UTF-8"]);
 
 
             $app

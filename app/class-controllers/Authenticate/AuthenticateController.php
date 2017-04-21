@@ -52,6 +52,8 @@ class AuthenticateController extends ApplicationController
     public function renderForm()
     {
         $key = "AuthenticateController_renderForm";
+        $tf = "common/form";
+        $t = $this->getTranslationContext();
         $notifications = NotificationsModel::create();
         $isConnected = SessionUser::isConnected();
 
@@ -62,16 +64,16 @@ class AuthenticateController extends ApplicationController
         $formModel = FormModel::create()
             ->setFormErrorPosition('central')
             ->addControl("name", InputTextControl::create()
-                ->placeholder("Name")
+                ->placeholder(__("label.name", $tf))
                 ->name("name")
             )
             ->addControl("password", InputPasswordControl::create()
-                ->placeholder("Password")
+                ->placeholder(__("label.password", $tf))
                 ->name("pass")
             )
             ->addControl("submit", InputSubmitControl::create()
                 ->name($key)
-                ->addHtmlAttribute("value", "Send")
+                ->addHtmlAttribute("value", __("label.send", $tf))
             );
 
 
@@ -98,7 +100,8 @@ class AuthenticateController extends ApplicationController
                 if (false !== ($user = $userStore->getUserByCredentials($name, $pass))) {
 
                     $props = UserToSessionConvertor::toSession($user);
-                    SessionUser::connect($props);
+                    $sessionTimeout = XConfig::get("Authenticate.sessionTimeout");
+                    SessionUser::connect($props, $sessionTimeout);
 
 
                     $onSuccessRedirectMode = XConfig::get("Authenticate.onSuccessRedirectMode");
@@ -113,14 +116,21 @@ class AuthenticateController extends ApplicationController
                         return RedirectResponse::create(RoutsyUtil::routeIdentifierToUri($routeIdentifier));
                     }
 
-
                 } else {
                     // say: invalid credentials
-                    $notifications->addNotification("error", "Error", "Invalid credentials were provided");
+                    $notifications->addNotification("error", __("title.error", $tf), __("message.error", $tf, ["error" => __("invalid.credentials", $t)]));
                 }
             }
 
         }
+
+        //--------------------------------------------
+        // SUCCESS MESSAGE
+        //--------------------------------------------
+        if (array_key_exists("success", $_GET)) {
+            $notifications->addNotification("success", __("title.success", $tf), __("message.success", $tf));
+        }
+
 
         //--------------------------------------------
         // DISPLAYING THE VIEW

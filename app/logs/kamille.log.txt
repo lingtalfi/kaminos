@@ -3126,3 +3126,63 @@ Stack trace:
 2017-04-20 17:02:21 - [debug]: [Core module] - WebApplicationHandler.handle 
 2017-04-20 17:02:21 - [debug]: ApplicationRoutsyRouter: routeId Test_ho matched
 2017-04-20 17:02:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\Test\TestController
+2017-04-20 18:33:04 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 18:33:04 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-20 18:33:04 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-20 18:33:04 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-20 18:33:04 - [debug]: Rendering layout splash/default
+2017-04-20 22:19:01 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-20 22:19:01 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-20 22:19:01 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-20 22:19:01 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-20 22:19:01 - [debug]: Rendering layout splash/default
+2017-04-21 08:08:52 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-21 08:08:52 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-21 08:08:52 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-21 08:08:52 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-21 08:08:52 - [debug]: Rendering layout splash/default
+2017-04-21 08:09:57 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-21 08:09:57 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-21 08:09:57 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-21 08:09:57 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-21 08:09:57 - [debug]: Rendering layout splash/default
+2017-04-21 08:12:09 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-21 08:12:09 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-21 08:12:09 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-04-21 08:12:09 - [trace]: LawsUtil trace with theme: _default_, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.notification; tplName: notification/default
+----- id: main.loginForm; tplName: loginForm/default
+2017-04-21 08:12:09 - [debug]: Rendering layout splash/default
+2017-04-21 08:12:38 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-21 08:12:38 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'The controller parameter was not found in the request'. uri was /, redispatching to the fallback loop
+2017-04-21 08:12:38 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-04-21 08:12:38 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId exception
+2017-04-21 08:12:38 - [trace]: LawsUtil trace with theme: _default_, viewId: exception (/config/laws/exception.conf.php):
+- layout: splash/default
+- positions: 
+- widgets: 
+----- id: main.exception; tplName: exception/default
+2017-04-21 08:12:38 - [debug]: Rendering layout splash/default

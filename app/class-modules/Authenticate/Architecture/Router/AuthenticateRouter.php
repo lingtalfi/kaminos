@@ -36,7 +36,7 @@ class AuthenticateRouter implements RouterInterface
                 SessionUser::disconnect();
 
                 /**
-                 * hack the router caller and make it believe a controller was found,
+                 * By not returning null, we make the router believe a controller was found,
                  * so that it doesn't loop the other routers.
                  */
                 return "";

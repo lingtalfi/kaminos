@@ -7,10 +7,10 @@ namespace Module\Core;
 class CoreHooks
 {
 
-    protected static function Core_feedUri2Controller(array &$uri2Controller)
-    {
-
-    }
+//    protected static function Core_feedUri2Controller(array &$uri2Controller)
+//    {
+//
+//    }
 
     protected static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
     {
@@ -28,7 +28,12 @@ class CoreHooks
 
     }
 
-    protected static function Core_feedRoutes(\Kamille\Architecture\Routes\RoutesInterface $routes)
+    /**
+     * @param data , array:
+     *      - 0: controller instance
+     *      - 1: laws config
+     */
+    protected static function Core_autoLawsConfig(&$data)
     {
 
     }

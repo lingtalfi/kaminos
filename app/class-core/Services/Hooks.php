@@ -32,36 +32,10 @@ class Hooks extends AbstractHooks
 //    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	protected static function Core_feedUri2Controller(array &$uri2Controller)
-	{
-		// mit-start:Toast
-		$uri2Controller["/toast"] = "something";
-        $uri2Controller["/marshmallows"] = "something";
-		// mit-end:Toast
-
-		// mit-start:Test
-		$uri2Controller["/test"] = "ff";
-		// mit-end:Test
-	}
+    protected static function Test_feedUri2Controller(array &$uri2Controller)
+    {
+        $uri2Controller["/login"] = "something";
+    }
 
 	protected static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
 	{
@@ -81,31 +55,16 @@ class Hooks extends AbstractHooks
 		// mit-end:Authenticate
 	}
 
-	protected static function Core_feedRoutes(\Kamille\Architecture\Routes\RoutesInterface $routes)
+	protected static function Core_autoLawsConfig(&$data)
 	{
-		// mit-start:Authenticate
-		$routes->addRoute("Authenticate_");
-		// mit-end:Authenticate
+		// mit-start:NullosAdmin
+		$autoJsScript = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme") . "/controllers/" . \Bat\ClassTool::getShortName($data[0]) . ".js";
+        $file = \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("app_dir") . "/www" . $autoJsScript;
+        if (file_exists($file)) {
+            $data[1]['layout']['conf']["jsScripts"][] = $autoJsScript;
+        }
+		// mit-end:NullosAdmin
 	}
-
-	protected static function Test_feedUri2Controller(array &$uri2Controller)
-	{
-		$uri2Controller["/login"] = "something";
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

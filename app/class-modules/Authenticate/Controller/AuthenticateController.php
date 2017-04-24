@@ -73,7 +73,7 @@ class AuthenticateController extends ApplicationController
             )
             ->addControl("submit", InputSubmitControl::create()
                 ->name($key)
-                ->addHtmlAttribute("value", __("label.send", $tf))
+                ->addHtmlAttribute("value", __("label.login", $t))
             );
 
 

@@ -39,6 +39,22 @@ class X extends AbstractX
 
 
 
+
+
+
+    public static function Authenticate_test($name, $pass)
+    {
+        a($name, $pass);
+    }
+
+
+
+    public static function Test_mymethodfff()
+    {
+        // pou
+    }
+
+
     public static function Authenticate_userStore()
     {
         $f = \Kamille\Services\XConfig::get("Authenticate.pathUserStore");
@@ -58,9 +74,10 @@ class X extends AbstractX
         return $grantor;
     }
 
-    public static function Authenticate_test($name, $pass)
+
+    public static function NullosAdmin_themeHelper()
     {
-        a($name, $pass);
+        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
     }
 
     public static function Core_webApplicationHandler()
@@ -68,27 +85,15 @@ class X extends AbstractX
         return new \Module\Core\ApplicationHandler\WebApplicationHandler();
     }
 
-    public static function Core_routes()
-    {
-        $routes =  new \Kamille\Architecture\Routes\Routes();
-        \Core\Services\Hooks::call("Core_feedRoutes", $routes);
-        return $routes;
-    }
 
-    public static function Test_mymethodfff()
-    {
-        // pou
-    }
 
-    public static function Core_shouldNotAppear()
-    {
-        // pou
-    }
 
-    public static function Core_feedUri2Controller()
-    {
-        $uri2Controller["/test"] = "ffff";
-    }
+
+
+
+
+
+
 
 
 

@@ -11,7 +11,7 @@ class PageNotFoundController extends ApplicationController
 
     public function render()
     {
-        return $this->renderByViewId("pageNotFound");
+        return $this->renderByViewId("Core/pageNotFound");
     }
 
 

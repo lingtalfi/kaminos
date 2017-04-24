@@ -65,7 +65,7 @@ $conf = [
     ],
     "widgets" => [
         "main.exception" => [
-            "name" => "exception/default",
+            "name" => "Exception/default",
             "conf" => [
                 /**
                  * Normally, you would provide this exception from a controller or another mean,

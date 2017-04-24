@@ -4,10 +4,9 @@
 namespace Widget\BookedMeteo;
 
 
+use KaminosUtils\WidgetInstaller\KaminosWidgetInstaller;
 
-use Kamille\WidgetInstaller\KamilleWidgetInstaller;
-
-class BookedMeteoWidgetInstaller extends KamilleWidgetInstaller
+class BookedMeteoWidgetInstaller extends KaminosWidgetInstaller
 {
 
 }

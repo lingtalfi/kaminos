@@ -30,6 +30,7 @@ $conf = [
                 "uriCreateAccount" => "/create-account",
                 "textCreateAccount" => __("createAccount", $t),
                 "textNewToSite" => __("newToSite", $t),
+                "textSubmit" => __("submit", $t),
             ],
         ],
     ],

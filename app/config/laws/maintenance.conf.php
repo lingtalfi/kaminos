@@ -7,11 +7,11 @@ $theme = ApplicationParameters::get("theme");
 
 $conf = [
     "layout" => [
-        "name" => "splash/default",
+        "tpl" => "splash/default",
     ],
     "widgets" => [
         "main.maintenance" => [
-            "name" => "maintenance/default",
+            "tpl" => "maintenance/default",
             "conf" => [
                 "logo_src" => "theme/$theme/widgets/maintenance/logo.png",
                 "logo_alt" => "logo",

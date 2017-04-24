@@ -4,9 +4,10 @@
 namespace Core\Controller;
 
 
+use Core\Services\Hooks;
 use Kamille\Architecture\Controller\Web\KamilleController;
-use Kamille\Ling\Z;
 use Kamille\Services\XConfig;
+use Kamille\Utils\ModuleInstallationRegister\ModuleInstallationRegister;
 
 
 class ApplicationController extends KamilleController
@@ -25,10 +26,18 @@ class ApplicationController extends KamilleController
          * So that in the end we have full hand on the customization of the lawsUtil (as an object)
          *
          */
-        if (false === array_key_exists("autoloadCss", $options)) {
-            $options['autoloadCss'] = XConfig::get("Core.useCssAutoload", false);
+        if (true === ModuleInstallationRegister::isInstalled('Core')) {
+
+            if (false === array_key_exists("autoloadCss", $options)) {
+                $options['autoloadCss'] = XConfig::get("Core.useCssAutoload", false);
+            }
+            $options['widgetClass'] = 'Core\Mvc\Widget\ApplicationWidget';
+
+            $c = [$this, $config];
+            Hooks::call("Core_autoLawsConfig", $c);
+            $config = $c[1];
         }
-        $options['widgetClass'] = 'Core\Mvc\Widget\ApplicationWidget';
+
         return parent::renderByViewId($viewId, $config, $options);
     }
 

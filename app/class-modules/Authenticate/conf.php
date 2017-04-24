@@ -62,11 +62,11 @@ $conf = [
      * - route: use the onSuccessRedirectValue to set a routsy route identifier identifying the route to redirect the user to
      *
      */
-    "onSuccessRedirectMode" => true,
+    "onSuccessRedirectMode" => "uri",
     /**
      * Only used if onSuccessRedirectMode is uri or route.
      */
-    "onSuccessRedirectValue" => null,
+    "onSuccessRedirectValue" => "/",
     /**
      * The time the user session will last.
      */

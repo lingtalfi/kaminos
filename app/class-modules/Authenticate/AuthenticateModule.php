@@ -15,6 +15,14 @@ class AuthenticateModule extends KamilleModule
             "ling.Authenticate",
         ];
     }
+
+
+    protected function getWidgets(){
+        return [
+            'KamilleWidgets.Notification',
+            'KamilleWidgets.LoginForm',
+        ];
+    }
 }
 
 

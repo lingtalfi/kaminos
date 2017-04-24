@@ -1,0 +1,19 @@
+.widget-maintenance {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.widget-maintenance .image {
+    margin: 0 auto;
+}
+
+.widget-maintenance .main-text {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.widget-maintenance .aux-text {
+    color: #aaa;
+}

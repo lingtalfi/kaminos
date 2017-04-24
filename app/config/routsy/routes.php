@@ -41,6 +41,8 @@ $routes['Test_ho'] = ["/doo", null, null, '\Controller\Test\TestController:pou']
 
 $routes['Test_ho2'] = ["/uri", null, null, "MyTestController:method"];
 
+
+$routes["Authenticate_loginForm"] = ["/login", null, null, '\Controller\Authenticate\AuthenticateController:renderForm'];
 //--------------------------------------------
 // DYNAMIC
 //--------------------------------------------
@@ -79,3 +81,6 @@ $routes["Test_myRouteId7"] = ["/my/{dynamic}/uris", null, function (HttpRequestI
 // USER - AFTER
 //--------------------------------------------
 
+
+$routes["NullosAdmin_homePage"] = ["/", null, null, 'Controller\NullosAdmin\HomePageController:render'];
+$routes["Mine_default"] = ["/", null, null, 'Controller\Core\PageNotFoundController:render'];

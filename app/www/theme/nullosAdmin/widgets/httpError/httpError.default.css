@@ -1,0 +1,6 @@
+.widget-http-error .error-code,
+.widget-http-error .error-text
+{
+    text-align: center;
+    margin: 0 auto;
+}

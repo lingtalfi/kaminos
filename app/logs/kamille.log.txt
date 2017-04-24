@@ -7992,3 +7992,6 @@ Stack trace:
 ----- id: main.notification; tplName: Notification/default
 ----- id: main.loginForm; tplName: LoginForm/default
 2017-04-23 21:45:51 - [debug]: Rendering layout splash/default
+2017-04-24 10:03:55 - [debug]: [Core module] - WebApplicationHandler.handle 
+2017-04-24 10:03:55 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-04-24 10:03:55 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm

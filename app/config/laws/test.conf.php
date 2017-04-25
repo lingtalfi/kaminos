@@ -70,7 +70,7 @@ $conf = [
             ],
         ],
         "maincontent.g" => [
-            "grid" => "1/2",
+            "grid" => "1/2.",
             "tpl" => "HtmlCode/default",
             "conf" => [
                 "html" => "content G",

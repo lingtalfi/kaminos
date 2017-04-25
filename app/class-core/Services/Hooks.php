@@ -57,6 +57,8 @@ class Hooks extends AbstractHooks
 
 	protected static function Core_autoLawsConfig(&$data)
 	{
+		
+
 		// mit-start:NullosAdmin
 		$autoJsScript = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme") . "/controllers/" . \Bat\ClassTool::getShortName($data[0]) . ".js";
         $file = \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("app_dir") . "/www" . $autoJsScript;
@@ -65,6 +67,22 @@ class Hooks extends AbstractHooks
         }
 		// mit-end:NullosAdmin
 	}
+
+	protected static function Core_addLawsUtilProxyDecorators(\Kamille\Mvc\LayoutProxy\LawsLayoutProxyInterface $layoutProxy)
+	{
+		if ($layoutProxy instanceof \Kamille\Mvc\LayoutProxy\LawsLayoutProxy) {
+            $layoutProxy->addDecorator(\Kamille\Mvc\WidgetDecorator\PositionWidgetDecorator::create());
+        }
+
+		// mit-start:NullosAdmin
+		if ($layoutProxy instanceof \Kamille\Mvc\LayoutProxy\LawsLayoutProxy) {
+            $layoutProxy->addDecorator(\Kamille\Mvc\WidgetDecorator\Bootstrap3GridWidgetDecorator::create());
+        }
+		// mit-end:NullosAdmin
+	}
+
+
+
 
 
 

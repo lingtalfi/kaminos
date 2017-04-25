@@ -20,6 +20,13 @@ class NullosAdminHooks
             $data[1]['layout']['conf']["jsScripts"][] = $autoJsScript;
         }
     }
+
+    protected static function Core_addLawsUtilProxyDecorators(\Kamille\Mvc\LayoutProxy\LawsLayoutProxyInterface $layoutProxy)
+    {
+        if ($layoutProxy instanceof \Kamille\Mvc\LayoutProxy\LawsLayoutProxy) {
+            $layoutProxy->addDecorator(\Kamille\Mvc\WidgetDecorator\Bootstrap3GridWidgetDecorator::create());
+        }
+    }
 }
 
 

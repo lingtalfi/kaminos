@@ -21,4 +21,5 @@ interface ThemeHelperInterface{
      * - bootstrap-daterangepicker
      */
     public function useLib($libName);
+
 }

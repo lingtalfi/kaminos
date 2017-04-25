@@ -75,15 +75,26 @@ class X extends AbstractX
     }
 
 
-    public static function NullosAdmin_themeHelper()
-    {
-        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
-    }
 
     public static function Core_webApplicationHandler()
     {
         return new \Module\Core\ApplicationHandler\WebApplicationHandler();
     }
+
+    public static function Core_lawsUtil()
+    {
+        $layoutProxy = \Kamille\Mvc\LayoutProxy\LawsLayoutProxy::create();
+        \Core\Services\Hooks::call("Core_addLawsUtilProxyDecorators", $layoutProxy);
+        return  \Kamille\Utils\Laws\LawsUtil::create()
+            ->setLawsLayoutProxy($layoutProxy);
+
+    }
+
+    public static function NullosAdmin_themeHelper()
+    {
+        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
+    }
+
 
 
 

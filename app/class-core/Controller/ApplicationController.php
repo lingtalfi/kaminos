@@ -5,8 +5,14 @@ namespace Core\Controller;
 
 
 use Core\Services\Hooks;
+use Core\Services\X;
+use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Architecture\Controller\Web\KamilleController;
+use Kamille\Architecture\Response\Web\HttpResponse;
+use Kamille\Architecture\Response\Web\HttpResponseInterface;
 use Kamille\Services\XConfig;
+use Kamille\Services\XLog;
+use Kamille\Utils\Laws\LawsUtilInterface;
 use Kamille\Utils\ModuleInstallationRegister\ModuleInstallationRegister;
 
 
@@ -16,16 +22,17 @@ class ApplicationController extends KamilleController
     private $translationContext;
 
 
+    /**
+     * Renders a laws view.
+     * More info on laws here: https://github.com/lingtalfi/laws
+     *
+     *
+     * $config: allows you to override the laws config file on the fly.
+     *
+     * @return HttpResponseInterface
+     */
     protected function renderByViewId($viewId, $config = null, array $options = [])
     {
-
-
-        /**
-         * Todo: move the KamilleController.renderByViewId method to a LawsService,
-         * and call this service from here (from the application context rather than the framework (aka kamille planet) context).
-         * So that in the end we have full hand on the customization of the lawsUtil (as an object)
-         *
-         */
         if (true === ModuleInstallationRegister::isInstalled('Core')) {
 
             if (false === array_key_exists("autoloadCss", $options)) {
@@ -36,9 +43,23 @@ class ApplicationController extends KamilleController
             $c = [$this, $config];
             Hooks::call("Core_autoLawsConfig", $c);
             $config = $c[1];
-        }
 
-        return parent::renderByViewId($viewId, $config, $options);
+
+            if (true === ApplicationParameters::get('debug')) {
+                XLog::debug("[Controller " . get_called_class() . "] - renderByViewId with viewId $viewId");
+            }
+
+            $util = X::get("Core_lawsUtil");
+            /**
+             * @var $util LawsUtilInterface
+             */
+            $content = $util->renderLawsViewById($viewId, $config, $options);
+        } else {
+            $content = "";
+        }
+        return HttpResponse::create($content);
+
+
     }
 
 

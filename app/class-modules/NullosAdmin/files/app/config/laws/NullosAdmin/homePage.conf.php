@@ -3,6 +3,7 @@
 $conf = [
     "widgets" => [
         'maincontent.topTiles' => [
+            'column' => "1/3",
             'tpl' => "NullosAdmin/Main/TopTiles/default",
             'conf' => [],
         ],

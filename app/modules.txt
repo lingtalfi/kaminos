@@ -5,5 +5,5 @@ Application
 Kaminos
 Test
 Authenticate
-NullosAdmin
 Core
+NullosAdmin

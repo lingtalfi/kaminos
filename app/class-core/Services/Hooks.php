@@ -81,6 +81,24 @@ class Hooks extends AbstractHooks
 		// mit-end:NullosAdmin
 	}
 
+	protected static function Core_lazyJsInit_addCodeWrapper(\Module\Core\JsLazyCodeCollector\JsLazyCodeCollectorInterface $collector)
+	{
+		
+
+		// mit-start:NullosAdmin
+		$collector->addCodeWrapper('jquery', function ($s) {
+            $r = '$(document).ready(function () {' . PHP_EOL;
+            $r .= $s;
+            $r .= '});' . PHP_EOL;
+            return $r;
+        });
+		// mit-end:NullosAdmin
+	}
+
+
+
+
+
 
 
 

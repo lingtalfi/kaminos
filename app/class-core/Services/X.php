@@ -76,6 +76,9 @@ class X extends AbstractX
 
 
 
+
+
+
     public static function Core_webApplicationHandler()
     {
         return new \Module\Core\ApplicationHandler\WebApplicationHandler();
@@ -85,9 +88,16 @@ class X extends AbstractX
     {
         $layoutProxy = \Kamille\Mvc\LayoutProxy\LawsLayoutProxy::create();
         \Core\Services\Hooks::call("Core_addLawsUtilProxyDecorators", $layoutProxy);
-        return  \Kamille\Utils\Laws\LawsUtil::create()
+        return \Kamille\Utils\Laws\LawsUtil::create()
             ->setLawsLayoutProxy($layoutProxy);
 
+    }
+
+    public static function Core_lazyJsInit()
+    {
+        $collector = \Module\Core\JsLazyCodeCollector\JsLazyCodeCollector::create();
+        \Core\Services\Hooks::call("Core_lazyJsInit_addCodeWrapper", $collector);
+        return $collector;
     }
 
     public static function NullosAdmin_themeHelper()

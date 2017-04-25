@@ -27,7 +27,9 @@ HtmlPageHelper::js("$prefixUri/vendors/jquery/dist/jquery.min.js", "jquery", nul
 HtmlPageHelper::js("$prefixUri/vendors/bootstrap/dist/js/bootstrap.min.js", null, null, false);
 HtmlPageHelper::js("$prefixUri/vendors/fastclick/lib/fastclick.js", null, null, false);
 HtmlPageHelper::js("$prefixUri/vendors/nprogress/nprogress.js", null, null, false);
-HtmlPageHelper::js("$prefixUri/build/js/custom.min.js", null, null, 'after');
+
+HtmlPageHelper::js("$prefixUri/build/js/custom.js", null, null, 'after');
+//HtmlPageHelper::js("$prefixUri/build/js/custom.min.js", null, null, 'after');
 
 
 if (array_key_exists('jsScripts', $v)) {

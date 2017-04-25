@@ -27,6 +27,17 @@ class NullosAdminHooks
             $layoutProxy->addDecorator(\Kamille\Mvc\WidgetDecorator\Bootstrap3GridWidgetDecorator::create());
         }
     }
+
+
+    protected static function Core_lazyJsInit_addCodeWrapper(\Module\Core\JsLazyCodeCollector\JsLazyCodeCollectorInterface $collector)
+    {
+        $collector->addCodeWrapper('jquery', function ($s) {
+            $r = '$(document).ready(function () {' . PHP_EOL;
+            $r .= $s;
+            $r .= '});' . PHP_EOL;
+            return $r;
+        });
+    }
 }
 
 

@@ -44,6 +44,11 @@ class CoreHooks
             $layoutProxy->addDecorator(\Kamille\Mvc\WidgetDecorator\PositionWidgetDecorator::create());
         }
     }
+
+    protected static function Core_lazyJsInit_addCodeWrapper(\Module\Core\JsLazyCodeCollector\JsLazyCodeCollectorInterface $collector)
+    {
+
+    }
 }
 
 

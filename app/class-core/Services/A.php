@@ -41,4 +41,16 @@ class A
         }
         return false;
     }
+
+
+    public static function addBodyEndJsCode($groupId, $code)
+    {
+        if (null !== ($coll = X::get("Core_lazyJsInit", null, false))) {
+            /**
+             * @var $coll \Module\Core\JsLazyCodeCollector\JsLazyCodeCollectorInterface
+             */
+            return $coll->addJsCode($groupId, $code);
+        }
+        return false;
+    }
 }

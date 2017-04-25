@@ -10,6 +10,7 @@ use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Architecture\Controller\Web\KamilleController;
 use Kamille\Architecture\Response\Web\HttpResponse;
 use Kamille\Architecture\Response\Web\HttpResponseInterface;
+use Kamille\Mvc\HtmlPageHelper\HtmlPageHelper;
 use Kamille\Services\XConfig;
 use Kamille\Services\XLog;
 use Kamille\Utils\Laws\LawsUtilInterface;
@@ -26,6 +27,10 @@ class ApplicationController extends KamilleController
      * Renders a laws view.
      * More info on laws here: https://github.com/lingtalfi/laws
      *
+     * Note: the laws view is provided by the Core module (at least in this implementation),
+     * so don't forget to install it if you want to use this method.
+     *
+     *
      *
      * $config: allows you to override the laws config file on the fly.
      *
@@ -35,24 +40,52 @@ class ApplicationController extends KamilleController
     {
         if (true === ModuleInstallationRegister::isInstalled('Core')) {
 
+
+            //--------------------------------------------
+            // SEND DEBUG MESSAGE TO THE LOGS
+            //--------------------------------------------
+            if (true === ApplicationParameters::get('debug')) {
+                XLog::debug("[Controller " . get_called_class() . "] - renderByViewId with viewId $viewId");
+            }
+
+
+            //--------------------------------------------
+            // CONFIGURING THE LAWS UTIL OPTIONS
+            //--------------------------------------------
             if (false === array_key_exists("autoloadCss", $options)) {
                 $options['autoloadCss'] = XConfig::get("Core.useCssAutoload", false);
             }
             $options['widgetClass'] = 'Core\Mvc\Widget\ApplicationWidget';
 
+
+            //--------------------------------------------
+            // LET MODULES UPDATE THE LAWS CONFIG
+            //--------------------------------------------
             $c = [$this, $config];
             Hooks::call("Core_autoLawsConfig", $c);
             $config = $c[1];
 
 
-            if (true === ApplicationParameters::get('debug')) {
-                XLog::debug("[Controller " . get_called_class() . "] - renderByViewId with viewId $viewId");
-            }
+            //--------------------------------------------
+            // INJECTING LAZY JS CODE AT THE END OF THE BODY
+            //--------------------------------------------
+            $config['callbacks'][] = function () {
+                if (null !== ($coll = X::get("Core_lazyJsInit", null, false))) {
+                    /**
+                     * @var $coll \Module\Core\JsLazyCodeCollector\JsLazyCodeCollectorInterface
+                     */
+                    HtmlPageHelper::addBodyEndSnippet($coll->getCompiledJsCode());
+                }
+            };
 
-            $util = X::get("Core_lawsUtil");
+
+            //--------------------------------------------
+            // RENDER THE CONTENT USING THE LAWS TOOL
+            //--------------------------------------------
             /**
              * @var $util LawsUtilInterface
              */
+            $util = X::get("Core_lawsUtil");
             $content = $util->renderLawsViewById($viewId, $config, $options);
         } else {
             $content = "";

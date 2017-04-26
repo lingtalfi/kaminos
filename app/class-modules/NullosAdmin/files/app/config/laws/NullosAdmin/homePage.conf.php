@@ -53,9 +53,19 @@ $conf = [
 //            'tpl' => "NullosAdmin/Main/Stat/TopTileWithIcon/prototype",
 //            'conf' => [],
 //        ],
-        'maincontent.thinProgressBars' => [
+//        'maincontent.thinProgressBars' => [
+//            'grid' => "1",
+//            'tpl' => "NullosAdmin/Main/Stat/ThinProgressBars/prototype",
+//            'conf' => [],
+//        ],
+//        'maincontent.flotFilledLines' => [
+//            'grid' => "1",
+//            'tpl' => "NullosAdmin/Main/Stat/Flot/FilledLines/prototype",
+//            'conf' => [],
+//        ],
+        'maincontent.chartPlot' => [
             'grid' => "1",
-            'tpl' => "NullosAdmin/Main/Stat/ThinProgressBars/prototype",
+            'tpl' => "NullosAdmin/Main/Stat/Chart/Plot/prototype",
             'conf' => [],
         ],
     ],

@@ -19,13 +19,11 @@ var arr_data2 = [
 ];
 
 
-
 var chart_plot_02_data = [];
 
 for (var i = 0; i < 30; i++) {
     chart_plot_02_data.push([new Date(Date.today().add(i).days()).getTime(), randNum() + i + i + 10]);
 }
-
 
 
 var chart_plot_01_settings = {
@@ -107,7 +105,7 @@ var chart_plot_02_settings = {
         margin: [0, -25],
         noColumns: 0,
         labelBoxBorderColor: null,
-        labelFormatter: function(label, series) {
+        labelFormatter: function (label, series) {
             return label + '&nbsp;&nbsp;';
         },
         width: 40,
@@ -138,19 +136,8 @@ var chart_plot_02_settings = {
 };
 
 
+if ($("#chart_plot_01").length) {
+    console.log('Plot1');
 
-if ($("#chart_plot_02").length){
-    console.log('Plot2');
-
-    $.plot( $("#chart_plot_02"),
-        [{
-            label: "Email Sent",
-            data: chart_plot_02_data,
-            lines: {
-                fillColor: "rgba(150, 202, 89, 0.12)"
-            },
-            points: {
-                fillColor: "#fff" }
-        }], chart_plot_02_settings);
-
+    $.plot($("#chart_plot_01"), [arr_data1, arr_data2], chart_plot_01_settings);
 }

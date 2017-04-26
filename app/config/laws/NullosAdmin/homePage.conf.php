@@ -58,9 +58,14 @@ $conf = [
 //            'tpl' => "NullosAdmin/Main/Stat/ThinProgressBars/prototype",
 //            'conf' => [],
 //        ],
-        'maincontent.flotFilledLines' => [
+//        'maincontent.flotFilledLines' => [
+//            'grid' => "1",
+//            'tpl' => "NullosAdmin/Main/Stat/Flot/FilledLines/prototype",
+//            'conf' => [],
+//        ],
+        'maincontent.chartPlot' => [
             'grid' => "1",
-            'tpl' => "NullosAdmin/Main/Stat/Flot/FilledLines/prototype",
+            'tpl' => "NullosAdmin/Main/Stat/Chart/Plot/prototype",
             'conf' => [],
         ],
     ],

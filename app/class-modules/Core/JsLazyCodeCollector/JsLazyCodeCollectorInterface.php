@@ -4,7 +4,9 @@
 namespace Module\Core\JsLazyCodeCollector;
 
 
-interface JsLazyCodeCollectorInterface
+use Kamille\Mvc\BodyEndSnippetsCollector\BodyEndSnippetsCollectorInterface;
+
+interface JsLazyCodeCollectorInterface extends BodyEndSnippetsCollectorInterface
 {
 
     /**
@@ -13,8 +15,6 @@ interface JsLazyCodeCollectorInterface
      * Core_lazyJsInit service, which this class is the "client" of.
      */
     public function addJsCode($groupId, $code);
-
-    public function getCompiledJsCode();
 
     public function addCodeWrapper($groupId, callable $wrapper);
 }

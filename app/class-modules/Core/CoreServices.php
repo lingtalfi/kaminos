@@ -12,6 +12,10 @@ class CoreServices
         return new \Module\Core\ApplicationHandler\WebApplicationHandler();
     }
 
+    /**
+     * This service will always return an instance of the LawsUtil object.
+     * Happy coding!
+     */
     protected static function Core_lawsUtil()
     {
         $layoutProxy = \Kamille\Mvc\LayoutProxy\LawsLayoutProxy::create();

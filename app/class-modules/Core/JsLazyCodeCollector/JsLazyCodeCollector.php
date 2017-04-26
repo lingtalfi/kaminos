@@ -37,15 +37,15 @@ class JsLazyCodeCollector implements JsLazyCodeCollectorInterface
     }
 
 
-    public function getCompiledJsCode()
+    public function getSnippets()
     {
         $s = '<script>' . PHP_EOL;
         foreach ($this->codes as $groupId => $codes) {
             $section = $this->getSection($groupId, $codes);
             $s .= $section . PHP_EOL;
         }
-        $s .= '<script>' . PHP_EOL;
-        return $s;
+        $s .= '</script>' . PHP_EOL;
+        return [$s];
     }
 
     //--------------------------------------------

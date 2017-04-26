@@ -38,6 +38,11 @@ class NullosAdminHooks
             return $r;
         });
     }
+
+
+    protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets){
+
+    }
 }
 
 

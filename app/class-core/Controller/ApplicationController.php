@@ -69,14 +69,9 @@ class ApplicationController extends KamilleController
             //--------------------------------------------
             // INJECTING LAZY JS CODE AT THE END OF THE BODY
             //--------------------------------------------
-            $config['callbacks'][] = function () {
-                if (null !== ($coll = X::get("Core_lazyJsInit", null, false))) {
-                    /**
-                     * @var $coll \Module\Core\JsLazyCodeCollector\JsLazyCodeCollectorInterface
-                     */
-                    HtmlPageHelper::addBodyEndSnippet($coll->getCompiledJsCode());
-                }
-            };
+            if (null !== ($coll = X::get("Core_lazyJsInit", null, false))) {
+                $options['bodyEndSnippetsCollector'] = $coll;
+            }
 
 
             //--------------------------------------------
@@ -91,7 +86,6 @@ class ApplicationController extends KamilleController
             $content = "";
         }
         return HttpResponse::create($content);
-
 
     }
 

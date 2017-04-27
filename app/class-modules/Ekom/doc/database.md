@@ -46,6 +46,48 @@ know the exact reference of the product we are buying.
 Otherwise specified, foreign keys "on update" and "on set" are set to CASCADE.
 
 
+All tables name use singular form (not plural).
+
+
+
+
+Condition -> action Paradigm
+-----------------------------
+
+The Condition-action paradigm is used to apply discounts (at both the product level, and/or the cart level),
+and also to apply carrier business strategies.
+
+It could be applied to other areas as well.
+
+The idea is to modelize business models with the power of a few computer language constructs,
+so that any idea can be implemented.
+
+The condition interpretation is delegated to the application and plugins via hooks,
+which make the model extensible.
+
+First, define your conditions, like this for instance:
+
+(if)
+price > 20
+& cart containsProduct 452
+|| ( cart hasMinAmountOf 100 && cart hasMaxAmountOf 500 )
+& ! user.country isEqualTo France
+
+
+Then, define your actions:
+
+(then)
+applyDiscountToProduct 600 reductionPercent = 10
+
+
+
+
+
+Tables
+=============
+
+
+
 Lang
 -----------
 
@@ -111,11 +153,12 @@ Shop
 -----------
 
 This represents a virtual store.
+The "on update" and "on set" values are set to "SET NULL" for all foreign keys of this table.
 
 - label: a label to identify the store in the backoffice (not displayed in front)
-- lang_id: the default lang used for this shop,
-            The "on update" and "on set" values are set to "SET NULL".
-            So, if the lang disappear, the shop stays, and the value of lang_id becomes null.
+- lang_id: the default lang used for this shop: is the default language on the front, and is also the back-office language for this shop
+- currency_id: the currency used by default for this shop (default currency of the front, and currency of the back-office)
+- timezone_id: the time zone used in this shop
 
 
 
@@ -153,6 +196,17 @@ User
                 This field needs to be added by an Ekom plugin (i.e. it is not part
                 of the default Ekom plugin).
 
+- user_group_id: 
+
+
+
+User_group
+---------
+Just a way or organizing users.
+You must have at least one group to put your users inside of.
+
+Other plugins can create their own groups (for instance b2b, b2c, ...).
+
 
 
 Address
@@ -164,7 +218,10 @@ Address
 - city
 - postcode: varchar  (some postcodes contain letters)
 - address 
-- active: int(0|1)
+- active: int(0|1|2), 2 means deleted. One shall not be able to recover from deleted.
+                    A deleted entry stays in the table so that when the user
+                    sees her orders, we can dynamically track back to the address information
+                    simply using the address_id (which was not deleted).
 
 
 
@@ -240,6 +297,19 @@ Product
                     
                     
 
+Product_lang
+--------------
+
+Per shop description and label.
+By default, the description and label belongs to a product, not a reference.
+
+However, if you want, you can override those labels and descriptions using the 
+product_reference_shop_lang table.
+
+
+
+Product_has_tag
+--------------
 
 Product_has_product_attribute
 --------------
@@ -303,6 +373,20 @@ Product_reference_shop
 This table contains reference related info for a given shop
 
 
+Product_reference_shop_lang
+------------------------------
+In some cases, you might want to have control over the description or the label of the product at the
+reference level (including attributes).
+
+Set the label and description columns of this table to non null values will override 
+the corresponding values from the product_lang table.
+
+- label
+- description
+
+
+
+
 Product_reference_store
 --------------
 This table contains reference related info for a given store.
@@ -353,11 +437,185 @@ it will be also displayed in all parent categories.
 
 
 
+Currency
+-------------
+
+A currency available to the ekom system (back or front).
+
+find rate: http://www.xe.com/currencyconverter/
+
+- iso_code: iso code 4217
+- symbol: the symbol representing the currency (for instance $)
+- exchange_rate: decimal(20,6)
+
+
+Currency_lang
+-------------
+- id_currency
+- id_lang
+- name
+
+
+Currency_shop
+-------------
+
+You can activate/de-activate a currency per shop.
+
+- active: tinyint(0|1)=0
+
+
+
+Timezone
+-----------
+- name:
+
+
+
+
+Condition
+-----------
+- combinator: none|or|and: default=none
+- negation: tinyint(0|1), whether to prefix the rest of the condition with the negation operator (!)
+- start_group: tinyint(0|1), whether or not to start the rest of the condition with an opening parenthesis
+- end_group: tinyint(0|1), whether or not to end the condition with a closing parenthesis
+- left_operand:
+- operator:
+- right_operand:
+- right_operand2:
+- ...: might be more in the future
+
+
+action
+-----------
+- source
+- source2
+- operator:
+- target:
+- target2:
+- ...: might be more in the future
+
+
+
+Order
+-------
+
+Is used to display orders to the user in the front (not an history).
+Also we need to recreate a pdf invoice with the data of the order and order_detail tables combined.
+
+- reference: reference created by ekom according to some format (which you can control)
+- invoice_address_id
+- billing_address_id
+- total_without_tax
+- total_with_tax
+
+
+
+
+Carrier
+-------------
+
+Carrier_lang
+-------------
+- label:
+- description
+
+Carrier_shop
+-------------
+- active:
+
+Carrier_has_condition
+-------------
+
+Carrier_has_action
+-------------
+About tax rules applied to shipping,
+since each country has its own laws, as we can guess by reading this document: https://www.avalara.com/learn/whitepapers/shipping-handling-sales-tax/,
+
+then the idea is that the carrier in ekom uses the flexible condition-action model
+to both implement the carrier strategy (each zone has a different price, depending on weight, or price, or whatever),
+AND the tax rules setting (depending on what you want, this carrier for this order will have the tax rule #452 for instance)
+if any.
+
+Note about conditions:
+for france, we generally have one tax rule for the whole country,
+so we can use an always true condition (like 1=1 for instance) to select the same tax rule for every shipping
+for a given carrier.
+
+
+
+
+Tag
+------
+
+This is more a pluginish thing than 
+a built-in ekom thing, but I put it here because it was on my notes (as to not forget).
 
 
 
 
 
+
+Discount_rule
+----------------
+
+This is a very interesting table in terms of how discounts are implemented in ekom.
+
+It was done for preserving consistency of the rule and thus enhance the overall simplicity of the system. 
+
+
+In ekom, every time we display a product, we parse all the product rules and see if one of them matches.
+The same applies for the cart.
+
+This means that there is no mysql bindure of the discount_rule table to any product in particular.
+
+The benefit of this, I believe, is that we have a dynamic rule system: when you say a rule, it's always true.
+
+My first idea was to bind discount rules to the products they were related to, but then I thought that it will
+be complicated to try to automate a consistent bindure system: imagine you say that products in category 4 
+have a -5% discount until may 5th, then if a new product is added to that category, you need to remember to apply
+the discount, or if a product is moved out of the category, you need to remember to remove the discount,
+and then the 5th may you need to remember to remove the discount bindures to the products of that category.
+
+And that's just one discount example.
+So, instead of remembering all those things, since I really such at remembering,
+I prefer to have a one all powerful rule system that is consulted every time we need it.
+
+It might have some impact on performances, but ekom is doing a pretty good job at optimizing this process:
+it basically compiles the conditions as a php callback, and so eliminate irrelevant conditions at the
+very first loop iteration, so for instance if we are may 8th, it will eliminate the "until 5th may" condition
+right at the first iteration, so that all subsequent conditions checking don't suffer this irrelevant condition
+checking (perf) penalty.
+
+
+So, we have a powerful/flexible discount system here, which hopefully encompasses every discount strategy
+one can think of.
+
+
+- type: cart|product, whether this rule applies at the cart level, or at the product level.
+                    If product level, it will be considered every time a product is displayed (product page,
+                    product list, etc...)
+                    The idea is also that when a discount is applied to a product, the label
+                    of the discount appears in the corresponding line on the invoice.
+
+- shop_id: 
+
+
+Discount_rule_lang
+----------------
+- label
+
+Discount_rule_has_condition
+----------------
+
+Discount_rule_has_action
+----------------
+commands like: addFreeProductInCart, what have you...
+I made a quick brainstorming, and you can at least do the following discount types (I let you find the implementation):
+
+- fixed percent discount
+- fixed amount discount
+- 10€ back if you buy 9 products #44
+- buy 2 products #44 and get the third for free
 
 
 

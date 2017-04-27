@@ -162,11 +162,47 @@ The "on update" and "on set" values are set to "SET NULL" for all foreign keys o
 
 
 
+
+Shop_configuration
+----------------
+
+
+This is an extension of the shop.
+Basically, providing a dynamic structure for modules/plugins to hook in.
+
+
+- key
+- value: varchar(512) as for now, relying on author tricky mind to not override this limit
+
+
+
+
 Shop_has_store
 -----------
 
 Store
 -----------
+
+
+
+Product_origin
+-----------------
+
+As we can read [here](https://www.prestashop.com/forums/topic/93918-multiple-manufacturers-for-a-single-product/),
+at the semantic level, a product could come from any number of:
+
+
+- manufacturer 
+- supplier
+- author
+- ...?
+
+The source table groups all those possibilities.
+
+
+- type: manufacturer, supplier, author, ...
+- value
+- image
 
 
 
@@ -474,6 +510,7 @@ Timezone
 
 Condition
 -----------
+- type: custom string to specify/group conditions by affinity
 - combinator: none|or|and: default=none
 - negation: tinyint(0|1), whether to prefix the rest of the condition with the negation operator (!)
 - start_group: tinyint(0|1), whether or not to start the rest of the condition with an opening parenthesis
@@ -485,7 +522,7 @@ Condition
 - ...: might be more in the future
 
 
-action
+Action
 -----------
 - source
 - source2
@@ -496,23 +533,114 @@ action
 
 
 
+
+
+Payment_method
+--------------
+
+- label
+- lang_id: (translatable)
+
+
+Payment_mode_shop
+--------------
+
+Select the set of payment methods available to your shop.
+
+- active: 0|1
+
+
 Order
 -------
 
-Is used to display orders to the user in the front (not an history).
+Is used to display orders to the user in the front (it's an history).
 Also we need to recreate a pdf invoice with the data of the order and order_detail tables combined.
 
-- reference: reference created by ekom according to some format (which you can control)
-- invoice_address_id
-- billing_address_id
-- total_without_tax
-- total_with_tax
+Note that we need to flatten all data, be it a dynamic carrier strategy, or an user address.
 
+
+
+- user_id: the number representing the user id owning this order. Although it's not a foreign key,
+            
+- shop_id: 
+
+- reference: reference created by ekom according to some format (which you can control)
+
+(invoice address info)
+- invoice_country
+- invoice_state: 
+- invoice_city
+- invoice_postcode: varchar  (some postcodes contain letters)
+- invoice_address 
+
+(billing address info)
+- billing_country
+- billing_state
+- billing_city
+- billing_postcode: varchar  (some postcodes contain letters)
+- billing_address 
+
+(order info):
+- a serialized version of the ekom order model, as defined in the appendixes of this document
+
+
+- state: the order state.
+            States can be created by plugins and modules.
+            Some default states are provided by ekom.
+            Todo:::: https://support.bigcommerce.com/articles/Public/Understanding-Order-Statuses
 
 
 
 Carrier
 -------------
+(could have been named carrier_method)
+
+
+The goal of the carrier related tables is to implement specific carrier pricing strategies.
+A pricing strategy might involve various factors, depending on the carrier service, for instance
+the weight of the products, the shipping address, or the store address, or maybe just a flat rate, or anything
+that one can think of.
+
+What's common to all carrier strategies is that the end goal is to update a given order total (be it with
+or without tax applied).
+
+By update, I mean raising the given price by one of those techniques:
+
+- fixed amount 
+- percent
+
+
+This is important because this technique is used to recreate users orders in the front, 
+so we need to stamp it (know the implementation details is enough).
+
+
+
+Can you imagine the case where one order leads to multiple carriers being involved? 
+I can, if no carrier method provided by the shop is able to handle the delivery of all the products at once,
+then (at the ekom level), the delivery might be split up into multiple deliveries.
+
+In order to do that, a carrier should be able to answer the question:
+
+- can you handle/deliver this product?
+
+
+This can be done with the flexible condition-action system already in place.
+We just need to have a "signalCannotHandle" type of action, and we also shall be able to give the reason why
+the delivery is not possible (too heavy for instance).
+
+That would force us to run a condition checking loop at the carrier selection page, but it would work.
+We could/should create a separate carrierCheck type for condition.
+
+
+So at the payment tunnel level, the idea would be to run the handleCarrier loop,
+to assign carriers to products (with the help of the user input/choices of course),
+then memorizing those in session,
+and when the payment is done, flattening all data to the order table.  
+
+
+
+
+
 
 Carrier_lang
 -------------
@@ -619,9 +747,188 @@ I made a quick brainstorming, and you can at least do the following discount typ
 
 
 
+Comment
+----------------
+
+A comment is owned by a user in the context of a shop.
+It can/should be moderated by a moderator.
+
+
+- active: 0|1|2, 
+        - 0: just posted, no moderator decision involved, not visible on the front
+        - 1: accepted by the moderator, and visible on the front
+        - 2: refuted by the moderator, and not visible on the front
+
+
+Product_has_comment
+----------------
+
+
+Feature
+----------------
+
+Features might be used as a complementary text to a description.
+The intent is to provide small bits of information, probably technically inclined.
+For instance, the diameter, the material used, the size, the color, ...
+
+- label
+
+
+Feature_value
+----------------
+
+Feature values are put in a separate table as they might be RE-USED,
+like the options in a select that would potentially be common to more than one product.
+
+- value: varchar(512) for now, might be extended to fulltext if required by an implementor
+
+
+
+Feature_has_feature
+----------------
+
+
+
 
 Resources
 =============
 Download prestashop languages:
 http://doc.prestashop.com/display/PS16/Languages
 
+
+
+
+
+Appendixes
+===============
+
+Order model
+--------------
+
+Here is how the order is organized in ekom.
+
+See schema.
+
+From the information below we can recreate an user order.
+
+
+
+Order lines are grouped by carrier, since an order might involve more than one carrier method.
+
+We start at the line level.
+
+Each line has a number of info available.
+One will probably not use them all, but only a subset.
+
+The available fields are the following:
+
+- reference
+- product: the name of the product 
+- description: an accurate (contains all attributes info) description of a product reference 
+- quantity: how many of this reference have been ordered 
+- weight: the weight for one unit of the given reference 
+- baseUnitPrice: the price for one unit of the given reference (the raw price, as defined in the backoffice, with nothing applied to it)  
+- basePrice: the baseUnitPrice multiplied by the quantity  
+- preTaxDiscount: a list of discount labels applied to the basePrice, before the taxes (if any) are applied.
+
+        A discount label shows a human readable summary of all relevant information about a (line/product) discount.
+        All those bit of information are still available as separated fields.
+        
+        A discount is ultimately applied to the product, and can only take one of two forms:
+            - a fixed amount discount
+            - a percent amount discount
+        
+        We describe the process of updating the price as applying a discount technique to a price.
+        
+        The available bit of information are provided as items of the preTaxDiscountItems list.
+         
+        The preTaxDiscountTechnique and preTaxDiscountTechnique keys (of each item) are all we need to apply the discount.
+        The preTaxDiscountLabel field is more of a human reminder.
+                    
+- preTaxDiscountItems: an array of item, each of which containing the following entries:     
+    - preTaxDiscountTechnique: fixed | percent         
+    - preTaxDiscountAmount: see preTaxDiscount field        
+    - preTaxDiscountValue: see preTaxDiscount field
+    
+- price: BasePrice x PreTaxDiscount
+- tax: a list of tax rules labels applied to the relevant product reference.
+
+            A tax rule label shows an human summary of a tax rule.
+             
+            A tax rule always applies a percent amount to the price,
+            and this percent amount is given as the taxPercent field.
+            
+            All tax rules labels can be accessed in greater details individually via the taxItems key described hereafter.
+            
+            When a product has multiple taxes, we can define how those taxes are applied with the
+            line.tvaOperator value of an ekom order model, which refernce might be available
+            via the shop table (when it's implemented, today is just brainstorming).
+            
+            
+            
+- taxItems: an array of item, each of which containing the following entries:
+    - taxPercent: the amount of percent of a given tax       
+    - taxLabel: the label of the given tax, as defined in the backoffice       
+
+- priceWithTax: the Price with the taxes applied 
+- postTaxDiscount: same as preTaxDiscount, but applied on the PriceWithTax
+- postTaxDiscountItems: same as preTaxDiscountItems, but for postTaxDiscount     
+- totalLine: PriceWithTax with postTaxDiscounts applied 
+       
+       
+       
+So all lines are grouped in a so called CarrierGroup, which is just a container for those lines.
+The CarrierGroup also brings its own fields into the mix:
+       
+- basePriceSubtotal: the sum of the "basePrice" column of all lines in this group        
+- priceSubtotal: the sum of the "price" column of all lines in this group        
+- priceWithTaxSubtotal: the sum of the "priceWithTax" column of all lines in this group        
+- totalLineSubtotal: the sum of the "totalLine" column of all lines in this group        
+- carrierInfo: a carrier summary of info related to the carrier      
+- carrierLabel: the label of the carrier        
+- carrierTechnique: fixed | percent, same principle as a preTaxDiscountItems item        
+- carrierAmount: 
+- priceCarrierGroupSubtotal: the priceSubtotal value, with carrier pricing strategy applied to it 
+- priceWithTaxCarrierGroupSubtotal: the priceWithTaxSubtotal value, with carrier pricing strategy applied to it 
+- totalLineCarrierGroupSubtotal: the totalLineSubtotal value, with carrier pricing strategy applied to it 
+- totalWeight: the sum of all weights (multiplied by the relevant quantities) 
+- carrierGroupSubtotal: this field is a little different,
+                        it takes the value of one of the following keys:
+                            - priceCarrierGroupSubtotal
+                            - priceWithTaxCarrierGroupSubtotal
+                            - totalLineCarrierGroupSubtotal
+                            
+                        The goal is that the value selected will be used to compute the grand total of the order.                            
+                        The choice depends on the carrierSubtotalTarget key, which might find its way to the shop
+                        table at the time of implementation.
+- lineItems: list of all line items, each of which containing the array described previously
+       
+       
+Now it's time for the grand finale.       
+All those groups are mixed together in a total section, which contains the following fields:
+
+- basePriceTotal: sum of the "basePriceSubtotal" columns of every CarrierGroup
+- priceTotal: sum of the "priceSubtotal" columns of every CarrierGroup
+- priceWithTaxTotal: sum of the "priceWithTaxSubtotal" columns of every CarrierGroup
+- totalLineTotal: sum of the "totalLineSubtotal" columns of every CarrierGroup
+- priceCarrierGroupTotal: sum of the "priceCarrierGroupSubtotal" columns of every CarrierGroup
+- priceWithTaxCarrierGroupTotal: sum of the "priceWithTaxCarrierGroupSubtotal" columns of every CarrierGroup
+- totalLineCarrierGroupTotal: sum of the "totalLineCarrierGroupSubtotal" columns of every CarrierGroup
+- totalWeight: sum of the "totalWeight" columns of every CarrierGroup
+- carrierGroupTotal: sum of the "carrierGroupSubtotal" columns of every CarrierGroup
+- grandTotal: alias for the carrierGroupTotal field
+- carrierGroupItems: list of all CarrierGroup items, each of which containing the array described previously
+       
+       
+So, name this big array ekomOrderModel, and voilà! You've got an useful array at your disposal. 
+       
+       
+       
+Notes: 
+- whether a preTaxDiscount or postTaxDiscount is applied depends on the discount condition/actions set in the backoffice.
+       We generally use preTaxDiscount only.
+        
+- note that a tax can be applied after or before the product is multiplied by the quantity, without affecting the business,
+        thanks to the multiplication properties:
+        
+                    (1 x 10) x 10/100 = (1 x 10/100) x 10

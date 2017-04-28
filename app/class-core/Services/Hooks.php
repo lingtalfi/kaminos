@@ -42,10 +42,86 @@ class Hooks extends AbstractHooks
 
 
 
-	protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets)
+
+	protected static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
+	{
+		if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
+            $f = \Kamille\Services\XConfig::get("Core.logFile");
+            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
+                ->setFormatter(\Logger\Formatter\TagFormatter::create())
+                ->setIdentifiers(null)
+                ->setPath($f));
+        }
+
+
+        if (true === \Kamille\Services\XConfig::get("Core.useDbLoggerListener")) {
+
+            $f = \Kamille\Services\XConfig::get("Core.dbLogFile");
+            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
+                ->setFormatter(\Logger\Formatter\TagFormatter::create())
+                ->setIdentifiers(null)
+                ->setPath($f));
+        }
+	}
+
+	protected static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
+	{
+		// mit-start:Authenticate
+		$router->addRouter(\Module\Authenticate\Architecture\Router\AuthenticateRouter::create());
+		// mit-end:Authenticate
+	}
+
+	protected static function Core_autoLawsConfig(&$data)
 	{
 		
 
+		// mit-start:NullosAdmin
+		$autoJsScript = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme") . "/controllers/" . \Bat\ClassTool::getShortName($data[0]) . ".js";
+        $file = \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("app_dir") . "/www" . $autoJsScript;
+        if (file_exists($file)) {
+            $data[1]['layout']['conf']["jsScripts"][] = $autoJsScript;
+        }
+		// mit-end:NullosAdmin
+	}
+
+	protected static function Core_feedAjaxUri2Controllers(array &$uri2Controllers)
+	{
+		
+
+		// mit-start:NullosAdmin
+		$uri2Controllers['/uploads'] = "Controller\UploadProfiles\UploadController:handleUpload";
+		// mit-end:NullosAdmin
+	}
+
+	protected static function Core_addLawsUtilProxyDecorators(\Kamille\Mvc\LayoutProxy\LawsLayoutProxyInterface $layoutProxy)
+	{
+		if ($layoutProxy instanceof \Kamille\Mvc\LayoutProxy\LawsLayoutProxy) {
+            $layoutProxy->addDecorator(\Kamille\Mvc\WidgetDecorator\PositionWidgetDecorator::create());
+        }
+
+		// mit-start:NullosAdmin
+		if ($layoutProxy instanceof \Kamille\Mvc\LayoutProxy\LawsLayoutProxy) {
+            $layoutProxy->addDecorator(\Kamille\Mvc\WidgetDecorator\Bootstrap3GridWidgetDecorator::create());
+        }
+		// mit-end:NullosAdmin
+	}
+
+	protected static function Core_lazyJsInit_addCodeWrapper(\Module\Core\JsLazyCodeCollector\JsLazyCodeCollectorInterface $collector)
+	{
+		
+
+		// mit-start:NullosAdmin
+		$collector->addCodeWrapper('jquery', function ($s) {
+            $r = '$(document).ready(function () {' . PHP_EOL;
+            $r .= $s;
+            $r .= '});' . PHP_EOL;
+            return $r;
+        });
+		// mit-end:NullosAdmin
+	}
+
+	protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets)
+	{
 		// mit-start:Ekom
 		$prefixUri = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme");
         $imgPrefix = $prefixUri . "/production";
@@ -81,68 +157,10 @@ class Hooks extends AbstractHooks
 		// mit-end:Ekom
 	}
 
-	protected static function Core_addLoggerListener(\Logger\LoggerInterface $logger)
-	{
-		if (true === \Kamille\Services\XConfig::get("Core.useFileLoggerListener")) {
-            $f = \Kamille\Services\XConfig::get("Core.logFile");
-            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
-                ->setFormatter(\Logger\Formatter\TagFormatter::create())
-                ->setIdentifiers(null)
-                ->setPath($f));
-        }
 
 
-        if (true === \Kamille\Services\XConfig::get("Core.useDbLoggerListener")) {
 
-            $f = \Kamille\Services\XConfig::get("Core.dbLogFile");
-            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
-                ->setFormatter(\Logger\Formatter\TagFormatter::create())
-                ->setIdentifiers(null)
-                ->setPath($f));
-        }
-	}
 
-	protected static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
-	{
-		// mit-start:Authenticate
-		$router->addRouter(\Module\Authenticate\Architecture\Router\AuthenticateRouter::create());
-		// mit-end:Authenticate
-	}
-
-	protected static function Core_autoLawsConfig(&$data)
-	{
-		// mit-start:NullosAdmin
-		$autoJsScript = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme") . "/controllers/" . \Bat\ClassTool::getShortName($data[0]) . ".js";
-        $file = \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("app_dir") . "/www" . $autoJsScript;
-        if (file_exists($file)) {
-            $data[1]['layout']['conf']["jsScripts"][] = $autoJsScript;
-        }
-		// mit-end:NullosAdmin
-	}
-
-	protected static function Core_addLawsUtilProxyDecorators(\Kamille\Mvc\LayoutProxy\LawsLayoutProxyInterface $layoutProxy)
-	{
-		if ($layoutProxy instanceof \Kamille\Mvc\LayoutProxy\LawsLayoutProxy) {
-            $layoutProxy->addDecorator(\Kamille\Mvc\WidgetDecorator\PositionWidgetDecorator::create());
-        }
-		// mit-start:NullosAdmin
-		if ($layoutProxy instanceof \Kamille\Mvc\LayoutProxy\LawsLayoutProxy) {
-            $layoutProxy->addDecorator(\Kamille\Mvc\WidgetDecorator\Bootstrap3GridWidgetDecorator::create());
-        }
-		// mit-end:NullosAdmin
-	}
-
-	protected static function Core_lazyJsInit_addCodeWrapper(\Module\Core\JsLazyCodeCollector\JsLazyCodeCollectorInterface $collector)
-	{
-		// mit-start:NullosAdmin
-		$collector->addCodeWrapper('jquery', function ($s) {
-            $r = '$(document).ready(function () {' . PHP_EOL;
-            $r .= $s;
-            $r .= '});' . PHP_EOL;
-            return $r;
-        });
-		// mit-end:NullosAdmin
-	}
 
 
 

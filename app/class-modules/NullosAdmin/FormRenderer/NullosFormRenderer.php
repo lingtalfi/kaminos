@@ -4,7 +4,11 @@
 namespace Module\NullosAdmin\FormRenderer;
 
 
+use Bat\StringTool;
+use Core\Services\A;
+use Core\Services\X;
 use FormRenderer\DiyFormRenderer;
+use Module\NullosAdmin\ThemeHelper\ThemeHelperInterface;
 
 class NullosFormRenderer extends DiyFormRenderer
 {
@@ -12,13 +16,31 @@ class NullosFormRenderer extends DiyFormRenderer
 
     public function __construct()
     {
+
+        $theme = X::get('NullosAdmin_themeHelper');
+        /**
+         * @var $theme ThemeHelperInterface
+         */
+        $theme->useLib("bootstrap-wysiwyg");
+        $theme->useLib("bootstrap-colorpicker");
+        $theme->useLib("bootstrap-daterangepicker");
+        $theme->useLib("dropzone");
+        $theme->useLib("Switchery");
+
+
         parent::__construct();
         $this->setCssClasses([
             "control" => function ($identifier, array $control) {
                 $s = 'form-control';
                 $s .= ' col-md-7 col-xs-12';
 
-                if (true === "type=radio|checkbox") {
+
+                if (array_key_exists('htmlAttributes', $control) && array_key_exists('type', $control['htmlAttributes']) &&
+                    (
+                        'radio' === $control['htmlAttributes']['type'] ||
+                        'checkbox' === $control['htmlAttributes']['type']
+                    )
+                ) {
                     return "";
                 }
 //                $s .= ' datepicker';
@@ -31,10 +53,191 @@ class NullosFormRenderer extends DiyFormRenderer
         ]);
     }
 
-    protected function getControlHtml(array $control, array $htmlAttributes)
+
+    protected function getControlHtml(array $control, array $htmlAttributes, $identifier)
     {
-        $s = parent::getControlHtml($control, $htmlAttributes);
+        $htmlAttributes['id'] = $this->getIdByIdentifier($identifier);
+
+
+        switch ($control['type']) {
+            case 'dropzone':
+
+                $id = StringTool::getUniqueCssId($identifier);
+
+
+                $s = '<div class="x_content">
+                    <div id="' . $id . '" class="dropzone"></div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </div>';
+
+                $profileId = $control['conf']['profileId'];
+
+                $jsCode = 'var myDropzone = new Dropzone("div#' . $id . '", { url: "/uploads?file=' . $profileId . '"});';
+                A::addBodyEndJsCode('jquery', $jsCode);
+
+                break;
+            case 'colorPicker':
+
+                $this->addHtmlClass($htmlAttributes, "form-control");
+                $s = '<input' . StringTool::htmlAttributes($htmlAttributes) . '>' . PHP_EOL;
+                $s = '<div class="input-group demo2">' . $s . '
+                        <span class="input-group-addon"><i></i></span>
+                      </div>';
+
+
+                break;
+            case 'datetimePicker':
+
+
+                $id = StringTool::getUniqueCssId($identifier);
+
+
+                $this->addHtmlClass($htmlAttributes, "form-control");
+                $s = '<fieldset>
+                          <div class="control-group">
+                            <div class="controls">
+                              <div class="col-md-11 form-group">
+                                <input type="text" class="form-control has-feedback-left" id="' . $id . '">
+                                <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>';
+
+
+                $jsCode = [
+                    '{elementId}' => $id,
+                    'init_daterangepicker' => "init_daterangepicker_" . StringTool::getUniqueCssId(),
+                    'jsConfig' => json_encode($control['js']),
+                ];
+
+
+                $content = file_get_contents(__DIR__ . "/assets/datetimePickerInit.tpl.js");
+                $jsCode = str_replace(array_keys($jsCode), array_values($jsCode), $content);
+                A::addBodyEndJsCode('jquery', $jsCode);
+
+                break;
+            case 'switch':
+                if ("1" === $htmlAttributes['value']) {
+                    $htmlAttributes["checked"] = "checked";
+                }
+
+                $label = $control['label'];
+                $htmlAttributes['class'] = 'js-switch';
+
+                $s = '<div>
+                            <label>
+                              <input ' . StringTool::htmlAttributes($htmlAttributes) . '> ' . $label . '
+                            </label>
+                          </div>';
+                break;
+            case 'htmlTextArea':
+
+                $val = (array_key_exists("value", $control)) ? $control['value'] : "";
+                $style = (array_key_exists('style', $htmlAttributes)) ? $htmlAttributes['style'] : "";
+                $style = 'display: none; ' . $style;
+
+                $htmlAttributes['style'] = $style;
+
+
+                $s = '<div id="alerts"></div>
+                  <div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor-one">
+                    <div class="btn-group">
+                      <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                      </ul>
+                    </div>
+
+                    <div class="btn-group">
+                      <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a data-edit="fontSize 5">
+                            <p style="font-size:17px">Huge</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-edit="fontSize 3">
+                            <p style="font-size:14px">Normal</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a data-edit="fontSize 1">
+                            <p style="font-size:11px">Small</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="btn-group">
+                      <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                      <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                      <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                      <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                    </div>
+
+                    <div class="btn-group">
+                      <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                      <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
+                      <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                      <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                    </div>
+
+                    <div class="btn-group">
+                      <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                      <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                      <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                      <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                    </div>
+
+                    <div class="btn-group">
+                      <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
+                      <div class="dropdown-menu input-append">
+                        <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
+                        <button class="btn" type="button">Add</button>
+                      </div>
+                      <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                    </div>
+
+                    <div class="btn-group">
+                      <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                      <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+                    </div>
+
+                    <div class="btn-group">
+                      <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                      <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                    </div>
+                  </div>
+
+                  <div id="editor-one" class="editor-wrapper"></div>
+
+                  <textarea' . StringTool::htmlAttributes($htmlAttributes) . '>' . $val . '</textarea>';
+                break;
+            default:
+                $s = parent::getControlHtml($control, $htmlAttributes, $identifier);
+                break;
+        }
+
+
         return '<div class="col-md-6 col-sm-6 col-xs-12">' . $s . '</div>';
+    }
+
+    protected function getTickableControlItemHtml($type, $id, $label, $labelLeftSide, $itemHtmlAttributes, $control, $identifier)
+    {
+        $s = '<div class="' . $type . '">
+                            <label>
+                              <input ' . StringTool::htmlAttributes($itemHtmlAttributes) . '> ' . $label . '
+                            </label>
+                          </div>';
+
+        if (true === $labelLeftSide) {
+            // in this implementation, we don't have the choice of the left/right position
+        }
+        return $s;
     }
 
 
@@ -44,73 +247,45 @@ class NullosFormRenderer extends DiyFormRenderer
         if (array_key_exists('htmlAttributes', $control) && in_array("required", $control['htmlAttributes'], true)) {
             $sReq .= '<span class="required">*</span>';
         }
-        return '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="id-' . $identifier . '">' . $label . ' ' . $sReq . '</label>';
+        return '<label class="control-label col-md-3 col-sm-3 col-xs-12" for="' . $this->getIdByIdentifier($identifier) . '">' . $label . ' ' . $sReq . '</label>';
     }
 
     public function render()
     {
+//        echo '<div>';
         echo $this->formOpeningTag;
         //            echo $this->centralizedFormErrors; // we don't use centralized errors!
         echo $this->controls;
-        echo '</form>';
-
-        // call prepare first...
         ?>
-        <!--        <div class="form-group">-->
-        <!--            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name <span-->
-        <!--                        class="required">*</span>-->
-        <!--            </label>-->
-        <!--            <div class="col-md-6 col-sm-6 col-xs-12">-->
-        <!--                <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--        <div class="form-group">-->
-        <!--            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name <span-->
-        <!--                        class="required">*</span>-->
-        <!--            </label>-->
-        <!--            <div class="col-md-6 col-sm-6 col-xs-12">-->
-        <!--                <input type="text" id="last-name" name="last-name" required="required"-->
-        <!--                       class="form-control col-md-7 col-xs-12">-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--        <div class="form-group">-->
-        <!--            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Middle Name / Initial</label>-->
-        <!--            <div class="col-md-6 col-sm-6 col-xs-12">-->
-        <!--                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--        <div class="form-group">-->
-        <!--            <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>-->
-        <!--            <div class="col-md-6 col-sm-6 col-xs-12">-->
-        <!--                <div id="gender" class="btn-group" data-toggle="buttons">-->
-        <!--                    <label class="btn btn-default" data-toggle-class="btn-primary"-->
-        <!--                           data-toggle-passive-class="btn-default">-->
-        <!--                        <input type="radio" name="gender" value="male"> &nbsp; Male &nbsp;-->
-        <!--                    </label>-->
-        <!--                    <label class="btn btn-primary" data-toggle-class="btn-primary"-->
-        <!--                           data-toggle-passive-class="btn-default">-->
-        <!--                        <input type="radio" name="gender" value="female"> Female-->
-        <!--                    </label>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--        <div class="form-group">-->
-        <!--            <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>-->
-        <!--            </label>-->
-        <!--            <div class="col-md-6 col-sm-6 col-xs-12">-->
-        <!--                <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required"-->
-        <!--                       type="text">-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--        <div class="ln_solid"></div>-->
-        <!--        <div class="form-group">-->
-        <!--            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">-->
-        <!--                <button class="btn btn-primary" type="button">Cancel</button>-->
-        <!--                <button class="btn btn-primary" type="reset">Reset</button>-->
-        <!--                <button type="submit" class="btn btn-success">Submit</button>-->
-        <!--            </div>-->
-        <!--        </div>-->
-
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button class="btn btn-primary" type="button">Cancel</button>
+                <button class="btn btn-primary" type="reset">Reset</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
         <?php
+        echo '</form>';
+//        echo '</div>';
+
+    }
+
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    private function getIdByIdentifier($identifier)
+    {
+        return 'id-' . $identifier;
+    }
+
+    private function addHtmlClass(array &$htmlAttributes, $class)
+    {
+        if (array_key_exists('class', $htmlAttributes)) {
+            $htmlAttributes['class'] .= ' ' . $class;
+        } else {
+            $htmlAttributes['class'] = $class;
+        }
     }
 }

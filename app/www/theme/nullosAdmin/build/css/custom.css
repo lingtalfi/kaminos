@@ -3681,11 +3681,11 @@ div[data-role="editor-toolbar"] {
 .select2-container--default.select2-container--focus .select2-selection--multiple {
     border: 1px solid #ccc
 }
-.switchery {
+form .switchery {
     width: 32px;
     height: 20px
 }
-.switchery>small {
+form .switchery>small {
     width: 20px;
     height: 20px
 }

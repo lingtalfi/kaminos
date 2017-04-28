@@ -13,6 +13,11 @@ use FormModel\Control\InputTextControl;
 use FormModel\Control\SelectControl;
 use FormModel\Control\TextAreaControl;
 use FormModel\FormModel;
+use Module\NullosAdmin\FormModel\Control\ColorInputTextControl;
+use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
+use Module\NullosAdmin\FormModel\Control\DropZoneControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
+use Module\NullosAdmin\FormModel\Control\InputSwitchControl;
 
 class TestPageController extends NullosAdminController
 {
@@ -77,6 +82,11 @@ class TestPageController extends NullosAdminController
                 ->name("favorite_color")
                 ->value("red")
             )
+            ->addControl("noodles", InputSwitchControl::create()
+                ->label("Like noodles?")
+                ->name("noodles")
+                ->addHtmlAttribute("value", "1")
+            )
             ->addControl("country", SelectControl::create()
                 ->value("spain")
                 ->setItems([
@@ -86,6 +96,16 @@ class TestPageController extends NullosAdminController
                 ])
                 ->label("Country")
                 ->name("country")
+            )
+            ->addControl("biography", HtmlTextAreaControl::create()
+                ->value("spain")
+                ->label("Biography")
+                ->name("biography")
+            )
+            ->addControl("date_holiday", DatetimePickerInputTextControl::create()
+                ->injectJsConfigurationKey(['timePicker' => false])
+                ->label("Holidays date")
+                ->name("date_holiday")
             )
             ->addControl("towns", SelectControl::create()
                 ->multiple()
@@ -98,9 +118,16 @@ class TestPageController extends NullosAdminController
                 ->name("towns[]")
                 ->value(["chartres", "tours"])
             )
-            ->addControl("avatar", InputFileControl::create()
+            ->addControl("avatar", DropZoneControl::create()
+                ->setShowDeleteLink(true)
+                ->setProfileId("default_image")
                 ->label("Avatar")
                 ->name("avatar")
+            )
+            ->addControl("color", ColorInputTextControl::create()
+                ->label("Color")
+                ->addHtmlAttribute("value", "#c00")
+                ->name("color")
             );
 
 

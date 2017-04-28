@@ -10,15 +10,18 @@ interface ThemeHelperInterface{
      * Loads a js lib.
      * Available js libs are:
      *
-     * - Chart
-     * - gauge
-     * - bootstrap-progressbar
-     * - iCheck
-     * - skycons
-     * - flot
-     * - dateJS
-     * - JQVMap
+     * - bootstrap-colorpicker
      * - bootstrap-daterangepicker
+     * - bootstrap-progressbar
+     * - Chart
+     * - dateJS
+     * - dropzone
+     * - flot
+     * - gauge
+     * - iCheck
+     * - JQVMap
+     * - skycons
+     * - Switchery
      */
     public function useLib($libName);
 

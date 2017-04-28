@@ -25,6 +25,7 @@ use Kamille\Architecture\Router\Web\StaticObjectRouter;
 use Kamille\Services\XLog;
 use Kamille\Utils\Routsy\RoutsyRouter;
 use Logger\Logger;
+use Module\Core\Architecture\Router\AjaxStaticRouter;
 use Module\Core\Architecture\Router\EarlyRouter;
 use Module\Core\Architecture\Router\ExceptionRouter;
 use QuickPdo\QuickPdo;
@@ -57,8 +58,18 @@ class WebApplicationHandler
 //            $uri2Controller = [];
 //            Hooks::call("Core_feedUri2Controller", $uri2Controller);
 
+
+            $uri2Controllers = [];
+            $ajaxRouter = AjaxStaticRouter::create();
+            Hooks::call("Core_feedAjaxUri2Controllers", $uri2Controllers);
+            $ajaxRouter->setUri2Controllers($uri2Controllers);
+
+
+
+
             $earlyRouter = EarlyRouter::create();
             $earlyRouter->addRouter(ExceptionRouter::create()->setController(XConfig::get("Core.exceptionController")));
+            $earlyRouter->addRouter($ajaxRouter);
             Hooks::call("Core_feedEarlyRouter", $earlyRouter);
 
 
@@ -83,11 +94,19 @@ class WebApplicationHandler
 
 
         } catch (\Exception $e) {
+
             /**
              * @var $oldRequest HttpRequestInterface
              */
             $oldRequest = $app->get('request');
-            XLog::error("[Core module] - WebApplicationHandler: exception caught with message: '" . $e->getMessage() . "'. uri was " . $oldRequest->uri() . ", redispatching to the fallback loop");
+            if($oldRequest instanceof HttpRequestInterface){
+                $sUri = $oldRequest->uri();
+            }
+            else{
+                $sUri = " not set (no request key found in the HttpRequest object)";
+
+            }
+            XLog::error("[Core module] - WebApplicationHandler: exception caught with message: '" . $e->getMessage() . "'. uri was " . $sUri . ", redispatching to the fallback loop");
 
             if (true === XConfig::get("Core.showExceptionTrace")) {
                 XLog::trace("$e");

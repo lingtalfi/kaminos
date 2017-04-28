@@ -5,6 +5,7 @@ Application
 Kaminos
 Test
 Authenticate
-NullosAdmin
-Core
 Ekom
+Core
+NullosAdmin
+UploadProfiles

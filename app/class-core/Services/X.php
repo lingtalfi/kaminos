@@ -82,10 +82,6 @@ class X extends AbstractX
 
 
 
-    public static function NullosAdmin_themeHelper()
-    {
-        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
-    }
 
     public static function Core_webApplicationHandler()
     {
@@ -113,6 +109,28 @@ class X extends AbstractX
         $initializer = new \Module\Core\Pdo\QuickPdoInitializer();
         return $initializer;
     }
+
+    public static function NullosAdmin_themeHelper()
+    {
+        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
+    }
+
+    public static function UploadProfilesServices_profileCollection()
+    {
+        $c = \Module\UploadProfiles\ProfileCollection\ProfileCollection::create();
+        $profiles = [];
+        $appDir = \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("app_dir");
+        $colFile = $appDir . "/config/upload-profiles/conf.php";
+        if (file_exists($colFile)) {
+            include $colFile;
+        }
+        $c->setProfiles($profiles);
+        return $c;
+    }
+
+
+
+
 
 
 

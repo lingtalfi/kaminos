@@ -48,6 +48,12 @@ class CoreHooks
 
     }
 
+    protected static function Core_feedAjaxUri2Controllers(array &$uri2Controllers)
+    {
+
+    }
+
+
     protected static function Core_addLawsUtilProxyDecorators(\Kamille\Mvc\LayoutProxy\LawsLayoutProxyInterface $layoutProxy)
     {
         if ($layoutProxy instanceof \Kamille\Mvc\LayoutProxy\LawsLayoutProxy) {

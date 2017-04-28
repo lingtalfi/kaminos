@@ -553,41 +553,95 @@ Select the set of payment methods available to your shop.
 Order
 -------
 
-Is used to display orders to the user in the front (it's an history).
-Also we need to recreate a pdf invoice with the data of the order and order_detail tables combined.
+Is used to display orders to the user in the front.
+
+When an order is placed, its data cannot change in the future (for obvious consistency reasons),
+therefore it's good to have all data available in the order table.
+
+Note: if the user wants to change her order, she can't. She might be able to duplicate an old order though (to implement
+if necessary).
+
+Think that we'll need to recreate a pdf invoice out of the data put in the order table.
+
 
 Note that we need to flatten all data, be it a dynamic carrier strategy, or an user address.
 
 
 
-- user_id: the number representing the user id owning this order. Although it's not a foreign key,
-            
-- shop_id: 
 
 - reference: reference created by ekom according to some format (which you can control)
-
-(invoice address info)
-- invoice_country
-- invoice_state: 
-- invoice_city
-- invoice_postcode: varchar  (some postcodes contain letters)
-- invoice_address 
-
-(billing address info)
-- billing_country
-- billing_state
-- billing_city
-- billing_postcode: varchar  (some postcodes contain letters)
-- billing_address 
-
-(order info):
-- a serialized version of the ekom order model, as defined in the appendixes of this document
+- date: datetime
+- tracking_number: null|string, provided by some carriers, but not all
+- user_info: a serialized array containing the following info:
+    - id (just in case), email, mobile, phone, pro (a plugin needs to put this field here), group label.
+            
+- shop_info: a serialized array containing the following:
+    - id, label, currency_symbol, currency_code
 
 
-- state: the order state.
-            States can be created by plugins and modules.
-            Some default states are provided by ekom.
-            Todo:::: https://support.bigcommerce.com/articles/Public/Understanding-Order-Statuses
+- invoice_address_info: serialized array with the following:
+    - invoice_country
+    - invoice_state: 
+    - invoice_city
+    - invoice_postcode: varchar  (some postcodes contain letters)
+    - invoice_address 
+
+
+- billing_address_info: serialized array with the following:
+    - billing_country
+    - billing_state
+    - billing_city
+    - billing_postcode: varchar  (some postcodes contain letters)
+    - billing_address 
+
+- order_details: a serialized version of the ekom order model, as defined in the appendixes of this document
+
+
+
+
+order_has_order_status
+----------------
+
+Status history.
+
+- date: datetime
+
+
+Order_status
+----------------
+Contains the statuses used by ekom.
+States can be created by plugins and modules, or manually.
+Some default states are provided by ekom.
+    - https://support.bigcommerce.com/articles/Public/Understanding-Order-Statuses
+    - Pending — customer started the checkout process, but did not complete it. 
+    - Awaiting Payment — customer has completed checkout process, but payment has yet to be confirmed. Authorize only transactions that are not yet captured have this status.
+    - Awaiting Fulfillment — customer has completed the checkout process and payment has been confirmed
+    - Awaiting Shipment — order has been pulled and packaged, and is awaiting collection from a shipping provider
+    - Awaiting Pickup — order has been pulled, and is awaiting customer pickup from a seller-specified location
+    - Partially Shipped — only some items in the order have been shipped, due to some products being pre-order only or other reasons
+    - Completed — order has been shipped/picked up, and receipt is confirmed; client has paid for their digital product and their file(s) are available for download
+    - Shipped — order has been shipped, but receipt has not been confirmed; seller has used the Ship Items action. 
+    - Cancelled — seller has cancelled an order, due to a stock inconsistency or other reasons. 
+    - Declined — seller has marked the order as declined for lack of manual payment, or other reasons
+    - Refunded — seller has used the Refund action.
+    - Disputed — customer has initiated a dispute resolution process for the PayPal transaction that paid for the order
+    - Verification Required — order on hold while some aspect (e.g. tax-exempt documentation) needs to be manually confirmed.
+     Orders with this status must be updated manually. 
+     Capturing funds or other order actions will not automatically update the status of an order marked Verification Required.     
+
+
+
+- label
+- lang_id
+
+Order_status_shop
+----------------
+- color: web color 
+
+
+
+
+
 
 
 
@@ -646,6 +700,7 @@ Carrier_lang
 -------------
 - label:
 - description
+
 
 Carrier_shop
 -------------

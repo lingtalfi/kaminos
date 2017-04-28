@@ -53,4 +53,16 @@ class A
         }
         return false;
     }
+
+    public static function quickPdoInit()
+    {
+        if (null !== ($obj = X::get("Core_QuickPdoInitializer", null, false))) {
+            /**
+             * @var $obj \Module\Core\Pdo\QuickPdoInitializer
+             */
+            $obj->init();
+            return true;
+        }
+        return false;
+    }
 }

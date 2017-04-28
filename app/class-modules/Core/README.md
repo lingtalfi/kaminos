@@ -120,6 +120,11 @@ Others
 History Log
 ------------------
     
+- 1.8.0 -- 2017-04-28
+
+    - add Core_QuickPdoInitializer service, and A corresponding shortcut 
+    - removed fallbackController configuration key
+    
 - 1.7.0 -- 2017-04-23
 
     - add Core_autoLawsConfig hook

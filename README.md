@@ -1,10 +1,10 @@
-Kaminos
+KamilleApp
 ==============
-2017-03-12
+2017-04-28
 
 
 
-An administration system for any website.
+Standard kamille app.
 
 
 
@@ -12,7 +12,4 @@ This work is currently in progress...
 
 
 
-                
-- Core: Maintenance mode
-        ->controller: maintenance Controller (view with maintenance widget...)
-                
+Add ApplicationModule.

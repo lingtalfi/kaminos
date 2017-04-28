@@ -5,6 +5,7 @@ namespace Module\Core\ApplicationHandler;
 
 
 use Bat\ObTool;
+use Core\Services\A;
 use Core\Services\Hooks;
 use Core\Services\X;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
@@ -26,6 +27,7 @@ use Kamille\Utils\Routsy\RoutsyRouter;
 use Logger\Logger;
 use Module\Core\Architecture\Router\EarlyRouter;
 use Module\Core\Architecture\Router\ExceptionRouter;
+use QuickPdo\QuickPdo;
 
 class WebApplicationHandler
 {
@@ -35,13 +37,20 @@ class WebApplicationHandler
         try {
 
 
-            // initialize logger
+            //--------------------------------------------
+            // INITIALIZE LOGGER
+            //--------------------------------------------
             $logger = Logger::create();
             Hooks::call("Core_addLoggerListener", $logger);
             XLog::setLogger($logger); // now XLog is initialized for the rest of the application :)
 
             if (true === ApplicationParameters::get('debug')) {
-                XLog::debug("[Core module] - WebApplicationHandler.handle ");
+                XLog::debug("[Core module] - WebApplicationHandler.handle");
+            }
+
+
+            if (true === XConfig::get("Core.useQuickPdo")) {
+                A::quickPdoInit();
             }
 
 

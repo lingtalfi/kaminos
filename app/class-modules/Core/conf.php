@@ -2,49 +2,56 @@
 
 
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
+use Kamille\Architecture\Environment\Web\Environment;
 
 $appDir = ApplicationParameters::get('app_dir');
 
+
+$env = Environment::getEnvironment();
+
+
+$dbName = "kamille";
+
+
+if ('dev' === $env) {
+
+    $quickPdoConf = [
+        "dsn" => "mysql:dbname=$dbName;host=127.0.0.1",
+        "user" => "root",
+        "pass" => "root",
+        "options" => [
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+        ],
+    ];
+} else {
+    $quickPdoConf = [
+        "dsn" => "mysql:dbname=$dbName;host=127.0.0.1",
+        "user" => "root",
+        "pass" => "root",
+        "options" => [
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+        ],
+    ];
+}
+
+
 $conf = [
     /**
-     * The default controller called by the static router when no other page matches
-     * hint: WebApplicationHandler
-     */
-    "fallbackController" => 'Controller\Core\PageNotFoundController:render',
-
-    /**
-     * The exception controller used when an exception was caught at the
-     * WebApplicationHandler level (which is btw a bad thing as it should
-     * probably be caught earlier).
-     *
-     * hint: WebApplicationHandler
+     * check documentation for more info
      */
     "exceptionController" => 'Controller\Core\ExceptionController:render',
-
-    /**
-     * Whether or not to use the default useFileLoggerListener provided by the Core module.
-     * It will write logs to the file specified with the logFile parameter
-     *
-     */
     "useFileLoggerListener" => true,
-    /**
-     * This is the log file for the core module (which brings up XLog functionality)
-     */
     "logFile" => $appDir . "/logs/kamille.log.txt",
-    /**
-     *
-     * Whether or not to show the exception trace in the logs.
-     * You can use the H::exceptionToString($e) method.
-     */
     "showExceptionTrace" => false,
-    /**
-     * Whether or not to autoload the css files based on their existence at the location defined
-     * in the laws system (part two).
-     * https://github.com/lingtalfi/laws
-     *
-     * Basically, when this is true, you don't need to call the stylesheet from your widget/layout code,
-     * this call will be made for you, as long as you create the stylesheet in the right
-     * location (defined in laws part 2).
-     */
     "useCssAutoload" => true,
+    //--------------------------------------------
+    // DATABASE
+    //--------------------------------------------
+    "database" => $dbName,
+    "useDbLoggerListener" => true,
+    "dbLogFile" => $appDir . "/logs/kamille.sql.log.txt",
+    "useQuickPdo" => true,
+    "quickPdoConfig" => $quickPdoConf,
 ];

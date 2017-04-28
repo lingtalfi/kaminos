@@ -21,6 +21,16 @@ class CoreHooks
                 ->setIdentifiers(null)
                 ->setPath($f));
         }
+
+
+        if (true === \Kamille\Services\XConfig::get("Core.useDbLoggerListener")) {
+
+            $f = \Kamille\Services\XConfig::get("Core.dbLogFile");
+            $logger->addListener(\Logger\Listener\FileLoggerListener::create()
+                ->setFormatter(\Logger\Formatter\TagFormatter::create())
+                ->setIdentifiers(null)
+                ->setPath($f));
+        }
     }
 
     protected static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)

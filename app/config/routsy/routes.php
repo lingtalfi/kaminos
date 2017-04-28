@@ -82,5 +82,6 @@ $routes["Test_myRouteId7"] = ["/my/{dynamic}/uris", null, function (HttpRequestI
 //--------------------------------------------
 
 
+$routes["NullosAdmin_testPage"] = ["/", null, null, 'Controller\NullosAdmin\TestPageController:render'];
 $routes["NullosAdmin_homePage"] = ["/", null, null, 'Controller\NullosAdmin\HomePageController:render'];
 $routes["Mine_default"] = ["/", null, null, 'Controller\Core\PageNotFoundController:render'];

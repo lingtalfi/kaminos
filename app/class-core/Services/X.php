@@ -79,6 +79,14 @@ class X extends AbstractX
 
 
 
+
+
+
+    public static function NullosAdmin_themeHelper()
+    {
+        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
+    }
+
     public static function Core_webApplicationHandler()
     {
         return new \Module\Core\ApplicationHandler\WebApplicationHandler();
@@ -100,9 +108,10 @@ class X extends AbstractX
         return $collector;
     }
 
-    public static function NullosAdmin_themeHelper()
+    public static function Core_QuickPdoInitializer()
     {
-        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
+        $initializer = new \Module\Core\Pdo\QuickPdoInitializer();
+        return $initializer;
     }
 
 

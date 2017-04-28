@@ -32,6 +32,12 @@ class CoreServices
         \Core\Services\Hooks::call("Core_lazyJsInit_addCodeWrapper", $collector);
         return $collector;
     }
+
+    protected static function Core_QuickPdoInitializer()
+    {
+        $initializer = new \Module\Core\Pdo\QuickPdoInitializer();
+        return $initializer;
+    }
 }
 
 

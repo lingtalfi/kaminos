@@ -8,7 +8,9 @@ use Bat\StringTool;
 use Core\Services\A;
 use Core\Services\X;
 use FormRenderer\DiyFormRenderer;
+use Kamille\Services\XConfig;
 use Module\NullosAdmin\ThemeHelper\ThemeHelperInterface;
+use Module\UploadProfile\ProfileFinder\ProfileFinderInterface;
 
 class NullosFormRenderer extends DiyFormRenderer
 {
@@ -75,7 +77,30 @@ class NullosFormRenderer extends DiyFormRenderer
 
                 $profileId = $control['conf']['profileId'];
 
-                $jsCode = 'var myDropzone = new Dropzone("div#' . $id . '", { url: "/uploads?file=' . $profileId . '"});';
+                $finder = X::get("UploadProfile_profileFinder");
+                $uploadUri = XConfig::get("UploadProfile.uploadUri");
+
+
+                $conf = [
+                    'url' => "$uploadUri?file=$profileId",
+                    'addRemoveLinks' => $control['conf']['showDeleteLink'],
+                ];
+                /**
+                 * @var $finder ProfileFinderInterface
+                 */
+                if (false !== ($profile = $finder->getProfile($profileId))) {
+                    if (array_key_exists("maxFileSize", $profile)) {
+                        $conf['maxFilesize'] = $profile['maxFileSize'];
+                    }
+                    if (array_key_exists("acceptedFiles", $profile)) {
+                        $conf['acceptedFiles'] = $profile['acceptedFiles'];
+                    }
+                }
+
+                $jsCode = '
+                var conf = ' . json_encode($conf) . ';
+                var myDropzone = new Dropzone("div#' . $id . '", conf);
+';
                 A::addBodyEndJsCode('jquery', $jsCode);
 
                 break;

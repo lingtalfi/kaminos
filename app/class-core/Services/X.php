@@ -110,23 +110,30 @@ class X extends AbstractX
         return $initializer;
     }
 
+
+
+
     public static function NullosAdmin_themeHelper()
     {
         return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
     }
 
-    public static function UploadProfilesServices_profileCollection()
+    public static function UploadProfile_profileFinder()
     {
-        $c = \Module\UploadProfiles\ProfileCollection\ProfileCollection::create();
-        $profiles = [];
         $appDir = \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("app_dir");
-        $colFile = $appDir . "/config/upload-profiles/conf.php";
-        if (file_exists($colFile)) {
-            include $colFile;
-        }
-        $c->setProfiles($profiles);
-        return $c;
+        $finder = \Module\UploadProfile\ProfileFinder\ProfileFinder::create()->setProfilesDir($appDir . "/config/upload-profiles");
+        return $finder;
     }
+
+    public static function DataTable_profileFinder()
+    {
+        $appDir = \Kamille\Ling\Z::appDir();
+        return \Module\DataTable\DataTableProfileFinder\DataTableProfileFinder::create()->setProfilesDir($appDir . "/config/datatable-profiles");
+    }
+
+
+
+
 
 
 

@@ -20,6 +20,12 @@ kamille install NullosAdmin
 ```
 
 
+Dependencies
+===============
+- Authenticate?
+- UploadProfile
+
+
 
 
 Developers

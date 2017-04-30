@@ -23,7 +23,7 @@ class TestPageController extends NullosAdminController
 {
 
 
-    public function render()
+    public function renderForm()
     {
         $key = "AuthenticateController_renderForm";
         $tf = "common/form";
@@ -120,7 +120,7 @@ class TestPageController extends NullosAdminController
             )
             ->addControl("avatar", DropZoneControl::create()
                 ->setShowDeleteLink(true)
-                ->setProfileId("default_image")
+                ->setProfileId("Ekom.default_image")
                 ->label("Avatar")
                 ->name("avatar")
             )

@@ -120,6 +120,7 @@ class TestPageController extends NullosAdminController
             )
             ->addControl("avatar", DropZoneControl::create()
                 ->setShowDeleteLink(true)
+                ->setProfileId("Ekom.default_image")
                 ->label("Avatar")
                 ->name("avatar")
             )

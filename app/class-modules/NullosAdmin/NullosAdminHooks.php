@@ -45,10 +45,7 @@ class NullosAdminHooks
 
     }
 
-    protected static function Core_feedAjaxUri2Controllers(array &$uri2Controllers)
-    {
-        $uri2Controllers['/uploads'] = "Controller\UploadProfiles\UploadController:handleUpload";
-    }
+
 }
 
 

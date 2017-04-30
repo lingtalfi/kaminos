@@ -8,4 +8,5 @@ Authenticate
 Ekom
 Core
 NullosAdmin
-UploadProfiles
+UploadProfile
+DataTable

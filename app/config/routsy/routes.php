@@ -43,6 +43,10 @@ $routes['Test_ho2'] = ["/uri", null, null, "MyTestController:method"];
 
 
 $routes["Authenticate_loginForm"] = ["/login", null, null, '\Controller\Authenticate\AuthenticateController:renderForm'];
+
+
+$routes['DataTable_ajaxHandler'] = [\Kamille\Services\XConfig::get("DataTable.uriAjaxHandler"), null, null, "Controller\DataTable\DataTableController:handleAjax"];
+
 //--------------------------------------------
 // DYNAMIC
 //--------------------------------------------
@@ -82,6 +86,6 @@ $routes["Test_myRouteId7"] = ["/my/{dynamic}/uris", null, function (HttpRequestI
 //--------------------------------------------
 
 
-$routes["NullosAdmin_testPage"] = ["/", null, null, 'Controller\NullosAdmin\TestPageController:render'];
+$routes["NullosAdmin_testPage"] = ["/", null, null, 'Controller\NullosAdmin\TestPageController:renderForm'];
 $routes["NullosAdmin_homePage"] = ["/", null, null, 'Controller\NullosAdmin\HomePageController:render'];
 $routes["Mine_default"] = ["/", null, null, 'Controller\Core\PageNotFoundController:render'];

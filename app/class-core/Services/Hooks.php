@@ -86,11 +86,13 @@ class Hooks extends AbstractHooks
 
 	protected static function Core_feedAjaxUri2Controllers(array &$uri2Controllers)
 	{
-		
-
 		// mit-start:NullosAdmin
-		$uri2Controllers['/uploads'] = "Controller\UploadProfiles\UploadController:handleUpload";
+		$uri2Controllers['/' . \Kamille\Services\XConfig::get("NullosAdmin.uploadDirName")] = "Controller\UploadProfile\UploadController:handleUpload";
 		// mit-end:NullosAdmin
+
+		// mit-start:UploadProfile
+		$uri2Controllers[\Kamille\Services\XConfig::get("UploadProfile.uploadUri")] = "Controller\UploadProfile\UploadController:handleUpload";
+		// mit-end:UploadProfile
 	}
 
 	protected static function Core_addLawsUtilProxyDecorators(\Kamille\Mvc\LayoutProxy\LawsLayoutProxyInterface $layoutProxy)
@@ -156,6 +158,8 @@ class Hooks extends AbstractHooks
         ];
 		// mit-end:Ekom
 	}
+
+
 
 
 

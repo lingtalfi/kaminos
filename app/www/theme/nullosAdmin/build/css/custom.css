@@ -4239,3 +4239,18 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 .dataTables_wrapper > .row{
   overflow:auto !important; /*prevent datatables overflowing its container*/
 }
+
+
+
+/*------------------------------------
+- LING
+------------------------------------*/
+.table-ling thead tr{
+    background: rgba(52, 73, 94, 0.94);
+    color: #ECF0F1;
+}
+
+.table-ling thead tr.search-row{
+    background: pink;
+    color: #ECF0F1;
+}

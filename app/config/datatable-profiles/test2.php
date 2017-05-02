@@ -15,21 +15,6 @@ $profile = [
         'type' => 'array',
         'path' => '/myphp/kaminos/app/www/twitter.rows.php',
     ],
-    'transformers' => [
-        'action' => function ($oldValue, $columnId, array $row) {
-            return [
-                'type' => "link",
-                'data' => [
-                    'type' => 'modal',
-                    'uri' => '/datatable-handler?type=special&id=test',
-                    'confirm' => false,
-                    'confirmText' => "Are you sure you want to execute this action?",
-                    'icon' => "mail",
-                    'label' => "Send a mail",
-                ],
-            ];
-        }
-    ],
     'model' => [
         'headers' => [
             "firstName" => "first Name",
@@ -45,19 +30,17 @@ $profile = [
         'isSortable' => true,
         'unsortable' => ['action'],
         'showCountInfo' => true,
-        'showNipp' => true,
-        'nippItems' => [1, 2, 5, 10, 20, 50, 100, 'all'],
+        'showNipp' => false,
         'showQuickPage' => true,
         'showPagination' => true,
         'showBulkActions' => true,
-        'showEmptyBulkWarning' => true,
         'bulkActions' => [
             'deleteAll' => [
                 'confirm' => false,
                 'confirmText' => "Are you sure you want to execute this action?",
                 'label' => "Delete items",
-                'uri' => "/datatable-handler?type=bulk",
-                'type' => "modal",
+                'uri' => "/datatable-myactions?actiondelete-all",
+                'type' => "refreshOnSuccess",
             ],
         ],
         'showActionButtons' => true,
@@ -66,9 +49,8 @@ $profile = [
                 'confirm' => false,
                 'confirmText' => "Are you sure you want to execute this action?",
                 'label' => "Send Mail",
-                'useSelectedRows' => true,
-                'uri' => "/datatable-handler?type=action",
-                'type' => "refreshOnSuccess",
+                'uri' => "/datatable-myactions?sendmail",
+                'type' => "modal",
                 'icon' => "mail",
             ],
         ],
@@ -79,21 +61,18 @@ $profile = [
         // the user can override them
         //--------------------------------------------
         'page' => 1,
-        'nipp' => 2,
+        'nipp' => 3,
 
         //--------------------------------------------
         // TEXT
         //--------------------------------------------
         'textNoResult' => 'No results found',
         'textSearch' => 'Search',
-        'textSearchClear' => 'Clear',
         'textCountInfo' => 'Showing {offsetStart} to {offsetEnd} of {nbItems} entries',
         'textNipp' => 'Show {select} entries',
         'textNippAll' => 'all',
         'textQuickPage' => 'Page',
         'textQuickPageButton' => 'Go',
         'textBulkActionsTeaser' => 'For selected entries',
-        'textEmptyBulkWarning' => 'Please select at least one row',
-        'textUseSelectedRowsEmptyWarning' => 'Please select at least one row',
     ],
 ];

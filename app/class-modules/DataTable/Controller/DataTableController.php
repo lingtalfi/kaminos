@@ -286,7 +286,7 @@ class DataTableController extends ApplicationController
                 $model->setTextEmptyBulkWarning($m['textEmptyBulkWarning']);
             }
             if (array_key_exists('textUseSelectedRowsEmptyWarning', $m)) {
-                $model->setTextUseSelectedRowsEmptyWarning($m['textUseSelectedRowsEmptyWarning']);
+                $model->setTextEmptyBulkWarning($m['textUseSelectedRowsEmptyWarning']);
             }
         }
     }

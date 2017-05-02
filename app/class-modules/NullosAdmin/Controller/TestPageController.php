@@ -23,7 +23,7 @@ class TestPageController extends NullosAdminController
 {
 
 
-    public function render()
+    public function renderForm()
     {
         $key = "AuthenticateController_renderForm";
         $tf = "common/form";

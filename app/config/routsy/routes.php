@@ -45,6 +45,11 @@ $routes['Test_ho2'] = ["/uri", null, null, "MyTestController:method"];
 $routes["Authenticate_loginForm"] = ["/login", null, null, '\Controller\Authenticate\AuthenticateController:renderForm'];
 
 
+$routes['DataTable_ajaxActionsHandler'] = [\Kamille\Services\XConfig::get("DataTable.uriAjaxHandler"), null, [
+    'inGet' => ["type"],
+], "DataTable\AppDataTableController:handleAjaxAction"]; // this controller needs to be implemented
+
+
 $routes['DataTable_ajaxHandler'] = [\Kamille\Services\XConfig::get("DataTable.uriAjaxHandler"), null, null, "Controller\DataTable\DataTableController:handleAjax"];
 
 //--------------------------------------------

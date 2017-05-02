@@ -25,7 +25,8 @@ use Kamille\Services\XConfig;
 
 <body>
 
-<div class="datatable_view" data-id="test"></div>
+<div id="kk" class="datatable_view" data-id="test"></div>
+<div class="datatable_view" data-id="test2"></div>
 
 
 
@@ -36,6 +37,11 @@ use Kamille\Services\XConfig;
             $('.datatable_view').dataTable({
                 uri: "<?php echo XConfig::get("DataTable.uriAjaxHandler"); ?>"
             });
+
+
+
+
+
         }
         initDataTable();
     });

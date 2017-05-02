@@ -3,6 +3,8 @@
 
 namespace Module\DataTable\DataTableProfileFinder;
 
+use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
+use Kamille\Ling\Z;
 use Kamille\Services\XLog;
 
 
@@ -26,6 +28,9 @@ class DataTableProfileFinder implements DataTableProfileFinderInterface
     {
         $f = $this->profilesDir . "/$profileId.php";
         if (file_exists($f)) {
+            if (true === ApplicationParameters::get("debug")) {
+                XLog::debug("DataTableProfileFinder: profile file found: $f");
+            }
             $profile = [];
             include $f;
             return $profile;

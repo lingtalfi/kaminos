@@ -180,7 +180,6 @@ class NullosAdminController extends ApplicationController
         ];
         Hooks::call("NullosAdmin_layout_addTopBarRightWidgets", $topbarRightWidgets);
         $widgets = array_merge($widgets, $topbarRightWidgets);
-
         $config = array_replace_recursive([
             "layout" => [
                 "tpl" => "admin/default",

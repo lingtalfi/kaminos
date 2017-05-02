@@ -4,7 +4,6 @@
 namespace Controller\DataTable;
 
 
-use function array_key_exists;
 use Core\Controller\ApplicationController;
 use Core\Services\X;
 use Kamille\Architecture\Response\Web\JsonResponse;
@@ -13,6 +12,7 @@ use ModelRenderers\DataTable\DataTableRenderer;
 use Models\DataTable\DataTableModel;
 use Module\DataTable\DataTableProfileFinder\DataTableProfileFinderInterface;
 use RowsGenerator\ArrayRowsGenerator;
+use RowsGenerator\QuickPdoRowsGenerator;
 use RowsGenerator\RowsGeneratorInterface;
 use RowsGenerator\Util\RowsTransformerUtil;
 
@@ -98,8 +98,12 @@ class DataTableController extends ApplicationController
                             $this->log("DataTableController: Path to array rowsGenerator File not found: $path");
                             $rows = [];
                         }
+                    } elseif ('quickPdo' === $type) {
+                        $generator = QuickPdoRowsGenerator::create()
+                            ->setFields($rowsGenerator['fields'])->setQuery($rowsGenerator['query']);
+
                     } else {
-                        throw new \Exception("not implemented yet");
+                        return $this->log("Not implemented yet, generator with type $type", true);
                     }
 
 
@@ -113,6 +117,7 @@ class DataTableController extends ApplicationController
                     $generator->setSortValues($sortValues);
                     $generator->setPage($page);
                     $generator->setNbItemsPerPage($nipp);
+
 
 
                     //--------------------------------------------

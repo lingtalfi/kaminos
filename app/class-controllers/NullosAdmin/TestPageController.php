@@ -132,13 +132,13 @@ class TestPageController extends NullosAdminController
 
 
         return $this->renderByViewId("NullosAdmin/testPage", [
-            'widgets' => [
-                "maincontent.form" => [
-                    "conf" => [
-                        "formModel" => $formModel->getArray(),
-                    ],
-                ],
-            ],
+//            'widgets' => [
+//                "maincontent.form" => [
+//                    "conf" => [
+//                        "formModel" => $formModel->getArray(),
+//                    ],
+//                ],
+//            ],
         ]);
     }
 

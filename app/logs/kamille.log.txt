@@ -18931,3 +18931,1552 @@ Stack trace:
 2017-05-02 07:32:54 - [debug]: [Core module] - WebApplicationHandler.handle
 2017-05-02 07:32:54 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxActionsHandler matched and controller is DataTable\AppDataTableController:handleAjaxAction
 2017-05-02 07:32:54 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: DataTable\AppDataTableController
+2017-05-02 10:16:24 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:16:24 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:16:24 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:16:24 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:16:27 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:16:27 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 10:16:27 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 10:16:27 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 10:16:27 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+----- id: maincontent.form; tplName: unknown
+2017-05-02 10:16:27 - [error]: LawsUtil: name is not a valid key for widgetId maincontent.form (viewId=NullosAdmin/testPage)
+2017-05-02 10:16:27 - [debug]: Rendering layout admin/default
+2017-05-02 10:16:34 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:16:34 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:16:34 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:16:34 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:17:13 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:17:13 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:17:13 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:17:13 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:18:18 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:18:18 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:18:18 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:18:18 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:18:18 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:18:18 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:18:18 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:18:18 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test2.php
+2017-05-02 10:19:19 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:19:19 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:19:19 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:19:19 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:19:19 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:19:19 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:19:19 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:19:19 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test2.php
+2017-05-02 10:39:11 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:39:11 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:39:11 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:39:11 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:39:11 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test2.php
+2017-05-02 10:39:11 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:39:11 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:39:11 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:39:11 - [sql.log]: 
+select count(*) as count from fournisseur_has_article h 
+inner join fournisseur f on f.id=h.fournisseur_id        
+inner join article a on a.id=h.article_id        
+        
+2017-05-02 10:39:11 - [error]: DataTableController: exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamille.fournisseur_has_article' doesn't exist' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/QuickPdo/QuickPdo.php:306
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/QuickPdo/QuickPdo.php(306): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/RowsGenerator/QuickPdoRowsGenerator.php(262): QuickPdo\QuickPdo::fetch('\nselect count(*...', Array)
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-controllers/DataTable/DataTableController.php(125): RowsGenerator\QuickPdoRowsGenerator->getRows()
+#3 [internal function]: Controller\DataTable\DataTableController->handleAjax()
+#4 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#5 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#6 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(132): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#7 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(93): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#8 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(17): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#9 {main}
+2017-05-02 10:40:05 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:05 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:05 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:05 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:05 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test2.php
+2017-05-02 10:40:05 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:05 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:05 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:05 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:05 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+t.reference,      
+t.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 2
+2017-05-02 10:40:05 - [error]: DataTableController: exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.reference' in 'field list'' in /Volumes/Macintosh HD 2/web/php/projects/universe/planets/QuickPdo/QuickPdo.php:283
+Stack trace:
+#0 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/QuickPdo/QuickPdo.php(283): PDOStatement->execute(Array)
+#1 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/RowsGenerator/QuickPdoRowsGenerator.php(285): QuickPdo\QuickPdo::fetchAll('\nselect \nf.id a...', Array)
+#2 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-controllers/DataTable/DataTableController.php(125): RowsGenerator\QuickPdoRowsGenerator->getRows()
+#3 [internal function]: Controller\DataTable\DataTableController->handleAjax()
+#4 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#5 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#6 /Volumes/Macintosh HD 2/web/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(132): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#7 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/class-modules/Core/ApplicationHandler/WebApplicationHandler.php(93): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#8 /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/www/index.php(17): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#9 {main}
+2017-05-02 10:40:19 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:19 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:19 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:19 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:19 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:19 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:19 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 2
+2017-05-02 10:40:19 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:19 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:19 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test2.php
+2017-05-02 10:40:35 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:35 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:35 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:35 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:35 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:35 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:40:35 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:35 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test2.php
+2017-05-02 10:40:44 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:44 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:44 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:44 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:44 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:44 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:40:45 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:45 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:45 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:45 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:45 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:40:46 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:46 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:46 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:46 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:46 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:40:47 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:47 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:47 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:47 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:47 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:47 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:40:48 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:48 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:48 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:48 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:48 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:48 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:40:50 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:50 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:50 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:50 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:50 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:50 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:40:51 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:40:51 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:40:51 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:40:51 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:40:51 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:40:51 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:41:45 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:41:45 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:41:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:41:45 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:41:45 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:41:45 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:43:12 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:43:12 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:43:12 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:43:12 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:43:12 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:43:12 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:43:55 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:43:55 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:43:55 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:43:55 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:43:55 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:43:55 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:44:48 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:44:48 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:44:48 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:44:48 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:44:48 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:44:48 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:45:13 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:45:13 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:45:13 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:45:13 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:45:13 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:45:13 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:45:53 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:45:53 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:45:53 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:45:53 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:45:53 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:45:53 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:46:35 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:46:35 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:46:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:46:35 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:46:35 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:46:35 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:48:30 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:48:30 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:48:30 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:48:30 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:48:30 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:48:30 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:48:30 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:48:30 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:48:30 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:48:30 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test2.php
+2017-05-02 10:52:51 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:52:51 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:52:51 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:52:51 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:52:51 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:52:51 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:52:51 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:52:51 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:52:51 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:52:51 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test2.php
+2017-05-02 10:52:53 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:52:53 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:52:53 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:52:53 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:52:53 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:52:53 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc limit 0, 100
+2017-05-02 10:52:54 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:52:54 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:52:54 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:52:54 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:52:54 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:52:54 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf desc limit 0, 100
+2017-05-02 10:52:55 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:52:55 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:52:55 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:52:55 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:52:55 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:52:55 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 10:54:04 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:04 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:04 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:04 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:04 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:04 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference asc limit 0, 100
+2017-05-02 10:54:06 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:06 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:06 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:06 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:06 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:06 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc, reference asc limit 0, 100
+2017-05-02 10:54:08 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:08 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:08 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:08 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:08 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:08 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc, reference desc limit 0, 100
+2017-05-02 10:54:08 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:08 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:08 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:08 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:08 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:08 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc limit 0, 100
+2017-05-02 10:54:09 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:09 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:09 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:09 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:09 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:09 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc, reference asc limit 0, 100
+2017-05-02 10:54:21 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:21 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxActionsHandler matched and controller is DataTable\AppDataTableController:handleAjaxAction
+2017-05-02 10:54:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: DataTable\AppDataTableController
+2017-05-02 10:54:21 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:21 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:21 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:21 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:21 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc, reference asc limit 0, 100
+2017-05-02 10:54:36 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:36 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:36 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:36 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:36 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:36 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc, reference asc limit 0, 50
+2017-05-02 10:54:42 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:42 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:42 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:42 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:42 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:42 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc, reference asc limit 0, 20
+2017-05-02 10:54:45 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:45 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:45 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:45 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:45 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc, reference asc limit 620, 20
+2017-05-02 10:54:46 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 10:54:46 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 10:54:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 10:54:46 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test.php
+2017-05-02 10:54:46 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 10:54:46 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc, reference asc limit 700, 20
+2017-05-02 15:43:44 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:43:44 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-02 15:43:44 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-02 15:43:44 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-02 15:43:44 - [debug]: Rendering layout splash/default
+2017-05-02 15:43:47 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:43:47 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-02 15:43:48 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:43:48 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:43:48 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:43:48 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:43:48 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+----- id: maincontent.form; tplName: unknown
+2017-05-02 15:43:48 - [error]: LawsUtil: name is not a valid key for widgetId maincontent.form (viewId=NullosAdmin/testPage)
+2017-05-02 15:43:48 - [debug]: Rendering layout admin/default
+2017-05-02 15:45:00 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:45:00 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:45:00 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:45:00 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:45:00 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+----- id: maincontent.form; tplName: unknown
+2017-05-02 15:45:00 - [error]: LawsUtil: name is not a valid key for widgetId maincontent.form (viewId=NullosAdmin/testPage)
+2017-05-02 15:45:00 - [debug]: Rendering layout admin/default
+2017-05-02 15:49:38 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:49:38 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:49:38 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:49:38 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:49:38 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+----- id: maincontent.form; tplName: unknown
+2017-05-02 15:49:38 - [error]: LawsUtil: name is not a valid key for widgetId maincontent.form (viewId=NullosAdmin/testPage)
+2017-05-02 15:49:38 - [debug]: Rendering layout admin/default
+2017-05-02 15:52:44 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:52:44 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:52:44 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:52:44 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:52:44 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+----- id: maincontent.form; tplName: unknown
+2017-05-02 15:52:44 - [error]: LawsUtil: name is not a valid key for widgetId maincontent.form (viewId=NullosAdmin/testPage)
+2017-05-02 15:52:44 - [debug]: Rendering layout admin/default
+2017-05-02 15:53:50 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:53:50 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:53:50 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:53:50 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:54:37 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:54:37 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:54:37 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:54:37 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:55:24 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:55:25 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:55:25 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:55:25 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:55:52 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:55:52 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:55:52 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:55:52 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:58:01 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:58:01 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:58:01 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:58:01 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:58:01 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+----- id: maincontent.form; tplName: unknown
+2017-05-02 15:58:01 - [error]: LawsUtil: name is not a valid key for widgetId maincontent.form (viewId=NullosAdmin/testPage)
+2017-05-02 15:58:01 - [debug]: Rendering layout admin/default
+2017-05-02 15:58:14 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:58:14 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:58:14 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:58:14 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:58:14 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+----- id: maincontent.form; tplName: unknown
+2017-05-02 15:58:14 - [error]: LawsUtil: name is not a valid key for widgetId maincontent.form (viewId=NullosAdmin/testPage)
+2017-05-02 15:58:14 - [debug]: Rendering layout admin/default
+2017-05-02 15:58:30 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:58:31 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:58:31 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:58:45 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:58:45 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:58:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:59:35 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 15:59:35 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 15:59:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 15:59:35 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 15:59:35 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+----- id: maincontent.form; tplName: unknown
+2017-05-02 15:59:35 - [error]: LawsUtil: name is not a valid key for widgetId maincontent.form (viewId=NullosAdmin/testPage)
+2017-05-02 15:59:35 - [debug]: Rendering layout admin/default
+2017-05-02 16:00:19 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:00:19 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 16:00:19 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 16:00:19 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 16:00:19 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 16:00:19 - [debug]: Rendering layout admin/default
+2017-05-02 16:02:13 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:02:13 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 16:02:13 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 16:02:13 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 16:02:13 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 16:02:13 - [debug]: Rendering layout admin/default
+2017-05-02 16:07:57 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:07:57 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 16:07:57 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 16:07:57 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 16:07:57 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 16:07:57 - [debug]: Rendering layout admin/default
+2017-05-02 16:07:57 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:07:57 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 16:07:57 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 16:07:57 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 16:07:57 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 16:07:57 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 16:08:08 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:08:08 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 16:08:08 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 16:08:08 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 16:08:08 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 16:08:08 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc limit 0, 100
+2017-05-02 16:08:09 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:08:09 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 16:08:09 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 16:08:09 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 16:08:09 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 16:08:09 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf desc limit 0, 100
+2017-05-02 16:08:10 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:08:10 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 16:08:10 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 16:08:10 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 16:08:10 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 16:08:10 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 16:22:07 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:22:07 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 16:22:07 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 16:22:07 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 16:22:07 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 16:22:07 - [debug]: Rendering layout admin/default
+2017-05-02 16:22:07 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:22:07 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'The controller parameter was not found in the request'. uri was /theme/nullosAdmin/widgets/DataTable/DataTable/datatable.js, redispatching to the fallback loop
+2017-05-02 16:22:07 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-05-02 16:22:07 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId Core/exception
+2017-05-02 16:22:07 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Core/exception (/config/laws/Core/exception.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.exception; tplName: Exception/default
+2017-05-02 16:22:07 - [debug]: Rendering layout splash/default
+2017-05-02 16:22:59 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:22:59 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 16:22:59 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 16:22:59 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 16:22:59 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 16:22:59 - [debug]: Rendering layout admin/default
+2017-05-02 16:22:59 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:22:59 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'The controller parameter was not found in the request'. uri was /theme/nullosAdmin/widgets/DataTable/DataTable/datatable.js, redispatching to the fallback loop
+2017-05-02 16:22:59 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-05-02 16:22:59 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId Core/exception
+2017-05-02 16:22:59 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Core/exception (/config/laws/Core/exception.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.exception; tplName: Exception/default
+2017-05-02 16:22:59 - [debug]: Rendering layout splash/default
+2017-05-02 16:25:24 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:25:24 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 16:25:24 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 16:25:25 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 16:25:25 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 16:25:25 - [debug]: Rendering layout admin/default
+2017-05-02 16:25:25 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:25:25 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 16:25:25 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 16:25:25 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 16:25:25 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 16:25:25 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 16:59:01 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:59:01 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 16:59:01 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 16:59:01 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 16:59:01 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 16:59:01 - [debug]: Rendering layout admin/default
+2017-05-02 16:59:01 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'Failed to load template: DataTable_DataTable/default'. uri was /, redispatching to the fallback loop
+2017-05-02 16:59:01 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-05-02 16:59:01 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId Core/exception
+2017-05-02 16:59:01 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Core/exception (/config/laws/Core/exception.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.exception; tplName: Exception/default
+2017-05-02 16:59:01 - [debug]: Rendering layout splash/default
+2017-05-02 16:59:46 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:59:46 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 16:59:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 16:59:46 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 16:59:46 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 16:59:46 - [debug]: Rendering layout admin/default
+2017-05-02 16:59:46 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 16:59:46 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 16:59:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 16:59:46 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 16:59:46 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 16:59:46 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 17:02:21 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:02:21 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 17:02:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 17:02:21 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 17:02:21 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 17:02:21 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf asc limit 0, 100
+2017-05-02 17:02:22 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:02:22 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 17:02:22 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 17:02:22 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 17:02:22 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 17:02:22 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         order by reference_lf desc limit 0, 100
+2017-05-02 17:02:23 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:02:23 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 17:02:23 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 17:02:23 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 17:02:23 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 17:02:23 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 17:03:00 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:03:00 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:03:00 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:03:00 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:03:00 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:03:00 - [debug]: Rendering layout admin/default
+2017-05-02 17:03:00 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:03:00 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 17:03:00 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 17:03:00 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 17:03:00 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 17:03:00 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 17:03:35 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:03:35 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:03:35 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:03:35 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:03:35 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:03:35 - [debug]: Rendering layout admin/default
+2017-05-02 17:03:36 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:03:36 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 17:03:36 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 17:03:36 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 17:03:36 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 17:03:36 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 17:03:49 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:03:49 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:03:49 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:03:49 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:03:49 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:03:49 - [debug]: Rendering layout admin/default
+2017-05-02 17:21:44 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:21:44 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:21:44 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:21:44 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:21:44 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:21:44 - [debug]: Rendering layout admin/default
+2017-05-02 17:21:44 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:21:44 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-02 17:21:44 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-02 17:21:44 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-quickpdo.php
+2017-05-02 17:21:44 - [sql.log]: 
+select count(*) as count from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+        
+2017-05-02 17:21:44 - [sql.log]: 
+select 
+f.id as fournisseur_id,  
+f.nom as fournisseur_nom,        
+a.id as article_id,  
+a.reference_lf as reference_lf,  
+h.reference,      
+h.prix        
+         from zilu.fournisseur_has_article h 
+inner join zilu.fournisseur f on f.id=h.fournisseur_id        
+inner join zilu.article a on a.id=h.article_id        
+         limit 0, 100
+2017-05-02 17:21:59 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:21:59 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:21:59 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:21:59 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:21:59 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:21:59 - [debug]: Rendering layout admin/default
+2017-05-02 17:24:42 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:24:42 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:24:42 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:24:42 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:24:42 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:24:42 - [debug]: Rendering layout admin/default
+2017-05-02 17:25:29 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:25:29 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:25:29 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:25:29 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:25:29 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:25:29 - [debug]: Rendering layout admin/default
+2017-05-02 17:26:33 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:26:33 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:26:33 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:26:33 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:26:33 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:26:33 - [debug]: Rendering layout admin/default
+2017-05-02 17:27:05 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:27:05 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:27:05 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:27:05 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:27:05 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:27:05 - [debug]: Rendering layout admin/default
+2017-05-02 17:28:15 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:28:15 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:28:15 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:28:15 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:28:15 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:28:15 - [debug]: Rendering layout admin/default
+2017-05-02 17:28:32 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-02 17:28:32 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-02 17:28:32 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-02 17:28:32 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-02 17:28:32 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable1; tplName: NullosAdmin/Main/DataTable/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-02 17:28:32 - [debug]: Rendering layout admin/default

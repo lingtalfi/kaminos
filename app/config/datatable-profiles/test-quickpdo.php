@@ -61,6 +61,8 @@ inner join zilu.article a on a.id=h.article_id
         'nippItems' => [20, 50, 100, 'all'],
         'showQuickPage' => true,
         'showPagination' => true,
+        'paginationNavigators' => ['first', 'prev', 'next', 'last'],
+        'paginationLength' => 9,
         'showBulkActions' => true,
         'showEmptyBulkWarning' => true,
         'bulkActions' => [
@@ -107,5 +109,9 @@ inner join zilu.article a on a.id=h.article_id
         'textBulkActionsTeaser' => 'For selected entries',
         'textEmptyBulkWarning' => 'Please select at least one row',
         'textUseSelectedRowsEmptyWarning' => 'Please select at least one row',
+        'textPaginationFirst' => 'First',
+        'textPaginationPrev' => 'Prev',
+        'textPaginationNext' => 'Next',
+        'textPaginationLast' => 'Last',
     ],
 ];

@@ -15,6 +15,7 @@ $profile = [
         'type' => 'array',
         'path' => '/myphp/kaminos/app/www/twitter.rows.php',
     ],
+    'renderer' => 'Module\NullosAdmin\ModelRenderers\DataTable\NullosDataTableRenderer',
     'transformers' => [
         'action' => function ($oldValue, $columnId, array $row) {
             return [
@@ -49,6 +50,8 @@ $profile = [
         'nippItems' => [1, 2, 5, 10, 20, 50, 100, 'all'],
         'showQuickPage' => true,
         'showPagination' => true,
+        'paginationNavigators' => ['first', 'prev', 'next', 'last'],
+        'paginationLength' => 9,
         'showBulkActions' => true,
         'showEmptyBulkWarning' => true,
         'bulkActions' => [
@@ -95,5 +98,9 @@ $profile = [
         'textBulkActionsTeaser' => 'For selected entries',
         'textEmptyBulkWarning' => 'Please select at least one row',
         'textUseSelectedRowsEmptyWarning' => 'Please select at least one row',
+        'textPaginationFirst' => 'First',
+        'textPaginationPrev' => 'Prev',
+        'textPaginationNext' => 'Next',
+        'textPaginationLast' => 'Last',
     ],
 ];

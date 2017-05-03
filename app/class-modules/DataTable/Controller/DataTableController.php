@@ -119,7 +119,6 @@ class DataTableController extends ApplicationController
                     $generator->setNbItemsPerPage($nipp);
 
 
-
                     //--------------------------------------------
                     // APPLY ROW TRANSFORMERS
                     //--------------------------------------------
@@ -292,6 +291,12 @@ class DataTableController extends ApplicationController
             }
             if (array_key_exists('textUseSelectedRowsEmptyWarning', $m)) {
                 $model->setTextUseSelectedRowsEmptyWarning($m['textUseSelectedRowsEmptyWarning']);
+            }
+            if (array_key_exists('textPaginationPrev', $m)) {
+                $model->setTextPaginationPrev($m['textPaginationPrev']);
+            }
+            if (array_key_exists('textPaginationNext', $m)) {
+                $model->setTextPaginationNext($m['textPaginationNext']);
             }
         }
     }

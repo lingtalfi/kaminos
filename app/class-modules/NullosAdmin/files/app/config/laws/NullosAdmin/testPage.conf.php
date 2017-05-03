@@ -14,20 +14,20 @@ $conf = [
 //                "formModel" => null,
 //            ],
 //        ],
-//        'maincontent.dataTable' => [
-//            'grid' => "1",
-//            'tpl' => "NullosAdmin/Main/DataTable/prototype",
-//            'conf' => [
-//                "dataTableModel" => null,
-//            ],
-//        ],
-        'maincontent.dataTable' => [
+        'maincontent.dataTable1' => [
             'grid' => "1",
-            'tpl' => "DataTable/DataTable/default",
+            'tpl' => "NullosAdmin/Main/DataTable/prototype",
             'conf' => [
-                "profileId" => "test-quickpdo",
+                "dataTableModel" => null,
             ],
         ],
+//        'maincontent.dataTable' => [
+//            'grid' => "1",
+//            'tpl' => "DataTable_DataTable/default",
+//            'conf' => [
+//                "profileId" => "test-quickpdo",
+//            ],
+//        ],
     ],
     "grid" => ['maincontent'],
 ];

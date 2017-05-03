@@ -54,7 +54,10 @@
  *                  The value is retrieved using regular form value extraction technique for select.
  * - pagination-link: a pagination link.
  *                  The value is retrieved using the value of the data-id attribute
- *
+ * - pagination-first: assign this to the pagination first link to make it alive
+ * - pagination-prev: assign this to the pagination previous link to make it alive
+ * - pagination-next: assign this to the pagination next link to make it alive
+ * - pagination-last: assign this to the pagination last link to make it alive
  *
  * - special-link: a link inside a row, created using the special features of the row of type link.
  *                      All attributes of the link, except the label and the icon,
@@ -443,7 +446,13 @@
                     e.preventDefault();
                     handleAction(jTarget, "special", jElem);
                 }
-                else if (jTarget.hasClass('pagination-link')) {
+                else if (
+                    jTarget.hasClass('pagination-link') ||
+                    jTarget.hasClass('pagination-first') ||
+                    jTarget.hasClass('pagination-prev') ||
+                    jTarget.hasClass('pagination-next') ||
+                    jTarget.hasClass('pagination-last')
+                ) {
                     e.preventDefault();
                     var number = jTarget.attr('data-id');
                     jElem.data('setPage')(number);

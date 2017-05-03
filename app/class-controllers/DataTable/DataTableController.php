@@ -9,6 +9,7 @@ use Core\Services\X;
 use Kamille\Architecture\Response\Web\JsonResponse;
 use Kamille\Services\XLog;
 use ModelRenderers\DataTable\DataTableRenderer;
+use ModelRenderers\Renderer\ModelAwareRendererInterface;
 use Models\DataTable\DataTableModel;
 use Module\DataTable\DataTableProfileFinder\DataTableProfileFinderInterface;
 use RowsGenerator\ArrayRowsGenerator;
@@ -119,7 +120,6 @@ class DataTableController extends ApplicationController
                     $generator->setNbItemsPerPage($nipp);
 
 
-
                     //--------------------------------------------
                     // APPLY ROW TRANSFORMERS
                     //--------------------------------------------
@@ -159,11 +159,18 @@ class DataTableController extends ApplicationController
                     //--------------------------------------------
                     // RENDERING AND OUTPUT
                     //--------------------------------------------
-                    $html = DataTableRenderer::create()->setModel($model->getArray())->render();
-                    return JsonResponse::create([
-                        'type' => 'success',
-                        'data' => $html,
-                    ]);
+                    $renderer = (array_key_exists('renderer', $profile)) ? $profile['renderer'] : 'ModelRenderers\DataTable\DataTableRenderer';
+                    $oRenderer = new $renderer();
+                    if ($oRenderer instanceof ModelAwareRendererInterface) {
+                        $html = $oRenderer->setModel($model->getArray())->render();
+                        return JsonResponse::create([
+                            'type' => 'success',
+                            'data' => $html,
+                        ]);
+                    }
+                    else{
+                        return $this->log("renderer not instance of ModelAwareRendererInterface");
+                    }
 
 
                 } else {
@@ -242,6 +249,12 @@ class DataTableController extends ApplicationController
             if (array_key_exists('showPagination', $m)) {
                 $model->setShowPagination($m['showPagination']);
             }
+            if (array_key_exists('paginationNavigators', $m)) {
+                $model->setPaginationNavigators($m['paginationNavigators']);
+            }
+            if (array_key_exists('paginationLength', $m)) {
+                $model->setPaginationLength($m['paginationLength']);
+            }
             if (array_key_exists('showBulkActions', $m)) {
                 $model->setShowBulkActions($m['showBulkActions']);
             }
@@ -292,6 +305,19 @@ class DataTableController extends ApplicationController
             }
             if (array_key_exists('textUseSelectedRowsEmptyWarning', $m)) {
                 $model->setTextUseSelectedRowsEmptyWarning($m['textUseSelectedRowsEmptyWarning']);
+            }
+            if (array_key_exists('textPaginationFirst', $m)) {
+                $model->setTextPaginationFirst($m['textPaginationFirst']);
+            }
+            if (array_key_exists('textPaginationPrev', $m)) {
+                $model->setTextPaginationPrev($m['textPaginationPrev']);
+            }
+            if (array_key_exists('textPaginationNext', $m)) {
+                $model->setTextPaginationNext($m['textPaginationNext']);
+            }
+
+            if (array_key_exists('textPaginationLast', $m)) {
+                $model->setTextPaginationLast($m['textPaginationLast']);
             }
         }
     }

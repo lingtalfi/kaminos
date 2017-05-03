@@ -2348,14 +2348,14 @@ if (typeof NProgress != 'undefined') {
 			};
 	   
 		/* DATA TABLES */
-			
+
 			function init_DataTables() {
-				
+
 				console.log('run_datatables');
-				
+
 				if( typeof ($.fn.DataTable) === 'undefined'){ return; }
 				console.log('init_DataTables');
-				
+
 				var handleDataTableButtons = function() {
 				  if ($("#datatable-buttons").length) {
 					$("#datatable-buttons").DataTable({
@@ -2431,7 +2431,7 @@ if (typeof NProgress != 'undefined') {
 				});
 
 				TableManageButtons.init();
-				
+
 			};
 	   
 			/* CHART - MORRIS  */

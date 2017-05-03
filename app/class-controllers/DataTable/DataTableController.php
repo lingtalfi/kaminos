@@ -5,6 +5,7 @@ namespace Controller\DataTable;
 
 
 use Core\Controller\ApplicationController;
+use Core\Services\Hooks;
 use Core\Services\X;
 use Kamille\Architecture\Response\Web\JsonResponse;
 use Kamille\Services\XLog;
@@ -159,7 +160,16 @@ class DataTableController extends ApplicationController
                     //--------------------------------------------
                     // RENDERING AND OUTPUT
                     //--------------------------------------------
-                    $renderer = (array_key_exists('renderer', $profile)) ? $profile['renderer'] : 'ModelRenderers\DataTable\DataTableRenderer';
+                    $renderer = 'ModelRenderers\DataTable\DataTableRenderer';
+                    if (array_key_exists('renderer', $_POST)) {
+                        $renderer = $_POST['renderer'];
+                    }
+
+
+                    // if you need the user to override the renderer on a per-profile basis, you can uncomment such a line,
+                    // but this will probably be never needed.
+//                    $renderer = (array_key_exists('renderer', $profile)) ? $profile['renderer'] : 'ModelRenderers\DataTable\DataTableRenderer';
+
                     $oRenderer = new $renderer();
                     if ($oRenderer instanceof ModelAwareRendererInterface) {
                         $html = $oRenderer->setModel($model->getArray())->render();

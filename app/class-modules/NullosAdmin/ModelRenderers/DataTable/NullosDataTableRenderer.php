@@ -5,8 +5,24 @@ namespace Module\NullosAdmin\ModelRenderers\DataTable;
 
 
 use ModelRenderers\DataTable\Util\DataTableRendererUtil;
+use ModelRenderers\DropDown\BootstrapDropDownRenderer;
 use ModelRenderers\Renderer\AbstractRenderer;
+use Module\NullosAdmin\ModelRenderers\DropDown\NullosDropDownRenderer;
 
+/**
+ *
+ * The following flavours are available to nullosAdmin:
+ *
+ * - default: blank (default)
+ * - primary: blue
+ * - success: green
+ * - info: cyan
+ * - warning: orange
+ * - danger: red
+ * - dark: dark blue-gray
+ * - link: transparent
+ *
+ */
 class NullosDataTableRenderer extends AbstractRenderer
 {
 
@@ -76,23 +92,24 @@ class NullosDataTableRenderer extends AbstractRenderer
 
                 <?php if (true === $a['showActionButtons']): ?>
                     <div class="col-sm-<?php echo $columnWidth; ?> text-center">
-                        <div class="dt-buttons btn-group">
+                        <div class="btn-group btn-group-sm">
                             <?php foreach ($a['actionButtons'] as $id => $actionButton):
                                 if (array_key_exists("useSelectedRows", $actionButton) && true === $actionButton['useSelectedRows']) {
                                     $actionButton['textUseSelectedRowsEmptyWarning'] = $a['textUseSelectedRowsEmptyWarning'];
                                 }
                                 ?>
-                                <a
+                                <button
                                         class="actionbutton-button btn btn-default buttons-html5 btn-sm"
                                     <?php echo DataTableRendererUtil::toDataAttributes($actionButton); ?>
                                         data-id="<?php echo $id; ?>"
+                                        type="button"
                                         tabindex="0"
                                         aria-controls="datatable-buttons" href="#">
                                     <?php if (array_key_exists('icon', $actionButton)): ?>
-                                        <span class="<?php echo $actionButton['icon']; ?>"></span>
+                                        <span class="<?php echo $actionButton['icon']; ?>"></span>&nbsp;
                                     <?php endif; ?>
                                     <span><?php echo $actionButton['label']; ?></span>
-                                </a>
+                                </button>
                             <?php endforeach ?>
                         </div>
                     </div>
@@ -138,7 +155,8 @@ class NullosDataTableRenderer extends AbstractRenderer
                                     $class .= ' sort-' . $dir;
                                 }
                                 ?>
-                                <th class="<?php echo $class; ?>" tabindex="0"><?php echo $label; ?></th>
+                                <th data-id="<?php echo $columnId; ?>" class="<?php echo $class; ?>"
+                                    tabindex="0"><?php echo $label; ?></th>
                             <?php endforeach; ?>
 
                             <?php if (true === $a['isSearchable']): ?>
@@ -282,67 +300,91 @@ class NullosDataTableRenderer extends AbstractRenderer
     //--------------------------------------------
     protected function displayPagination(array $model)
     {
-        $navigators = $model['paginationNavigators'];
 
-        $nbPages = ceil($model['nbTotalItems'] / $model['nipp']);
-        $sDisabled = (1 === $model['page']) ? 'disabled' : '';
-        $sDisabledNext = (1 === $model['page']) ? 'disabled' : '';
-
-        if (in_array('first', $navigators, true)): ?>
-            <li data-id="1" class="paginate_button pagination-first  <?php echo $sDisabled; ?>"><a href="#"
-                                                                                                   aria-controls="datatable"
-                                                                                                   tabindex="0"><?php echo $model['textPaginationFirst']; ?></a>
-            </li>
-        <?php endif;
-
-        if (in_array('prev', $navigators, true)):
-            $prev = $model['page'] - 1;
-            if ($prev < 1) {
-                $prev = 1;
-            }
+        if ('all' === $model['nipp']) {
             ?>
-            <li data-id="<?php echo $prev; ?>" class="paginate_button pagination-prev <?php echo $sDisabled; ?>"><a
-                        href="#"
-                        aria-controls="datatable"
-                        tabindex="0"><?php echo $model['textPaginationPrev']; ?></a>
-            </li>
-        <?php endif;
-
-
-        list($min, $max) = DataTableRendererUtil::getPaginationMinMax($model);
-        for ($i = $min; $i <= $max; $i++) {
-            $class = ((int)$i === (int)$model['page']) ? 'active' : "";
-            ?>
-            <li data-id="<?php echo $i; ?>" class="paginate_button <?php echo $class; ?>"><a href="#"
-                                                                                             aria-controls="datatable"
-                                                                                             tabindex="0"><?php echo $i; ?></a>
+            <li class="paginate_button active"><a href="#"
+                                                  data-id="1"
+                                                  class="pagination-link"
+                                                  aria-controls="datatable"
+                                                  tabindex="0">1</a>
             </li>
             <?php
+        } else {
+
+
+            $navigators = $model['paginationNavigators'];
+
+            $nbPages = ceil($model['nbTotalItems'] / $model['nipp']);
+            $sDisabled = (1 === (int)$model['page']) ? 'disabled' : '';
+            $sDisabledNext = ((int)$nbPages === (int)$model['page']) ? 'disabled' : '';
+
+            if (in_array('first', $navigators, true)): ?>
+                <li class="paginate_button"><a href="#"
+                                               class="pagination-first"
+                                               data-id="1"
+                                               aria-controls="datatable"
+                                               tabindex="0"><?php echo $model['textPaginationFirst']; ?></a>
+                </li>
+            <?php endif;
+
+            if (in_array('prev', $navigators, true)):
+                $prev = $model['page'] - 1;
+                if ($prev < 1) {
+                    $prev = 1;
+                }
+                ?>
+                <li class="paginate_button <?php echo $sDisabled; ?>"><a
+                            data-id="<?php echo $prev; ?>"
+                            class="pagination-prev"
+                            href="#"
+                            aria-controls="datatable"
+                            tabindex="0"><?php echo $model['textPaginationPrev']; ?></a>
+                </li>
+            <?php endif;
+
+
+            list($min, $max) = DataTableRendererUtil::getPaginationMinMax($model);
+            for ($i = $min; $i <= $max; $i++) {
+                $class = ((int)$i === (int)$model['page']) ? 'active' : "";
+                ?>
+                <li class="paginate_button <?php echo $class; ?>"><a href="#"
+                                                                     data-id="<?php echo $i; ?>"
+                                                                     class="pagination-link"
+                                                                     aria-controls="datatable"
+                                                                     tabindex="0"><?php echo $i; ?></a>
+                </li>
+                <?php
+            }
+
+
+            if (in_array('next', $navigators, true)):
+                $next = $model['page'] + 1;
+                if ($next > $nbPages) {
+                    $next = $nbPages;
+                }
+                ?>
+                <li class="paginate_button <?php echo $sDisabledNext; ?>"><a
+                            data-id="<?php echo $next; ?>"
+                            class="pagination-next"
+                            href="#"
+                            aria-controls="datatable"
+                            tabindex="0"><?php echo $model['textPaginationNext']; ?></a>
+                </li>
+            <?php endif;
+
+
+            if (in_array('last', $navigators, true)):
+                ?>
+                <li class="paginate_button"><a href="#"
+                                               class="pagination-last"
+                                               data-id="<?php echo $nbPages; ?>"
+                                               aria-controls="datatable"
+                                               tabindex="0"><?php echo $model['textPaginationLast']; ?></a>
+                </li>
+                <?php
+            endif;
         }
-
-
-        if (in_array('next', $navigators, true)):
-            $next = $model['page'] + 1;
-            if ($next > $nbPages) {
-                $next = $nbPages;
-            }
-            ?>
-            <li data-id="<?php echo $next; ?>" class="paginate_button pagination-next <?php echo $sDisabledNext; ?>"><a
-                        href="#"
-                        aria-controls="datatable"
-                        tabindex="0"><?php echo $model['textPaginationNext']; ?></a>
-            </li>
-        <?php endif;
-
-
-        if (in_array('last', $navigators, true)):
-            ?>
-            <li data-id="<?php echo $nbPages; ?>" class="paginate_button pagination-last"><a href="#"
-                                                                                             aria-controls="datatable"
-                                                                                             tabindex="0"><?php echo $model['textPaginationLast']; ?></a>
-            </li>
-            <?php
-        endif;
     }
 
     protected function renderRowSpecial(array $special, array $row)
@@ -360,6 +402,9 @@ class NullosDataTableRenderer extends AbstractRenderer
                     $s .= $this->renderLink($oneData);
                 }
                 break;
+            case 'dropdown':
+                echo NullosDropDownRenderer::create()->setModel($data)->render();
+                break;
             default:
                 $this->onError("Unknown special type: $type");
                 break;
@@ -371,10 +416,16 @@ class NullosDataTableRenderer extends AbstractRenderer
     {
         $label = (array_key_exists('label', $data)) ? $data['label'] : "";
         $icon = (array_key_exists('icon', $data)) ? $data['icon'] : "";
-        $s = '<button class="special-link" ' . DataTableRendererUtil::toDataAttributes($data) . '>';
-        $s .= $icon . " ";
+        $flavour = (array_key_exists('flavour', $data)) ? $data['flavour'] : "default";
+
+        $s = '<button class="btn btn-' . $flavour . ' btn-xs special-link" type="button" aria-expanded="false" ' . DataTableRendererUtil::toDataAttributes($data) . '>';
+        if ('' !== $icon) {
+            $s .= '<span class="' . $icon . '"></span>&nbsp;&nbsp;';
+        }
         $s .= $label;
         $s .= '</button>';
+
+
         return $s;
     }
 

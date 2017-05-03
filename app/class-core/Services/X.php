@@ -113,10 +113,6 @@ class X extends AbstractX
 
 
 
-    public static function NullosAdmin_themeHelper()
-    {
-        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
-    }
 
     public static function UploadProfile_profileFinder()
     {
@@ -130,6 +126,12 @@ class X extends AbstractX
         $appDir = \Kamille\Ling\Z::appDir();
         return \Module\DataTable\DataTableProfileFinder\DataTableProfileFinder::create()->setProfilesDir($appDir . "/config/datatable-profiles");
     }
+
+    public static function NullosAdmin_themeHelper()
+    {
+        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
+    }
+
 
 
 

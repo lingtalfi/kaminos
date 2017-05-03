@@ -152,7 +152,8 @@
 
 
             var data = {
-                id: profileId
+                id: profileId,
+                renderer: options.renderer
             };
 
 
@@ -515,6 +516,7 @@
 
     $.fn.dataTable.defaults = {
         uri: "/datatable-handler",
+        renderer: 'ModelRenderers\\DataTable\\DataTableRenderer',
         /**
          * @param type: error|success
          */

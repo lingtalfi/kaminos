@@ -10,23 +10,51 @@
  *
  */
 
+
+
 $profile = [
     'rowsGenerator' => [
         'type' => 'array',
         'path' => '/myphp/kaminos/app/www/twitter.rows.php',
     ],
-    'renderer' => 'Module\NullosAdmin\ModelRenderers\DataTable\NullosDataTableRenderer',
     'transformers' => [
         'action' => function ($oldValue, $columnId, array $row) {
+//            return [
+//                'type' => "link",
+//                'data' => [
+//                    'type' => 'modal',
+//                    'uri' => '/datatable-handler?type=special&id=test',
+//                    'confirm' => false,
+//                    'confirmText' => "Are you sure you want to execute this action?",
+//                    'icon' => "fa fa-bullhorn",
+//                    'label' => "Send a mail",
+//                    'flavour' => "danger",
+//                ],
+//            ];
             return [
-                'type' => "link",
+                'type' => "dropdown",
                 'data' => [
-                    'type' => 'modal',
-                    'uri' => '/datatable-handler?type=special&id=test',
-                    'confirm' => false,
-                    'confirmText' => "Are you sure you want to execute this action?",
-                    'icon' => "mail",
-                    'label' => "Send a mail",
+                    'text' => "Group",
+                    'icon' => "fa fa-bullhorn",
+                    'flavour' => "primary",
+                    'size' => "xs",
+                    'items' => [
+                        [
+                            'confirm' => true,
+                            'label' => "Tamère",
+                            'id' => "tamere",
+                            'uri' => "/actionlink-handler",
+                            'type' => "modal",
+                        ],
+                        'divider',
+                        [
+                            'confirm' => true,
+                            'label' => "tafille",
+                            'id' => "tafille",
+                            'uri' => "/actionlink-handler",
+                            'type' => "modal",
+                        ],
+                    ],
                 ],
             ];
         }
@@ -51,7 +79,7 @@ $profile = [
         'showQuickPage' => true,
         'showPagination' => true,
         'paginationNavigators' => ['first', 'prev', 'next', 'last'],
-        'paginationLength' => 9,
+        'paginationLength' => 5,
         'showBulkActions' => true,
         'showEmptyBulkWarning' => true,
         'bulkActions' => [
@@ -69,10 +97,10 @@ $profile = [
                 'confirm' => false,
                 'confirmText' => "Are you sure you want to execute this action?",
                 'label' => "Send Mail",
-                'useSelectedRows' => true,
+                'useSelectedRows' => false,
                 'uri' => "/datatable-handler?type=action",
                 'type' => "refreshOnSuccess",
-                'icon' => "mail",
+                'icon' => "fa fa-envelope",
             ],
         ],
 

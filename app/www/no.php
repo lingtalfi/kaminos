@@ -14,7 +14,7 @@ use Kamille\Services\XConfig;
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="/theme/nullosAdmin/vendors/jquery/dist/jquery.min.js"></script>
-    <script src="/datatable.js"></script>
+    <script src="/nullos.js"></script>
     <link rel="stylesheet" href="/datatable.css">
     <style>
         .datatable_view{
@@ -26,24 +26,13 @@ use Kamille\Services\XConfig;
 <body>
 
 <div id="kk" class="datatable_view" data-id="test"></div>
-<div class="datatable_view" data-id="test2"></div>
-
 
 
 <script>
     $(document).ready(function () {
-        function initDataTable() {
-            console.log("init datatable");
-            $('.datatable_view').dataTable({
-                uri: "<?php echo XConfig::get("DataTable.uriAjaxHandler"); ?>"
-            });
 
+        $('#kk').nullos.pou();
 
-
-
-
-        }
-        initDataTable();
     });
 </script>
 

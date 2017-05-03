@@ -28,6 +28,10 @@ HtmlPageHelper::js("$prefixUri/vendors/bootstrap/dist/js/bootstrap.min.js", null
 HtmlPageHelper::js("$prefixUri/vendors/fastclick/lib/fastclick.js", null, null, false);
 HtmlPageHelper::js("$prefixUri/vendors/nprogress/nprogress.js", null, null, false);
 
+
+HtmlPageHelper::js("$prefixUri/nullos.js", null, null, false);
+
+
 HtmlPageHelper::js("$prefixUri/build/js/custom.js", null, null, 'after');
 //HtmlPageHelper::js("$prefixUri/build/js/custom.min.js", null, null, 'after');
 

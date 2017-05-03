@@ -1,10 +1,9 @@
 DataTable module
 =================
-2017-05-01
+2017-05-01 -> 2017-05-03
 
 
-WORK IN PROGRESS.
-
+Bring datatables to your application.
 
 DataTable module for the [kamille framework](https://github.com/lingtalfi/Kamille).
 
@@ -93,7 +92,7 @@ That's it.
 
 Widget Dependencies
 =========
-
+- The DataTable module provides its own widget DataTable_DataTable
 
 
 
@@ -101,6 +100,10 @@ Widget Dependencies
 
 History Log
 ------------------
+    
+- 1.1.0 -- 2017-05-03
+
+    - clean up
     
 - 1.0.0 -- 2017-05-01
 

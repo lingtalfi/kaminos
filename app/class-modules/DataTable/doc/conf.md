@@ -11,7 +11,7 @@ The uri to the ajax handler, which by default calls the DataTableController prov
 
 
 
-uriAjaxActionsHandler
+uriAjaxActionsHandler (not implemented)
 -----------------
 Default: DataTable\AppDataTableController:handleAjaxAction
 

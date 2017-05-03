@@ -2,6 +2,7 @@
 
 
 use Core\Services\A;
+use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Mvc\HtmlPageHelper\HtmlPageHelper;
 use Kamille\Services\XConfig;
 

@@ -7,6 +7,6 @@ Test
 Authenticate
 Ekom
 Core
-NullosAdmin
 UploadProfile
 DataTable
+NullosAdmin

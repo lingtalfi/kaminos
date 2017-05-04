@@ -477,7 +477,260 @@ That was just a reminder of the vocabulary we know so far.
 
 
 
+Using translations for the end result
+---------------------------------------
+I believe that column names should be translated by the translation mechanism of your app.
 
+Why?
+
+Because translation is powerful: it can translate a column name not ONLY in a human readable name,
+but in a human readable name FOR EVERY LANGUAGE, which is a far better approach right?
+
+So, imagine that we have the following two tables:
+
+- concours
+    - id
+    - equipe_id: fk
+    - titre
+    - url_photo
+    - url_video
+    - date_debut
+    - date_fin
+    - lots
+    - reglement
+    - description
+    
+- equipe
+    - id        
+    - nom
+            
+And imagine we want to display the concours table,
+then the fields would look like that for instance:
+
+- id
+- equipe.nom
+- titre
+- url_photo
+- url_video
+- date_debut
+- date_fin
+- lots
+- reglement
+- description
+ 
+ 
+(Notice that I replaced the foreign key with the name of the foreign table followed by a dot, followed by the foreignKeyPreferredColumn)
+ 
+And so, my point is that it is much better to rely on a translation system to actually translate the column names
+rather than relying on custom rules (like replacing underscores with spaces) or mappings (url_photo => Photo, ...).
+
+Well, if we adopt that way of thinking, then the problem of finding human names is not our problem anymore
+and we can move to the next step, which is aliasing.
+
+
+Prefixes
+-------------
+
+So in the previous example, we only had one foreign key, and so we had the following columns:
+ 
+- id
+- equipe.nom
+- titre
+- url_photo
+- url_video
+- date_debut
+- date_fin
+- lots
+- reglement
+- description
+
+
+Let's start to think about creating a valid mysql request:
+
+Here is my try and error process:
+```bash
+mysql> select id, equipe.nom from concours c inner join equipe e on e.id=c.equipe_id;
+ERROR 1052 (23000): Column 'id' in field list is ambiguous
+
+mysql> select c.id, equipe.nom from concours c inner join equipe e on e.id=c.equipe_id;
+ERROR 1054 (42S22): Unknown column 'equipe.nom' in 'field list'
+
+mysql> select c.id, e.nom from concours c inner join equipe e on e.id=c.equipe_id;
++----+-------------------+
+| id | nom               |
++----+-------------------+
+|  1 | komin >           |
+|  2 | equipe concours 2 |
+|  3 | equipe concours 2 |
+|  4 | equipe concours 2 |
++----+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> 
+
+```
+
+So, if you read closely my tries and errors, in the first try, I use the id column without an alias,
+and mysql complains, because it's ambiguous. Indeed the equipe table also has an id column.
+
+So, we don't need to go any further, we will basically need to prefix all our fields, this should take
+care of the problem.
+
+So, then I try the request by prefixing the equipe's nom field with the equipe table name, and
+mysql still complains: it doesn't know the equipe.nom column, probably because I used the e alias for equipe.
+
+Although finding alias is very natural for a human, in terms of programming that's one more problem (although
+a small one), and it can be avoided by prefixing every column with the full table name, like this:
+
+
+```bash
+mysql> select concours.id, equipe.nom from concours inner join equipe on equipe.id=concours.equipe_id;
++----+-------------------+
+| id | nom               |
++----+-------------------+
+|  1 | komin >           |
+|  2 | equipe concours 2 |
+|  3 | equipe concours 2 |
+|  4 | equipe concours 2 |
++----+-------------------+
+4 rows in set (0.00 sec)
+```
+
+So, although this is more verbose, it's actually simpler to compute as a program, and also is less error prone.
+And so, you guessed it, that's the way I will choose.
+
+
+So we need some kind of function that would take a table name as input, and return the prefixed column names
+as output.
+
+
+Ideally, something like that:
+
+- getPrefixedColumns ( concours )
+
+Returns the following:
+
+```php
+- concours.id
+- equipe.nom
+- concours.titre
+- concours.url_photo
+- concours.url_video
+- concours.date_debut
+- concours.date_fin
+- concours.lots
+- concours.reglement
+- concours.description
+```
+
+Or even better, some method that returns the whole sql query (so computing the inner joins for us);
+but as a kit rather than a whole, since we might need to split it, depending on our auto-admin system,
+so ideally something like this:
+
+- array     getSqlQuery ( table )
+
+The returned array would contain two entries: fields and query.
+
+And so getSqlQuery ( concours )
+
+would return the following array:
+
+- 0:
+    - concours.id
+    - equipe.nom
+    - concours.titre
+    - concours.url_photo
+    - concours.url_video
+    - concours.date_debut
+    - concours.date_fin
+    - concours.lots
+    - concours.reglement
+    - concours.description    
+- 1:
+    - inner join equipe on equipe.id=concours.equipe_id
+    
+    
+Ok, nice, except that this was only a trivial example with a nice foreign key.
+In real life, we might have nullable foreign keys.
+I once stumbled upon that case, and doing inner joins on those nullable foreign keys didn't work so well.
+
+Actually, the table I'm talking about is in the zilu schema: commande_has_article.
+
+I figured out that the working sql query was basically the following:
+
+```txt
+
+
+select
+    c.id,
+    c.commande_id,
+    co.reference as commande_reference,
+    c.article_id,
+    a.reference_lf as article_reference_lf,
+    c.container_id,
+    con.nom as container_nom,
+    c.fournisseur_id,
+    f.nom as fournisseur_nom,
+    c.sav_id,
+    s.fournisseur as sav_fournisseur,
+    c.commande_ligne_statut_id,
+    com.nom as commande_ligne_statut_nom,
+    c.prix_override,
+    c.date_estimee,
+    c.quantite,
+    c.unit
+
+
+from zilu.commande_has_article c
+inner join zilu.article a on a.id=c.article_id
+inner join zilu.commande co on co.id=c.commande_id
+inner join zilu.commande_ligne_statut com on com.id=c.commande_ligne_statut_id
+inner join zilu.fournisseur f on f.id=c.fournisseur_id
+left join zilu.container con on con.id=c.container_id
+left join zilu.sav s on s.id=c.sav_id
+    
+```
+
+So, basically using left join instead of inner join on nullable foreign keys, and putting the 
+left join at the end, after the inner join.
+
+I know, that's imprecise explanations, right? That's because my skills in mysql are very limited,
+and as for now I don't have the time to dig deeper, but this is a very interesting topic, so it's open
+to evolution...
+
+But for now, I will use this strategy of using of "left join at the end".
+
+So, basically the getSqlQuery will take care of all that for us, and thus drastically reducing
+the amount of work to generate a simple sql query for every given tables of the chosen databases.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+            
+            
+    
 
 
 

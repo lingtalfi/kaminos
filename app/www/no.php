@@ -1,40 +1,30 @@
 <?php
 
 
+use CrudGeneratorTools\CrudGenerator\ListCrudGeneratorHelper;
+use QuickPdo\QuickPdo;
+
 require_once __DIR__ . "/../boot.php";
-require_once __DIR__ . "/../init.php";
 
 
-use Kamille\Services\XConfig;
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="/theme/nullosAdmin/vendors/jquery/dist/jquery.min.js"></script>
-    <script src="/nullos.js"></script>
-    <link rel="stylesheet" href="/datatable.css">
-    <style>
-        .datatable_view{
-            margin: 50px auto 0 auto;
-        }
-    </style>
-</head>
-
-<body>
-
-<div id="kk" class="datatable_view" data-id="test"></div>
+//--------------------------------------------
+// PLAYGROUND
+//--------------------------------------------
+QuickPdo::setConnection("mysql:dbname=oui;host=127.0.0.1", "root", "root", [
+    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+]);
 
 
-<script>
-    $(document).ready(function () {
+$gen = ListCrudGeneratorHelper::create()->setDatabases([
+    'oui',
+    'zilu',
+]);
 
-        $('#kk').nullos.pou();
 
-    });
-</script>
+// list of all tables in oui
+a($gen->getTables("oui", true));
 
-</body>
-</html>
+// returns an array containing the fields and the joins involved in displaying a simple view of the oui.concours table
+a($gen->getSqlQuery("oui.concours"));

@@ -28,3 +28,34 @@ Auto-admin
 ==============
 This is a big topic, please browse the doc directory of this repository to find the information you would like.
 
+
+
+Using the tools
+===================
+
+- Initializing QuickPdo
+
+There are two ways to use the generator tools: 
+
+- with a standalone script
+- as a script embedded in your application (module, plugin, ...)
+
+
+
+Initializing QuickPdo
+-----------------------
+
+In both cases, the first step is to initialize a [QuickPdo](https://github.com/lingtalfi/Quickpdo) connection.
+
+Here is how you would it if you use a standalone script:
+
+```php
+QuickPdo::setConnection("mysql:dbname=oui;host=127.0.0.1", "root", "root", [
+    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+]);
+```
+
+If you use a framework, then you should know how to initialize the pdo connexion.
+Or if you don't, just paste/adapt the above snippet somewhere in your code.
+

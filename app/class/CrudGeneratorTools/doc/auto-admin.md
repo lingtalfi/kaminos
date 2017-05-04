@@ -623,6 +623,40 @@ Returns the following:
 - concours.description
 ```
 
+It's important that this method must always return the ric fields, as ric fields
+only can ensure proper identifying of a row (typically allowing editing a row and deleting a row features).
+
+So we need to ask: what's a ric field, and we need a method to get the ric fields for us.
+
+### Ric
+
+Ric fields are the fields that uniquely identify any row of a given table.
+If the table contains an auto-incremented column (like typically id for instance),
+then this alone is the ric field.
+
+Otherwise, if there is a primary key, the primary key is the ric field (it might be composed
+of one ore more columns).
+
+Then, if no primary key was found, then the ric fields must be all the columns of the table (there
+is no other option).
+
+We should have a getRic( table ) method to abstract this annoying implementation details for us.
+
+
+
+<hr>
+
+
+So, back to getPrefixedColumns, it should always ensure that ric fields are present.
+If we listed all fields of a given table, we would have them, but since we do the 
+"get preferred foreign key column replacement", some columns might be taken away,
+and some of those MIGHT be part of the ric fields (that's why the getPrefixedColumns method to put them back for us)
+
+
+
+getSqlQuery
+----------------
+
 Or even better, some method that returns the whole sql query (so computing the inner joins for us);
 but as a kit rather than a whole, since we might need to split it, depending on our auto-admin system,
 so ideally something like this:
@@ -706,6 +740,11 @@ the amount of work to generate a simple sql query for every given tables of the 
 
 
 
+joins
+----------------
+
+Basically, each foreign key in a table will generate a join, which can be either of type left or type inner,
+depending on whether or not the foreign key is nullable or not (respectively).
 
 
 
@@ -713,8 +752,19 @@ the amount of work to generate a simple sql query for every given tables of the 
 
 
 
+Generating the menu
+=====================
 
+I don't know your auto-admin system yet, but I bet it has a menu where you can select a table in particular.
 
+So, I provide a createMenu() method, that you will override, which basically receives the 
+sets of tables as argument, organized by databases.
+
+As I said earlier, I strongly recommend to use the translation mechanism of your application
+to then translate those menu labels into any language you want.
+
+So, it doesn't matter if the createMenu method doesn't provide human readable 
+labels out of the box.
 
 
 

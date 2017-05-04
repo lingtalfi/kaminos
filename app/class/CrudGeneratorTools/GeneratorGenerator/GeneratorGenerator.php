@@ -15,9 +15,18 @@ class GeneratorGenerator
         return new static();
     }
 
-    public function generateForeignKeysPreferredColumns($db)
+    public function generateForeignKeysPreferredColumnsByDatabase($db = null)
     {
-
+        $ret = [];
+        $dbs = CrudGeneratorToolsHelper::getDatabases($db);
+        foreach ($dbs as $db) {
+            $tables = CrudGeneratorToolsHelper::getTables($db, true);
+            foreach ($tables as $table) {
+                $f = self::generateForeignKeysPreferredColumnsByTable($table);
+                $ret = array_merge($ret, $f);
+            }
+        }
+        return $ret;
     }
 
 

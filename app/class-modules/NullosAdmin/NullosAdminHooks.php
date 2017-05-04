@@ -45,6 +45,11 @@ class NullosAdminHooks
 
     }
 
+    protected static function NullosAdmin_layout_sideBarMenuModel(array &$sideBarMenuModel)
+    {
+
+    }
+
     protected static function DataTable_getRendererClassName(array &$renderer)
     {
         $renderer = 'Module\NullosAdmin\ModelRenderers\DataTable\NullosDataTableRenderer';

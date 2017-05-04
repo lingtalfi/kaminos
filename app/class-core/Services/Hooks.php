@@ -118,10 +118,10 @@ class Hooks extends AbstractHooks
 		// mit-end:NullosAdmin
 	}
 
-
-
 	protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets)
 	{
+		
+
 		// mit-start:Ekom
 		$prefixUri = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme");
         $imgPrefix = $prefixUri . "/production";
@@ -156,6 +156,32 @@ class Hooks extends AbstractHooks
         ];
 		// mit-end:Ekom
 	}
+
+	protected static function NullosAdmin_layout_sideBarMenuModel(array &$sideBarMenuModel)
+	{
+		// mit-start:Ekom
+		$sideBarMenuModel['sections'][] = [
+            "label" => "Ekom",
+            "items" => [
+                [
+                    "icon" => "fa fa-money",
+                    "label" => "&nbsp;&nbsp;test",
+                    "items" => [
+                        [
+                            "icon" => "fa fa-but",
+                            "label" => "bug",
+                            "link" => "/pou",
+                            "items" => null,
+                        ],
+                    ],
+                ],
+            ],
+        ];
+		// mit-end:Ekom
+	}
+
+
+
 
 
 

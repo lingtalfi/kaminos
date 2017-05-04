@@ -5,8 +5,9 @@ Application
 Kaminos
 Test
 Authenticate
-Ekom
 Core
 UploadProfile
 DataTable
 NullosAdmin
+Ekom
+AutoAdmin

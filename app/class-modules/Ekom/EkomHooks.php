@@ -8,8 +8,34 @@ class EkomHooks
 {
 
 
+    protected static function NullosAdmin_layout_sideBarMenuModel(array &$sideBarMenuModel)
+    {
+        $sideBarMenuModel['sections'][] = [
+            "label" => "Ekom",
+            "items" => [
+                [
+                    "icon" => "fa fa-home",
+                    "label" => "test",
+                    'badge' => [
+                        'type' => "success",
+                        'text' => "success",
+                    ],
+                    "items" => [
+                        [
+                            "icon" => "fa fa-but",
+                            "label" => "bug",
+                            "link" => "/pou",
+                            "items" => null,
+                        ],
+                    ],
+                ],
+            ],
+        ];
+    }
 
-    protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets){
+
+    protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets)
+    {
 
         $prefixUri = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme");
         $imgPrefix = $prefixUri . "/production";

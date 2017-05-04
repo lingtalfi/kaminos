@@ -166,6 +166,10 @@ class DataTableController extends ApplicationController
                     }
 
 
+                    // if you need the user to override the renderer on a per-profile basis, you can uncomment such a line,
+                    // but this will probably be never needed.
+//                    $renderer = (array_key_exists('renderer', $profile)) ? $profile['renderer'] : 'ModelRenderers\DataTable\DataTableRenderer';
+
                     $oRenderer = new $renderer();
                     if ($oRenderer instanceof ModelAwareRendererInterface) {
                         $html = $oRenderer->setModel($model->getArray())->render();
@@ -173,7 +177,8 @@ class DataTableController extends ApplicationController
                             'type' => 'success',
                             'data' => $html,
                         ]);
-                    } else {
+                    }
+                    else{
                         return $this->log("renderer not instance of ModelAwareRendererInterface");
                     }
 

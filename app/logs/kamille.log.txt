@@ -25332,3 +25332,556 @@ Stack trace:
 2017-05-03 16:06:29 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
 2017-05-03 16:06:29 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
 2017-05-03 16:06:29 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 13:05:54 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:05:55 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:05:55 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:05:55 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:05:55 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:39 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:39 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:39 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:39 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:39 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:39 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:40 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:40 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:40 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:40 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:40 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:40 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:40 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:40 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:40 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:40 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:40 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:40 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:40 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:40 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:40 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:40 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:40 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:40 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:40 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:40 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:40 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:40 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:40 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:40 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:13:41 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:13:41 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:13:41 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:13:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:13:41 - [debug]: Rendering layout splash/default
+2017-05-04 13:34:29 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:34:29 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:34:29 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-04 13:34:29 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-04 13:34:29 - [debug]: Rendering layout splash/default
+2017-05-04 13:34:32 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:34:32 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-04 13:34:32 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:34:32 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 13:34:32 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 13:34:32 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 13:34:32 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 13:34:32 - [debug]: Rendering layout admin/default
+2017-05-04 13:34:33 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:34:33 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 13:34:33 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 13:34:33 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 13:41:44 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:41:44 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 13:41:44 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 13:41:44 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 13:41:44 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 13:41:44 - [debug]: Rendering layout admin/default
+2017-05-04 13:41:45 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:41:45 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 13:41:45 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 13:41:45 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 13:41:46 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:41:46 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 13:41:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 13:41:46 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 13:41:46 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 13:41:46 - [debug]: Rendering layout admin/default
+2017-05-04 13:41:46 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:41:46 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 13:41:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 13:41:46 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 13:42:20 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:42:20 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 13:42:20 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 13:43:03 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:43:03 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 13:43:03 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 13:43:03 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 13:43:03 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 13:43:03 - [debug]: Rendering layout admin/default
+2017-05-04 13:43:03 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:43:03 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 13:43:03 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 13:43:03 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 13:46:26 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:46:26 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 13:46:26 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 13:46:26 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 13:46:26 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 13:46:26 - [debug]: Rendering layout admin/default
+2017-05-04 13:46:26 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 13:46:26 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 13:46:26 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 13:46:26 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:06:23 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:06:23 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:06:23 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:06:23 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:06:23 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:06:23 - [debug]: Rendering layout admin/default
+2017-05-04 14:06:23 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:06:23 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:06:23 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:06:23 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:07:17 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:07:17 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:07:17 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:07:17 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:07:17 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:07:17 - [debug]: Rendering layout admin/default
+2017-05-04 14:07:17 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:07:17 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:07:17 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:07:17 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:08:51 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:08:51 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:08:51 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:08:51 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:08:51 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:08:51 - [debug]: Rendering layout admin/default
+2017-05-04 14:08:51 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:08:51 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:08:51 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:08:51 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:09:59 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:09:59 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:09:59 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:09:59 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:09:59 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:09:59 - [debug]: Rendering layout admin/default
+2017-05-04 14:09:59 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:09:59 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:09:59 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:09:59 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:10:14 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:10:14 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:10:14 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:10:14 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:10:14 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:10:14 - [debug]: Rendering layout admin/default
+2017-05-04 14:10:14 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:10:14 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:10:14 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:10:14 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:10:28 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:10:28 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:10:28 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:10:28 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:10:28 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:10:28 - [debug]: Rendering layout admin/default
+2017-05-04 14:10:28 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:10:28 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:10:28 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:10:28 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:10:38 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:10:38 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:10:38 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:10:38 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:10:38 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:10:38 - [debug]: Rendering layout admin/default
+2017-05-04 14:10:38 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:10:38 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:10:38 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:10:38 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:10:58 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:10:58 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:10:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:10:58 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:10:58 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:10:58 - [debug]: Rendering layout admin/default
+2017-05-04 14:10:58 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:10:58 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:10:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:10:58 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:13:18 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:13:18 - [debug]: ApplicationRoutsyRouter: routeId Core_myRouteId1 matched and controller is ?Controller:method
+2017-05-04 14:13:19 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:13:19 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:13:19 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:13:19 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:13:19 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:13:19 - [debug]: Rendering layout admin/default
+2017-05-04 14:13:20 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:13:20 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:13:20 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:13:20 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:13:21 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:13:21 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:13:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:13:21 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:13:21 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:13:21 - [debug]: Rendering layout admin/default
+2017-05-04 14:13:21 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:13:21 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:13:21 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:13:21 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:13:30 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:13:30 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:13:30 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:13:30 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:13:30 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:13:30 - [debug]: Rendering layout admin/default
+2017-05-04 14:13:30 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:13:30 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:13:30 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:13:30 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php
+2017-05-04 14:17:36 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:17:36 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_testPage matched and controller is Controller\NullosAdmin\TestPageController:renderForm
+2017-05-04 14:17:36 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\TestPageController
+2017-05-04 14:17:36 - [debug]: [Controller Controller\NullosAdmin\TestPageController] - renderByViewId with viewId NullosAdmin/testPage
+2017-05-04 14:17:36 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/testPage (/config/laws/NullosAdmin/testPage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.dataTable; tplName: DataTable_DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-04 14:17:36 - [debug]: Rendering layout admin/default
+2017-05-04 14:17:36 - [debug]: [Core module] - WebApplicationHandler.handle
+2017-05-04 14:17:36 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-04 14:17:36 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-04 14:17:36 - [debug]: DataTableProfileFinder: profile file found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/datatable-profiles/test-array.php

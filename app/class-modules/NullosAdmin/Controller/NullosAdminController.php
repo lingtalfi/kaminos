@@ -44,6 +44,33 @@ class NullosAdminController extends ApplicationController
         }
 
 
+        $sideBarMenuModel = [
+            "sections" => [
+                [
+                    "label" => "pou",
+                    "items" => [
+                        [
+                            "icon" => "fa fa-home",
+                            "label" => "test",
+                            'badge' => [
+                                'type' => "success",
+                                'text' => "success",
+                            ],
+                            "items" => [
+                                [
+                                    "icon" => "fa fa-but",
+                                    "label" => "bug",
+                                    "link" => "/pou",
+                                    "items" => null,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+        Hooks::call("NullosAdmin_layout_sideBarMenuModel", $sideBarMenuModel);
+
         $widgets = [
             "sidebar.navTitle" => [
                 "tpl" => "NullosAdmin/NavTitle/default",
@@ -65,31 +92,7 @@ class NullosAdminController extends ApplicationController
             "sidebar.sidebarMenu" => [
                 "tpl" => "NullosAdmin/SidebarMenu/default",
                 "conf" => [
-                    "sidebarMenuModel" => [
-                        "sections" => [
-                            [
-                                "label" => "pou",
-                                "items" => [
-                                    [
-                                        "icon" => "fa fa-home",
-                                        "label" => "test",
-                                        'badge' => [
-                                            'type' => "success",
-                                            'text' => "success",
-                                        ],
-                                        "items" => [
-                                            [
-                                                "icon" => "fa fa-but",
-                                                "label" => "bug",
-                                                "link" => "/pou",
-                                                "items" => null,
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
+                    "sidebarMenuModel" => $sideBarMenuModel,
                 ],
             ],
             "sidebar.menuFooterButtons" => [

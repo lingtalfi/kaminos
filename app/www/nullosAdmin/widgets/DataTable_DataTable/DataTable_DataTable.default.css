@@ -1,0 +1,307 @@
+.datatable_paginate a {
+    padding: 6px 9px !important;
+    background: #ddd !important;
+    border-color: #ddd !important
+}
+
+.datatable_paginate a {
+    background: #ff0000
+}
+
+.datatable_wrapper {
+    position: relative;
+    clear: both;
+    zoom: 1
+}
+
+.dataTables_processing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 30px;
+    margin-left: -125px;
+    margin-top: -15px;
+    padding: 14px 0 2px 0;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    background-color: white
+}
+
+.datatable_nipp {
+    width: 40%;
+    float: left
+}
+
+.datatable_quickpage {
+    width: 50%;
+    float: right;
+    text-align: right
+}
+
+.datatable_info {
+    width: 60%;
+    float: left
+}
+
+.datatable_paginate {
+    float: right;
+    text-align: right
+}
+
+table.dataTable th.focus,
+table.dataTable td.focus {
+    outline: 2px solid #1ABB9C !important;
+    outline-offset: -1px
+}
+
+.dataTables_scroll {
+    clear: both
+}
+
+.dataTables_scrollBody {
+    *margin-top: -1px;
+    -webkit-overflow-scrolling: touch
+}
+
+.top .datatable_info {
+    float: none
+}
+
+.dataTables_empty {
+    text-align: center
+}
+
+.example_alt_pagination div.datatable_info {
+    width: 40%
+}
+
+@media (max-width: 460px) {
+    .datatable_wrapper .col-sm-6,
+    .datatable_wrapper .col-sm-4 {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .datatable_wrapper .col-sm-6 .datatable_quickpage,
+    .datatable_wrapper .col-sm-4 .datatable_quickpage {
+        float: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .datatable_nipp {
+        float: none;
+    }
+}
+
+.datatable_wrapper > .row {
+    overflow: auto !important; /*prevent datatables overflowing its container*/
+}
+
+table.dataTable {
+    clear: both;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+    border-collapse: separate !important
+}
+
+table.dataTable td, table.dataTable th {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+table.dataTable td.dataTables_empty, table.dataTable th.dataTables_empty {
+    text-align: center
+}
+
+table.dataTable.nowrap th, table.dataTable.nowrap td {
+    white-space: nowrap
+}
+
+div.datatable_wrapper div.datatable_nipp label,
+div.datatable_wrapper div.datatable_bulk label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap
+}
+
+div.datatable_wrapper div.datatable_nipp select,
+div.datatable_wrapper div.datatable_bulk select {
+    width: 75px;
+    display: inline-block
+}
+
+@media (min-width: 768px) {
+    div.datatable_wrapper div.datatable_nipp select,
+    div.datatable_wrapper div.datatable_bulk select {
+        width: auto;
+    }
+}
+
+div.datatable_wrapper div.datatable_quickpage {
+    text-align: right
+}
+
+div.datatable_wrapper div.datatable_quickpage label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left
+}
+
+div.datatable_wrapper div.datatable_quickpage input {
+    margin-left: 0.5em;
+    display: inline-block;
+    width: auto
+}
+
+div.datatable_wrapper div.datatable_info {
+    padding-top: 8px;
+    white-space: nowrap
+}
+
+div.datatable_wrapper div.datatable_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right
+}
+
+div.datatable_wrapper div.datatable_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap
+}
+
+div.datatable_wrapper div.dataTables_processing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    margin-top: -26px;
+    text-align: center;
+    padding: 1em 0
+}
+
+table.dataTable thead > tr > th.sort-asc, table.dataTable thead > tr > th.sort-desc, table.dataTable thead > tr > th.sort-nosort, table.dataTable thead > tr > td.sort-asc, table.dataTable thead > tr > td.sort-desc, table.dataTable thead > tr > td.sort-nosort {
+    padding-right: 30px
+}
+
+table.dataTable thead > tr > th:active, table.dataTable thead > tr > td:active {
+    outline: none
+}
+
+table.dataTable thead .sort-nosort, table.dataTable thead .sort-asc, table.dataTable thead .sort-desc, table.dataTable thead .sort-asc_disabled, table.dataTable thead .sort-desc_disabled {
+    cursor: pointer;
+    position: relative
+}
+
+table.dataTable thead .sort-nosort:after, table.dataTable thead .sort-asc:after, table.dataTable thead .sort-desc:after, table.dataTable thead .sort-asc_disabled:after, table.dataTable thead .sort-desc_disabled:after {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: block;
+    font-family: 'Glyphicons Halflings';
+    opacity: 0.5
+}
+
+table.dataTable thead .sort-nosort:after {
+    opacity: 0.2;
+    content: "\e150"
+}
+
+table.dataTable thead .sort-asc:after {
+    content: "\e155"
+}
+
+table.dataTable thead .sort-desc:after {
+    content: "\e156"
+}
+
+table.dataTable thead .sort-asc_disabled:after, table.dataTable thead .sort-desc_disabled:after {
+    color: #eee
+}
+
+div.dataTables_scrollHead table.dataTable {
+    margin-bottom: 0 !important
+}
+
+div.dataTables_scrollBody table {
+    border-top: none;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
+
+div.dataTables_scrollBody table thead .sort-nosort:after, div.dataTables_scrollBody table thead .sort-asc:after, div.dataTables_scrollBody table thead .sort-desc:after {
+    display: none
+}
+
+div.dataTables_scrollBody table tbody tr:first-child th, div.dataTables_scrollBody table tbody tr:first-child td {
+    border-top: none
+}
+
+div.dataTables_scrollFoot table {
+    margin-top: 0 !important;
+    border-top: none
+}
+
+@media screen and (max-width: 767px) {
+    div.datatable_wrapper div.datatable_nipp, div.datatable_wrapper div.datatable_quickpage, div.datatable_wrapper div.datatable_info, div.datatable_wrapper div.datatable_paginate {
+        text-align: center
+    }
+}
+
+table.dataTable.table-condensed > thead > tr > th {
+    padding-right: 20px
+}
+
+table.dataTable.table-condensed .sort-nosort:after, table.dataTable.table-condensed .sort-asc:after, table.dataTable.table-condensed .sort-desc:after {
+    top: 6px;
+    right: 6px
+}
+
+table.table-bordered.dataTable th, table.table-bordered.dataTable td {
+    border-left-width: 0
+}
+
+table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child {
+    border-right-width: 0
+}
+
+table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td {
+    border-bottom-width: 0;
+    vertical-align: middle;
+}
+
+div.dataTables_scrollHead table.table-bordered {
+    border-bottom-width: 0
+}
+
+div.table-responsive > div.datatable_wrapper > div.row {
+    margin: 0
+}
+
+div.table-responsive > div.datatable_wrapper > div.row > div[class^="col-"]:first-child {
+    padding-left: 0
+}
+
+div.table-responsive > div.datatable_wrapper > div.row > div[class^="col-"]:last-child {
+    padding-right: 0
+}
+
+table.dataTable .search-row {
+    background: #f0f0f0;
+}
+
+table.dataTable .search-row > td {
+    vertical-align: middle;
+}
+
+table.dataTable th:last-child,
+table.dataTable td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}

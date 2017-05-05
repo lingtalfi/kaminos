@@ -101,6 +101,14 @@ Widget Dependencies
 History Log
 ------------------
     
+- 1.3.0 -- 2017-05-05
+
+    - fix DataTableController returning proper error message after exception caught 
+    
+- 1.2.0 -- 2017-05-04
+
+    - add rowsGenerator.object key in profile as an alternative to the 'path' key.
+    
 - 1.1.0 -- 2017-05-03
 
     - clean up

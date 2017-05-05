@@ -4,6 +4,7 @@
 namespace Controller\DataTable;
 
 
+use Bat\ObTool;
 use Core\Controller\ApplicationController;
 use Core\Services\Hooks;
 use Core\Services\X;
@@ -91,15 +92,27 @@ class DataTableController extends ApplicationController
                     $rowsGenerator = $profile['rowsGenerator'];
                     $type = $rowsGenerator['type'];
                     if ('array' === $type) {
-                        $path = $rowsGenerator['path'];
-                        if (file_exists($path)) {
-                            $rows = [];
-                            include $path;
-                            $generator = ArrayRowsGenerator::create()->setArray($rows);
+                        if (array_key_exists('path', $rowsGenerator)) {
+
+                            $path = $rowsGenerator['path'];
+                            if (file_exists($path)) {
+                                $rows = [];
+                                include $path;
+                            } else {
+                                $this->log("DataTableController: Path to array rowsGenerator File not found: $path");
+                                $rows = [];
+                            }
+                        } elseif (array_key_exists('object', $rowsGenerator)) {
+                            $o = new $rowsGenerator['object'];
+                            /**
+                             * @var $o RowsGeneratorInterface
+                             */
+                            $rows = $o->getRows();
                         } else {
-                            $this->log("DataTableController: Path to array rowsGenerator File not found: $path");
-                            $rows = [];
+                            return $this->log("Unknown array method, either the path key or the object key were expected");
                         }
+                        $generator = ArrayRowsGenerator::create()->setArray($rows);
+
                     } elseif ('quickPdo' === $type) {
                         $generator = QuickPdoRowsGenerator::create()
                             ->setFields($rowsGenerator['fields'])->setQuery($rowsGenerator['query']);
@@ -177,8 +190,7 @@ class DataTableController extends ApplicationController
                             'type' => 'success',
                             'data' => $html,
                         ]);
-                    }
-                    else{
+                    } else {
                         return $this->log("renderer not instance of ModelAwareRendererInterface");
                     }
 
@@ -188,6 +200,7 @@ class DataTableController extends ApplicationController
                 }
             } catch (\Exception $e) {
                 $this->log("$e");
+                ObTool::cleanAll();
                 return JsonResponse::create([
                     'type' => 'error',
                     'data' => $e->getMessage(),

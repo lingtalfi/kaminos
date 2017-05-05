@@ -38,6 +38,7 @@ class NullosDataTableRenderer extends AbstractRenderer
         $a = $this->model;
 //        a($a);
 
+        $columns = $a['headers'];
         $visibleColumns = $a['headers'];
         foreach ($a['hidden'] as $columnId) {
             unset($visibleColumns[$columnId]);
@@ -143,8 +144,9 @@ class NullosDataTableRenderer extends AbstractRenderer
                             <?php endif; ?>
 
 
-                            <?php foreach ($visibleColumns as $columnId => $label): ?>
+                            <?php foreach ($columns as $columnId => $label): ?>
                                 <?php
+                                $style = (in_array($columnId, $a['hidden'])) ? ' style="display: none"' : '';
                                 $class = '';
                                 if (true === $a['isSortable'] && false === in_array($columnId, $a['unsortable'], true)) {
                                     $class = 'sort-item';
@@ -155,8 +157,9 @@ class NullosDataTableRenderer extends AbstractRenderer
                                     $class .= ' sort-' . $dir;
                                 }
                                 ?>
-                                <th data-id="<?php echo $columnId; ?>" class="<?php echo $class; ?>"
-                                    tabindex="0"><?php echo $label; ?></th>
+                                <th<?php echo $style; ?> data-id="<?php echo $columnId; ?>"
+                                                         class="<?php echo $class; ?>"
+                                                         tabindex="0"><?php echo $label; ?></th>
                             <?php endforeach; ?>
 
                             <?php if (true === $a['isSearchable']): ?>
@@ -169,8 +172,10 @@ class NullosDataTableRenderer extends AbstractRenderer
                                 <?php if (true === $a['checkboxes']): ?>
                                     <td></td>
                                 <?php endif; ?>
-                                <?php foreach ($visibleColumns as $columnId => $label): ?>
-                                    <td>
+                                <?php foreach ($columns as $columnId => $label):
+                                    $style = (in_array($columnId, $a['hidden'])) ? ' style="display: none"' : '';
+                                    ?>
+                                    <td<?php echo $style; ?>>
                                         <?php if (false === in_array($columnId, $a['unsearchable'])): ?>
                                             <?php
                                             $val = (array_key_exists($columnId, $a['searchValues'])) ? $a['searchValues'][$columnId] : "";
@@ -209,14 +214,15 @@ class NullosDataTableRenderer extends AbstractRenderer
                                         </td>
                                     <?php endif; ?>
 
-                                    <?php foreach ($row as $k => $v): ?>
-                                        <?php if (array_key_exists($k, $visibleColumns)): ?>
-                                            <?php if (is_array($v)): ?>
-                                                <td><?php echo $this->renderRowSpecial($v, $row); ?></td>
-                                            <?php else: ?>
-                                                <td><?php echo $v; ?></td>
-                                            <?php endif; ?>
+                                    <?php foreach ($columns as $k => $label):
+                                        $v = $row[$k];
+                                        $style = (in_array($k, $a['hidden'])) ? ' style="display: none"' : '';
+                                        if (is_array($v)): ?>
+                                            <td<?php echo $style; ?>><?php echo $this->renderRowSpecial($v, $row); ?></td>
+                                        <?php else: ?>
+                                            <td<?php echo $style; ?>><?php echo $v; ?></td>
                                         <?php endif; ?>
+
                                     <?php endforeach ?>
 
 

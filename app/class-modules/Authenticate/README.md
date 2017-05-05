@@ -12,6 +12,7 @@ It provides various things:
 
 - an authentication form, to authenticate users 
 - the Authenticate_grantor service (A::has), to check whether a connected user has or hasn't a role
+- an install facility so that a module can easily provide its own badges/badgesGroups to the existing system
 
 
 
@@ -62,3 +63,30 @@ Services
 
 By default, the user store and the badge store both uses file based stores.
 The stores are located in app/store/Authenticate/profiles.php and app/store/Authenticate/users.php 
+
+
+
+The profiles install facility
+=============================
+The Authenticate module is a fundamental module.
+So much so that it has features built into the KamilleModule.
+
+If your module extends the KamilleModule, then to add your own badges to the existing system you can 
+use the profiles facility.
+
+Add a profiles.php file at the root of your module:
+
+
+```txt
+- app/class-modules/My
+----- MyModule.php      # this is just your regular module file
+----- profiles.php      # create this file to automatically add your own badges when the module is installed
+```
+
+
+The notation inside the profiles.php is described in the Authenticate planet, in the source code comments of the 
+class: **Authenticate\BadgeStore\FileBadgeStore**.
+
+ 
+ 
+ 

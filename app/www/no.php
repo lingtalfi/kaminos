@@ -4,6 +4,9 @@
 use Authenticate\BadgeStore\FileBadgeStore;
 use CrudGeneratorTools\CrudGenerator\ListCrudGeneratorHelper;
 use CrudGeneratorTools\Helper\CrudGeneratorToolsHelper;
+use CrudWithFile\CrudWithFile;
+use ModelRenderers\DataTable\DataTableRenderer;
+use Models\DataTable\DataTableModel;
 use Module\AutoAdmin\AutoAdminModule;
 use Output\WebProgramOutput;
 use QuickPdo\QuickPdo;
@@ -13,7 +16,55 @@ require_once __DIR__ . "/../boot.php";
 
 
 
+$model = DataTableModel::create();
+/**
+ * @var $model DataTableModel
+ */
+$model
+    ->setRows([
+        [
+            "firstName" => "Mark",
+            "lastName" => "Otto",
+            "userName" => "@mdo",
+        ],
+        [
+            "firstName" => "Jacob",
+            "lastName" => "Thornton",
+            "userName" => "@fat",
+        ],
+        [
+            "firstName" => "Larry",
+            "lastName" => "the Bird",
+            "userName" => "@twitter",
+        ],
+        [
+            "firstName" => "Shogun",
+            "lastName" => "Mantra",
+            "userName" => "@shotra",
+        ],
+        [
+            "firstName" => "Aziz",
+            "lastName" => "Bethune",
+            "userName" => "@loopz",
+        ],
+        [
+            "firstName" => "Gary",
+            "lastName" => "Jaret",
+            "userName" => "@gjwish",
+        ],
+        [
+            "firstName" => "Mark",
+            "lastName" => "Coulio",
+            "userName" => "@coulio",
+        ],
+    ])
+    ->setNbTotalItems(7);
 
+echo DataTableRenderer::create()->setModel($model->getArray())->render();
+
+
+
+az();
 
 $m = new AutoAdminModule();
 $m->setProgramOutput(WebProgramOutput::create());

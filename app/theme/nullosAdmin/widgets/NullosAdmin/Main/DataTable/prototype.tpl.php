@@ -1,9 +1,10 @@
 <?php
 
 
-use Kamille\Mvc\HtmlPageHelper\HtmlPageHelper;
 
-HtmlPageHelper::css("/theme/nullosAdmin/build/css/datatable.css");
+use Module\NullosAdmin\ThemeHelper\ThemeHelper;
+
+ThemeHelper::inst()->useLib("dataTable");
 
 
 ?>

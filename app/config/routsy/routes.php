@@ -6,6 +6,7 @@ use Kamille\Architecture\Request\Web\HttpRequestInterface;
 //--------------------------------------------
 // USER - BEFORE
 //--------------------------------------------
+$routes["My_debug"] = ["/pou", null, null, "Controller\App\DebugController:render"];
 
 
 //--------------------------------------------
@@ -51,6 +52,7 @@ $routes['DataTable_ajaxActionsHandler'] = [\Kamille\Services\XConfig::get("DataT
 
 
 $routes['DataTable_ajaxHandler'] = [\Kamille\Services\XConfig::get("DataTable.uriAjaxHandler"), null, null, "Controller\DataTable\DataTableController:handleAjax"];
+$routes['NullosAdmin_users'] = [\Kamille\Services\XConfig::get("NullosAdmin.uriUsers"), null, null, "Controller\NullosAdmin\UsersController:renderList"];
 
 //--------------------------------------------
 // DYNAMIC

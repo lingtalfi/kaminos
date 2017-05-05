@@ -8,6 +8,7 @@ use Bat\ClassTool;
 use Core\Controller\ApplicationController;
 use Core\Services\Hooks;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
+use Kamille\Services\XConfig;
 
 
 class NullosAdminController extends ApplicationController
@@ -47,23 +48,13 @@ class NullosAdminController extends ApplicationController
         $sideBarMenuModel = [
             "sections" => [
                 [
-                    "label" => "pou",
+                    "label" => "Admin",
                     "items" => [
                         [
-                            "icon" => "fa fa-home",
-                            "label" => "test",
-                            'badge' => [
-                                'type' => "success",
-                                'text' => "success",
-                            ],
-                            "items" => [
-                                [
-                                    "icon" => "fa fa-but",
-                                    "label" => "bug",
-                                    "link" => "/pou",
-                                    "items" => null,
-                                ],
-                            ],
+                            "icon" => "fa fa-user",
+                            "label" => "Users",
+                            "link" => XConfig::get("NullosAdmin.uriUsers"),
+                            "items" => null,
                         ],
                     ],
                 ],

@@ -1,3 +1,6 @@
+/**
+ * This file is owned by the nullosAdmin theme, which was made for the NullosAdmin module.
+ */
 (function ($) {
 
 

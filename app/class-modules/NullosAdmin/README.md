@@ -22,7 +22,8 @@ kamille install NullosAdmin
 
 Dependencies
 ===============
-- Authenticate?
+- Authenticate
+- DataTable
 - UploadProfile
 
 

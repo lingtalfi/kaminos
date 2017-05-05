@@ -11,6 +11,7 @@ use Kamille\Services\XLog;
 class ThemeHelper implements ThemeHelperInterface
 {
 
+    private static $inst;
     private $loaded;
 
 
@@ -19,9 +20,12 @@ class ThemeHelper implements ThemeHelperInterface
         $this->loaded = [];
     }
 
-    public static function create()
+    public static function inst()
     {
-        return new static();
+        if (null === self::$inst) {
+            self::$inst = new static();
+        }
+        return self::$inst;
     }
 
     /**
@@ -41,6 +45,11 @@ class ThemeHelper implements ThemeHelperInterface
      * - JQVMap
      * - skycons
      * - Switchery
+     *
+     *
+     * Plus the following that I added
+     *
+     * - dataTable
      */
     public function useLib($libName)
     {
@@ -48,6 +57,9 @@ class ThemeHelper implements ThemeHelperInterface
             $prefixUri = "/theme/" . ApplicationParameters::get("theme");
             $this->loaded[$libName] = true;
             switch ($libName) {
+                //--------------------------------------------
+                // ORIGINAL FROM GENTELELLA
+                //--------------------------------------------
                 case 'bootstrap-colorpicker':
                     HtmlPageHelper::js("$prefixUri/vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js", null, null, false);
                     HtmlPageHelper::css("$prefixUri/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css", null);
@@ -106,6 +118,14 @@ class ThemeHelper implements ThemeHelperInterface
                 case 'Switchery':
                     HtmlPageHelper::js("$prefixUri/vendors/switchery/dist/switchery.min.js", null, null, false);
                     HtmlPageHelper::css("$prefixUri/vendors/switchery/dist/switchery.min.css", null);
+                    break;
+                    //--------------------------------------------
+                    // MINES
+                    //--------------------------------------------
+                case 'dataTable':
+                    // assert: DataTable module is installed
+                    HtmlPageHelper::js("/modules/DataTable/datatable.js", "datatable", [], false);
+                    HtmlPageHelper::css("$prefixUri/widgets/DataTable_DataTable/DataTable_DataTable.default.css", null);
                     break;
                 default:
                     XLog::error('Module\NullosAdmin\ThemeHelper: Unknown library: ' . $libName);

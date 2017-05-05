@@ -14,6 +14,7 @@ use ModelRenderers\DataTable\DataTableRenderer;
 use ModelRenderers\Renderer\ModelAwareRendererInterface;
 use Models\DataTable\DataTableModel;
 use Module\DataTable\DataTableProfileFinder\DataTableProfileFinderInterface;
+use PersistentRowCollection\Finder\PersistentRowCollectionFinderInterface;
 use RowsGenerator\ArrayRowsGenerator;
 use RowsGenerator\QuickPdoRowsGenerator;
 use RowsGenerator\RowsGeneratorInterface;
@@ -91,6 +92,10 @@ class DataTableController extends ApplicationController
                     //--------------------------------------------
                     $rowsGenerator = $profile['rowsGenerator'];
                     $type = $rowsGenerator['type'];
+                    $rows = [];
+                    $nbTotalItems = 0;
+
+                    //
                     if ('array' === $type) {
                         if (array_key_exists('path', $rowsGenerator)) {
 
@@ -112,10 +117,20 @@ class DataTableController extends ApplicationController
                             return $this->log("Unknown array method, either the path key or the object key were expected");
                         }
                         $generator = ArrayRowsGenerator::create()->setArray($rows);
+                        list($rows, $page, $nbTotalItems) = $this->getGeneratorInfo($generator, $page, $nipp, $searchValues, $sortValues);
 
                     } elseif ('quickPdo' === $type) {
                         $generator = QuickPdoRowsGenerator::create()
                             ->setFields($rowsGenerator['fields'])->setQuery($rowsGenerator['query']);
+                        list($rows, $page, $nbTotalItems) = $this->getGeneratorInfo($generator, $page, $nipp, $searchValues, $sortValues);
+
+                    } elseif ('prc' === $type) {
+                        $finder= X::get("NullosAdmin_PersistentRowCollectionFinder");
+                        /**
+                         * @var $finder PersistentRowCollectionFinderInterface
+                         */
+                        $finder->find("todo");
+                        throw new \Exception("todo");
 
                     } else {
                         return $this->log("Not implemented yet, generator with type $type", true);
@@ -123,21 +138,8 @@ class DataTableController extends ApplicationController
 
 
                     //--------------------------------------------
-                    // CONFIGURING THE ROWS GENERATOR
-                    //--------------------------------------------
-                    /**
-                     * @var $generator RowsGeneratorInterface
-                     */
-                    $generator->setSearchItems($searchValues);
-                    $generator->setSortValues($sortValues);
-                    $generator->setPage($page);
-                    $generator->setNbItemsPerPage($nipp);
-
-
-                    //--------------------------------------------
                     // APPLY ROW TRANSFORMERS
                     //--------------------------------------------
-                    $rows = $generator->getRows();
                     if (array_key_exists('transformers', $profile)) {
                         $headers = array_keys($profile['model']['headers']);
                         $rows = RowsTransformerUtil::transform($rows, $headers, $profile['transformers']);
@@ -147,14 +149,14 @@ class DataTableController extends ApplicationController
                     //--------------------------------------------
                     // CONFIGURING THE MODEL BY USER DATA
                     //--------------------------------------------
-                    $nbTotalItems = $generator->getNbTotalItems();
-
                     $model = DataTableModel::create()
                         //
                         ->setSearchValues($searchValues)
                         ->setSortValues($sortValues)
                         ->setNipp($nipp)
-                        ->setPage($generator->getPage());
+                        ->setPage($page);
+
+
                     /**
                      * @var $model DataTableModel
                      */
@@ -227,6 +229,26 @@ class DataTableController extends ApplicationController
                 'data' => $msg,
             ]);
         }
+    }
+
+
+    private function getGeneratorInfo(RowsGeneratorInterface $generator, $page, $nipp, array $searchValues, array $sortValues)
+    {
+        //--------------------------------------------
+        // CONFIGURING THE ROWS GENERATOR
+        //--------------------------------------------
+        /**
+         * @var $generator RowsGeneratorInterface
+         */
+        $generator->setSearchItems($searchValues);
+        $generator->setSortValues($sortValues);
+        $generator->setPage($page);
+        $generator->setNbItemsPerPage($nipp);
+        return [
+            $generator->getRows(),
+            $generator->getPage(),
+            $generator->getNbTotalItems(),
+        ];
     }
 
     private function configureModelByProfile(DataTableModel $model, array $profile)

@@ -3,6 +3,10 @@
 
 $profile = [
     'rowsGenerator' => [
+        'type' => 'prc',
+        'id' => 'NullosAdmin.User',
+    ],
+    'rowsGenerator' => [
         'type' => 'array',
         'object' => 'Module\NullosAdmin\Authenticate\Users\AuthenticateUsersRowsAdapter',
     ],
@@ -75,8 +79,8 @@ $profile = [
                 'confirmText' => "Are you sure you want to execute this action?",
                 'label' => "Add User",
                 'useSelectedRows' => false,
-                'uri' => "/datatable-handler?type=action",
-                'type' => "refreshOnSuccess",
+                'uri' => "/service/NullosAdmin",
+                'type' => "modal",
                 'icon' => "fa fa-plus",
             ],
         ],

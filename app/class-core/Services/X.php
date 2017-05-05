@@ -129,7 +129,7 @@ class X extends AbstractX
 
     public static function NullosAdmin_themeHelper()
     {
-        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::create();
+        return \Module\NullosAdmin\ThemeHelper\ThemeHelper::inst();
     }
 
 

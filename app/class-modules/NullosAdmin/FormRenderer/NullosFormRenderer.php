@@ -15,6 +15,8 @@ use Module\UploadProfile\ProfileFinder\ProfileFinderInterface;
 class NullosFormRenderer extends DiyFormRenderer
 {
 
+    private $showSubmitButtonsGroup;
+
 
     public function __construct()
     {
@@ -29,8 +31,11 @@ class NullosFormRenderer extends DiyFormRenderer
         $theme->useLib("dropzone");
         $theme->useLib("Switchery");
 
+        $this->showSubmitButtonsGroup = true;
+
 
         parent::__construct();
+
         $this->setCssClasses([
             "control" => function ($identifier, array $control) {
                 $s = 'form-control';
@@ -53,6 +58,12 @@ class NullosFormRenderer extends DiyFormRenderer
                 return 'form-group';
             },
         ]);
+    }
+
+    public function setShowSubmitButtonsGroup($showSubmitButtonsGroup)
+    {
+        $this->showSubmitButtonsGroup = $showSubmitButtonsGroup;
+        return $this;
     }
 
 
@@ -281,16 +292,19 @@ class NullosFormRenderer extends DiyFormRenderer
         echo $this->formOpeningTag;
         //            echo $this->centralizedFormErrors; // we don't use centralized errors!
         echo $this->controls;
-        ?>
-        <div class="ln_solid"></div>
-        <div class="form-group">
-            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                <button class="btn btn-primary" type="button">Cancel</button>
-                <button class="btn btn-primary" type="reset">Reset</button>
-                <button type="submit" class="btn btn-success">Submit</button>
+        if (true === $this->showSubmitButtonsGroup):
+            ?>
+
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <button class="btn btn-primary" type="button">Cancel</button>
+                    <button class="btn btn-primary" type="reset">Reset</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
             </div>
-        </div>
-        <?php
+            <?php
+        endif;
         echo '</form>';
 //        echo '</div>';
 

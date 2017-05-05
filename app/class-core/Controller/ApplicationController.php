@@ -90,6 +90,43 @@ class ApplicationController extends KamilleController
     }
 
 
+    protected function renderAjaxByViewId($viewId, $config = null, array $options = [])
+    {
+        if (true === ModuleInstallationRegister::isInstalled('Core')) {
+
+
+            //--------------------------------------------
+            // SEND DEBUG MESSAGE TO THE LOGS
+            //--------------------------------------------
+            if (true === ApplicationParameters::get('debug')) {
+                XLog::debug("[Controller " . get_called_class() . "] - renderAjaxByViewId with viewId $viewId");
+            }
+            $options['widgetClass'] = 'Core\Mvc\Widget\ApplicationWidget';
+            $options['layout'] = 'Kamille\Mvc\Layout\Layout';
+
+
+            //--------------------------------------------
+            // LET MODULES UPDATE THE LAWS CONFIG
+            //--------------------------------------------
+            $c = [$this, $config];
+            Hooks::call("Core_autoLawsConfig", $c);
+            $config = $c[1];
+
+            //--------------------------------------------
+            // RENDER THE CONTENT USING THE LAWS TOOL
+            //--------------------------------------------
+            /**
+             * @var $util LawsUtilInterface
+             */
+            $util = X::get("Core_lawsUtil");
+            $content = $util->renderLawsViewById($viewId, $config, $options);
+        } else {
+            $content = "";
+        }
+        return $content;
+    }
+
+
     protected function getTranslationContext()
     {
         if (null === $this->translationContext) {

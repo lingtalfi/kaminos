@@ -9,9 +9,13 @@ use Kamille\Architecture\Request\Web\HttpRequestInterface;
 $routes["My_debug"] = ["/pou", null, null, "Controller\App\DebugController:render"];
 
 
+
 //--------------------------------------------
 // STATIC
 //--------------------------------------------
+
+
+
 $routes["Core_myRouteId1"] = ["/pou", null, null, "?Controller:method"];
 
 $routes["Core_myRouteId2"] = ["/pou2", null, null, [
@@ -52,7 +56,10 @@ $routes['DataTable_ajaxActionsHandler'] = [\Kamille\Services\XConfig::get("DataT
 
 
 $routes['DataTable_ajaxHandler'] = [\Kamille\Services\XConfig::get("DataTable.uriAjaxHandler"), null, null, "Controller\DataTable\DataTableController:handleAjax"];
+
+
 $routes['NullosAdmin_users'] = [\Kamille\Services\XConfig::get("NullosAdmin.uriUsers"), null, null, "Controller\NullosAdmin\UsersController:renderList"];
+$routes["NullosAdmin_ajax"] = ["/service/NullosAdmin", null, null, "Controller\NullosAdmin\NullosAdminAjaxController:handleRequest"];
 
 //--------------------------------------------
 // DYNAMIC

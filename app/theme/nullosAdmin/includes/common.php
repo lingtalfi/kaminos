@@ -20,6 +20,7 @@ HtmlPageHelper::css("$prefixUri/vendors/bootstrap/dist/css/bootstrap.min.css"); 
 HtmlPageHelper::css("$prefixUri/vendors/font-awesome/css/font-awesome.min.css"); // font awesome
 HtmlPageHelper::css("$prefixUri/vendors/nprogress/nprogress.css"); // nprogress
 HtmlPageHelper::css("$prefixUri/build/css/custom.min.css"); // custom theme style
+HtmlPageHelper::css("$prefixUri/css/nullos.css"); //
 
 
 // bottom scripts
@@ -29,7 +30,7 @@ HtmlPageHelper::js("$prefixUri/vendors/fastclick/lib/fastclick.js", null, null, 
 HtmlPageHelper::js("$prefixUri/vendors/nprogress/nprogress.js", null, null, false);
 
 
-HtmlPageHelper::js("$prefixUri/nullos.js", null, null, false);
+HtmlPageHelper::js("$prefixUri/js/nullos.js", null, null, false);
 
 
 HtmlPageHelper::js("$prefixUri/build/js/custom.js", null, null, 'after');

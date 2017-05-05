@@ -133,6 +133,7 @@
         }
     };
 
+
     //----------------------------------------
     // INIT FUNCTIONS
     //----------------------------------------
@@ -145,8 +146,15 @@
         });
     }
 
+
     $(document).ready(function () {
         initActionLinks();
+        $.fn.dataTable.defaults.modalResponse = function (type, msg) {
+            var jLink = $('<button style="display: none" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajax-modal-main">Large modal</button>');
+            $('body').append(jLink);
+            jLink.trigger('click');
+            $('#ajax-modal-main .modal-content').empty().append(msg);
+        };
     });
 
 })(jQuery);

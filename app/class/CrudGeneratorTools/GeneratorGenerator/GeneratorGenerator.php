@@ -18,7 +18,15 @@ class GeneratorGenerator
     public function generateForeignKeysPreferredColumnsByDatabase($db = null)
     {
         $ret = [];
-        $dbs = CrudGeneratorToolsHelper::getDatabases($db);
+        if (null === $db) {
+            $dbs = CrudGeneratorToolsHelper::getDatabases($db);
+        } else {
+            if (!is_array($db)) {
+                $dbs = [$db];
+            } else {
+                $dbs = $db;
+            }
+        }
         foreach ($dbs as $db) {
             $tables = CrudGeneratorToolsHelper::getTables($db, true);
             foreach ($tables as $table) {

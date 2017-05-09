@@ -476,6 +476,38 @@ And so that's one more word to our vocabulary.
 That was just a reminder of the vocabulary we know so far.
 
 
+formForeignKeySelectorFormat
+----------------------------
+For forms, we have a similar case:
+imagine that table A has a foreign key to column id from table B.
+
+So a nice form for table A would contain an html select tag containing all possible values for B.id.
+
+The value (the option tag's value) would be the value of B.id,
+but if the label (of the option tag) was B.id, this might be difficult for an human to read.
+
+Instead, we can format the foreign key with tags, so that the resulting string would be used
+as labels.
+
+What I'm saying is: instead of selecting between numeric values (1,2,3,4,...),
+we should be able to choose the format ourselves (and that's the purpose of the formForeignKeySelectorFormat).
+
+
+If formForeignKeySelectorFormat is:
+
+- {id}. {label}
+
+Then, assuming that table B contains an id column and a label column, then the select option labels would look like 
+this:
+
+- 1. red
+- 2. blue
+- 3. green
+
+
+
+
+
 
 Using translations for the end result
 ---------------------------------------

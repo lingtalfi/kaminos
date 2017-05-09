@@ -11,6 +11,7 @@ use Kamille\Architecture\Response\Web\GscpResponse;
 use Kamille\Services\XConfig;
 use Kamille\Services\XLog;
 use Models\Notification\NotificationsModel;
+use PersistentRowCollection\Util\PersistentRowCollectionHelper;
 
 class CrudController extends NullosAdminController
 {
@@ -37,13 +38,22 @@ class CrudController extends NullosAdminController
                         $isAjax = true;
                     }
 
+                    $ric = null;
+                    $isUpdate = false;
+                    $formMode = 'insert';
+                    if (array_key_exists('ric', $_POST)) {
+                        $isUpdate = true;
+                        $formMode = 'update';
+                        $ric = $_POST['ric'];
+                    }
+
 
                     $p = explode(".", $prcId);
                     $prcName = array_pop($p);
                     $title = $prcName; /* todo: use translate... */
 
                     $prc = A::getPrc($prcId);
-                    $formModel = $prc->getForm('insert');
+                    $formModel = $prc->getForm($formMode, $ric);
 
 
                     $listLink = A::prcLink($prcId, "list");
@@ -58,11 +68,24 @@ class CrudController extends NullosAdminController
 
 
                             try {
-                                $ric = $prc->create($_POST);
-                                $msg = "The form was posted successfully.";
-                                $msg .= '&nbsp;&nbsp;<br><a href="' . $listLink . '">Back to the list</a>';
-                                $notifs->addNotification("success", "Yes!", $msg);
-                                $isSuccess = true;
+                                if (false === $isUpdate) {
+                                    $ric = $prc->create($_POST);
+                                    $msg = "The item was inserted successfully.";
+                                    $msg .= '&nbsp;&nbsp;<br><a href="' . $listLink . '">Back to the list</a>';
+                                    $notifs->addNotification("success", "Yes!", $msg);
+                                    $isSuccess = true;
+                                } else {
+                                    $ric = $_POST['ric'];
+                                    unset($_POST['ric']);
+                                    $aRic = PersistentRowCollectionHelper::combineRic($ric, $prc->getRic());
+                                    $prc->update($aRic, $_POST);
+                                    $msg = "The item was updated successfully.";
+                                    $msg .= '&nbsp;&nbsp;<br><a href="' . $listLink . '">Back to the list</a>';
+                                    $notifs->addNotification("success", "Yes!", $msg);
+                                    $isSuccess = true;
+                                }
+
+
                             } catch (\Exception $e) {
                                 $msg = "The form was posted successfully, ";
                                 $msg .= "but a problem occurred while creating the record, please contact the webmaster, sorry.";
@@ -158,6 +181,21 @@ class CrudController extends NullosAdminController
 //                            ->setJsInitScript("/path");
                     }
                     return $this->renderByViewId("NullosAdmin/crudForm", $config);
+
+                    break;
+                case "delete":
+
+                    try {
+
+                        $ric = $_POST['ric'];
+                        $prc = A::getPrc($prcId);
+                        $aRic = PersistentRowCollectionHelper::combineRic($ric, $prc->getRic());
+                        $prc->delete($aRic);
+                        return ModalGscpResponse::make('The item has been deleted', 'success', 'Kool!');
+                    } catch (\Exception $e) {
+                        XLog::error("$e");
+                        return ModalGscpResponse::make('An error occurred, the item might not be deleted, please check the logs', 'error', 'Oops!');
+                    }
 
                     break;
                 default:

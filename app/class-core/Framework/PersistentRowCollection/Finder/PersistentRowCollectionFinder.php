@@ -43,11 +43,20 @@ class PersistentRowCollectionFinder implements PersistentRowCollectionFinderInte
      */
     public function find($name)
     {
-        $class = 'Prc\\' . str_replace('.', '\\', $name) . "PersistentRowCollection";
+        $p = explode('.', $name);
+        $p = array_map('ucfirst', $p);
+        //
+        $s = implode('\\', $p);
+        $class = 'Prc\\' . $s . "PersistentRowCollection";
         if (class_exists($class)) {
             return new $class();
         } else {
-            $class = 'Prc\\Auto\\' . str_replace('.', '\\', $name) . "PersistentRowCollection";
+            $last = array_pop($p);
+            $p[] = 'Auto';
+            $p[] = $last;
+
+            $class = 'Prc\\' . implode('\\', $p) . "PersistentRowCollection";
+
             if (class_exists($class)) {
                 return new $class();
             }

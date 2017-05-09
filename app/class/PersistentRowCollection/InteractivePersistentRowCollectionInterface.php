@@ -14,7 +14,8 @@ interface InteractivePersistentRowCollectionInterface extends PersistentRowColle
      * Return the insert or update form model allowing interaction with the row collection or the row.
      *
      * @param $type , string(insert|update), default=insert
+     * @param $ric , string, only if type is update
      * @return FormModelInterface, the form model
      */
-    public function getForm($type);
+    public function getForm($type, $ric = null);
 }

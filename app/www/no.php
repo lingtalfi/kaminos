@@ -16,7 +16,7 @@ use QuickPdo\QuickPdo;
 require_once __DIR__ . "/../boot.php";
 
 
-
+ini_set('display_errors', "1");
 
 require_once __DIR__ . "/../scripts/generator.php";
 

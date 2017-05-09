@@ -23,8 +23,8 @@ class AutoAdminHooks
     {
         $profileFinder->addFallbackHandler(function ($dir, $profileId) {
             $p = explode('/', $profileId);
-            if (2 === count($p)) {
-                $manual = implode('/', [$p[0], 'manual', $p[1]]);
+            if (3 === count($p)) {
+                $manual = implode('/', [$p[0], 'manual', $p[1], $p[2]]);
                 $f = $dir . "/$manual.php";
                 if (file_exists($f)) {
                     return $f;

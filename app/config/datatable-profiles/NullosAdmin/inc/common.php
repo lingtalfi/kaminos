@@ -32,10 +32,11 @@ $profile = [
                             'type' => "post",
                         ],
                         [
-                            'confirm' => false,
+                            'confirm' => true,
+                            'confirmText' => "Are you sure you want to execute this action?",
                             'label' => "Delete",
                             'id' => "delete",
-                            'uri' => "/crud-handler?prc=NullosAdmin.User",
+                            'uri' => A::prcLink($prc, "delete"),
                             'type' => "refreshOnSuccess",
                         ],
                     ],

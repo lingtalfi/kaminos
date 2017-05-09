@@ -68,7 +68,6 @@ class NullosDataTableRenderer extends AbstractRenderer
         }
         $columnWidth = 12 / $n;
 
-
         ?>
         <div class="datatable_wrapper form-inline dt-bootstrap no-footer">
             <div
@@ -144,8 +143,9 @@ class NullosDataTableRenderer extends AbstractRenderer
                             <?php endif; ?>
 
 
-                            <?php foreach ($columns as $columnId => $label): ?>
+                            <?php foreach ($columns as $columnId): ?>
                                 <?php
+                                $label = $this->getLabel($columnId);
                                 $style = (in_array($columnId, $a['hidden'])) ? ' style="display: none"' : '';
                                 $class = '';
                                 if (true === $a['isSortable'] && false === in_array($columnId, $a['unsortable'], true)) {
@@ -172,7 +172,7 @@ class NullosDataTableRenderer extends AbstractRenderer
                                 <?php if (true === $a['checkboxes']): ?>
                                     <td></td>
                                 <?php endif; ?>
-                                <?php foreach ($columns as $columnId => $label):
+                                <?php foreach ($columns as $columnId):
                                     $style = (in_array($columnId, $a['hidden'])) ? ' style="display: none"' : '';
                                     ?>
                                     <td<?php echo $style; ?>>
@@ -214,7 +214,7 @@ class NullosDataTableRenderer extends AbstractRenderer
                                         </td>
                                     <?php endif; ?>
 
-                                    <?php foreach ($columns as $k => $label):
+                                    <?php foreach ($columns as $k):
                                         $v = $row[$k];
                                         $style = (in_array($k, $a['hidden'])) ? ' style="display: none"' : '';
                                         if (is_array($v)): ?>
@@ -409,7 +409,7 @@ class NullosDataTableRenderer extends AbstractRenderer
                 }
                 break;
             case 'dropdown':
-                echo NullosDropDownRenderer::create()->setModel($data)->render();
+                $s .= NullosDropDownRenderer::create()->setModel($data)->render();
                 break;
             default:
                 $this->onError("Unknown special type: $type");
@@ -438,6 +438,15 @@ class NullosDataTableRenderer extends AbstractRenderer
     protected function onError($msg)
     {
         throw new \Exception("DataTableRenderer error: " . $msg);
+    }
+
+
+    protected function getLabel($columnId)
+    {
+        /**
+         * Override this to use the translation mechanism of your app
+         */
+        return $columnId;
     }
 
 }

@@ -1,7 +1,10 @@
 <?php
 
 
-use Kamille\Mvc\HtmlPageHelper\HtmlPageHelper;
+
+
+
+$routes["DataTable_crudHandler"] = ["/crud-handler", null, null, '\Controller\DataTable\CrudController:handleCrud'];
 
 $routes['DataTable_ajaxActionsHandler'] = [\Kamille\Services\XConfig::get("DataTable.uriAjaxActionsHandler"), null, [
     'inGet' => ["type"],

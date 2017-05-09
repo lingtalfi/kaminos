@@ -65,6 +65,11 @@ class CoreHooks
     {
 
     }
+
+    protected static function Core_ModalGscpResponseDefaultButtons(array &$buttons)
+    {
+
+    }
 }
 
 

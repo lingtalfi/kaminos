@@ -61,11 +61,11 @@ catch(\Exception $e){
 
 $conf = [
     "layout" => [
-        "name" => "splash/default",
+        "tpl" => "splash/default",
     ],
     "widgets" => [
         "main.exception" => [
-            "name" => "Exception/default",
+            "tpl" => "Exception/default",
             "conf" => [
                 /**
                  * Normally, you would provide this exception from a controller or another mean,

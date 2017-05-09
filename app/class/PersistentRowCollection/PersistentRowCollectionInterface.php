@@ -4,6 +4,8 @@
 namespace PersistentRowCollection;
 
 
+use PersistentRowCollection\Exception\PersistentRowCollectionException;
+
 interface PersistentRowCollectionInterface
 {
 
@@ -12,9 +14,9 @@ interface PersistentRowCollectionInterface
      * Insert a new row in the collection.
      *
      * @param array $row
-     * @return array|false,
-     *          Return false if something wrong happened.
-     *          Return the ric array in case of success.
+     * @return array, the ric values as array in case of success.
+     *                  For instance, [id => 6]
+     * @throws PersistentRowCollectionException
      *
      */
     public function create(array $row);
@@ -46,12 +48,21 @@ interface PersistentRowCollectionInterface
     public function read(&$page, $nipp, array $searchValues = [], array $sortValues = [], &$nbTotalItems = 0);
 
     /**
+     * Return the row matching the given ric, or false if no match was found
+     *
+     * @param $ric
+     * @return array|false
+     */
+    public function readByRic($ric);
+
+    /**
      *
      * Update the row identified by the given ric with the given newRow.
      *
      * @param array $ric
      * @param array $newRow
-     * @return bool, whether or not the update was successful
+     * @return void
+     * @throws PersistentRowCollectionException
      */
     public function update(array $ric, array $newRow);
 
@@ -60,7 +71,13 @@ interface PersistentRowCollectionInterface
      * Delete the row identified by the given ric
      *
      * @param array $ric
-     * @return mixed
+     * @return void
+     * @throws PersistentRowCollectionException
      */
     public function delete(array $ric);
+
+    /**
+     * @return array, array of ric columns
+     */
+    public function getRic();
 }

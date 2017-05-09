@@ -38,6 +38,12 @@ class CoreServices
         $initializer = new \Module\Core\Pdo\QuickPdoInitializer();
         return $initializer;
     }
+
+    protected static function Core_PersistentRowCollectionFinder()
+    {
+        $initializer = new \Core\Framework\PersistentRowCollection\Finder\PersistentRowCollectionFinder();
+        return $initializer;
+    }
 }
 
 

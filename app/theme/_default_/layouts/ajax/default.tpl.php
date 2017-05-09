@@ -1,0 +1,3 @@
+<?php
+$l->position('main');
+

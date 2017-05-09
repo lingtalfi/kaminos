@@ -9,26 +9,29 @@ use Core\Controller\ApplicationController;
 use Core\Services\Hooks;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Services\XConfig;
+use Kamille\Services\XLog;
 
 
 class NullosAdminController extends ApplicationController
 {
 
 
-    public function renderPage()
+    protected function renderPageError($msg, $title = null)
     {
-
-
-    }
-
-
-
-    //--------------------------------------------
-    //
-    //--------------------------------------------
-    protected function renderMainContent()
-    {
-
+        XLog::error(get_called_class() . ": You need to define the prc first");
+        if (null === $title) {
+            $title = "Oops";
+        }
+        return $this->renderByViewId("NullosAdmin/errorPage", [
+            'widgets' => [
+                'maincontent.error' => [
+                    "conf" => [
+                        'message' => $msg,
+                        'title' => $title,
+                    ],
+                ],
+            ],
+        ]);
     }
 
 
@@ -45,6 +48,7 @@ class NullosAdminController extends ApplicationController
         }
 
 
+
         $sideBarMenuModel = [
             "sections" => [
                 [
@@ -53,7 +57,7 @@ class NullosAdminController extends ApplicationController
                         [
                             "icon" => "fa fa-user",
                             "label" => "Users",
-                            "link" => XConfig::get("NullosAdmin.uriUsers"),
+                            "link" => XConfig::get("NullosAdmin.uriCrud") . "?prc=NullosAdmin.User",
                             "items" => null,
                         ],
                     ],

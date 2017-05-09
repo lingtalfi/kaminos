@@ -28,29 +28,7 @@ class ThemeHelper implements ThemeHelperInterface
         return self::$inst;
     }
 
-    /**
-     * Loads a js lib.
-     * Available js libs are:
-     *
-     * - bootstrap-colorpicker
-     * - bootstrap-daterangepicker
-     * - bootstrap-progressbar
-     * - bootstrap-wysiwyg
-     * - Chart
-     * - dateJS
-     * - dropzone
-     * - flot
-     * - gauge
-     * - iCheck
-     * - JQVMap
-     * - skycons
-     * - Switchery
-     *
-     *
-     * Plus the following that I added
-     *
-     * - dataTable
-     */
+
     public function useLib($libName)
     {
         if (false === array_key_exists($libName, $this->loaded)) {
@@ -112,6 +90,13 @@ class ThemeHelper implements ThemeHelperInterface
                     HtmlPageHelper::js("$prefixUri/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js", null, null, false);
                     HtmlPageHelper::css("$prefixUri/vendors/jqvmap/dist/jqvmap.min.css", null);
                     break;
+                case 'parsley':
+                    HtmlPageHelper::js("$prefixUri/vendors/parsleyjs/dist/parsley.min.js", null, null, false);
+                    break;
+                case 'scroller':
+                    HtmlPageHelper::js("$prefixUri/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js", null, null, false);
+                    HtmlPageHelper::css("$prefixUri/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css", null);
+                    break;
                 case 'skycons':
                     HtmlPageHelper::js("$prefixUri/vendors/skycons/skycons.js", null, null, false);
                     break;
@@ -119,9 +104,9 @@ class ThemeHelper implements ThemeHelperInterface
                     HtmlPageHelper::js("$prefixUri/vendors/switchery/dist/switchery.min.js", null, null, false);
                     HtmlPageHelper::css("$prefixUri/vendors/switchery/dist/switchery.min.css", null);
                     break;
-                    //--------------------------------------------
-                    // MINES
-                    //--------------------------------------------
+                //--------------------------------------------
+                // MINES
+                //--------------------------------------------
                 case 'dataTable':
                     // assert: DataTable module is installed
                     HtmlPageHelper::js("/modules/DataTable/datatable.js", "datatable", [], false);
@@ -132,6 +117,23 @@ class ThemeHelper implements ThemeHelperInterface
                     break;
             }
         }
+    }
+
+    public static function getBsType($type)
+    {
+        switch ($type) {
+            case 'error':
+                return "danger";
+                break;
+            case 'warning':
+            case 'info':
+            case 'success':
+                return $type;
+                break;
+            default:
+                break;
+        }
+        return "default";
     }
 }
 

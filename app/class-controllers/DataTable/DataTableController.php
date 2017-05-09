@@ -5,16 +5,16 @@ namespace Controller\DataTable;
 
 
 use Bat\ObTool;
+use Core\Architecture\Response\Web\ModalGscpResponse;
 use Core\Controller\ApplicationController;
-use Core\Services\Hooks;
 use Core\Services\X;
 use Kamille\Architecture\Response\Web\JsonResponse;
 use Kamille\Services\XLog;
-use ModelRenderers\DataTable\DataTableRenderer;
 use ModelRenderers\Renderer\ModelAwareRendererInterface;
 use Models\DataTable\DataTableModel;
 use Module\DataTable\DataTableProfileFinder\DataTableProfileFinderInterface;
 use PersistentRowCollection\Finder\PersistentRowCollectionFinderInterface;
+use PersistentRowCollection\PersistentRowCollectionInterface;
 use RowsGenerator\ArrayRowsGenerator;
 use RowsGenerator\QuickPdoRowsGenerator;
 use RowsGenerator\RowsGeneratorInterface;
@@ -125,12 +125,20 @@ class DataTableController extends ApplicationController
                         list($rows, $page, $nbTotalItems) = $this->getGeneratorInfo($generator, $page, $nipp, $searchValues, $sortValues);
 
                     } elseif ('prc' === $type) {
-                        $finder= X::get("NullosAdmin_PersistentRowCollectionFinder");
+                        $finder = X::get("Core_PersistentRowCollectionFinder");
+
                         /**
                          * @var $finder PersistentRowCollectionFinderInterface
                          */
-                        $finder->find("todo");
-                        throw new \Exception("todo");
+                        $prcId = $rowsGenerator['id'];
+                        if (false !== ($prc = $finder->find($prcId))) {
+                            /**
+                             * @var $prc PersistentRowCollectionInterface
+                             */
+                            $rows = $prc->read($page, $nipp, $searchValues, $sortValues, $nbTotalItems);
+                        } else {
+                            return $this->log("Prc not found with id $prcId", true);
+                        }
 
                     } else {
                         return $this->log("Not implemented yet, generator with type $type", true);
@@ -141,7 +149,7 @@ class DataTableController extends ApplicationController
                     // APPLY ROW TRANSFORMERS
                     //--------------------------------------------
                     if (array_key_exists('transformers', $profile)) {
-                        $headers = array_keys($profile['model']['headers']);
+                        $headers = $profile['model']['headers'];
                         $rows = RowsTransformerUtil::transform($rows, $headers, $profile['transformers']);
                     }
 
@@ -203,10 +211,7 @@ class DataTableController extends ApplicationController
             } catch (\Exception $e) {
                 $this->log("$e");
                 ObTool::cleanAll();
-                return JsonResponse::create([
-                    'type' => 'error',
-                    'data' => $e->getMessage(),
-                ]);
+                return ModalGscpResponse::make($e->getMessage(), "error", $this->getModalTitle());
             }
         } else {
             return JsonResponse::create([
@@ -222,13 +227,15 @@ class DataTableController extends ApplicationController
     private function log($msg, $response = false)
     {
         $msg = "DataTableController: " . $msg;
-        XLog::error($msg);
+        XLog::error("$msg");
         if (true === $response) {
-            return JsonResponse::create([
-                'type' => 'error',
-                'data' => $msg,
-            ]);
+            return ModalGscpResponse::make($msg, "error", $this->getModalTitle());
         }
+    }
+
+    private function getModalTitle()
+    {
+        return "Oops: An error occurred";
     }
 
 

@@ -27,6 +27,9 @@ class QuickPdoInitializer
             $c = XConfig::get("Core.quickPdoConfig");
             QuickPdo::setConnection($c['dsn'], $c['user'], $c['pass'], $c['options']);
             QuickPdo::setOnQueryReadyCallback(function ($query, $markers = null) {
+                if (null === $markers) {
+                    $markers = [];
+                }
                 XLog::log(new QuickPdoQueryFormatter($query, $markers), 'sql.log');
             });
             $this->initialized = true;

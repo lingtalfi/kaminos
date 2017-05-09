@@ -1,17 +1,19 @@
 <?php
 
 
+use Core\Services\A;
+use Kamille\Services\XConfig;
+
+if (!isset($prc)) {
+    throw new \Exception("Prc must exist");
+}
 $profile = [
     'rowsGenerator' => [
         'type' => 'prc',
-        'id' => 'NullosAdmin.User',
-    ],
-    'rowsGenerator' => [
-        'type' => 'array',
-        'object' => 'Module\NullosAdmin\Authenticate\Users\AuthenticateUsersRowsAdapter',
+        'id' => $prc,
     ],
     'transformers' => [
-        'action' => function ($v, $columnId, array $row) {
+        'action' => function ($v, $columnId, array $row) use ($prc) {
             return [
                 'type' => "dropdown",
                 'data' => [
@@ -21,18 +23,20 @@ $profile = [
                     'size' => "xs",
                     'items' => [
                         [
-                            'confirm' => true,
+                            'confirm' => false,
                             'label' => "Edit",
                             'id' => "edit",
-                            'uri' => "/actionlink-handler",
+                            'uri' => A::prcLink($prc, "form"),
+//                            'uri' => A::prcLink($prc, "ajaxForm"),
                             'type' => "modal",
+                            'type' => "post",
                         ],
                         [
-                            'confirm' => true,
+                            'confirm' => false,
                             'label' => "Delete",
                             'id' => "delete",
-                            'uri' => "/actionlink-handler",
-                            'type' => "modal",
+                            'uri' => "/crud-handler?prc=NullosAdmin.User",
+                            'type' => "refreshOnSuccess",
                         ],
                     ],
                 ],
@@ -40,15 +44,10 @@ $profile = [
         },
     ],
     'model' => [
-        'headers' => [
-            "id" => "id",
-            "name" => "name",
-            "pass" => "pass",
-            "profile" => "profile",
-            "action" => "action",
-        ],
-        'hidden' => ['pass'],
-        'ric' => ['id'],
+        'headers' => [], // OVERRIDE
+        'ric' => [], // OVERRIDE
+        'hidden' => [], // OVERRIDE
+        //
         'checkboxes' => true,
         'isSearchable' => true,
         'unsearchable' => ['action'],
@@ -74,13 +73,13 @@ $profile = [
         ],
         'showActionButtons' => true,
         'actionButtons' => [
-            'addUser' => [
+            'addItem' => [
                 'confirm' => false,
                 'confirmText' => "Are you sure you want to execute this action?",
-                'label' => "Add User",
+                'label' => "OVERRIDE",
                 'useSelectedRows' => false,
-                'uri' => "/service/NullosAdmin",
-                'type' => "modal",
+                'uri' => XConfig::get("NullosAdmin.uriCrud") . "?type=form&prc=" . $prc,
+                'type' => "link",
                 'icon' => "fa fa-plus",
             ],
         ],

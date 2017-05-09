@@ -13,6 +13,7 @@ interface ThemeHelperInterface{
      * - bootstrap-colorpicker
      * - bootstrap-daterangepicker
      * - bootstrap-progressbar
+     * - bootstrap-wysiwyg
      * - Chart
      * - dateJS
      * - dropzone
@@ -20,8 +21,15 @@ interface ThemeHelperInterface{
      * - gauge
      * - iCheck
      * - JQVMap
+     * - parsley
+     * - scroller
      * - skycons
      * - Switchery
+     *
+     *
+     * Plus the following that I added
+     *
+     * - dataTable
      */
     public function useLib($libName);
 

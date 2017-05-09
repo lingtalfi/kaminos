@@ -2,6 +2,7 @@
 
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Mvc\HtmlPageHelper\HtmlPageHelper;
+use Module\NullosAdmin\ThemeHelper\ThemeHelper;
 
 
 $prefixUri = "/theme/" . ApplicationParameters::get("theme");
@@ -37,8 +38,16 @@ HtmlPageHelper::js("$prefixUri/build/js/custom.js", null, null, 'after');
 //HtmlPageHelper::js("$prefixUri/build/js/custom.min.js", null, null, 'after');
 
 
+ThemeHelper::inst()->useLib("scroller");
+
+
+
 if (array_key_exists('jsScripts', $v)) {
     foreach ($v['jsScripts'] as $uri) {
         HtmlPageHelper::js($uri, null, null, false);
     }
 }
+
+
+//HtmlPageHelper::addBodyClass("footer_fixed");
+//HtmlPageHelper::addBodyClass("sidebar_fixed");

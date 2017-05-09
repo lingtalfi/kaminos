@@ -9,11 +9,9 @@ use Kamille\Architecture\Request\Web\HttpRequestInterface;
 $routes["My_debug"] = ["/pou", null, null, "Controller\App\DebugController:render"];
 
 
-
 //--------------------------------------------
 // STATIC
 //--------------------------------------------
-
 
 
 $routes["Core_myRouteId1"] = ["/pou", null, null, "?Controller:method"];
@@ -50,16 +48,27 @@ $routes['Test_ho2'] = ["/uri", null, null, "MyTestController:method"];
 $routes["Authenticate_loginForm"] = ["/login", null, null, '\Controller\Authenticate\AuthenticateController:renderForm'];
 
 
+$routes['NullosAdmin_crud'] = [\Kamille\Services\XConfig::get("NullosAdmin.uriCrud"), null, null, "Controller\NullosAdmin\CrudController:render"];
+
+
+$routes['NullosAdmin_users'] = [\Kamille\Services\XConfig::get("NullosAdmin.uriUsers"), null, null, "Controller\NullosAdmin\UsersController:renderList"];
+
+
+$routes["NullosAdmin_ajax"] = ["/service/NullosAdmin", null, null, "Controller\NullosAdmin\NullosAdminAjaxController:handleRequest"];
+
+
+$routes["NullosAdmin_home"] = ["/", null, null, "Controller\NullosAdmin\HomePageController:render"];
+
+
+$routes["DataTable_crudHandler"] = ["/crud-handler", null, null, '\Controller\DataTable\CrudController:handleCrud'];
+
+
 $routes['DataTable_ajaxActionsHandler'] = [\Kamille\Services\XConfig::get("DataTable.uriAjaxActionsHandler"), null, [
     'inGet' => ["type"],
 ], "DataTable\AppDataTableController:handleAjaxAction"]; // this controller needs to be implemented by the user
 
 
 $routes['DataTable_ajaxHandler'] = [\Kamille\Services\XConfig::get("DataTable.uriAjaxHandler"), null, null, "Controller\DataTable\DataTableController:handleAjax"];
-
-
-$routes['NullosAdmin_users'] = [\Kamille\Services\XConfig::get("NullosAdmin.uriUsers"), null, null, "Controller\NullosAdmin\UsersController:renderList"];
-$routes["NullosAdmin_ajax"] = ["/service/NullosAdmin", null, null, "Controller\NullosAdmin\NullosAdminAjaxController:handleRequest"];
 
 //--------------------------------------------
 // DYNAMIC
@@ -100,6 +109,4 @@ $routes["Test_myRouteId7"] = ["/my/{dynamic}/uris", null, function (HttpRequestI
 //--------------------------------------------
 
 
-$routes["NullosAdmin_testPage"] = ["/", null, null, 'Controller\NullosAdmin\TestPageController:renderForm'];
-$routes["NullosAdmin_homePage"] = ["/", null, null, 'Controller\NullosAdmin\HomePageController:render'];
 $routes["Mine_default"] = ["/", null, null, 'Controller\Core\PageNotFoundController:render'];

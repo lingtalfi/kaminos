@@ -17,6 +17,12 @@ class DataTableProfileFinder implements DataTableProfileFinderInterface
 {
 
     private $profilesDir;
+    private $fallbackHandlers;
+
+    public function __construct()
+    {
+        $this->fallbackHandlers = [];
+    }
 
 
     public static function create()
@@ -35,9 +41,20 @@ class DataTableProfileFinder implements DataTableProfileFinderInterface
             include $f;
             return $profile;
         } else {
-            XLog::error("DataTableProfileFinder: profile file not found: $f");
+            foreach ($this->fallbackHandlers as $fallbackHandler) {
+                if (false !== ($file = call_user_func($fallbackHandler, $this->profilesDir, $profileId))) {
+                    if (file_exists($file)) {
+                        if (true === ApplicationParameters::get("debug")) {
+                            XLog::debug("DataTableProfileFinder: fallback profile file found: $file");
+                        }
+                        $profile = [];
+                        include $file;
+                        return $profile;
+                    }
+                }
+            }
+            XLog::error("DataTableProfileFinder: profile not found with profileId $profileId");
         }
-
         return false;
     }
 
@@ -47,6 +64,12 @@ class DataTableProfileFinder implements DataTableProfileFinderInterface
     public function setProfilesDir($profilesDir)
     {
         $this->profilesDir = $profilesDir;
+        return $this;
+    }
+
+    public function addFallbackHandler(callable $fallbackHandler)
+    {
+        $this->fallbackHandlers[] = $fallbackHandler;
         return $this;
     }
 

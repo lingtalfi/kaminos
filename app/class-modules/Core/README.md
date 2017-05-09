@@ -90,8 +90,7 @@ Services
 Controllers
 ===============
 
-- ExceptionController, viewId=exception
-- PageNotFoundController, viewId=pageNotFound
+See documentation for more info
 
 
 
@@ -119,6 +118,10 @@ Others
 
 History Log
 ------------------
+    
+- 1.9.0 -- 2017-05-06
+
+    - add Core_ModalGscpResponseDefaultButtons hook
     
 - 1.8.0 -- 2017-04-28
 

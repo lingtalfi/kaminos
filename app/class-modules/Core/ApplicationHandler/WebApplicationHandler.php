@@ -37,6 +37,7 @@ class WebApplicationHandler
     {
         try {
 
+            $request = HttpRequest::create();
 
             //--------------------------------------------
             // INITIALIZE LOGGER
@@ -46,7 +47,7 @@ class WebApplicationHandler
             XLog::setLogger($logger); // now XLog is initialized for the rest of the application :)
 
             if (true === ApplicationParameters::get('debug')) {
-                XLog::debug("[Core module] - WebApplicationHandler.handle");
+                XLog::debug("[Core module] - WebApplicationHandler.handle with uri: " . $request->uri());
             }
 
 
@@ -63,8 +64,6 @@ class WebApplicationHandler
             $ajaxRouter = AjaxStaticRouter::create();
             Hooks::call("Core_feedAjaxUri2Controllers", $uri2Controllers);
             $ajaxRouter->setUri2Controllers($uri2Controllers);
-
-
 
 
             $earlyRouter = EarlyRouter::create();
@@ -90,7 +89,8 @@ class WebApplicationHandler
                 ->addListener(ControllerExecuterRequestListener::create())
                 ->addListener(ResponseExecuterListener::create());
 
-            $app->handleRequest(HttpRequest::create());
+
+            $app->handleRequest($request);
 
 
         } catch (\Exception $e) {
@@ -99,10 +99,9 @@ class WebApplicationHandler
              * @var $oldRequest HttpRequestInterface
              */
             $oldRequest = $app->get('request');
-            if($oldRequest instanceof HttpRequestInterface){
+            if ($oldRequest instanceof HttpRequestInterface) {
                 $sUri = $oldRequest->uri();
-            }
-            else{
+            } else {
                 $sUri = " not set (no request key found in the HttpRequest object)";
 
             }

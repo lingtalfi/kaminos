@@ -15,8 +15,6 @@ use Module\UploadProfile\ProfileFinder\ProfileFinderInterface;
 class NullosFormRenderer extends DiyFormRenderer
 {
 
-    private $showSubmitButtonsGroup;
-
 
     public function __construct()
     {
@@ -30,14 +28,13 @@ class NullosFormRenderer extends DiyFormRenderer
         $theme->useLib("bootstrap-daterangepicker");
         $theme->useLib("dropzone");
         $theme->useLib("Switchery");
-
-        $this->showSubmitButtonsGroup = true;
+//        $theme->useLib("parsley"); // we actually don't use parsley for now
 
 
         parent::__construct();
 
         $this->setCssClasses([
-            "control" => function ($identifier, array $control) {
+            "control" => function ($identifier, array $control, array $errors) {
                 $s = 'form-control';
                 $s .= ' col-md-7 col-xs-12';
 
@@ -51,6 +48,9 @@ class NullosFormRenderer extends DiyFormRenderer
                     return "";
                 }
 //                $s .= ' datepicker';
+                if (array_key_exists($identifier, $errors)) {
+                    $s .= ' parsley-error';
+                }
 
                 return $s;
             },
@@ -58,12 +58,6 @@ class NullosFormRenderer extends DiyFormRenderer
                 return 'form-group';
             },
         ]);
-    }
-
-    public function setShowSubmitButtonsGroup($showSubmitButtonsGroup)
-    {
-        $this->showSubmitButtonsGroup = $showSubmitButtonsGroup;
-        return $this;
     }
 
 
@@ -259,7 +253,20 @@ class NullosFormRenderer extends DiyFormRenderer
         }
 
 
-        return '<div class="col-md-6 col-sm-6 col-xs-12">' . $s . '</div>';
+        return $s;
+    }
+
+    protected function doWrapControl($sClass, $identifier, $controlHtml, $hint, $label, $error)
+    {
+        return '
+<div' . $sClass . ' data-id="' . $identifier . '">
+' . $hint . '
+' . $label . '
+<div class="col-md-6 col-sm-6 col-xs-12">
+' . $controlHtml . '
+' . $error . '
+</div>
+</div>';
     }
 
     protected function getTickableControlItemHtml($type, $id, $label, $labelLeftSide, $itemHtmlAttributes, $control, $identifier)
@@ -292,22 +299,58 @@ class NullosFormRenderer extends DiyFormRenderer
         echo $this->formOpeningTag;
         //            echo $this->centralizedFormErrors; // we don't use centralized errors!
         echo $this->controls;
-        if (true === $this->showSubmitButtonsGroup):
-            ?>
+        echo $this->renderSubmitButtonBar();
+        echo '</form>';
+//        echo '</div>';
 
+    }
+
+
+    protected function doRenderSubmitButtonBar(array $submitButtonBar)
+    {
+        if (true === $submitButtonBar['enable']):
+            ?>
             <div class="ln_solid"></div>
             <div class="form-group">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                    <button class="btn btn-primary" type="button">Cancel</button>
-                    <button class="btn btn-primary" type="reset">Reset</button>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <?php if (true === $submitButtonBar['showResetButton']): ?>
+                        <button class="btn btn-primary"
+                                type="reset"><?php echo $submitButtonBar['textResetButton']; ?></button>
+                    <?php endif; ?>
+                    <button type="submit"
+                            class="btn btn-success"><?php echo $submitButtonBar['textSubmitButton']; ?></button>
                 </div>
             </div>
             <?php
         endif;
-        echo '</form>';
-//        echo '</div>';
+    }
 
+
+    protected function getFormOpeningTag(array $formHtmlAttributes)
+    {
+        if (false === array_key_exists('class', $formHtmlAttributes)) {
+            $formHtmlAttributes['class'] = "";
+        }
+
+        $formHtmlAttributes['class'] .= "form-horizontal form-label-left";
+
+        return '<form' . StringTool::htmlAttributes($formHtmlAttributes) . '>' . PHP_EOL;
+    }
+
+
+    protected function wrapAllControlErrors(array $errors)
+    {
+        $s = '<ul class="parsley-errors-list filled" id="parsley-id-5">';
+        foreach ($errors as $error) {
+            $s .= '<li class="parsley-required">' . $error . '</li>';
+        }
+        $s .= '</ul>' . PHP_EOL;
+        return $s;
+    }
+
+    protected function wrapOneControlError($error)
+    {
+        return '<ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">' . $error . '</li></ul>' . PHP_EOL;
     }
 
 

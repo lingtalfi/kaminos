@@ -83,6 +83,23 @@ class X extends AbstractX
 
 
 
+
+
+
+
+
+
+
+
+    public static function UploadProfile_profileFinder()
+    {
+        $appDir = \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("app_dir");
+        $finder = \Module\UploadProfile\ProfileFinder\ProfileFinder::create()->setProfilesDir($appDir . "/config/upload-profiles");
+        return $finder;
+    }
+
+
+
     public static function Core_webApplicationHandler()
     {
         return new \Module\Core\ApplicationHandler\WebApplicationHandler();
@@ -110,27 +127,40 @@ class X extends AbstractX
         return $initializer;
     }
 
-
-
-
-
-    public static function UploadProfile_profileFinder()
+    public static function Core_PersistentRowCollectionFinder()
     {
-        $appDir = \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("app_dir");
-        $finder = \Module\UploadProfile\ProfileFinder\ProfileFinder::create()->setProfilesDir($appDir . "/config/upload-profiles");
-        return $finder;
-    }
-
-    public static function DataTable_profileFinder()
-    {
-        $appDir = \Kamille\Ling\Z::appDir();
-        return \Module\DataTable\DataTableProfileFinder\DataTableProfileFinder::create()->setProfilesDir($appDir . "/config/datatable-profiles");
+        $initializer = new \Core\Framework\PersistentRowCollection\Finder\PersistentRowCollectionFinder();
+        return $initializer;
     }
 
     public static function NullosAdmin_themeHelper()
     {
         return \Module\NullosAdmin\ThemeHelper\ThemeHelper::inst();
     }
+
+    public static function DataTable_profileFinder()
+    {
+        $appDir = \Kamille\Ling\Z::appDir();
+        $f = \Module\DataTable\DataTableProfileFinder\DataTableProfileFinder::create();
+        $f->setProfilesDir($appDir . "/config/datatable-profiles");
+        \Core\Services\Hooks::call("DataTable_configureProfileFinder", $f);
+        return $f;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

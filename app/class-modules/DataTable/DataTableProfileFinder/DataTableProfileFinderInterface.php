@@ -7,6 +7,10 @@ namespace Module\DataTable\DataTableProfileFinder;
 interface DataTableProfileFinderInterface
 {
     /**
+     *
+     *
+     *
+     *
      * @return array|false, the datatable profile if found, or false otherwise.
      *
      * The datatable profile looks like this:

@@ -30,8 +30,8 @@
     //----------------------------------------
     // CREATING THE NULLOS NAMESPACE
     //----------------------------------------
-    $.fn.nullos = function (_options) {
-        options = $.extend({}, $.fn.nullos.defaults, _options);
+    $.fn.nullos = function () {
+
     };
 
 
@@ -60,6 +60,7 @@
         }
     };
 
+
     //----------------------------------------
     // HANDLE ACTION LINK
     //----------------------------------------
@@ -74,7 +75,7 @@
          * Note: data-* attributes case seemed
          * to be strlowered
          */
-        var data = getActionLinkDataAttributes(jEl, type);
+        var data = getActionLinkDataAttributes(jEl);
 
         var fn = function () {
 
@@ -96,7 +97,7 @@
                         return;
                     }
 
-                    handleResponse(response, function (d) {
+                    $.fn.nullos.handleResponse(response, function (d) {
                         if ('refreshOnSuccess' === data.type) {
                             window.location.reload();
                             return;
@@ -124,37 +125,65 @@
         }
     };
 
-    //----------------------------------------
-    // DEFAULT OPTIONS
-    //----------------------------------------
-    $.fn.nullos.defaults = {
-        modalResponse: function (type, msg) {
-            alert("NullosModal of type " + type + ": " + msg);
-        }
-    };
 
+    //----------------------------------------
+    // UTIL
+    //----------------------------------------
+    /**
+     * Post a form to the server at the given uri.
+     * The server responds with a gscp response.
+     *
+     * We can choose whether to close the modal, or to inject the response into the modal with the mode.
+     *
+     * mode: reloadIfSuccess|...
+     *
+     *      If reloadIfSuccess: the page is reloaded if the response is a success.
+     *
+     *
+     */
+
+    $.fn.nullos.postForm = function (jForm, uri, mode) {
+        $.post(uri, jForm.serialize(), function (r) {
+            if ('success' === r.type) {
+                if ('reloadIfSuccess' === mode) {
+                    window.location.reload();
+                    return;
+                }
+            }
+            jForm.closest('.modal-body').empty().append(r.data);
+
+        }, 'json');
+    };
 
     //----------------------------------------
     // INIT FUNCTIONS
     //----------------------------------------
     function initActionLinks() {
-        $('body').on('click', function (e) {
-            var jTarget = $(e.target);
-            if (jTarget.hasClass('special-link')) {
-                $.fn.nullos.handleActionLink(jTarget);
-            }
-        });
+        // $('body').on('click', function (e) {
+        //     var jTarget = $(e.target);
+        //     if (jTarget.hasClass('special-link')) {
+        //         $.fn.nullos.handleActionLink(jTarget);
+        //     }
+        // });
     }
 
 
     $(document).ready(function () {
+        console.log("nullos init");
         initActionLinks();
-        $.fn.dataTable.defaults.modalResponse = function (type, msg) {
-            var jLink = $('<button style="display: none" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajax-modal-main">Large modal</button>');
-            $('body').append(jLink);
-            jLink.trigger('click');
-            $('#ajax-modal-main .modal-content').empty().append(msg);
-        };
+        if ("dataTable" in $.fn) {
+
+            $.fn.dataTable.defaults.modalResponse = function (type, msg) {
+                var jLink = $('<button style="display: none" type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajax-modal-main">Large modal</button>');
+                $('body').append(jLink);
+                jLink.trigger('click');
+                $('#ajax-modal-main .modal-content').empty().append(msg);
+            };
+            $.fn.dataTable.defaults.renderer = 'Module\\NullosAdmin\\ModelRenderers\\DataTable\\NullosDataTableRenderer';
+
+
+            options = $.extend({}, $.fn.dataTable.defaults);
+        }
     });
 
 })(jQuery);

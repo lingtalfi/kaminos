@@ -3,7 +3,14 @@
 
 namespace Core\Services;
 
+use Authenticate\Grant\Exception\GrantException;
+use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
+use Kamille\Ling\Z;
 use Kamille\Services\XConfig;
+use Kamille\Services\XLog;
+use PersistentRowCollection\Finder\PersistentRowCollectionFinderInterface;
+use PersistentRowCollection\InteractivePersistentRowCollectionInterface;
+use PersistentRowCollection\PersistentRowCollectionInterface;
 
 
 /**
@@ -31,13 +38,18 @@ class A
     }
 
 
-    public static function has($badge)
+    public static function has($badge, $throwEx = false)
     {
         if (null !== ($grantor = X::get("Authenticate_grantor", null, false))) {
             /**
              * @var $grantor \Authenticate\Grant\GrantorInterface
              */
-            return $grantor->has($badge);
+            if (true === $grantor->has($badge)) {
+                return true;
+            }
+        }
+        if (true === $throwEx) {
+            throw new GrantException("You don't have the necessary privilege to do this action ($badge)");
         }
         return false;
     }
@@ -64,5 +76,50 @@ class A
             return true;
         }
         return false;
+    }
+
+    /**
+     * @return InteractivePersistentRowCollectionInterface|false
+     * @throws \Exception
+     */
+    public static function getPrc($prcId, $checkInteractive = true, $throwEx = true)
+    {
+        /**
+         * @var $finder PersistentRowCollectionFinderInterface
+         */
+        $finder = X::get("Core_PersistentRowCollectionFinder");
+        if (false !== ($prc = $finder->find($prcId))) {
+            if (false === $checkInteractive) {
+                return $prc;
+            } else {
+                if ($prc instanceof InteractivePersistentRowCollectionInterface) {
+                    return $prc;
+                } else {
+                    $msg = "Prc class not an instance of InteractivePersistentRowCollectionInterface, prcId=$prcId";
+                    if (true === ApplicationParameters::get("debug")) {
+                        XLog::error($msg);
+                    }
+                    if (true === $throwEx) {
+                        throw new \Exception($msg);
+                    }
+                    return false;
+                }
+            }
+
+        }
+        $msg = "Prc not found with prcId=$prcId";
+        if (true === ApplicationParameters::get("debug")) {
+            XLog::error($msg);
+        }
+        if (true === $throwEx) {
+            throw new \Exception($msg);
+        }
+        return false;
+    }
+
+
+    public static function prcLink($prcId, $type = "list")
+    {
+        return XConfig::get("NullosAdmin.uriCrud") . "?type=$type&prc=$prcId";
     }
 }

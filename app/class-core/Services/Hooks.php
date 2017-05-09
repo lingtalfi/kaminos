@@ -18,6 +18,7 @@ use Kamille\Services\AbstractHooks;
  */
 class Hooks extends AbstractHooks
 {
+
 //    public static function StaticPageRouter_feedUri2Page(array &$uri2Page)
 //    {
 //        \Toast\ToastHooks::StaticPageRouter_feedUri2Page($uri2Page);
@@ -36,6 +37,9 @@ class Hooks extends AbstractHooks
     {
         $uri2Controller["/login"] = "something";
     }
+
+
+
 
 
 
@@ -118,10 +122,25 @@ class Hooks extends AbstractHooks
 		// mit-end:NullosAdmin
 	}
 
-	protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets)
+	protected static function Core_ModalGscpResponseDefaultButtons(array &$buttons)
 	{
 		
 
+		// mit-start:NullosAdmin
+		$buttons = [
+            "close" => [
+                "flavour" => "default",
+                "label" => "Close",
+                "htmlAttr" => [
+                    "data-dismiss" => "modal",
+                ],
+            ],
+        ];
+		// mit-end:NullosAdmin
+	}
+
+	protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets)
+	{
 		// mit-start:Ekom
 		$prefixUri = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme");
         $imgPrefix = $prefixUri . "/production";
@@ -164,8 +183,12 @@ class Hooks extends AbstractHooks
             "label" => "Ekom",
             "items" => [
                 [
-                    "icon" => "fa fa-money",
-                    "label" => "&nbsp;&nbsp;test",
+                    "icon" => "fa fa-home",
+                    "label" => "test",
+                    'badge' => [
+                        'type' => "success",
+                        'text' => "success",
+                    ],
                     "items" => [
                         [
                             "icon" => "fa fa-but",
@@ -178,7 +201,48 @@ class Hooks extends AbstractHooks
             ],
         ];
 		// mit-end:Ekom
+
+		// mit-start:AutoAdmin
+		$items = [];
+        $f = \Module\AutoAdmin\AutoAdminHelper::getGeneratedSideBarMenuPath();
+        if (file_exists($f)) {
+            include $f;
+        }
+        $sideBarMenuModel['sections'][] = [
+            "label" => "AutoAdmin",
+            "items" => $items,
+        ];
+		// mit-end:AutoAdmin
 	}
+
+	protected static function DataTable_getRendererClassName(&$renderer)
+	{
+		// mit-start:NullosAdmin
+		$renderer = 'Module\NullosAdmin\ModelRenderers\DataTable\NullosDataTableRenderer';
+		// mit-end:NullosAdmin
+	}
+
+	protected static function DataTable_configureProfileFinder(\Module\DataTable\DataTableProfileFinder\DataTableProfileFinder $profileFinder)
+	{
+		// mit-start:AutoAdmin
+        $profileFinder->addFallbackHandler(function ($dir, $profileId) {
+            $p = explode('/', $profileId);
+            if (2 === count($p)) {
+                $manual = implode('/', [$p[0], 'manual', $p[1]]);
+                $f = $dir . "/$manual.php";
+                if (file_exists($f)) {
+                    return $f;
+                }
+            }
+            return false;
+        });
+		// mit-end:AutoAdmin
+	}
+
+
+
+
+
 
 
 

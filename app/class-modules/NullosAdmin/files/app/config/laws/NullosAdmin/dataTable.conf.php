@@ -7,6 +7,10 @@ $conf = [
             'tpl' => "NullosAdmin/Main/DataTable/default",
             'conf' => [
                 "profileId" => "overrideMe",
+                "showHeader" => false,
+                "title" => "",
+                "subtitle" => "",
+                "description" => null,
             ],
         ],
     ],

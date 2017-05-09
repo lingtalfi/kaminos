@@ -127,6 +127,10 @@ class ApplicationController extends KamilleController
     }
 
 
+
+
+
+
     protected function getTranslationContext()
     {
         if (null === $this->translationContext) {

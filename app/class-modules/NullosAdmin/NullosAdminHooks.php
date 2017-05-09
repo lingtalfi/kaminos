@@ -56,6 +56,19 @@ class NullosAdminHooks
     }
 
 
+    protected static function Core_ModalGscpResponseDefaultButtons(array &$buttons)
+    {
+        $buttons = [
+            "close" => [
+                "flavour" => "default",
+                "label" => "Close",
+                "htmlAttr" => [
+                    "data-dismiss" => "modal",
+                ],
+            ],
+        ];
+    }
+
 }
 
 

@@ -12,6 +12,7 @@ use CrudGeneratorTools\Helper\CrudGeneratorToolsHelper;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Ling\Z;
 use Module\AutoAdmin\AutoAdminHelper;
+use Module\AutoAdmin\CrudGenerator\Skinny\Generator\NullosSkinnyTypeGenerator;
 use QuickPdo\QuickPdo;
 use QuickPdo\QuickPdoInfoTool;
 
@@ -126,6 +127,7 @@ class NullosCrudGenerator extends CrudGenerator
 
     protected function doGenerateItems(array $db2Tables)
     {
+
         foreach ($db2Tables as $db => $tables) {
             foreach ($tables as $table) {
                 $column2DataType = QuickPdoInfoTool::getColumnDataTypes($db . '.' . $table);
@@ -260,7 +262,7 @@ class NullosCrudGenerator extends CrudGenerator
             }
             $sValidator .= ';' . PHP_EOL;
         }
-
+az("stop");
 
         $sModel = '';
         $snippets = [];
@@ -348,21 +350,17 @@ EEE;
                     if (array_key_exists($column, $fks)) {
 
                         $fkInfo = $fks[$column];
-                        $identifierCol  = $fkInfo[2]; // assume this is always the case for now
-                        a($fks, $column);
-                        az($table);
-                        az($table);
+                        $identifierCol = $fkInfo[2]; // assume this is always the case for now
+                        if (false !== ($row = QuickPdo::fetch('select count(*) as count from ' . $fkInfo[0] . '.' . $fkInfo[1]))) {
+                            $nbItems = (int)$row['count'];
+                            if ($nbItems < 365000) {
 
-                        $rows = QuickPdo::fetchAll('select * from ' . $fkInfo[0] . '.' . $fkInfo[1]);
-                        $items = [];
-                        foreach($rows as $row){
-                            $items[$identifierCol] = 0;
-                        }
-
-
-
-
-                        $snippets[] = <<<EEE
+                                $rows = QuickPdo::fetchAll('select * from ' . $fkInfo[0] . '.' . $fkInfo[1]);
+                                $items = [];
+                                foreach ($rows as $row) {
+                                    $items[$identifierCol] = 0;
+                                }
+                                $snippets[] = <<<EEE
          ->addControl("country", SelectControl::create()
                 ->value("spain")
                 ->setItems([
@@ -375,7 +373,15 @@ EEE;
             )
 EEE;
 
-                        $uses[] = 'FormModel\Control\SelectControl';
+                                $uses[] = 'FormModel\Control\SelectControl';
+                            } else {
+                                throw new \Exception("not implemented yet");
+                            }
+                        }
+                        a($fks, $column);
+                        az($table);
+                        az($table);
+
 
                     } else {
 
@@ -450,7 +456,8 @@ EEE;
     }
 
 
-    protected function getFormForeignKeySelectorLabel(array $row){
+    protected function getFormForeignKeySelectorLabel(array $row)
+    {
 
     }
 }

@@ -23,6 +23,7 @@ class NullosFormRenderer extends DiyFormRenderer
         /**
          * @var $theme ThemeHelperInterface
          */
+        $theme->useLib("autocomplete");
         $theme->useLib("bootstrap-wysiwyg");
         $theme->useLib("bootstrap-colorpicker");
         $theme->useLib("bootstrap-daterangepicker");
@@ -67,6 +68,21 @@ class NullosFormRenderer extends DiyFormRenderer
 
 
         switch ($control['type']) {
+            case 'autocomplete':
+
+                $id = StringTool::getUniqueCssId($identifier);
+                $htmlAttributes['id'] = $id;
+                $s = '<input' . StringTool::htmlAttributes($htmlAttributes) . '>' . PHP_EOL;
+
+                $uri = $control['js']['uri'];
+                $jsCode = ' 
+                $("#'. $id .'").autocomplete({
+                    serviceUrl: "'. $uri .'"
+                });
+';
+                A::addBodyEndJsCode('jquery', $jsCode);
+
+                break;
             case 'dropzone':
 
                 $id = StringTool::getUniqueCssId($identifier);

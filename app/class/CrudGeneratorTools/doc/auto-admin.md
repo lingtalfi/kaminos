@@ -476,34 +476,6 @@ And so that's one more word to our vocabulary.
 That was just a reminder of the vocabulary we know so far.
 
 
-formForeignKeySelectorFormat
-----------------------------
-For forms, we have a similar case:
-imagine that table A has a foreign key to column id from table B.
-
-So a nice form for table A would contain an html select tag containing all possible values for B.id.
-
-The value (the option tag's value) would be the value of B.id,
-but if the label (of the option tag) was B.id, this might be difficult for an human to read.
-
-Instead, we can format the foreign key with tags, so that the resulting string would be used
-as labels.
-
-What I'm saying is: instead of selecting between numeric values (1,2,3,4,...),
-we should be able to choose the format ourselves (and that's the purpose of the formForeignKeySelectorFormat).
-
-
-If formForeignKeySelectorFormat is:
-
-- {id}. {label}
-
-Then, assuming that table B contains an id column and a label column, then the select option labels would look like 
-this:
-
-- 1. red
-- 2. blue
-- 3. green
-
 
 
 
@@ -803,16 +775,158 @@ labels out of the box.
 
 
 
+Generating forms
+=====================
+2017-05-09
 
 
+Pehaps the most important question which comes in mind when generating forms is:
+
+- what control type should I use for this table field?
 
 
+I believe the user (of the crud generator) should always have the last word,
+so we are going to create a simple map representing the type for every columns of every table
+that we want to know about.
 
+So basically, we will have a big file (or one per database) containing such content (imaginary example):
+
+- table_one:
+    - id: auto_increment
+    - name: input
+    - age: input
+    - description: textarea
+    - photo: upload
+    - car_id: selectForeignKey:car.id
+
+
+The benefit of this technique is that the user can change the default type chosen by the generator easily.
+The drawback is that she needs to learn a syntax (and I need to create it).
  
- 
+So once this list is generated, the goal is to call the generator again against that list, and it will generate
+all the form for us.
+
+
+In other words, we split the work in two parts:
+
+- defining the control types
+- generating the controls in the application
+
+
+
+Defining the control types
+-----------------------------
+
+So wat syntax are we going to use?
+
+Well, meet skinny, the name of the syntax we are going to use.
+(my first idea was CTDLFFG, control type description language for form generators, but
+then I change for skinny because nobody would remember CTDLFFG).
+
+
+Skinny
+----------
+The available types are:
+
+- auto_increment: this one maybe is obsolete because an auto-incremented field is not likely to become something else,
+                and generators usually know how to handle them.
+                But just in case.
+- input: indicate the generator that we want a default input text html tag.
+            This type might be generated for fields of type varchar.
+- textarea: indicate the generator that we want a textarea.    
+            This type might be suitable for fields of type text.
+- upload: indicate the generator that we want a file tag, or possibly an ajax drop files thing.
+            We can let the user put this type manually, or maybe detect if the column name contains expressions like photo, image, avatar, ...
+            This type might require extraneous parameters, depending on the concrete implementation.
+            How to add parameters is explained below in the next section.
+- date: indicate the generator that we want a date.
+            This type might be generated for fields of type date.
+            Parameters:
+                - nullable (0|1): whether or not the field is nullable.
+            
+- datetime: indicate the generator that we want a datetime 
+            This type might be generated for fields of type datetime.
+            Parameters:
+                - nullable (0|1): whether or not the field is nullable.            
+- selectForeignKey: indicate the generator that we want a select, or an autocomplete, depending on the estimated
+            number of items.
+            A select is preferable when there are few choices, since the user doesn't have to GUESS,
+            while an autocomplete becomes the only recommended choice if there are more than x items (I personally 
+            like to set the threshold at 365 items for poetic reasons), since too much items on a select would
+            totally slow down the browser and put it on its knees (try a select with 10000 items and see for yourself).
+            Again, parameters will probably be required.
+
+            Parameters:
+                - nullable (0|1): whether or not the field is nullable.            
+
+That's all for now.
+You might want to add your own types, but those work fine for me.
             
             
-    
+### Parameters:
+
+We shall be able to add some parameters to any of those types.
+To add parameters, simply put the parameters list after the type, separating them with the plus (+) symbol.
+
+A parameter is composed of a name followed by a value, both separated by an equal (=) symbol.
+
+There is no escape mechanism so far (because I'm lazy and I believe we don't need it).
+
+There might be one later if necessary.
+(note, we can think of doubling the plus and the equal before implementing an escaping system)
+
+Example:
+
+The upload type might require a path identifier.
+
+- upload+path=/bla/bla
+
+Also, the selectForeignKey might requires a sql query as the first parameter, and a string formatter as the second parameter.
+
+- selectForeignKey+query=select id, label from articles+format={id}. {label}
+
+
+
+So that's it.
+
+
+
+I suggest skinny types are stored in a php file under your application store directory.
+
+One file per database, so for instance in NullosAdmin (the current project I'm working on):
+ 
+```txt 
+- app/store/AutoAdmin/skinny-types/
+----- auto/
+--------- database1.php
+--------- database2.php
+----- manual/
+--------- database2.php
+----- ...
+``` 
+
+If the manual version (manual directory) exists, it should be used, 
+otherwise your system should fallback to the auto version.
+
+And so, the generator should only generate the auto versions, and let the user create the manual versions 
+at her own pace.
+
+
+And the content of database1.php would look like this:
+
+```php
+<?php
+
+$types = [
+    "table1" => [
+        'column1' => 'input',    
+        'column2' => 'input',    
+        //...    
+    ],
+    //...    
+];
+
+```
 
 
 
@@ -822,13 +936,10 @@ labels out of the box.
 
 
 
-
-
-
-
-
-
-
+            
+            
+            
+                
 
 
 

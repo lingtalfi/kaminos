@@ -27,13 +27,16 @@ $profile = [
                             'label' => "Edit",
                             'id' => "edit",
                             'uri' => A::prcLink($prc, "form"),
+//                            'uri' => A::prcLink($prc, "ajaxForm"),
+                            'type' => "modal",
                             'type' => "post",
                         ],
                         [
-                            'confirm' => false,
+                            'confirm' => true,
+                            'confirmText' => "Are you sure you want to execute this action?",
                             'label' => "Delete",
                             'id' => "delete",
-                            'uri' => "/crud-handler?prc=NullosAdmin.User",
+                            'uri' => A::prcLink($prc, "delete"),
                             'type' => "refreshOnSuccess",
                         ],
                     ],
@@ -42,9 +45,9 @@ $profile = [
         },
     ],
     'model' => [
-        'headers' => "OVERRIDE",
-        'ric' => "OVERRIDE",
-        'hidden' => "OVERRIDE",
+        'headers' => [], // OVERRIDE
+        'ric' => [], // OVERRIDE
+        'hidden' => [], // OVERRIDE
         //
         'checkboxes' => true,
         'isSearchable' => true,

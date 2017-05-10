@@ -30,7 +30,7 @@ htmlTextArea
 
 colorPicker
 -----------
-same as text input
+same as text input except for the type
 
 - control:
 ----- type: colorPicker
@@ -72,3 +72,22 @@ http://www.dropzonejs.com/
 ----- htmlAttributes:  
         
         
+        
+sqlQuerySelect
+-----------
+
+same as select (the model is different from an input's perspective, 
+but the output for the renderer is the same).
+
+                
+autocomplete
+-----------
+same as text input except for the type
+
+- control:
+----- type: autocomplete
+----- htmlAttributes
+--------- type: text
+--------- value: string 
+----- js
+--------- uri

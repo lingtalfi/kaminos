@@ -10,6 +10,7 @@ interface ThemeHelperInterface{
      * Loads a js lib.
      * Available js libs are:
      *
+     * - autocomplete
      * - bootstrap-colorpicker
      * - bootstrap-daterangepicker
      * - bootstrap-progressbar

@@ -13,11 +13,13 @@ use FormModel\Control\InputTextControl;
 use FormModel\Control\SelectControl;
 use FormModel\Control\TextAreaControl;
 use FormModel\FormModel;
+use Module\NullosAdmin\FormModel\Control\AutoCompleteInputTextControl;
 use Module\NullosAdmin\FormModel\Control\ColorInputTextControl;
 use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
 use Module\NullosAdmin\FormModel\Control\DropZoneControl;
 use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
 use Module\NullosAdmin\FormModel\Control\InputSwitchControl;
+use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 class TestPageController extends NullosAdminController
 {
@@ -118,6 +120,17 @@ class TestPageController extends NullosAdminController
                 ->name("towns[]")
                 ->value(["chartres", "tours"])
             )
+            ->addControl("products", SqlQuerySelectControl::create()
+                ->multiple()
+                ->query('select id, concat(id, ". ", produits) from zilu.csv_product_list')
+                ->firstOption("Please choose an option", null) // 0|null|mixed: the first option's value
+                ->label("Select a zilu product")
+                ->name("product")
+            )
+            ->addControl("products2", AutoCompleteInputTextControl::create()
+                ->uri('NullosAdmin/json/autocomplete')
+                ->name("product2")
+            )
             ->addControl("avatar", DropZoneControl::create()
                 ->setShowDeleteLink(true)
                 ->setProfileId("Ekom.default_image")
@@ -132,13 +145,13 @@ class TestPageController extends NullosAdminController
 
 
         return $this->renderByViewId("NullosAdmin/testPage", [
-//            'widgets' => [
-//                "maincontent.form" => [
-//                    "conf" => [
-//                        "formModel" => $formModel->getArray(),
-//                    ],
-//                ],
-//            ],
+            'widgets' => [
+                "maincontent.form" => [
+                    "conf" => [
+                        "formModel" => $formModel->getArray(),
+                    ],
+                ],
+            ],
         ]);
     }
 

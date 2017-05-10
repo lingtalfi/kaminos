@@ -7,6 +7,7 @@ use Kamille\Architecture\Request\Web\HttpRequestInterface;
 // USER - BEFORE
 //--------------------------------------------
 $routes["My_debug"] = ["/pou", null, null, "Controller\App\DebugController:render"];
+$routes["My_test"] = ["/test", null, null, "Controller\NullosAdmin\TestPageController:renderForm"];
 
 
 //--------------------------------------------
@@ -103,6 +104,9 @@ $routes["Test_myRouteId7"] = ["/my/{dynamic}/uris", null, function (HttpRequestI
     $o = [];
     return true; // true if ok, false will make the match fails
 }, "?Controller:method"];
+
+
+$routes["Core_service"] = ["/service/{serviceIdentifier}", null, null, 'Controller\Core\ServiceController:render'];
 
 //--------------------------------------------
 // USER - AFTER

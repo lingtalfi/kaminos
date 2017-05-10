@@ -136,6 +136,7 @@ class DataTableController extends ApplicationController
                              * @var $prc PersistentRowCollectionInterface
                              */
                             $rows = $prc->read($page, $nipp, $searchValues, $sortValues, $nbTotalItems);
+
                         } else {
                             return $this->log("Prc not found with id $prcId", true);
                         }

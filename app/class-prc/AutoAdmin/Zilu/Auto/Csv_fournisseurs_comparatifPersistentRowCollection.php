@@ -8,7 +8,7 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
-use FormModel\Control\TextAreaControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -441,7 +441,7 @@ FROM zilu.csv_fournisseurs_comparatif
                 ->label("ref_lf")
                 ->name("ref_lf")
             )
-            ->addControl("produit", TextAreaControl::create()
+            ->addControl("produit", HtmlTextAreaControl::create()
                 ->label("produit")
                 ->name("produit")
             )
@@ -465,11 +465,11 @@ FROM zilu.csv_fournisseurs_comparatif
                 ->label("ean")
                 ->name("ean")
             )
-            ->addControl("nom_hldp", TextAreaControl::create()
+            ->addControl("nom_hldp", HtmlTextAreaControl::create()
                 ->label("nom_hldp")
                 ->name("nom_hldp")
             )
-            ->addControl("nom_leaderfit", TextAreaControl::create()
+            ->addControl("nom_leaderfit", HtmlTextAreaControl::create()
                 ->label("nom_leaderfit")
                 ->name("nom_leaderfit")
             )
@@ -517,7 +517,7 @@ FROM zilu.csv_fournisseurs_comparatif
                 ->label("categorie")
                 ->name("categorie")
             )
-            ->addControl("descriptif", TextAreaControl::create()
+            ->addControl("descriptif", HtmlTextAreaControl::create()
                 ->label("descriptif")
                 ->name("descriptif")
             )
@@ -541,7 +541,7 @@ FROM zilu.csv_fournisseurs_comparatif
                 ->label("en_material")
                 ->name("en_material")
             )
-            ->addControl("en_description", TextAreaControl::create()
+            ->addControl("en_description", HtmlTextAreaControl::create()
                 ->label("en_description")
                 ->name("en_description")
             )
@@ -549,7 +549,7 @@ FROM zilu.csv_fournisseurs_comparatif
                 ->label("en_category")
                 ->name("en_category")
             )
-            ->addControl("es_products", TextAreaControl::create()
+            ->addControl("es_products", HtmlTextAreaControl::create()
                 ->label("es_products")
                 ->name("es_products")
             )

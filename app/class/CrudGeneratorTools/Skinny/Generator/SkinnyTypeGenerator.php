@@ -5,16 +5,18 @@ namespace CrudGeneratorTools\Skinny\Generator;
 
 use ArrayToString\ArrayToStringTool;
 use Bat\FileSystemTool;
+use QuickPdo\QuickPdo;
 use QuickPdo\QuickPdoInfoTool;
 
 class SkinnyTypeGenerator implements SkinnyTypeGeneratorInterface
 {
     protected $dstDir;
-    private $databases;
+    protected $databases;
+    protected $module;
 
     public function __construct()
     {
-
+        $this->databases = null;
     }
 
 
@@ -45,6 +47,12 @@ class SkinnyTypeGenerator implements SkinnyTypeGeneratorInterface
         return $this;
     }
 
+    public function setModule($module)
+    {
+        $this->module = $module;
+        return $this;
+    }
+
     public function setDatabases(array $databases)
     {
         $this->databases = $databases;
@@ -57,6 +65,7 @@ class SkinnyTypeGenerator implements SkinnyTypeGeneratorInterface
         $table2Types = [];
         foreach ($tables as $table) {
             $types = QuickPdoInfoTool::getColumnDataTypes($db . "." . $table);
+            $detailedTypes = QuickPdoInfoTool::getColumnDataTypes($db . "." . $table, true);
             $fks = QuickPdoInfoTool::getForeignKeysInfo($table, $db);
             $nullables = QuickPdoInfoTool::getColumnNullabilities($db . "." . $table);
             $autoIncField = QuickPdoInfoTool::getAutoIncrementedField($db . '.' . $table);
@@ -64,11 +73,13 @@ class SkinnyTypeGenerator implements SkinnyTypeGeneratorInterface
             $column2SkinnyType = [];
             foreach ($types as $column => $type) {
 
+
+                $detailedType = $detailedTypes[$column];
                 $isAutoInc = ($column === $autoIncField);
                 $foreignKey = (array_key_exists($column, $fks)) ? $fks[$column] : null;
                 $isNullable = $nullables[$column];
 
-                if (false !== $skinnyType = ($this->getSkinnyType($column, $table, $db, $type, $isAutoInc, $foreignKey, $isNullable))) {
+                if (false !== $skinnyType = ($this->getSkinnyType($column, $table, $db, $type, $detailedType, $isAutoInc, $foreignKey, $isNullable))) {
                     $column2SkinnyType[$column] = $skinnyType;
                 }
             }
@@ -96,37 +107,77 @@ EEE;
     }
 
 
-    protected function getSkinnyType($column, $table, $db, $type, $isAutoInc, $foreignKey, $isNullable)
+    protected function getSkinnyType($column, $table, $db, $type, $detailedType, $isAutoInc, $foreignKey, $isNullable)
     {
+        $ret = false;
         if (true === $isAutoInc) {
-            return 'auto_increment';
+            $ret = 'auto_increment';
         } else {
             if (null !== $foreignKey) {
-                return "selectForeignKey";
+                $fDb = $foreignKey[0];
+                $fTable = $foreignKey[1];
+
+
+                $lotOfItems = false;
+
+                $q = "select count(*) as count from $fDb.$fTable";
+                if (false !== ($ret = QuickPdo::fetch($q))) {
+                    $nbItems = $ret["count"];
+                    if ($nbItems > 365) {
+                        $lotOfItems = true;
+                    }
+                }
+                if (false === $lotOfItems) {
+                    $ret = "selectForeignKey";
+                } else {
+                    $ret = "autocomplete";
+                }
             } else {
                 switch ($type) {
                     case 'text':
-                        return 'textarea';
+                        $ret = 'textarea';
                         break;
                     case 'date':
-                        return 'date';
+                        $ret = 'date';
                         break;
                     case 'datetime':
-                        return 'datetime';
+                        $ret = 'datetime';
                         break;
                     default:
-                        if (
+
+
+                        if ('tinyint(1)' === $detailedType) {
+                            $ret = 'switch';
+                        } elseif (
                             $this->contains($column, 'photo') ||
-                            $this->contains($column, 'image')
+                            $this->contains($column, 'image') ||
+                            $this->contains($column, 'avatar')
                         ) {
-                            return 'upload';
+                            $ret = 'upload';
+                        } elseif ($this->contains($column, 'color')) {
+                            $ret = 'color';
+                        } elseif (
+                            'pass' === $column ||
+                            'password' === $column
+                        ) {
+                            $ret = 'pass';
+                        } else {
+                            $ret = 'input';
                         }
-                        return 'input';
                         break;
                 }
             }
         }
-        return false;
+        if (false !== $ret) {
+            $this->onTypeChosen($ret, $column, $table, $db, $type, $detailedType, $isAutoInc, $foreignKey, $isNullable);
+        }
+        return $ret;
+    }
+
+
+    protected function onTypeChosen(&$chosenType, $column, $table, $db, $type, $detailedType, $isAutoInc, $foreignKey, $isNullable)
+    {
+
     }
 
     //--------------------------------------------

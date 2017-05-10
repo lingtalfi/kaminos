@@ -8,6 +8,8 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
+use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
+use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -50,6 +52,9 @@ inner join zilu.fournisseur on zilu.fournisseur.id=devis.fournisseur_id
         $validator
 			->setTests("reference", "reference", [
                 RequiredControlTest::create(),
+            ])
+			->setTests("fournisseur_id", "fournisseur_id", [
+                RequiredControlTest::create(),
             ]);
 
     }
@@ -61,11 +66,15 @@ inner join zilu.fournisseur on zilu.fournisseur.id=devis.fournisseur_id
                 ->label("reference")
                 ->name("reference")
             )
-            ->addControl("date_reception", InputTextControl::create()
+            ->addControl("date_reception", DatetimePickerInputTextControl::create()
+                ->injectJsConfigurationKey(['timePicker' => false])
                 ->label("date_reception")
                 ->name("date_reception")
             )
-            ->addControl("fournisseur_id", InputTextControl::create()
+            ->addControl("fournisseur_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('select id, nom from zilu.fournisseur')
+                 
                 ->label("fournisseur_id")
                 ->name("fournisseur_id")
             );

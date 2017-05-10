@@ -9,9 +9,12 @@ use Bat\FileSystemTool;
 use CrudGeneratorTools\CrudGenerator\CrudGenerator;
 use CrudGeneratorTools\GeneratorGenerator\GeneratorGenerator;
 use CrudGeneratorTools\Helper\CrudGeneratorToolsHelper;
+use CrudGeneratorTools\Skinny\Generator\SkinnyTypeGenerator;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Ling\Z;
 use Module\AutoAdmin\AutoAdminHelper;
+use Module\AutoAdmin\CrudGenerator\Helper\AutoAdminCrudGeneratorHelper;
+use Module\AutoAdmin\CrudGenerator\Skinny\Generator\NullosSkinnyModelGenerator;
 use Module\AutoAdmin\CrudGenerator\Skinny\Generator\NullosSkinnyTypeGenerator;
 use QuickPdo\QuickPdo;
 use QuickPdo\QuickPdoInfoTool;
@@ -29,6 +32,10 @@ class NullosCrudGenerator extends CrudGenerator
 {
 
     private $module;
+    /**
+     * @var NullosSkinnyModelGenerator
+     */
+    private $modelGen;
     //
     private $table2Nullables;
     private $table2DataType;
@@ -40,6 +47,7 @@ class NullosCrudGenerator extends CrudGenerator
     {
         parent::__construct();
         $this->module = "AutoAdmin";
+
     }
 
 
@@ -51,43 +59,21 @@ class NullosCrudGenerator extends CrudGenerator
 
     public function generate()
     {
-        $this->initForeignKeyPreferredColumn();
+        /**
+         * Prepare types
+         * @var $typeGen NullosSkinnyTypeGenerator
+         */
+        $typeGen = NullosSkinnyTypeGenerator::create()->setModule($this->module)->setDatabases($this->databases);
+        $typeGen->generate();
+
+
+
+        $this->modelGen = NullosSkinnyModelGenerator::create();
+        $this->table2foreignKeyPreferredColumn = AutoAdminCrudGeneratorHelper::getForeignKeyPreferredColumn($this->databases);
         parent::generate();
     }
 
 
-    public function generateForeignKeyPreferredColumns()
-    {
-        $path = Z::appDir() . "/store/AutoAdmin/foreignKeyPreferredColumns/generated.foreignKeyPreferredColumns.php";
-        $arr = GeneratorGenerator::create()->generateForeignKeysPreferredColumnsByDatabase($this->databases);
-        $sArr = ArrayToStringTool::toPhpArray($arr);
-        $s = '<?php ' . PHP_EOL;
-        $s .= '$preferredColumns = ';
-        $s .= $sArr . ';' . PHP_EOL . PHP_EOL;
-        FileSystemTool::mkfile($path, $s);
-    }
-
-
-    public function initForeignKeyPreferredColumn()
-    {
-        $path = Z::appDir() . "/store/AutoAdmin/foreignKeyPreferredColumns";
-        $generatedPath = $path . '/generated.foreignKeyPreferredColumns.php';
-        $manualPath = $path . '/foreignKeyPreferredColumns.php';
-        $preferredColumns = [];
-        if (file_exists($generatedPath)) {
-            include $generatedPath;
-        } else {
-            if (file_exists($manualPath)) {
-                include $manualPath;
-            } else {
-                $this->generateForeignKeyPreferredColumns();
-                if (file_exists($generatedPath)) {
-                    include $generatedPath;
-                }
-            }
-        }
-        $this->table2foreignKeyPreferredColumn = $preferredColumns;
-    }
 
     //--------------------------------------------
     //
@@ -262,11 +248,12 @@ class NullosCrudGenerator extends CrudGenerator
             }
             $sValidator .= ';' . PHP_EOL;
         }
-az("stop");
+
 
         $sModel = '';
         $snippets = [];
-        $this->generateFormModel($db, $table, $snippets, $uses);
+        $this->modelGen->generateFormModel($db, $table, $snippets, $uses);
+
         if (count($snippets) > 0) {
             $sModel .= '$model';
             foreach ($snippets as $snippet) {
@@ -319,94 +306,8 @@ az("stop");
 
     private function generateFormModel($db, $table, array &$snippets, array &$uses)
     {
-        /**
-         * By default, we will generate the following:
-         * - required on every non nullable varchar
-         */
-        $datatypes = $this->table2DataType[$db . '.' . $table];
-        $nullables = $this->table2Nullables[$db . '.' . $table];
-        $autoInc = $this->table2AutoInc[$db . '.' . $table];
-        $fks = $this->table2Fks[$db . '.' . $table];
-
-        foreach ($datatypes as $column => $datatype) {
-            /**
-             * skip auto incremented column
-             */
-            if ($column !== $autoInc) {
-                if ('text' === $datatype) {
-
-                    $snippets[] = <<<EEE
-            ->addControl("$column", TextAreaControl::create()
-                ->label("$column")
-                ->name("$column")
-            )
-EEE;
-
-                    $uses[] = 'FormModel\Control\TextAreaControl';
-                } elseif ('int' === $datatype) {
-                    /**
-                     * foreign key
-                     */
-                    if (array_key_exists($column, $fks)) {
-
-                        $fkInfo = $fks[$column];
-                        $identifierCol = $fkInfo[2]; // assume this is always the case for now
-                        if (false !== ($row = QuickPdo::fetch('select count(*) as count from ' . $fkInfo[0] . '.' . $fkInfo[1]))) {
-                            $nbItems = (int)$row['count'];
-                            if ($nbItems < 365000) {
-
-                                $rows = QuickPdo::fetchAll('select * from ' . $fkInfo[0] . '.' . $fkInfo[1]);
-                                $items = [];
-                                foreach ($rows as $row) {
-                                    $items[$identifierCol] = 0;
-                                }
-                                $snippets[] = <<<EEE
-         ->addControl("country", SelectControl::create()
-                ->value("spain")
-                ->setItems([
-                    'france' => "France",
-                    'spain' => "Spain",
-                    'italy' => "Italy",
-                ])
-                ->label("Country")
-                ->name("country")
-            )
-EEE;
-
-                                $uses[] = 'FormModel\Control\SelectControl';
-                            } else {
-                                throw new \Exception("not implemented yet");
-                            }
-                        }
-                        a($fks, $column);
-                        az($table);
-                        az($table);
 
 
-                    } else {
-
-                        $snippets[] = <<<EEE
-            ->addControl("$column", TextAreaControl::create()
-                ->label("$column")
-                ->name("$column")
-            )
-EEE;
-
-                        $uses[] = 'FormModel\Control\TextAreaControl';
-                    }
-                } else {
-
-                    $snippets[] = <<<EEE
-            ->addControl("$column", InputTextControl::create()
-                ->label("$column")
-                ->name("$column")
-            )
-EEE;
-
-                    $uses[] = 'FormModel\Control\InputTextControl';
-                }
-            }
-        }
     }
 
     private function generateFormModelValidator($db, $table, array &$snippets, array &$uses)

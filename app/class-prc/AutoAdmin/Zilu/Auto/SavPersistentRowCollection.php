@@ -8,7 +8,9 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
-use FormModel\Control\TextAreaControl;
+use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
+use Module\NullosAdmin\FormModel\Control\DropZoneControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -97,7 +99,8 @@ FROM zilu.sav
                 ->label("produit")
                 ->name("produit")
             )
-            ->addControl("livre_le", InputTextControl::create()
+            ->addControl("livre_le", DatetimePickerInputTextControl::create()
+                ->injectJsConfigurationKey(['timePicker' => false])
                 ->label("livre_le")
                 ->name("livre_le")
             )
@@ -113,7 +116,8 @@ FROM zilu.sav
                 ->label("nb_produits_defec")
                 ->name("nb_produits_defec")
             )
-            ->addControl("date_notif", InputTextControl::create()
+            ->addControl("date_notif", DatetimePickerInputTextControl::create()
+                ->injectJsConfigurationKey(['timePicker' => false])
                 ->label("date_notif")
                 ->name("date_notif")
             )
@@ -129,7 +133,8 @@ FROM zilu.sav
                 ->label("pourcentage_rembourse")
                 ->name("pourcentage_rembourse")
             )
-            ->addControl("date_remboursement", InputTextControl::create()
+            ->addControl("date_remboursement", DatetimePickerInputTextControl::create()
+                ->injectJsConfigurationKey(['timePicker' => false])
                 ->label("date_remboursement")
                 ->name("date_remboursement")
             )
@@ -137,11 +142,13 @@ FROM zilu.sav
                 ->label("forme")
                 ->name("forme")
             )
-            ->addControl("statut", TextAreaControl::create()
+            ->addControl("statut", HtmlTextAreaControl::create()
                 ->label("statut")
                 ->name("statut")
             )
-            ->addControl("photo", InputTextControl::create()
+            ->addControl("photo", DropZoneControl::create()
+                ->setShowDeleteLink(true)
+                ->setProfileId("AutoAdmin/zilu.sav.photo")            
                 ->label("photo")
                 ->name("photo")
             )

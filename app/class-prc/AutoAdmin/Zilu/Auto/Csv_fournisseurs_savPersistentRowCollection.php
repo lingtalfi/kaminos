@@ -8,7 +8,7 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
-use FormModel\Control\TextAreaControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -166,15 +166,15 @@ FROM zilu.csv_fournisseurs_sav
                 ->label("avoir_lf")
                 ->name("avoir_lf")
             )
-            ->addControl("date_remboursement", TextAreaControl::create()
+            ->addControl("date_remboursement", HtmlTextAreaControl::create()
                 ->label("date_remboursement")
                 ->name("date_remboursement")
             )
-            ->addControl("problemes", TextAreaControl::create()
+            ->addControl("problemes", HtmlTextAreaControl::create()
                 ->label("problemes")
                 ->name("problemes")
             )
-            ->addControl("avancement", TextAreaControl::create()
+            ->addControl("avancement", HtmlTextAreaControl::create()
                 ->label("avancement")
                 ->name("avancement")
             );

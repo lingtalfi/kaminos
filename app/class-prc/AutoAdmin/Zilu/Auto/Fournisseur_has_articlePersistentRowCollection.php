@@ -6,6 +6,9 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
+use Module\NullosAdmin\FormModel\Control\AutoCompleteInputTextControl;
 use FormModel\Control\InputTextControl;
 
 use FormModel\FormModel;
@@ -52,17 +55,28 @@ inner join zilu.fournisseur on zilu.fournisseur.id=fournisseur_has_article.fourn
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("fournisseur_id", "fournisseur_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("article_id", "article_id", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)
     {
         $model
-            ->addControl("fournisseur_id", InputTextControl::create()
+            ->addControl("fournisseur_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('select id, nom from zilu.fournisseur')
+                 
                 ->label("fournisseur_id")
                 ->name("fournisseur_id")
             )
-            ->addControl("article_id", InputTextControl::create()
+            ->addControl("article_id", AutoCompleteInputTextControl::create()
+                ->uri('/service/json/AutoAdmin/autocomplete/auto/zilu.article')
                 ->label("article_id")
                 ->name("article_id")
             )

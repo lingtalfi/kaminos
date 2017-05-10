@@ -1,0 +1,5 @@
+dependencies:
+    - git::/lingtalfi/ArrayToString:1.46
+    - git::/lingtalfi/Bat:1.46
+    - git::/lingtalfi/QuickPdo:1.46
+    - git::/lingtalfi/Kamille:1.46

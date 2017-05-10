@@ -29,6 +29,8 @@ which should only define one variable: $out.
 
 The **$out** variable is then returned by the controller.
 
+In the case of a gscp service, then the **$type** variable must also be returned.
+
  
  
 Type

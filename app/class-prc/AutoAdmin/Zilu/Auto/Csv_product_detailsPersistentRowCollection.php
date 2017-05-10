@@ -8,7 +8,8 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
-use FormModel\Control\TextAreaControl;
+use Module\NullosAdmin\FormModel\Control\DropZoneControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -89,11 +90,13 @@ FROM zilu.csv_product_details
                 ->label("product")
                 ->name("product")
             )
-            ->addControl("photo", InputTextControl::create()
+            ->addControl("photo", DropZoneControl::create()
+                ->setShowDeleteLink(true)
+                ->setProfileId("AutoAdmin/zilu.csv_product_details.photo")            
                 ->label("photo")
                 ->name("photo")
             )
-            ->addControl("features", TextAreaControl::create()
+            ->addControl("features", HtmlTextAreaControl::create()
                 ->label("features")
                 ->name("features")
             )
@@ -101,7 +104,7 @@ FROM zilu.csv_product_details
                 ->label("logo")
                 ->name("logo")
             )
-            ->addControl("packing", TextAreaControl::create()
+            ->addControl("packing", HtmlTextAreaControl::create()
                 ->label("packing")
                 ->name("packing")
             )

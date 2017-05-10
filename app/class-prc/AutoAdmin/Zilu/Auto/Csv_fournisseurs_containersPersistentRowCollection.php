@@ -8,7 +8,7 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
-use FormModel\Control\TextAreaControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -141,7 +141,7 @@ FROM zilu.csv_fournisseurs_containers
                 ->label("container")
                 ->name("container")
             )
-            ->addControl("produit_fr", TextAreaControl::create()
+            ->addControl("produit_fr", HtmlTextAreaControl::create()
                 ->label("produit_fr")
                 ->name("produit_fr")
             )
@@ -149,15 +149,15 @@ FROM zilu.csv_fournisseurs_containers
                 ->label("reference")
                 ->name("reference")
             )
-            ->addControl("produits_fr", TextAreaControl::create()
+            ->addControl("produits_fr", HtmlTextAreaControl::create()
                 ->label("produits_fr")
                 ->name("produits_fr")
             )
-            ->addControl("produits_en", TextAreaControl::create()
+            ->addControl("produits_en", HtmlTextAreaControl::create()
                 ->label("produits_en")
                 ->name("produits_en")
             )
-            ->addControl("details", TextAreaControl::create()
+            ->addControl("details", HtmlTextAreaControl::create()
                 ->label("details")
                 ->name("details")
             )
@@ -217,11 +217,11 @@ FROM zilu.csv_fournisseurs_containers
                 ->label("commande_en_cours")
                 ->name("commande_en_cours")
             )
-            ->addControl("note", TextAreaControl::create()
+            ->addControl("note", HtmlTextAreaControl::create()
                 ->label("note")
                 ->name("note")
             )
-            ->addControl("livraison", TextAreaControl::create()
+            ->addControl("livraison", HtmlTextAreaControl::create()
                 ->label("livraison")
                 ->name("livraison")
             )

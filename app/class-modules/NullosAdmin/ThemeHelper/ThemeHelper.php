@@ -39,7 +39,8 @@ class ThemeHelper implements ThemeHelperInterface
                 // ORIGINAL FROM GENTELELLA
                 //--------------------------------------------
                 case 'autocomplete':
-                    HtmlPageHelper::js("$prefixUri/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js", null, null, false);
+//                    HtmlPageHelper::js("$prefixUri/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js", null, null, false);
+                    HtmlPageHelper::js("$prefixUri/vendors/devbridge-autocomplete/dist/jquery.autocomplete.js", null, null, false);
                     break;
                 case 'bootstrap-colorpicker':
                     HtmlPageHelper::js("$prefixUri/vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js", null, null, false);

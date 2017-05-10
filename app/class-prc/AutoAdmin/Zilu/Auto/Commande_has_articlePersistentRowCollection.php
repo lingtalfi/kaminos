@@ -7,7 +7,10 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
+use Module\NullosAdmin\FormModel\Control\AutoCompleteInputTextControl;
 use FormModel\Control\InputTextControl;
+use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -60,6 +63,18 @@ left join zilu.sav on zilu.sav.id=commande_has_article.sav_id
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
         $validator
+			->setTests("commande_id", "commande_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("article_id", "article_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("fournisseur_id", "fournisseur_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("commande_ligne_statut_id", "commande_ligne_statut_id", [
+                RequiredControlTest::create(),
+            ])
 			->setTests("unit", "unit", [
                 RequiredControlTest::create(),
             ]);
@@ -69,27 +84,43 @@ left join zilu.sav on zilu.sav.id=commande_has_article.sav_id
     protected function decorateFormModel(FormModel $model)
     {
         $model
-            ->addControl("commande_id", InputTextControl::create()
+            ->addControl("commande_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('select id, reference from zilu.commande')
+                 
                 ->label("commande_id")
                 ->name("commande_id")
             )
-            ->addControl("article_id", InputTextControl::create()
+            ->addControl("article_id", AutoCompleteInputTextControl::create()
+                ->uri('/service/json/AutoAdmin/autocomplete/auto/zilu.article')
                 ->label("article_id")
                 ->name("article_id")
             )
-            ->addControl("container_id", InputTextControl::create()
+            ->addControl("container_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('select id, nom from zilu.container')
+                ->firstOption("Please choose an option", 0) 
                 ->label("container_id")
                 ->name("container_id")
             )
-            ->addControl("fournisseur_id", InputTextControl::create()
+            ->addControl("fournisseur_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('select id, nom from zilu.fournisseur')
+                 
                 ->label("fournisseur_id")
                 ->name("fournisseur_id")
             )
-            ->addControl("sav_id", InputTextControl::create()
+            ->addControl("sav_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('select id, fournisseur from zilu.sav')
+                ->firstOption("Please choose an option", 0) 
                 ->label("sav_id")
                 ->name("sav_id")
             )
-            ->addControl("commande_ligne_statut_id", InputTextControl::create()
+            ->addControl("commande_ligne_statut_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('select id, nom from zilu.commande_ligne_statut')
+                 
                 ->label("commande_ligne_statut_id")
                 ->name("commande_ligne_statut_id")
             )
@@ -97,7 +128,8 @@ left join zilu.sav on zilu.sav.id=commande_has_article.sav_id
                 ->label("prix_override")
                 ->name("prix_override")
             )
-            ->addControl("date_estimee", InputTextControl::create()
+            ->addControl("date_estimee", DatetimePickerInputTextControl::create()
+                ->injectJsConfigurationKey(['timePicker' => false])
                 ->label("date_estimee")
                 ->name("date_estimee")
             )

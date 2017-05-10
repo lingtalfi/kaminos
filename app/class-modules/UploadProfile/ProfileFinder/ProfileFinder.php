@@ -7,6 +7,12 @@ use Kamille\Services\XLog;
 
 
 /**
+ *
+ * This finder is not really used (at least in my works), the FileProfileFinder is used instead.
+ * But it remains here just in case.
+ *
+ *
+ *
  * This finder assumes that files are organized in a certain way:
  *
  * the profileId has the following format:

@@ -106,7 +106,7 @@ $routes["Test_myRouteId7"] = ["/my/{dynamic}/uris", null, function (HttpRequestI
 }, "?Controller:method"];
 
 
-$routes["Core_service"] = ["/service/{serviceIdentifier}", null, null, 'Controller\Core\ServiceController:render'];
+$routes["Core_service"] = ["/service/{serviceIdentifier+}", null, null, 'Controller\Core\ServiceController:render'];
 
 //--------------------------------------------
 // USER - AFTER

@@ -32,6 +32,7 @@ class TestPageController extends NullosAdminController
         $t = $this->getTranslationContext();
 
 
+        a($_POST);
         /**
          * Note: submit buttons are added automatically at the renderer level.
          */
@@ -127,9 +128,10 @@ class TestPageController extends NullosAdminController
                 ->label("Select a zilu product")
                 ->name("product")
             )
-            ->addControl("products2", AutoCompleteInputTextControl::create()
-                ->uri('NullosAdmin/json/autocomplete')
-                ->name("product2")
+            ->addControl("countries2", AutoCompleteInputTextControl::create()
+                ->uri('/service/json/NullosAdmin/autocomplete/demo.autocomplete')
+                ->label("Countries")
+                ->name("countries2")
             )
             ->addControl("avatar", DropZoneControl::create()
                 ->setShowDeleteLink(true)

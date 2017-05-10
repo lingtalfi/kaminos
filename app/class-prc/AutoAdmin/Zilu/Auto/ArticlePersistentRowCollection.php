@@ -8,7 +8,8 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
-use FormModel\Control\TextAreaControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
+use Module\NullosAdmin\FormModel\Control\DropZoneControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -76,11 +77,11 @@ FROM zilu.article
                 ->label("reference_hldp")
                 ->name("reference_hldp")
             )
-            ->addControl("descr_fr", TextAreaControl::create()
+            ->addControl("descr_fr", HtmlTextAreaControl::create()
                 ->label("descr_fr")
                 ->name("descr_fr")
             )
-            ->addControl("descr_en", TextAreaControl::create()
+            ->addControl("descr_en", HtmlTextAreaControl::create()
                 ->label("descr_en")
                 ->name("descr_en")
             )
@@ -88,7 +89,9 @@ FROM zilu.article
                 ->label("ean")
                 ->name("ean")
             )
-            ->addControl("photo", InputTextControl::create()
+            ->addControl("photo", DropZoneControl::create()
+                ->setShowDeleteLink(true)
+                ->setProfileId("AutoAdmin/zilu.article.photo")            
                 ->label("photo")
                 ->name("photo")
             )
@@ -96,7 +99,7 @@ FROM zilu.article
                 ->label("logo")
                 ->name("logo")
             )
-            ->addControl("long_desc_en", TextAreaControl::create()
+            ->addControl("long_desc_en", HtmlTextAreaControl::create()
                 ->label("long_desc_en")
                 ->name("long_desc_en")
             );

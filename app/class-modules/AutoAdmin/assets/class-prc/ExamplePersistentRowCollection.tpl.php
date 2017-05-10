@@ -8,10 +8,10 @@
 //-use
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
-use PersistentRowCollection\QuickPdoPersistentRowCollection;
+use Module\NullosAdmin\PersistentRowCollection\NullosQuickPdoPersistentRowCollection;
 
 
-class ExamplePersistentRowCollection extends QuickPdoPersistentRowCollection
+class ExamplePersistentRowCollection extends NullosQuickPdoPersistentRowCollection
 {
     public function __construct()
     {

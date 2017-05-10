@@ -8,7 +8,7 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
-use FormModel\Control\TextAreaControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -151,11 +151,11 @@ FROM zilu.csv_fournisseurs_fournisseurs
                 ->label("ref")
                 ->name("ref")
             )
-            ->addControl("produits_fr", TextAreaControl::create()
+            ->addControl("produits_fr", HtmlTextAreaControl::create()
                 ->label("produits_fr")
                 ->name("produits_fr")
             )
-            ->addControl("produits_en", TextAreaControl::create()
+            ->addControl("produits_en", HtmlTextAreaControl::create()
                 ->label("produits_en")
                 ->name("produits_en")
             )
@@ -163,7 +163,7 @@ FROM zilu.csv_fournisseurs_fournisseurs
                 ->label("moq")
                 ->name("moq")
             )
-            ->addControl("details", TextAreaControl::create()
+            ->addControl("details", HtmlTextAreaControl::create()
                 ->label("details")
                 ->name("details")
             )
@@ -187,7 +187,7 @@ FROM zilu.csv_fournisseurs_fournisseurs
                 ->label("total_amount")
                 ->name("total_amount")
             )
-            ->addControl("packing_details", TextAreaControl::create()
+            ->addControl("packing_details", HtmlTextAreaControl::create()
                 ->label("packing_details")
                 ->name("packing_details")
             )
@@ -227,19 +227,19 @@ FROM zilu.csv_fournisseurs_fournisseurs
                 ->label("reference")
                 ->name("reference")
             )
-            ->addControl("champ1", TextAreaControl::create()
+            ->addControl("champ1", HtmlTextAreaControl::create()
                 ->label("champ1")
                 ->name("champ1")
             )
-            ->addControl("champ2", TextAreaControl::create()
+            ->addControl("champ2", HtmlTextAreaControl::create()
                 ->label("champ2")
                 ->name("champ2")
             )
-            ->addControl("champ3", TextAreaControl::create()
+            ->addControl("champ3", HtmlTextAreaControl::create()
                 ->label("champ3")
                 ->name("champ3")
             )
-            ->addControl("champ4", TextAreaControl::create()
+            ->addControl("champ4", HtmlTextAreaControl::create()
                 ->label("champ4")
                 ->name("champ4")
             )

@@ -6,7 +6,8 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 
-use FormModel\Control\InputTextControl;
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -48,17 +49,30 @@ inner join zilu.devis on zilu.devis.id=devis_has_commande_has_article.devis_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("devis_id", "devis_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("commande_has_article_id", "commande_has_article_id", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)
     {
         $model
-            ->addControl("devis_id", InputTextControl::create()
+            ->addControl("devis_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('select id, reference from zilu.devis')
+                 
                 ->label("devis_id")
                 ->name("devis_id")
             )
-            ->addControl("commande_has_article_id", InputTextControl::create()
+            ->addControl("commande_has_article_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('select id, unit from zilu.commande_has_article')
+                 
                 ->label("commande_has_article_id")
                 ->name("commande_has_article_id")
             );

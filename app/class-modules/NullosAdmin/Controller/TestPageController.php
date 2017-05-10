@@ -13,6 +13,7 @@ use FormModel\Control\InputTextControl;
 use FormModel\Control\SelectControl;
 use FormModel\Control\TextAreaControl;
 use FormModel\FormModel;
+use Module\NullosAdmin\FormModel\Control\AutoCompleteInputTextControl;
 use Module\NullosAdmin\FormModel\Control\ColorInputTextControl;
 use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
 use Module\NullosAdmin\FormModel\Control\DropZoneControl;
@@ -31,6 +32,7 @@ class TestPageController extends NullosAdminController
         $t = $this->getTranslationContext();
 
 
+        a($_POST);
         /**
          * Note: submit buttons are added automatically at the renderer level.
          */
@@ -125,6 +127,11 @@ class TestPageController extends NullosAdminController
                 ->firstOption("Please choose an option", null) // 0|null|mixed: the first option's value
                 ->label("Select a zilu product")
                 ->name("product")
+            )
+            ->addControl("countries2", AutoCompleteInputTextControl::create()
+                ->uri('/service/json/NullosAdmin/autocomplete/demo.autocomplete')
+                ->label("Countries")
+                ->name("countries2")
             )
             ->addControl("avatar", DropZoneControl::create()
                 ->setShowDeleteLink(true)

@@ -44,7 +44,7 @@ class CrudGenerator implements CrudGeneratorInterface
     //--------------------------------------------
     public function getSqlQuery($table)
     {
-        $prefixedColumns = $this->getPrefixesColumns($table);
+        $prefixedColumns = $this->getPrefixedColumns($table);
         $joins = $this->getJoinsList($table);
         return [
             $prefixedColumns,
@@ -117,7 +117,7 @@ class CrudGenerator implements CrudGeneratorInterface
     }
 
 
-    protected function getPrefixesColumns($table)
+    protected function getPrefixedColumns($table)
     {
         $prefixedColumns = [];
         list($schema, $tableOnly) = CrudGeneratorToolsHelper::getDbAndTable($table);

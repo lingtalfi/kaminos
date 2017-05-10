@@ -120,7 +120,9 @@ class NullosFormRenderer extends DiyFormRenderer
 
                 $jsCode = '
                 var conf = ' . json_encode($conf) . ';
+                Dropzone.autoDiscover = false;
                 var myDropzone = new Dropzone("div#' . $id . '", conf);
+                //$("div#' . $id . '").dropzone(conf);
 ';
                 A::addBodyEndJsCode('jquery', $jsCode);
 

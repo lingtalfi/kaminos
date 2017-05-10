@@ -7,7 +7,8 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 use FormModel\Control\InputTextControl;
-use FormModel\Control\TextAreaControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
+use Module\NullosAdmin\FormModel\Control\DropZoneControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -175,11 +176,13 @@ FROM zilu.csv_prix_materiel
                 ->label("code_compta")
                 ->name("code_compta")
             )
-            ->addControl("description", TextAreaControl::create()
+            ->addControl("description", HtmlTextAreaControl::create()
                 ->label("description")
                 ->name("description")
             )
-            ->addControl("photos", InputTextControl::create()
+            ->addControl("photos", DropZoneControl::create()
+                ->setShowDeleteLink(true)
+                ->setProfileId("AutoAdmin/zilu.csv_prix_materiel.photos")            
                 ->label("photos")
                 ->name("photos")
             )

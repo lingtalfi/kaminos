@@ -9,11 +9,7 @@ require_once __DIR__ . "/../boot.php";
 
 
 A::quickPdoInit();
+//NullosSkinnyTypeGenerator::create()->setDatabases(['zilu'])->setModule("NullosAdmin")->generate();
 
 
-
-NullosSkinnyTypeGenerator::create()->setDatabases(['zilu'])->generate();
-
-
-az("aaahhhhh");
 NullosCrudGenerator::create()->setDatabases(['zilu'])->generate();

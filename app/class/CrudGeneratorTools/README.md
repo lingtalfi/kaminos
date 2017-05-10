@@ -30,32 +30,79 @@ This is a big topic, please browse the doc directory of this repository to find 
 
 
 
-Using the tools
+What are the tools
 ===================
 
-- Initializing QuickPdo
+Hopefully by the name of the methods you get the idea, because that and the source code
+is all the doc we have (at least for now).
 
-There are two ways to use the generator tools: 
+- CrudGeneratorToolsHelper
+    - getDbAndTable ( table )
+    - getTables ( db=null, useDbPrefix=true )
+    - getColumns ( table )
+    - getForeignKeysInfo ( table )
+    - getDatabases ( db=null )
+    - getRic ( table )
+    
+- GeneratorGenerator
+    - generateForeignKeysPreferredColumnsByDatabase ( db=null )
+    - generateForeignKeysPreferredColumnsByTable ( table )
+    
+- CrudGenerator
+    - generate
+    - getSqlQuery ( table )
+    - getSqlQueryAsString ( table )
+    - getJoinsList ( table )
+    - getPrefixedColumns ( table )
 
-- with a standalone script
-- as a script embedded in your application (module, plugin, ...)
 
 
+Basically what you want to do is extend the CrudGenerator class, and then call the generate method.
 
-Initializing QuickPdo
------------------------
+You should end up with a generator script like this one:
 
-In both cases, the first step is to initialize a [QuickPdo](https://github.com/lingtalfi/Quickpdo) connection.
-
-Here is how you would it if you use a standalone script:
 
 ```php
-QuickPdo::setConnection("mysql:dbname=oui;host=127.0.0.1", "root", "root", [
-    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-    \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
-]);
+<?php
+
+
+use Core\Services\A;
+use Module\AutoAdmin\CrudGenerator\NullosCrudGenerator;
+
+require_once __DIR__ . "/../boot.php";
+
+
+A::quickPdoInit();
+NullosCrudGenerator::create()->setDatabases(['zilu'])->generate();
+
 ```
 
-If you use a framework, then you should know how to initialize the pdo connexion.
-Or if you don't, just paste/adapt the above snippet somewhere in your code.
+The example above comes from the AutoAdmin module, which generates the admin for the NullosAdmin module,
+which is part of the [Kamille framework](https://github.com/lingtalfi/Kamille).
+
+
+
+
+What is skinny?
+====================
+
+If you browse the planet, you will see the Skinny directory, which contains the Skinny subsystem tools.
+
+Skinny basically implements the workflow of first generating a list of desired form types,
+and store them in a file.
+
+Then, generate the desired files using those form types preferences.
+
+This allows for more control on what's being generated, giving the user the ability to easily
+override the default generated preferences.
+
+The documentation for skinny can be found in the auto-admin document of this repository.
+
+
+
+
+
+
+
+
 

@@ -7,8 +7,9 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
 use FormModel\Control\InputTextControl;
-use FormModel\Control\TextAreaControl;
+use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -74,7 +75,8 @@ FROM zilu.historique_statut
     protected function decorateFormModel(FormModel $model)
     {
         $model
-            ->addControl("date", InputTextControl::create()
+            ->addControl("date", DatetimePickerInputTextControl::create()
+                ->injectJsConfigurationKey(['timePicker' => true])
                 ->label("date")
                 ->name("date")
             )
@@ -98,7 +100,7 @@ FROM zilu.historique_statut
                 ->label("commande_reference")
                 ->name("commande_reference")
             )
-            ->addControl("commentaire", TextAreaControl::create()
+            ->addControl("commentaire", HtmlTextAreaControl::create()
                 ->label("commentaire")
                 ->name("commentaire")
             )

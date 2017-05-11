@@ -54,4 +54,8 @@ $conf = [
     "dbLogFile" => $appDir . "/logs/kamille.sql.log.txt",
     "useQuickPdo" => true,
     "quickPdoConfig" => $quickPdoConf,
+    //--------------------------------------------
+    // JS
+    //--------------------------------------------
+    "addJqueryEndWrapper" => true,
 ];

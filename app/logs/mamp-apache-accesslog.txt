@@ -20087,3 +20087,10 @@
 127.0.0.1 - - [11/May/2017:15:01:39 +0200] "POST /datatable-handler HTTP/1.1" 200 13959
 127.0.0.1 - - [11/May/2017:15:01:41 +0200] "GET /crud?type=list&prc=AutoAdmin.zilu.container HTTP/1.1" 200 23200
 127.0.0.1 - - [11/May/2017:15:01:42 +0200] "POST /datatable-handler HTTP/1.1" 200 12380
+127.0.0.1 - - [11/May/2017:15:03:12 +0200] "GET /crud?type=list&prc=AutoAdmin.zilu.article HTTP/1.1" 200 23196
+127.0.0.1 - - [11/May/2017:15:03:13 +0200] "POST /datatable-handler HTTP/1.1" 200 81039
+127.0.0.1 - - [11/May/2017:15:03:17 +0200] "GET /crud?type=list&prc=AutoAdmin.zilu.container HTTP/1.1" 200 23200
+127.0.0.1 - - [11/May/2017:15:03:18 +0200] "POST /datatable-handler HTTP/1.1" 200 12380
+127.0.0.1 - - [11/May/2017:15:03:20 +0200] "GET /crud?type=form&prc=AutoAdmin.zilu.container HTTP/1.1" 200 25329
+127.0.0.1 - - [11/May/2017:15:03:43 +0200] "GET /crud?type=list&prc=Ekom.kamille.ek_address HTTP/1.1" 200 23200
+127.0.0.1 - - [11/May/2017:15:03:43 +0200] "POST /datatable-handler HTTP/1.1" 200 13959

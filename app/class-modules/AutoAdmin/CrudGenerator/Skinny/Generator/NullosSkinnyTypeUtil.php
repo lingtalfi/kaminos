@@ -4,13 +4,11 @@
 namespace Module\AutoAdmin\CrudGenerator\Skinny\Generator;
 
 
-use CrudGeneratorTools\Skinny\Generator\SkinnyTypeGenerator;
 use CrudGeneratorTools\Skinny\Helper\SkinnyHelper;
-use CrudGeneratorTools\Skinny\Util\SkinnyTypeUtil;
+use CrudGeneratorTools\Skinny\SkinnyTypeUtil;
 use CrudGeneratorTools\Util\ForeignKeyPreferredColumnUtil;
 use Kamille\Ling\Z;
 use Kamille\Services\XLog;
-use Module\AutoAdmin\CrudGenerator\Helper\AutoAdminCrudGeneratorHelper;
 use Module\AutoAdmin\CrudGenerator\Util\NullosForeignKeyPreferredColumnUtil;
 
 class NullosSkinnyTypeUtil extends SkinnyTypeUtil
@@ -62,10 +60,9 @@ class NullosSkinnyTypeUtil extends SkinnyTypeUtil
     {
 
         if ('selectForeignKey' === $chosenType) {
-            $preferred = $this->foreignKeyPreferredColumnUtil->getPreferredForeignKey($foreignKey[0], $foreignKey[1], $this->_useCache);
-            if (false !== $preferred) {
+            $preferredCol = $this->foreignKeyPreferredColumnUtil->getPreferredForeignKey($foreignKey[0], $foreignKey[1], $this->_useCache);
+            if (false !== $preferredCol) {
                 $foreignTable = $foreignKey[0] . "." . $foreignKey[1];
-                $preferredCol = $preferred[$foreignTable];
                 $foreignCol = $foreignKey[2];
                 $query = 'select ' . $foreignCol . ', ' . $preferredCol . ' from ' . $foreignTable;
                 $params = [

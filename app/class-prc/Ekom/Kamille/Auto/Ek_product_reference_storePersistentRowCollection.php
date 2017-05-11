@@ -2,12 +2,12 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
+use FormModel\Control\InputTextControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -22,9 +22,9 @@ class Ek_product_reference_storePersistentRowCollection extends NullosQuickPdoPe
         $this->setTable("kamille.ek_product_reference_store");
         $this->fields = '
 ek_product_reference_store.id,
-ek_store.id,
+ek_store.label,
 ek_product_reference_store.quantity,
-ek_product_reference.id
+ek_product_reference.natural_reference
 ';
         $this->query = '
 SELECT
@@ -48,14 +48,7 @@ inner join kamille.ek_store on kamille.ek_store.id=ek_product_reference_store.st
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("store_id", "store_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("product_reference_id", "product_reference_id", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
@@ -63,14 +56,18 @@ inner join kamille.ek_store on kamille.ek_store.id=ek_product_reference_store.st
         $model
             ->addControl("store_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, label from kamille.ek_store')
                  
                 ->label("store_id")
                 ->name("store_id")
             )
+            ->addControl("quantity", InputTextControl::create()
+                ->label("quantity")
+                ->name("quantity")
+            )
             ->addControl("product_reference_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, natural_reference from kamille.ek_product_reference')
                  
                 ->label("product_reference_id")
                 ->name("product_reference_id")

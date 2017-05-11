@@ -2,11 +2,11 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\InputTextControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -43,16 +43,17 @@ FROM kamille.ek_timezone
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("name", "name", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
-        
+        $model
+            ->addControl("name", InputTextControl::create()
+                ->label("name")
+                ->name("name")
+            );
+
     }
 
     protected function getAutoIncrementedColumn()

@@ -2,11 +2,11 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\InputTextControl;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
@@ -23,7 +23,7 @@ class Ek_tax_langPersistentRowCollection extends NullosQuickPdoPersistentRowColl
         $this->fields = '
 ek_tax_lang.id,
 ek_tax_lang.label,
-ek_lang.id
+ek_lang.label
 ';
         $this->query = '
 SELECT
@@ -46,22 +46,19 @@ inner join kamille.ek_lang on kamille.ek_lang.id=ek_tax_lang.lang_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("label", "label", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("lang_id", "lang_id", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
         $model
+            ->addControl("label", InputTextControl::create()
+                ->label("label")
+                ->name("label")
+            )
             ->addControl("lang_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, label from kamille.ek_lang')
                  
                 ->label("lang_id")
                 ->name("lang_id")

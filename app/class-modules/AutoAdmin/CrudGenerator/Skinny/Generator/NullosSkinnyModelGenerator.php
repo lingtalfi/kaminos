@@ -52,6 +52,9 @@ class NullosSkinnyModelGenerator extends SkinnyModelGenerator
         if (null === $this->quickPdoInfoCache) {
             $this->quickPdoInfoCache = QuickPdoInfoCacheUtil::create()->cache($this->_useCache);
         }
+        if (null === $this->skinnyTypeUtil) {
+            $this->skinnyTypeUtil = NullosSkinnyTypeUtil::create();
+        }
     }
 
     protected function generateFormControlModel($typeId, $type, $column, $db, $table, array &$snippets, array &$uses)
@@ -221,6 +224,7 @@ EEE;
                 $uses[] = 'Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl';
                 break;
             default:
+                parent::generateFormControlModel($typeId, $type, $column, $db, $table, $snippets, $uses);
                 break;
         }
     }

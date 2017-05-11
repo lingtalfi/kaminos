@@ -2,7 +2,7 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
@@ -21,7 +21,7 @@ class Ek_productPersistentRowCollection extends NullosQuickPdoPersistentRowColle
         $this->setTable("kamille.ek_product");
         $this->fields = '
 ek_product.id,
-ek_product_reference.id
+ek_product_reference.natural_reference
 ';
         $this->query = '
 SELECT
@@ -52,8 +52,8 @@ left join kamille.ek_product_reference on kamille.ek_product_reference.id=ek_pro
         $model
             ->addControl("product_reference_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
-                 
+                ->query('select id, natural_reference from kamille.ek_product_reference')
+                ->firstOption("Please choose an option", 0) 
                 ->label("product_reference_id")
                 ->name("product_reference_id")
             );

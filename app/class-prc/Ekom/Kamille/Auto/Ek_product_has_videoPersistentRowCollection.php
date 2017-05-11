@@ -2,11 +2,10 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
@@ -23,8 +22,8 @@ class Ek_product_has_videoPersistentRowCollection extends NullosQuickPdoPersiste
         $this->fields = '
 ek_product_has_video.product_id,
 ek_product_has_video.video_id,
-ek_product.id,
-ek_video.id
+ek_product.product_reference_id,
+ek_video.uri
 ';
         $this->query = '
 SELECT
@@ -49,14 +48,7 @@ inner join kamille.ek_video on kamille.ek_video.id=ek_product_has_video.video_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("product_id", "product_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("video_id", "video_id", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
@@ -64,14 +56,14 @@ inner join kamille.ek_video on kamille.ek_video.id=ek_product_has_video.video_id
         $model
             ->addControl("product_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, product_reference_id from kamille.ek_product')
                  
                 ->label("product_id")
                 ->name("product_id")
             )
             ->addControl("video_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, uri from kamille.ek_video')
                  
                 ->label("video_id")
                 ->name("video_id")

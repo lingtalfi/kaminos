@@ -2,11 +2,11 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\TextAreaControl;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
@@ -23,7 +23,7 @@ class Ek_cartPersistentRowCollection extends NullosQuickPdoPersistentRowCollecti
         $this->fields = '
 ek_cart.id,
 ek_cart.items,
-ek_user.id
+ek_user.email
 ';
         $this->query = '
 SELECT
@@ -46,19 +46,19 @@ inner join kamille.ek_user on kamille.ek_user.id=ek_cart.user_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("user_id", "user_id", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
         $model
+            ->addControl("items", TextAreaControl::create()
+                ->label("items")
+                ->name("items")
+            )
             ->addControl("user_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, email from kamille.ek_user')
                  
                 ->label("user_id")
                 ->name("user_id")

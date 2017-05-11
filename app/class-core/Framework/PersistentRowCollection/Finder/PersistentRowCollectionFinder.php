@@ -2,11 +2,9 @@
 
 
 namespace Core\Framework\PersistentRowCollection\Finder;
-
-
-use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use PersistentRowCollection\Finder\PersistentRowCollectionFinderInterface;
 use PersistentRowCollection\PersistentRowCollectionInterface;
+
 
 /**
  * This Finder uses a dynamic technique based on name convention:
@@ -56,7 +54,6 @@ class PersistentRowCollectionFinder implements PersistentRowCollectionFinderInte
             $p[] = $last;
 
             $class = 'Prc\\' . implode('\\', $p) . "PersistentRowCollection";
-
             if (class_exists($class)) {
                 return new $class();
             }

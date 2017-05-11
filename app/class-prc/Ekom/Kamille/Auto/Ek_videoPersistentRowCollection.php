@@ -2,11 +2,11 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\InputTextControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -43,16 +43,17 @@ FROM kamille.ek_video
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("uri", "uri", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
-        
+        $model
+            ->addControl("uri", InputTextControl::create()
+                ->label("uri")
+                ->name("uri")
+            );
+
     }
 
     protected function getAutoIncrementedColumn()

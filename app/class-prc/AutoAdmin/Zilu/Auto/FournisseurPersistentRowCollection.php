@@ -6,7 +6,7 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\InputTextControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -44,19 +44,21 @@ FROM zilu.fournisseur
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("nom", "nom", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("email", "email", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
-        
+        $model
+            ->addControl("nom", InputTextControl::create()
+                ->label("nom")
+                ->name("nom")
+            )
+            ->addControl("email", InputTextControl::create()
+                ->label("email")
+                ->name("email")
+            );
+
     }
 
     protected function getAutoIncrementedColumn()

@@ -2,11 +2,10 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
@@ -23,9 +22,9 @@ class Ek_product_has_product_attributePersistentRowCollection extends NullosQuic
         $this->fields = '
 ek_product_has_product_attribute.product_id,
 ek_product_has_product_attribute.product_attribute_id,
-ek_product.id,
-ek_product_attribute.id,
-ek_product_attibute_value.id
+ek_product.product_reference_id,
+ek_product_attribute.label,
+ek_product_attibute_value.label
 ';
         $this->query = '
 SELECT
@@ -51,17 +50,7 @@ inner join kamille.ek_product_attribute on kamille.ek_product_attribute.id=ek_pr
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("product_id", "product_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("product_attribute_id", "product_attribute_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("product_attibute_value_id", "product_attibute_value_id", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
@@ -69,21 +58,21 @@ inner join kamille.ek_product_attribute on kamille.ek_product_attribute.id=ek_pr
         $model
             ->addControl("product_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, product_reference_id from kamille.ek_product')
                  
                 ->label("product_id")
                 ->name("product_id")
             )
             ->addControl("product_attribute_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, label from kamille.ek_product_attribute')
                  
                 ->label("product_attribute_id")
                 ->name("product_attribute_id")
             )
             ->addControl("product_attibute_value_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, label from kamille.ek_product_attibute_value')
                  
                 ->label("product_attibute_value_id")
                 ->name("product_attibute_value_id")

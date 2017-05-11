@@ -2,11 +2,10 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
@@ -23,8 +22,8 @@ class Ek_shop_has_storePersistentRowCollection extends NullosQuickPdoPersistentR
         $this->fields = '
 ek_shop_has_store.shop_id,
 ek_shop_has_store.store_id,
-ek_shop.id,
-ek_store.id
+ek_shop.label,
+ek_store.label
 ';
         $this->query = '
 SELECT
@@ -49,14 +48,7 @@ inner join kamille.ek_store on kamille.ek_store.id=ek_shop_has_store.store_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("shop_id", "shop_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("store_id", "store_id", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
@@ -64,14 +56,14 @@ inner join kamille.ek_store on kamille.ek_store.id=ek_shop_has_store.store_id
         $model
             ->addControl("shop_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, label from kamille.ek_shop')
                  
                 ->label("shop_id")
                 ->name("shop_id")
             )
             ->addControl("store_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, label from kamille.ek_store')
                  
                 ->label("store_id")
                 ->name("store_id")

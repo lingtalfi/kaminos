@@ -6,9 +6,9 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 use Module\NullosAdmin\FormModel\Control\AutoCompleteInputTextControl;
+use FormModel\Control\InputTextControl;
 use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
 
 use FormModel\FormModel;
@@ -61,23 +61,7 @@ left join zilu.sav on zilu.sav.id=commande_has_article.sav_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("commande_id", "commande_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("article_id", "article_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("fournisseur_id", "fournisseur_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("commande_ligne_statut_id", "commande_ligne_statut_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("unit", "unit", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
@@ -85,7 +69,7 @@ left join zilu.sav on zilu.sav.id=commande_has_article.sav_id
         $model
             ->addControl("commande_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, reference from zilu.commande')
                  
                 ->label("commande_id")
                 ->name("commande_id")
@@ -97,36 +81,48 @@ left join zilu.sav on zilu.sav.id=commande_has_article.sav_id
             )
             ->addControl("container_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
-                 
+                ->query('select id, nom from zilu.container')
+                ->firstOption("Please choose an option", 0) 
                 ->label("container_id")
                 ->name("container_id")
             )
             ->addControl("fournisseur_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, nom from zilu.fournisseur')
                  
                 ->label("fournisseur_id")
                 ->name("fournisseur_id")
             )
             ->addControl("sav_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
-                 
+                ->query('select id, fournisseur from zilu.sav')
+                ->firstOption("Please choose an option", 0) 
                 ->label("sav_id")
                 ->name("sav_id")
             )
             ->addControl("commande_ligne_statut_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, nom from zilu.commande_ligne_statut')
                  
                 ->label("commande_ligne_statut_id")
                 ->name("commande_ligne_statut_id")
+            )
+            ->addControl("prix_override", InputTextControl::create()
+                ->label("prix_override")
+                ->name("prix_override")
             )
             ->addControl("date_estimee", DatetimePickerInputTextControl::create()
                 ->injectJsConfigurationKey(['timePicker' => false])
                 ->label("date_estimee")
                 ->name("date_estimee")
+            )
+            ->addControl("quantite", InputTextControl::create()
+                ->label("quantite")
+                ->name("quantite")
+            )
+            ->addControl("unit", InputTextControl::create()
+                ->label("unit")
+                ->name("unit")
             );
 
     }

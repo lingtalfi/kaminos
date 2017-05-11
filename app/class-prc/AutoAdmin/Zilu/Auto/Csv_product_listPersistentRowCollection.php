@@ -6,7 +6,8 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\InputTextControl;
+use FormModel\Control\TextAreaControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -45,19 +46,25 @@ FROM zilu.csv_product_list
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("ref_hldp", "ref_hldp", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("ref_lf", "ref_lf", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
-        
+        $model
+            ->addControl("ref_hldp", InputTextControl::create()
+                ->label("ref_hldp")
+                ->name("ref_hldp")
+            )
+            ->addControl("ref_lf", InputTextControl::create()
+                ->label("ref_lf")
+                ->name("ref_lf")
+            )
+            ->addControl("produits", TextAreaControl::create()
+                ->label("produits")
+                ->name("produits")
+            );
+
     }
 
     protected function getAutoIncrementedColumn()

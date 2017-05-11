@@ -2,11 +2,11 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\InputTextControl;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
@@ -24,7 +24,7 @@ class Ek_statePersistentRowCollection extends NullosQuickPdoPersistentRowCollect
 ek_state.id,
 ek_state.iso_code,
 ek_state.label,
-ek_country.id
+ek_country.iso_code
 ';
         $this->query = '
 SELECT
@@ -47,25 +47,23 @@ inner join kamille.ek_country on kamille.ek_country.id=ek_state.country_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("iso_code", "iso_code", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("label", "label", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("country_id", "country_id", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
         $model
+            ->addControl("iso_code", InputTextControl::create()
+                ->label("iso_code")
+                ->name("iso_code")
+            )
+            ->addControl("label", InputTextControl::create()
+                ->label("label")
+                ->name("label")
+            )
             ->addControl("country_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, iso_code from kamille.ek_country')
                  
                 ->label("country_id")
                 ->name("country_id")

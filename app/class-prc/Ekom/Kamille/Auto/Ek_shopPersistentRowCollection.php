@@ -2,11 +2,11 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\InputTextControl;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
@@ -23,9 +23,9 @@ class Ek_shopPersistentRowCollection extends NullosQuickPdoPersistentRowCollecti
         $this->fields = '
 ek_shop.id,
 ek_shop.label,
-ek_lang.id,
-ek_currency.id,
-ek_timezone.id
+ek_lang.label,
+ek_currency.iso_code,
+ek_timezone.name
 ';
         $this->query = '
 SELECT
@@ -50,34 +50,34 @@ left join kamille.ek_timezone on kamille.ek_timezone.id=ek_shop.timezone_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("label", "label", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
         $model
+            ->addControl("label", InputTextControl::create()
+                ->label("label")
+                ->name("label")
+            )
             ->addControl("lang_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
-                 
+                ->query('select id, label from kamille.ek_lang')
+                ->firstOption("Please choose an option", 0) 
                 ->label("lang_id")
                 ->name("lang_id")
             )
             ->addControl("currency_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
-                 
+                ->query('select id, iso_code from kamille.ek_currency')
+                ->firstOption("Please choose an option", 0) 
                 ->label("currency_id")
                 ->name("currency_id")
             )
             ->addControl("timezone_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
-                 
+                ->query('select id, name from kamille.ek_timezone')
+                ->firstOption("Please choose an option", 0) 
                 ->label("timezone_id")
                 ->name("timezone_id")
             );

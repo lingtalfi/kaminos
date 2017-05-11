@@ -42,6 +42,12 @@ class AutoAdminHooks
                 $f = $dir . "/$manual.php";
                 if (file_exists($f)) {
                     return $f;
+                } else {
+                    $auto = implode('/', [$p[0], 'auto', $p[1], $p[2]]);
+                    $f = $dir . "/$auto.php";
+                    if (file_exists($f)) {
+                        return $f;
+                    }
                 }
             }
             return false;

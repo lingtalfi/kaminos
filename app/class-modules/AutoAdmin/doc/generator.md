@@ -10,6 +10,39 @@ But what does it concretely?
 
 
 
+Here is how you call it:
+
+```php
+<?php
+
+
+use Core\Services\A;
+use Module\AutoAdmin\CrudGenerator\NullosCrudGenerator;
+
+
+ini_set('display_errors', "1");
+require_once __DIR__ . "/../boot.php";
+A::quickPdoInit();
+
+
+NullosCrudGenerator::create()
+    ->useCache(true)
+    ->setLogFunction(function ($type, $msg) {
+        a($type . ":" . $msg);
+    })
+    ->setModule("Ekom")
+    ->generate('kamille');
+
+
+
+
+```
+
+
+What the above script does is the following:
+
+
+
 1. Call **app/scripts/generator.php** 
 
 2. Generate foreign keys preferred columns in **app/store/AutoAdmin/foreignKeyPreferredColumns/auto/$database.php**.

@@ -207,8 +207,7 @@ class Hooks extends AbstractHooks
                 $manualFile = $manualDir . "/$dbFile";
                 if (file_exists($manualFile)) {
                     include $manualFile;
-                }
-                else{
+                } else {
                     include $autoDir . "/$dbFile";
                 }
                 $allItems[] = $items;
@@ -229,6 +228,7 @@ class Hooks extends AbstractHooks
         // mit-end:NullosAdmin
     }
 
+
     protected static function DataTable_configureProfileFinder(\Module\DataTable\DataTableProfileFinder\DataTableProfileFinder $profileFinder)
     {
         // mit-start:AutoAdmin
@@ -239,6 +239,12 @@ class Hooks extends AbstractHooks
                 $f = $dir . "/$manual.php";
                 if (file_exists($f)) {
                     return $f;
+                } else {
+                    $auto = implode('/', [$p[0], 'auto', $p[1], $p[2]]);
+                    $f = $dir . "/$auto.php";
+                    if (file_exists($f)) {
+                        return $f;
+                    }
                 }
             }
             return false;

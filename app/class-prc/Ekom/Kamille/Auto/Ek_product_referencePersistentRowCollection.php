@@ -2,11 +2,11 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\InputTextControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -45,19 +45,25 @@ FROM kamille.ek_product_reference
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("natural_reference", "natural_reference", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("reference", "reference", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
-        
+        $model
+            ->addControl("natural_reference", InputTextControl::create()
+                ->label("natural_reference")
+                ->name("natural_reference")
+            )
+            ->addControl("reference", InputTextControl::create()
+                ->label("reference")
+                ->name("reference")
+            )
+            ->addControl("weight", InputTextControl::create()
+                ->label("weight")
+                ->name("weight")
+            );
+
     }
 
     protected function getAutoIncrementedColumn()

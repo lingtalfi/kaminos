@@ -6,9 +6,9 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 use Module\NullosAdmin\FormModel\Control\AutoCompleteInputTextControl;
+use FormModel\Control\InputTextControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -54,14 +54,7 @@ inner join zilu.fournisseur on zilu.fournisseur.id=fournisseur_has_article.fourn
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("fournisseur_id", "fournisseur_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("article_id", "article_id", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
@@ -69,7 +62,7 @@ inner join zilu.fournisseur on zilu.fournisseur.id=fournisseur_has_article.fourn
         $model
             ->addControl("fournisseur_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, nom from zilu.fournisseur')
                  
                 ->label("fournisseur_id")
                 ->name("fournisseur_id")
@@ -78,6 +71,22 @@ inner join zilu.fournisseur on zilu.fournisseur.id=fournisseur_has_article.fourn
                 ->uri('/service/json/AutoAdmin/autocomplete/auto/zilu.article')
                 ->label("article_id")
                 ->name("article_id")
+            )
+            ->addControl("reference", InputTextControl::create()
+                ->label("reference")
+                ->name("reference")
+            )
+            ->addControl("prix", InputTextControl::create()
+                ->label("prix")
+                ->name("prix")
+            )
+            ->addControl("volume", InputTextControl::create()
+                ->label("volume")
+                ->name("volume")
+            )
+            ->addControl("poids", InputTextControl::create()
+                ->label("poids")
+                ->name("poids")
             );
 
     }

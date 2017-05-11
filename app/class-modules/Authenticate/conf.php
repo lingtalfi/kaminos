@@ -34,6 +34,12 @@ $conf = [
     "controllerLoginForm" => 'Controller\Authenticate\AuthenticateController:renderForm',
 
     /**
+     * Whether or not to display the splash loginForm
+     * if the user is not connected
+     */
+    "useSplashLoginForm" => true,
+
+    /**
      * If that key is found in the $_GET array,
      * then it will redirect the user to the same uri, but with the disconnectGetKey
      * parameter removed from the queryString.

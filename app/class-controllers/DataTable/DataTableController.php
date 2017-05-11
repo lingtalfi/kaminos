@@ -39,6 +39,7 @@ class DataTableController extends ApplicationController
                  */
                 if (false !== ($profile = $profileLoader->getProfile($datatableProfileId))) {
 
+
                     $searchValues = [];
                     $sortValues = [];
                     $page = 1;

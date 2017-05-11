@@ -2,12 +2,12 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\DropZoneControl;
+use FormModel\Control\InputTextControl;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
@@ -25,8 +25,8 @@ class Ek_product_reference_shopPersistentRowCollection extends NullosQuickPdoPer
 ek_product_reference_shop.id,
 ek_product_reference_shop.image,
 ek_product_reference_shop.prix_ht,
-ek_shop.id,
-ek_product_reference.id
+ek_shop.label,
+ek_product_reference.natural_reference
 ';
         $this->query = '
 SELECT
@@ -50,17 +50,7 @@ inner join kamille.ek_shop on kamille.ek_shop.id=ek_product_reference_shop.shop_
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("image", "image", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("shop_id", "shop_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("product_reference_id", "product_reference_id", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
@@ -72,16 +62,20 @@ inner join kamille.ek_shop on kamille.ek_shop.id=ek_product_reference_shop.shop_
                 ->label("image")
                 ->name("image")
             )
+            ->addControl("prix_ht", InputTextControl::create()
+                ->label("prix_ht")
+                ->name("prix_ht")
+            )
             ->addControl("shop_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, label from kamille.ek_shop')
                  
                 ->label("shop_id")
                 ->name("shop_id")
             )
             ->addControl("product_reference_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, natural_reference from kamille.ek_product_reference')
                  
                 ->label("product_reference_id")
                 ->name("product_reference_id")

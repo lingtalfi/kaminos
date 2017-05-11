@@ -1,50 +1,33 @@
 <?php
 
+
 $store = [
     'profiles' => [
-        'admin' => [
-            'groups' => [
-                'AutoAdmin-admin',
-                'group3',
+        "root" => [
+            "groups" => [
+                "group3",
             ],
-            'abadge1',
-            'abadge2',
-        ],
-        'root' => [
-            'groups' => [
-                'group3',
-            ],
-            'badge1',
-            'badge2',
+            "badge1",
+            "badge2",
         ],
     ],
     'groups' => [
-        'AutoAdmin' => [
+        "group1" => [
+            "groups" => [],
+            "badge3",
+            "badge4",
         ],
-        'AutoAdmin-admin' => [
-            'groups' => [
-            ],
-            'useGenerator',
+        "group2" => [
+            "groups" => [],
+            "badge5",
+            "badge6",
         ],
-        'group1' => [
-            'groups' => [
+        "group3" => [
+            "groups" => [
+                "group1",
             ],
-            'badge3',
-            'badge4',
-        ],
-        'group2' => [
-            'groups' => [
-            ],
-            'badge5',
-            'badge6',
-        ],
-        'group3' => [
-            'groups' => [
-                'group1',
-            ],
-            'badge7',
-            'badge8',
+            "badge7",
+            "badge8",
         ],
     ],
 ];
-

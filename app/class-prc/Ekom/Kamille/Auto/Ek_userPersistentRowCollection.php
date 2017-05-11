@@ -2,12 +2,13 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
+use FormModel\Control\InputTextControl;
+use FormModel\Control\InputPasswordControl;
 use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
 use Module\NullosAdmin\FormModel\Control\InputSwitchControl;
 
@@ -24,13 +25,13 @@ class Ek_userPersistentRowCollection extends NullosQuickPdoPersistentRowCollecti
         $this->setTable("kamille.ek_user");
         $this->fields = '
 ek_user.id,
-ek_user_group.id,
+ek_user_group.label,
 ek_user.email,
 ek_user.pass,
 ek_user.base_shop_id,
 ek_user.date_creation,
 ek_user.active,
-ek_address.id,
+ek_address.type,
 ek_user.mobile,
 ek_user.phone,
 ek_user.pro
@@ -57,26 +58,7 @@ inner join kamille.ek_user_group on kamille.ek_user_group.id=ek_user.user_group_
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("user_group_id", "user_group_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("email", "email", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("pass", "pass", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("main_address_id", "main_address_id", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("mobile", "mobile", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("phone", "phone", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
@@ -84,10 +66,22 @@ inner join kamille.ek_user_group on kamille.ek_user_group.id=ek_user.user_group_
         $model
             ->addControl("user_group_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, label from kamille.ek_user_group')
                  
                 ->label("user_group_id")
                 ->name("user_group_id")
+            )
+            ->addControl("email", InputTextControl::create()
+                ->label("email")
+                ->name("email")
+            )
+            ->addControl("pass", InputPasswordControl::create()
+                ->label("pass")
+                ->name("pass")
+            )
+            ->addControl("base_shop_id", InputTextControl::create()
+                ->label("base_shop_id")
+                ->name("base_shop_id")
             )
             ->addControl("date_creation", DatetimePickerInputTextControl::create()
                 ->injectJsConfigurationKey(['timePicker' => true])
@@ -101,10 +95,18 @@ inner join kamille.ek_user_group on kamille.ek_user_group.id=ek_user.user_group_
             )
             ->addControl("main_address_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('')
+                ->query('select id, type from kamille.ek_address')
                  
                 ->label("main_address_id")
                 ->name("main_address_id")
+            )
+            ->addControl("mobile", InputTextControl::create()
+                ->label("mobile")
+                ->name("mobile")
+            )
+            ->addControl("phone", InputTextControl::create()
+                ->label("phone")
+                ->name("phone")
             )
             ->addControl("pro", InputSwitchControl::create()
                 ->label("pro")

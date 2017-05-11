@@ -2,11 +2,11 @@
 
 
 
-namespace Prc\AutoAdmin\Kamille\Auto;
+namespace Prc\Ekom\Kamille\Auto;
 
 
 
-use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use FormModel\Control\InputTextControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
@@ -45,19 +45,25 @@ FROM kamille.ek_currency
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        $validator
-			->setTests("iso_code", "iso_code", [
-                RequiredControlTest::create(),
-            ])
-			->setTests("symbol", "symbol", [
-                RequiredControlTest::create(),
-            ]);
-
+        
     }
 
     protected function decorateFormModel(FormModel $model)
     {
-        
+        $model
+            ->addControl("iso_code", InputTextControl::create()
+                ->label("iso_code")
+                ->name("iso_code")
+            )
+            ->addControl("symbol", InputTextControl::create()
+                ->label("symbol")
+                ->name("symbol")
+            )
+            ->addControl("exchange_rate", InputTextControl::create()
+                ->label("exchange_rate")
+                ->name("exchange_rate")
+            );
+
     }
 
     protected function getAutoIncrementedColumn()

@@ -14,7 +14,7 @@ $types = [
     'ek_backoffice_user' => [
         'id' => 'auto_increment',
         'email' => 'input',
-        'pass' => 'input',
+        'pass' => 'pass',
         'lang_id' => 'selectForeignKey',
     ],
     'ek_cart' => [
@@ -73,7 +73,7 @@ $types = [
     ],
     'ek_product_reference_shop' => [
         'id' => 'auto_increment',
-        'image' => 'upload',
+        'image' => 'upload+profileId=Ekom/kamille.ek_product_reference_shop.image',
         'prix_ht' => 'input',
         'shop_id' => 'selectForeignKey',
         'product_reference_id' => 'selectForeignKey',
@@ -159,7 +159,7 @@ $types = [
         'id' => 'auto_increment',
         'user_group_id' => 'selectForeignKey',
         'email' => 'input',
-        'pass' => 'input',
+        'pass' => 'pass',
         'base_shop_id' => 'input',
         'date_creation' => 'datetime',
         'active' => 'switch',

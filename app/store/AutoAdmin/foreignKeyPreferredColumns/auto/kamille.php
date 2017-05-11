@@ -1,0 +1,25 @@
+<?php 
+$preferredColumns = [
+    'ek_country' => 'iso_code',
+    'ek_state' => 'iso_code',
+    'ek_lang' => 'label',
+    'ek_user' => 'email',
+    'ek_product_reference' => 'natural_reference',
+    'ek_product' => 'product_reference_id',
+    'ek_product_attibute_value' => 'label',
+    'ek_product_attribute' => 'label',
+    'ek_video' => 'uri',
+    'ek_shop' => 'label',
+    'ek_store' => 'label',
+    'ek_role_group' => 'label',
+    'ek_role_badge' => 'label',
+    'ek_backoffice_user' => 'email',
+    'ek_role_profile' => 'label',
+    'ek_currency' => 'iso_code',
+    'ek_timezone' => 'name',
+    'ek_tax_lang' => 'label',
+    'ek_tax' => 'reduction',
+    'ek_address' => 'type',
+    'ek_user_group' => 'label',
+];
+

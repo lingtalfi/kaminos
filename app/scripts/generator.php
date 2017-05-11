@@ -12,4 +12,10 @@ A::quickPdoInit();
 //NullosSkinnyTypeGenerator::create()->setDatabases(['zilu'])->setModule("NullosAdmin")->generate();
 
 
-NullosCrudGenerator::create()->setDatabases(['zilu'])->generate();
+NullosCrudGenerator::create()
+    ->setLogFunction(function($type, $msg){
+        a($type . ": " . $msg);
+    })
+    ->setDatabases(['zilu'])
+    ->setModule("AutoAdmin")
+    ->generate();

@@ -11,7 +11,7 @@ class AutoAdminHelper
 
     public static function getGeneratedSideBarMenuPath()
     {
-        return Z::appDir() . "/store/AutoAdmin/sideBarMenu/generated.sideBarMenu.php";
+        return Z::appDir() . "/store/AutoAdmin/sideBarMenu";
     }
 
     public static function getGeneratedPrcPath($moduleName)

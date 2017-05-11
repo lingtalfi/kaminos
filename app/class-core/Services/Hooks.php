@@ -3,6 +3,7 @@
 
 namespace Core\Services;
 
+
 use Kamille\Services\AbstractHooks;
 
 
@@ -195,15 +196,29 @@ class Hooks extends AbstractHooks
         // mit-end:Ekom
 
         // mit-start:AutoAdmin
-        $items = [];
-        $f = \Module\AutoAdmin\AutoAdminHelper::getGeneratedSideBarMenuPath();
-        if (file_exists($f)) {
-            include $f;
+        $allItems = [];
+        $dir = \Module\AutoAdmin\AutoAdminHelper::getGeneratedSideBarMenuPath();
+        $autoDir = $dir . "/auto";
+        $manualDir = $dir . "/manual";
+        if (is_dir($autoDir)) {
+            $dbFiles = \DirScanner\YorgDirScannerTool::getFilesWithExtension($autoDir, 'php', false, false, true);
+            foreach ($dbFiles as $dbFile) {
+                $items = [];
+                $manualFile = $manualDir . "/$dbFile";
+                if (file_exists($manualFile)) {
+                    include $manualFile;
+                }
+                else{
+                    include $autoDir . "/$dbFile";
+                }
+                $allItems[] = $items;
+            }
+
+            $sideBarMenuModel['sections'][] = [
+                "label" => "AutoAdmin",
+                "items" => $allItems,
+            ];
         }
-        $sideBarMenuModel['sections'][] = [
-            "label" => "AutoAdmin",
-            "items" => $items,
-        ];
         // mit-end:AutoAdmin
     }
 

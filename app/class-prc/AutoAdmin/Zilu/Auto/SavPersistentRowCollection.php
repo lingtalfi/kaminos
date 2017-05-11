@@ -7,17 +7,15 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 
 
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
-use FormModel\Control\InputTextControl;
 use Module\NullosAdmin\FormModel\Control\DatetimePickerInputTextControl;
-use Module\NullosAdmin\FormModel\Control\HtmlTextAreaControl;
 use Module\NullosAdmin\FormModel\Control\DropZoneControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
-use PersistentRowCollection\QuickPdoPersistentRowCollection;
+use Module\NullosAdmin\PersistentRowCollection\NullosQuickPdoPersistentRowCollection;
 
 
-class SavPersistentRowCollection extends QuickPdoPersistentRowCollection
+class SavPersistentRowCollection extends NullosQuickPdoPersistentRowCollection
 {
     public function __construct()
     {
@@ -87,74 +85,26 @@ FROM zilu.sav
     protected function decorateFormModel(FormModel $model)
     {
         $model
-            ->addControl("fournisseur", InputTextControl::create()
-                ->label("fournisseur")
-                ->name("fournisseur")
-            )
-            ->addControl("reference_lf", InputTextControl::create()
-                ->label("reference_lf")
-                ->name("reference_lf")
-            )
-            ->addControl("produit", InputTextControl::create()
-                ->label("produit")
-                ->name("produit")
-            )
             ->addControl("livre_le", DatetimePickerInputTextControl::create()
                 ->injectJsConfigurationKey(['timePicker' => false])
                 ->label("livre_le")
                 ->name("livre_le")
-            )
-            ->addControl("quantite", InputTextControl::create()
-                ->label("quantite")
-                ->name("quantite")
-            )
-            ->addControl("prix", InputTextControl::create()
-                ->label("prix")
-                ->name("prix")
-            )
-            ->addControl("nb_produits_defec", InputTextControl::create()
-                ->label("nb_produits_defec")
-                ->name("nb_produits_defec")
             )
             ->addControl("date_notif", DatetimePickerInputTextControl::create()
                 ->injectJsConfigurationKey(['timePicker' => false])
                 ->label("date_notif")
                 ->name("date_notif")
             )
-            ->addControl("demande_remboursement", InputTextControl::create()
-                ->label("demande_remboursement")
-                ->name("demande_remboursement")
-            )
-            ->addControl("montant_rembourse", InputTextControl::create()
-                ->label("montant_rembourse")
-                ->name("montant_rembourse")
-            )
-            ->addControl("pourcentage_rembourse", InputTextControl::create()
-                ->label("pourcentage_rembourse")
-                ->name("pourcentage_rembourse")
-            )
             ->addControl("date_remboursement", DatetimePickerInputTextControl::create()
                 ->injectJsConfigurationKey(['timePicker' => false])
                 ->label("date_remboursement")
                 ->name("date_remboursement")
-            )
-            ->addControl("forme", InputTextControl::create()
-                ->label("forme")
-                ->name("forme")
-            )
-            ->addControl("statut", HtmlTextAreaControl::create()
-                ->label("statut")
-                ->name("statut")
             )
             ->addControl("photo", DropZoneControl::create()
                 ->setShowDeleteLink(true)
                 ->setProfileId("AutoAdmin/zilu.sav.photo")            
                 ->label("photo")
                 ->name("photo")
-            )
-            ->addControl("avancement", InputTextControl::create()
-                ->label("avancement")
-                ->name("avancement")
             );
 
     }

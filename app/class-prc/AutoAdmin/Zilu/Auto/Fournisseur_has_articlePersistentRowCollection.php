@@ -9,14 +9,13 @@ namespace Prc\AutoAdmin\Zilu\Auto;
 use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 use Module\NullosAdmin\FormModel\Control\AutoCompleteInputTextControl;
-use FormModel\Control\InputTextControl;
 
 use FormModel\FormModel;
 use FormModel\Validation\ControlsValidator\ControlsValidator;
-use PersistentRowCollection\QuickPdoPersistentRowCollection;
+use Module\NullosAdmin\PersistentRowCollection\NullosQuickPdoPersistentRowCollection;
 
 
-class Fournisseur_has_articlePersistentRowCollection extends QuickPdoPersistentRowCollection
+class Fournisseur_has_articlePersistentRowCollection extends NullosQuickPdoPersistentRowCollection
 {
     public function __construct()
     {
@@ -70,7 +69,7 @@ inner join zilu.fournisseur on zilu.fournisseur.id=fournisseur_has_article.fourn
         $model
             ->addControl("fournisseur_id", SqlQuerySelectControl::create()
                 //->multiple()
-                ->query('select id, nom from zilu.fournisseur')
+                ->query('')
                  
                 ->label("fournisseur_id")
                 ->name("fournisseur_id")
@@ -79,22 +78,6 @@ inner join zilu.fournisseur on zilu.fournisseur.id=fournisseur_has_article.fourn
                 ->uri('/service/json/AutoAdmin/autocomplete/auto/zilu.article')
                 ->label("article_id")
                 ->name("article_id")
-            )
-            ->addControl("reference", InputTextControl::create()
-                ->label("reference")
-                ->name("reference")
-            )
-            ->addControl("prix", InputTextControl::create()
-                ->label("prix")
-                ->name("prix")
-            )
-            ->addControl("volume", InputTextControl::create()
-                ->label("volume")
-                ->name("volume")
-            )
-            ->addControl("poids", InputTextControl::create()
-                ->label("poids")
-                ->name("poids")
             );
 
     }

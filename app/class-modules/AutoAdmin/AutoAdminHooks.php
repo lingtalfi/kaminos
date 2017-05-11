@@ -8,15 +8,29 @@ class AutoAdminHooks
 {
     protected static function NullosAdmin_layout_sideBarMenuModel(array &$sideBarMenuModel)
     {
-        $items = [];
-        $f = \Module\AutoAdmin\AutoAdminHelper::getGeneratedSideBarMenuPath();
-        if (file_exists($f)) {
-            include $f;
+        $allItems = [];
+        $dir = \Module\AutoAdmin\AutoAdminHelper::getGeneratedSideBarMenuPath();
+        $autoDir = $dir . "/auto";
+        $manualDir = $dir . "/manual";
+        if (is_dir($autoDir)) {
+            $dbFiles = \DirScanner\YorgDirScannerTool::getFilesWithExtension($autoDir, 'php', false, false, true);
+            foreach ($dbFiles as $dbFile) {
+                $items = [];
+                $manualFile = $manualDir . "/$dbFile";
+                if (file_exists($manualFile)) {
+                    include $manualFile;
+                }
+                else{
+                    include $autoDir . "/$dbFile";
+                }
+                $allItems[] = $items;
+            }
+
+            $sideBarMenuModel['sections'][] = [
+                "label" => "AutoAdmin",
+                "items" => $allItems,
+            ];
         }
-        $sideBarMenuModel['sections'][] = [
-            "label" => "AutoAdmin",
-            "items" => $items,
-        ];
     }
 
     protected static function DataTable_configureProfileFinder(\Module\DataTable\DataTableProfileFinder\DataTableProfileFinder $profileFinder)

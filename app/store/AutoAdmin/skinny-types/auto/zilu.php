@@ -18,12 +18,12 @@ $types = [
     ],
     'commande_has_article' => [
         'id' => 'auto_increment',
-        'commande_id' => 'selectForeignKey+query=select id, reference from zilu.commande',
+        'commande_id' => 'selectForeignKey',
         'article_id' => 'autocomplete+uri=/service/json/AutoAdmin/autocomplete/auto/zilu.article',
-        'container_id' => 'selectForeignKey+query=select id, nom from zilu.container+firstOptionLabel=Please choose an option+firstOptionValue=0',
-        'fournisseur_id' => 'selectForeignKey+query=select id, nom from zilu.fournisseur',
-        'sav_id' => 'selectForeignKey+query=select id, fournisseur from zilu.sav+firstOptionLabel=Please choose an option+firstOptionValue=0',
-        'commande_ligne_statut_id' => 'selectForeignKey+query=select id, nom from zilu.commande_ligne_statut',
+        'container_id' => 'selectForeignKey',
+        'fournisseur_id' => 'selectForeignKey',
+        'sav_id' => 'selectForeignKey',
+        'commande_ligne_statut_id' => 'selectForeignKey',
         'prix_override' => 'input',
         'date_estimee' => 'date',
         'quantite' => 'input',
@@ -36,7 +36,7 @@ $types = [
     'container' => [
         'id' => 'auto_increment',
         'nom' => 'input',
-        'type_container_id' => 'selectForeignKey+query=select id, label from zilu.type_container',
+        'type_container_id' => 'selectForeignKey',
     ],
     'csv_fournisseurs_comparatif' => [
         'id' => 'auto_increment',
@@ -274,11 +274,11 @@ $types = [
         'id' => 'auto_increment',
         'reference' => 'input',
         'date_reception' => 'date',
-        'fournisseur_id' => 'selectForeignKey+query=select id, nom from zilu.fournisseur',
+        'fournisseur_id' => 'selectForeignKey',
     ],
     'devis_has_commande_has_article' => [
-        'devis_id' => 'selectForeignKey+query=select id, reference from zilu.devis',
-        'commande_has_article_id' => 'selectForeignKey+query=select id, unit from zilu.commande_has_article',
+        'devis_id' => 'selectForeignKey',
+        'commande_has_article_id' => 'selectForeignKey',
     ],
     'fournisseur' => [
         'id' => 'auto_increment',
@@ -286,7 +286,7 @@ $types = [
         'email' => 'input',
     ],
     'fournisseur_has_article' => [
-        'fournisseur_id' => 'selectForeignKey+query=select id, nom from zilu.fournisseur',
+        'fournisseur_id' => 'selectForeignKey',
         'article_id' => 'autocomplete+uri=/service/json/AutoAdmin/autocomplete/auto/zilu.article',
         'reference' => 'input',
         'prix' => 'input',

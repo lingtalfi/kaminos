@@ -1,0 +1,86 @@
+<?php
+
+
+
+namespace Prc\AutoAdmin\Kamille\Auto;
+
+
+
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
+use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
+
+use FormModel\FormModel;
+use FormModel\Validation\ControlsValidator\ControlsValidator;
+use Module\NullosAdmin\PersistentRowCollection\NullosQuickPdoPersistentRowCollection;
+
+
+class Ek_shop_has_storePersistentRowCollection extends NullosQuickPdoPersistentRowCollection
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setTable("kamille.ek_shop_has_store");
+        $this->fields = '
+ek_shop_has_store.shop_id,
+ek_shop_has_store.store_id,
+ek_shop.id,
+ek_store.id
+';
+        $this->query = '
+SELECT
+%s
+FROM kamille.ek_shop_has_store
+inner join kamille.ek_shop on kamille.ek_shop.id=ek_shop_has_store.shop_id
+inner join kamille.ek_store on kamille.ek_store.id=ek_shop_has_store.store_id
+';
+    }
+
+
+    public function getRic()
+    {
+        return [
+    'shop_id',
+    'store_id',
+];
+    }
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    protected function decorateFormModelValidator(ControlsValidator $validator)
+    {
+        $validator
+			->setTests("shop_id", "shop_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("store_id", "store_id", [
+                RequiredControlTest::create(),
+            ]);
+
+    }
+
+    protected function decorateFormModel(FormModel $model)
+    {
+        $model
+            ->addControl("shop_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('')
+                 
+                ->label("shop_id")
+                ->name("shop_id")
+            )
+            ->addControl("store_id", SqlQuerySelectControl::create()
+                //->multiple()
+                ->query('')
+                 
+                ->label("store_id")
+                ->name("store_id")
+            );
+
+    }
+
+    protected function getAutoIncrementedColumn()
+    {
+        return null;
+    }
+}

@@ -39833,3 +39833,290 @@ FROM zilu.article
 2017-05-10 16:17:53 - [error]: ProfileFinder: profile file not found: /Volumes/Macintosh HD 2/web/php/projects/kaminos/app/config/upload-profilesAutoAdmin/auto/zilu.article.photo.php
 2017-05-10 16:18:32 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /upload-handler?file=AutoAdmin/zilu.article.photo
 2017-05-10 16:18:32 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\UploadProfile\UploadController
+2017-05-10 21:09:09 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 21:09:10 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-10 21:09:10 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-10 21:09:10 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-10 21:09:10 - [debug]: Rendering layout splash/default
+2017-05-10 21:09:12 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 21:09:12 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-10 21:09:12 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 21:09:12 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 21:09:12 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 21:09:12 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 21:09:12 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 21:09:12 - [debug]: Rendering layout admin/default
+2017-05-10 21:11:27 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 21:11:27 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 21:11:27 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 21:11:27 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 21:11:27 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 21:11:27 - [debug]: Rendering layout admin/default
+2017-05-10 21:11:36 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 21:11:36 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 21:11:36 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 21:11:36 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 21:11:36 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 21:11:36 - [debug]: Rendering layout admin/default
+2017-05-10 22:17:56 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:17:56 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:17:56 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:17:56 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 22:17:56 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 22:17:57 - [debug]: Rendering layout admin/default
+2017-05-10 22:21:48 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:21:48 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:21:48 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:26:47 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:26:47 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:26:47 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:26:47 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 22:26:47 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 22:26:47 - [debug]: Rendering layout admin/default
+2017-05-10 22:27:18 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:27:18 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:27:18 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:27:18 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 22:27:19 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 22:27:19 - [debug]: Rendering layout admin/default
+2017-05-10 22:28:13 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:28:13 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:28:13 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:28:13 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 22:28:13 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 22:28:13 - [debug]: Rendering layout admin/default
+2017-05-10 22:55:05 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:55:05 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:55:05 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:55:05 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 22:55:06 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 22:55:06 - [debug]: Rendering layout admin/default
+2017-05-10 22:55:16 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:55:16 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:55:16 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:55:16 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 22:55:16 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 22:55:16 - [debug]: Rendering layout admin/default
+2017-05-10 22:56:20 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:56:20 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:56:20 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:56:20 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 22:56:20 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 22:56:20 - [debug]: Rendering layout admin/default
+2017-05-10 22:56:22 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:56:22 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:56:22 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:56:22 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 22:56:22 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 22:56:22 - [debug]: Rendering layout admin/default
+2017-05-10 22:57:59 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-10 22:57:59 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-10 22:57:59 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-10 22:57:59 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-10 22:57:59 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 22:57:59 - [debug]: Rendering layout admin/default
+2017-05-10 23:02:54 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crudp
+2017-05-10 23:02:54 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'The controller parameter was not found in the request /crudp'. uri was /crudp, redispatching to the fallback loop
+2017-05-10 23:02:54 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-05-10 23:02:54 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId Core/exception
+2017-05-10 23:02:54 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Core/exception (/config/laws/Core/exception.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.exception; tplName: Exception/default
+2017-05-10 23:02:55 - [debug]: Rendering layout splash/default
+2017-05-10 23:02:58 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=AutoAdmin.zilu.article
+2017-05-10 23:02:58 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-10 23:02:58 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-10 23:02:58 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-10 23:02:58 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 23:02:58 - [debug]: Rendering layout admin/default
+2017-05-10 23:02:59 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-10 23:02:59 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-10 23:02:59 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-10 23:02:59 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/AutoAdmin/manual/zilu/article.php
+2017-05-10 23:03:04 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=AutoAdmin.zilu.commande
+2017-05-10 23:03:04 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-10 23:03:04 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-10 23:03:04 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-10 23:03:04 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 23:03:04 - [debug]: Rendering layout admin/default
+2017-05-10 23:03:04 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-10 23:03:04 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-10 23:03:04 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-10 23:03:04 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/AutoAdmin/manual/zilu/commande.php
+2017-05-10 23:03:06 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=AutoAdmin.zilu.commande_has_article
+2017-05-10 23:03:06 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-10 23:03:06 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-10 23:03:06 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-10 23:03:06 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-10 23:03:06 - [debug]: Rendering layout admin/default
+2017-05-10 23:03:06 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-10 23:03:07 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-10 23:03:07 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-10 23:03:07 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/AutoAdmin/manual/zilu/commande_has_article.php

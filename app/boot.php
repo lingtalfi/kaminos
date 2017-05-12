@@ -11,7 +11,7 @@
 
 use BumbleBee\Autoload\ButineurAutoloader;
 use Kamille\Architecture\ApplicationParameters\Web\WebApplicationParameters;
-use Kamille\Services\AbstractHooks;
+
 
 
 //------------------------------------------------------------------------------/
@@ -30,6 +30,7 @@ ButineurAutoloader::getInst()
     ->addLocation(__DIR__ . "/class-controllers", "Controller")
     ->addLocation(__DIR__ . "/class-modules", "Module")
     ->addLocation(__DIR__ . "/class-prc", "Prc")
+    ->addLocation(__DIR__ . "/class-themes", "Theme")
     ->addLocation(__DIR__ . "/class-widgets", "Widget")
     ->addLocation(__DIR__ . "/planets");
 ButineurAutoloader::getInst()->start();

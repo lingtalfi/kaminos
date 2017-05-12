@@ -10,6 +10,7 @@ use Core\Services\Hooks;
 use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Services\XConfig;
 use Kamille\Services\XLog;
+use Kamille\Utils\Laws\Config\LawsConfig;
 
 
 class NullosAdminController extends ApplicationController
@@ -35,7 +36,7 @@ class NullosAdminController extends ApplicationController
     }
 
 
-    protected function renderByViewId($viewId, $config = null, array $options = [])
+    protected function renderByViewId($viewId, LawsConfig $config = null, array $options = [])
     {
 
 
@@ -44,9 +45,8 @@ class NullosAdminController extends ApplicationController
 
 
         if (null === $config) {
-            $config = [];
+            $config = LawsConfig::create();
         }
-
 
 
         $sideBarMenuModel = [
@@ -178,12 +178,14 @@ class NullosAdminController extends ApplicationController
         ];
         Hooks::call("NullosAdmin_layout_addTopBarRightWidgets", $topbarRightWidgets);
         $widgets = array_merge($widgets, $topbarRightWidgets);
-        $config = array_replace_recursive([
+
+
+        $config->replace([
             "layout" => [
                 "tpl" => "admin/default",
             ],
             "widgets" => $widgets
-        ], $config);
+        ]);
 
         return parent::renderByViewId($viewId, $config, $options);
     }

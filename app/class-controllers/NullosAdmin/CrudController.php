@@ -10,6 +10,7 @@ use Kamille\Architecture\ApplicationParameters\ApplicationParameters;
 use Kamille\Architecture\Response\Web\GscpResponse;
 use Kamille\Services\XConfig;
 use Kamille\Services\XLog;
+use Kamille\Utils\Laws\Config\LawsConfig;
 use Models\Notification\NotificationsModel;
 use PersistentRowCollection\Util\PersistentRowCollectionHelper;
 
@@ -180,7 +181,7 @@ class CrudController extends NullosAdminController
                         return ModalGscpResponse::make($content, $responseType, $title);
 //                            ->setJsInitScript("/path");
                     }
-                    return $this->renderByViewId("NullosAdmin/crudForm", $config);
+                    return $this->renderByViewId("NullosAdmin/crudForm", LawsConfig::create()->replace($config));
 
                     break;
                 case "delete":
@@ -202,7 +203,7 @@ class CrudController extends NullosAdminController
                     $dataTableProfileId = str_replace('.', '/', $prcId);
                     $p = explode('.', $prcId);
                     $title = array_pop($p);
-                    return $this->renderByViewId("NullosAdmin/dataTable", [
+                    return $this->renderByViewId("NullosAdmin/dataTable", LawsConfig::create()->replace([
                         'widgets' => [
                             'maincontent.dataTable' => [
                                 'conf' => [
@@ -212,7 +213,7 @@ class CrudController extends NullosAdminController
                                 ],
                             ],
                         ],
-                    ]);
+                    ]));
                     break;
             }
         } else {

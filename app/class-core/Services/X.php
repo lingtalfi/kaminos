@@ -117,6 +117,12 @@ class X extends AbstractX
         return $initializer;
     }
 
+    public static function Core_LawsViewRenderer()
+    {
+        $r = new \Module\Core\Utils\Laws\LawsViewRenderer();
+        return $r;
+    }
+
     public static function NullosAdmin_themeHelper()
     {
         return \Module\NullosAdmin\ThemeHelper\ThemeHelper::inst();

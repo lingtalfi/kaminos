@@ -5,6 +5,7 @@ namespace Core\Services;
 
 
 use Kamille\Services\AbstractHooks;
+use Kamille\Utils\Laws\Config\LawsConfig;
 
 
 /**
@@ -63,22 +64,27 @@ class Hooks extends AbstractHooks
 
     protected static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
     {
-		
 
-		// mit-start:Authenticate
-		$router->addRouter(\Module\Authenticate\Architecture\Router\AuthenticateRouter::create());
-		// mit-end:Authenticate
+
+        // mit-start:Authenticate
+        $router->addRouter(\Module\Authenticate\Architecture\Router\AuthenticateRouter::create());
+        // mit-end:Authenticate
     }
 
     protected static function Core_autoLawsConfig(&$data)
     {
 
-
         // mit-start:NullosAdmin
         $autoJsScript = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme") . "/controllers/" . \Bat\ClassTool::getShortName($data[0]) . ".js";
         $file = \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("app_dir") . "/www" . $autoJsScript;
         if (file_exists($file)) {
-            $data[1]['layout']['conf']["jsScripts"][] = $autoJsScript;
+            /**
+             * @var $conf \Kamille\Utils\Laws\Config\LawsConfig
+             */
+            $conf = $data[1];
+            $conf->replace(function (array &$c) use ($autoJsScript) {
+                $c['layout']['conf']["jsScripts"][] = $autoJsScript;
+            });
         }
         // mit-end:NullosAdmin
     }
@@ -136,10 +142,10 @@ class Hooks extends AbstractHooks
 
     protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets)
     {
-		
 
-		// mit-start:Ekom
-		$prefixUri = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme");
+
+        // mit-start:Ekom
+        $prefixUri = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme");
         $imgPrefix = $prefixUri . "/production";
 
         unset($topbarRightWidgets['topbar_right.userMessages']);
@@ -170,12 +176,12 @@ class Hooks extends AbstractHooks
                 ],
             ],
         ];
-		// mit-end:Ekom
+        // mit-end:Ekom
     }
 
     protected static function NullosAdmin_layout_sideBarMenuModel(array &$sideBarMenuModel)
     {
-		// mit-start:AutoAdmin
+        // mit-start:AutoAdmin
         $allItems = [];
         $dir = \Module\AutoAdmin\AutoAdminHelper::getGeneratedSideBarMenuPath();
         $autoDir = $dir . "/auto";
@@ -200,8 +206,8 @@ class Hooks extends AbstractHooks
         }
         // mit-end:AutoAdmin
 
-		// mit-start:Ekom
-		$sideBarMenuModel['sections'][] = [
+        // mit-start:Ekom
+        $sideBarMenuModel['sections'][] = [
             "label" => "Ekom",
             "items" => [
                 [
@@ -222,7 +228,7 @@ class Hooks extends AbstractHooks
                 ],
             ],
         ];
-		// mit-end:Ekom
+        // mit-end:Ekom
     }
 
     protected static function DataTable_getRendererClassName(&$renderer)

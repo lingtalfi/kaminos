@@ -6,6 +6,7 @@ namespace Prc\Ekom\Kamille\Auto;
 
 
 
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 use FormModel\Control\InputTextControl;
 
@@ -51,7 +52,17 @@ inner join kamille.ek_lang on kamille.ek_lang.id=ek_country_lang.lang_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("country_id", "country_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("lang_id", "lang_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("label", "label", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)

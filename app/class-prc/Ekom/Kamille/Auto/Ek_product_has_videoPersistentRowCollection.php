@@ -6,6 +6,7 @@ namespace Prc\Ekom\Kamille\Auto;
 
 
 
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
 use FormModel\FormModel;
@@ -48,7 +49,14 @@ inner join kamille.ek_video on kamille.ek_video.id=ek_product_has_video.video_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("product_id", "product_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("video_id", "video_id", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)

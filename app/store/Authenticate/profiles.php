@@ -4,7 +4,6 @@ $store = [
     'profiles' => [
         'admin' => [
             'groups' => [
-                'AutoAdmin-admin',
                 'group3',
             ],
             'abadge1',
@@ -19,13 +18,6 @@ $store = [
         ],
     ],
     'groups' => [
-        'AutoAdmin' => [
-        ],
-        'AutoAdmin-admin' => [
-            'groups' => [
-            ],
-            'useGenerator',
-        ],
         'group1' => [
             'groups' => [
             ],

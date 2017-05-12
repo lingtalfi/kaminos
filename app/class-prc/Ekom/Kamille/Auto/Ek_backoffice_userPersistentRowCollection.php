@@ -6,6 +6,7 @@ namespace Prc\Ekom\Kamille\Auto;
 
 
 
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
 use FormModel\Control\InputPasswordControl;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
@@ -48,7 +49,17 @@ inner join kamille.ek_lang on kamille.ek_lang.id=ek_backoffice_user.lang_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("email", "email", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("pass", "pass", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("lang_id", "lang_id", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)

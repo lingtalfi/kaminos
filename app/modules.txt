@@ -4,10 +4,10 @@ Connexion
 Application
 Kaminos
 Test
-Authenticate
 UploadProfile
-Ekom
 Core
 NullosAdmin
 AutoAdmin
 DataTable
+Authenticate
+Ekom

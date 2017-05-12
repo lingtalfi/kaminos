@@ -6,6 +6,7 @@ namespace Prc\Ekom\Kamille\Auto;
 
 
 
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\DropZoneControl;
 use FormModel\Control\InputTextControl;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
@@ -50,7 +51,17 @@ inner join kamille.ek_shop on kamille.ek_shop.id=ek_product_reference_shop.shop_
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("image", "image", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("shop_id", "shop_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("product_reference_id", "product_reference_id", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)

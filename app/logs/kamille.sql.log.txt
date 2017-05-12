@@ -41426,3 +41426,477 @@ FROM kamille.ek_address
 inner join kamille.ek_country on kamille.ek_country.id=ek_address.country_id
 left join kamille.ek_state on kamille.ek_state.id=ek_address.state_id
 
+2017-05-11 19:19:30 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-11 19:19:30 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-11 19:19:30 - [debug]: [Controller Controller\Authenticate\AuthenticateController] - renderByViewId with viewId Authenticate/loginForm
+2017-05-11 19:19:30 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Authenticate/loginForm (/config/laws/Authenticate/loginForm.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.notification; tplName: Notification/default
+----- id: main.loginForm; tplName: LoginForm/default
+2017-05-11 19:19:31 - [debug]: Rendering layout splash/default
+2017-05-11 19:19:34 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-11 19:19:34 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Authenticate\AuthenticateController
+2017-05-11 19:19:34 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-11 19:19:34 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-11 19:19:34 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-11 19:19:34 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-11 19:19:34 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 19:19:34 - [debug]: Rendering layout admin/default
+2017-05-11 19:19:47 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-11 19:19:47 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-11 19:19:47 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-11 19:19:47 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-11 19:19:47 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 19:19:47 - [debug]: Rendering layout admin/default
+2017-05-11 19:41:03 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /docs-assets/ico/favicon.png
+2017-05-11 19:41:03 - [error]: [Core module] - WebApplicationHandler: exception caught with message: 'The controller parameter was not found in the request /docs-assets/ico/favicon.png'. uri was /docs-assets/ico/favicon.png, redispatching to the fallback loop
+2017-05-11 19:41:04 - [debug]: RouterRequestListener: Router matched: Module\Core\Architecture\Router\EarlyRouter, controller: Controller\Core\ExceptionController
+2017-05-11 19:41:04 - [debug]: [Controller Controller\Core\ExceptionController] - renderByViewId with viewId Core/exception
+2017-05-11 19:41:04 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: Core/exception (/config/laws/Core/exception.conf.php):
+- layout: splash/default
+- widgets: 
+----- id: main.exception; tplName: Exception/default
+2017-05-11 19:41:04 - [debug]: Rendering layout splash/default
+2017-05-11 20:14:17 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /
+2017-05-11 20:14:17 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_home matched and controller is Controller\NullosAdmin\HomePageController:render
+2017-05-11 20:14:17 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\HomePageController
+2017-05-11 20:14:17 - [debug]: [Controller Controller\NullosAdmin\HomePageController] - renderByViewId with viewId NullosAdmin/homePage
+2017-05-11 20:14:17 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/homePage (/config/laws/NullosAdmin/homePage.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.topTiles; tplName: NullosAdmin/Main/TopTiles/default
+----- id: maincontent.chartPlot; tplName: NullosAdmin/Main/Stat/Chart/Plot/prototype
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:14:17 - [debug]: Rendering layout admin/default
+2017-05-11 20:14:20 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=Ekom.kamille.ek_address
+2017-05-11 20:14:20 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:14:20 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:14:20 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-11 20:14:20 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:14:20 - [debug]: Rendering layout admin/default
+2017-05-11 20:14:20 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-11 20:14:20 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-11 20:14:20 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-11 20:14:20 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/Ekom/auto/kamille/ek_address.php
+2017-05-11 20:14:20 - [sql.log]: 
+SELECT
+count(*) as count
+FROM kamille.ek_address
+inner join kamille.ek_country on kamille.ek_country.id=ek_address.country_id
+left join kamille.ek_state on kamille.ek_state.id=ek_address.state_id
+
+2017-05-11 20:14:20 - [error]: DataTableController: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kamille.ek_address' doesn't exist in /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDOStatement->execute(Array)
+#1 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/RowsGenerator/QuickPdoRowsGenerator.php(262): QuickPdo\QuickPdo::fetch('\nSELECT\ncount(*...', Array)
+#2 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/PersistentRowCollection/QuickPdoPersistentRowCollection.php(70): RowsGenerator\QuickPdoRowsGenerator->getRows()
+#3 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/class-controllers/DataTable/DataTableController.php(139): PersistentRowCollection\QuickPdoPersistentRowCollection->read(1, 20, Array, Array, 0)
+#4 [internal function]: Controller\DataTable\DataTableController->handleAjax()
+#5 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#6 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#7 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(132): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#8 /Users/pierrelafitte/Documents/it/php/projects/kamille-modules/Core/ApplicationHandler/WebApplicationHandler.php(93): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#9 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/www/index.php(17): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#10 {main}
+2017-05-11 20:14:20 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: :
+- layout: ajax/default
+- widgets: 
+----- id: main.modal; tplName: ModalContent/default
+2017-05-11 20:14:20 - [debug]: Rendering layout ajax/default
+2017-05-11 20:14:24 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=AutoAdmin.zilu.article
+2017-05-11 20:14:24 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:14:24 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:14:24 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-11 20:14:24 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:14:24 - [debug]: Rendering layout admin/default
+2017-05-11 20:14:24 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-11 20:14:24 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-11 20:14:24 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-11 20:14:24 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/AutoAdmin/manual/zilu/article.php
+2017-05-11 20:14:24 - [sql.log]: 
+SELECT
+count(*) as count
+FROM zilu.article
+
+2017-05-11 20:14:24 - [error]: DataTableController: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zilu.article' doesn't exist in /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDOStatement->execute(Array)
+#1 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/RowsGenerator/QuickPdoRowsGenerator.php(262): QuickPdo\QuickPdo::fetch('\nSELECT\ncount(*...', Array)
+#2 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/PersistentRowCollection/QuickPdoPersistentRowCollection.php(70): RowsGenerator\QuickPdoRowsGenerator->getRows()
+#3 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/class-controllers/DataTable/DataTableController.php(139): PersistentRowCollection\QuickPdoPersistentRowCollection->read(1, 20, Array, Array, 0)
+#4 [internal function]: Controller\DataTable\DataTableController->handleAjax()
+#5 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#6 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#7 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(132): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#8 /Users/pierrelafitte/Documents/it/php/projects/kamille-modules/Core/ApplicationHandler/WebApplicationHandler.php(93): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#9 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/www/index.php(17): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#10 {main}
+2017-05-11 20:14:24 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: :
+- layout: ajax/default
+- widgets: 
+----- id: main.modal; tplName: ModalContent/default
+2017-05-11 20:14:24 - [debug]: Rendering layout ajax/default
+2017-05-11 20:22:41 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=AutoAdmin.zilu.article
+2017-05-11 20:22:41 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:22:41 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:22:41 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-11 20:22:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:22:41 - [debug]: Rendering layout admin/default
+2017-05-11 20:22:41 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-11 20:22:41 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-11 20:22:41 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-11 20:22:41 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/AutoAdmin/manual/zilu/article.php
+2017-05-11 20:22:41 - [sql.log]: 
+SELECT
+count(*) as count
+FROM zilu.article
+
+2017-05-11 20:22:41 - [error]: DataTableController: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zilu.article' doesn't exist in /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:305
+Stack trace:
+#0 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(305): PDOStatement->execute(Array)
+#1 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/RowsGenerator/QuickPdoRowsGenerator.php(262): QuickPdo\QuickPdo::fetch('\nSELECT\ncount(*...', Array)
+#2 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/PersistentRowCollection/QuickPdoPersistentRowCollection.php(70): RowsGenerator\QuickPdoRowsGenerator->getRows()
+#3 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/class-controllers/DataTable/DataTableController.php(139): PersistentRowCollection\QuickPdoPersistentRowCollection->read(1, 20, Array, Array, 0)
+#4 [internal function]: Controller\DataTable\DataTableController->handleAjax()
+#5 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#6 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#7 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(132): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#8 /Users/pierrelafitte/Documents/it/php/projects/kamille-modules/Core/ApplicationHandler/WebApplicationHandler.php(93): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#9 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/www/index.php(17): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#10 {main}
+2017-05-11 20:22:41 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: :
+- layout: ajax/default
+- widgets: 
+----- id: main.modal; tplName: ModalContent/default
+2017-05-11 20:22:42 - [debug]: Rendering layout ajax/default
+2017-05-11 20:22:46 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=Ekom.kamille.ek_address
+2017-05-11 20:22:46 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:22:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:22:46 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-11 20:22:46 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:22:46 - [debug]: Rendering layout admin/default
+2017-05-11 20:22:46 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-11 20:22:46 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-11 20:22:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-11 20:22:46 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/Ekom/auto/kamille/ek_address.php
+2017-05-11 20:22:46 - [sql.log]: 
+SELECT
+count(*) as count
+FROM kamille.ek_address
+inner join kamille.ek_country on kamille.ek_country.id=ek_address.country_id
+left join kamille.ek_state on kamille.ek_state.id=ek_address.state_id
+
+2017-05-11 20:22:48 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=form&prc=Ekom.kamille.ek_address
+2017-05-11 20:22:48 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:22:48 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:22:48 - [sql.log]: select id, iso_code from kamille.ek_state
+2017-05-11 20:22:48 - [sql.log]: select id, iso_code from kamille.ek_country
+2017-05-11 20:22:48 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/crudForm
+2017-05-11 20:22:48 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/crudForm (/config/laws/NullosAdmin/crudForm.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.notifications; tplName: Notification/default
+----- id: maincontent.crudForm; tplName: NullosAdmin/Main/Form/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:22:48 - [debug]: Rendering layout admin/default
+2017-05-11 20:24:37 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=formPost&prc=Ekom.kamille.ek_address
+2017-05-11 20:24:37 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:24:37 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:24:37 - [sql.log]: insert  into kamille.ek_address set `type`=:type, `city`=:city, `postcode`=:postcode, `address`=:address, `active`=:active, `state_id`=:state_id
+2017-05-11 20:24:37 - [error]: CrudController: couldn't create the row in the persistent collection. PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`kamille`.`ek_address`, CONSTRAINT `fk_address_state1` FOREIGN KEY (`state_id`) REFERENCES `ek_state` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:127
+Stack trace:
+#0 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(127): PDOStatement->execute(Array)
+#1 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/PersistentRowCollection/QuickPdoPersistentRowCollection.php(40): QuickPdo\QuickPdo::insert('kamille.ek_addr...', Array)
+#2 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/class-controllers/NullosAdmin/CrudController.php(72): PersistentRowCollection\QuickPdoPersistentRowCollection->create(Array)
+#3 [internal function]: Controller\NullosAdmin\CrudController->render()
+#4 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#5 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#6 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(132): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#7 /Users/pierrelafitte/Documents/it/php/projects/kamille-modules/Core/ApplicationHandler/WebApplicationHandler.php(93): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#8 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/www/index.php(17): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#9 {main}
+2017-05-11 20:24:37 - [sql.log]: select id, iso_code from kamille.ek_state
+2017-05-11 20:24:37 - [sql.log]: select id, iso_code from kamille.ek_country
+2017-05-11 20:24:37 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/crudForm
+2017-05-11 20:24:37 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/crudForm (/config/laws/NullosAdmin/crudForm.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.notifications; tplName: Notification/default
+----- id: maincontent.crudForm; tplName: NullosAdmin/Main/Form/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:24:37 - [debug]: Rendering layout admin/default
+2017-05-11 20:24:46 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=Ekom.kamille.ek_backoffice_user
+2017-05-11 20:24:46 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:24:46 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:24:46 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-11 20:24:46 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:24:46 - [debug]: Rendering layout admin/default
+2017-05-11 20:24:47 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-11 20:24:47 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-11 20:24:47 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-11 20:24:47 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/Ekom/auto/kamille/ek_backoffice_user.php
+2017-05-11 20:24:47 - [sql.log]: 
+SELECT
+count(*) as count
+FROM kamille.ek_backoffice_user
+inner join kamille.ek_lang on kamille.ek_lang.id=ek_backoffice_user.lang_id
+
+2017-05-11 20:24:48 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=form&prc=Ekom.kamille.ek_backoffice_user
+2017-05-11 20:24:48 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:24:48 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:24:48 - [sql.log]: select id, label from kamille.ek_lang
+2017-05-11 20:24:48 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/crudForm
+2017-05-11 20:24:48 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/crudForm (/config/laws/NullosAdmin/crudForm.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.notifications; tplName: Notification/default
+----- id: maincontent.crudForm; tplName: NullosAdmin/Main/Form/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:24:48 - [debug]: Rendering layout admin/default
+2017-05-11 20:24:49 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=formPost&prc=Ekom.kamille.ek_backoffice_user
+2017-05-11 20:24:49 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:24:49 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:24:49 - [sql.log]: insert  into kamille.ek_backoffice_user set `email`=:email, `pass`=:pass
+2017-05-11 20:24:49 - [error]: CrudController: couldn't create the row in the persistent collection. PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`kamille`.`ek_backoffice_user`, CONSTRAINT `fk_backoffice_user_lang` FOREIGN KEY (`lang_id`) REFERENCES `ek_lang` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php:127
+Stack trace:
+#0 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/QuickPdo/QuickPdo.php(127): PDOStatement->execute(Array)
+#1 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/PersistentRowCollection/QuickPdoPersistentRowCollection.php(40): QuickPdo\QuickPdo::insert('kamille.ek_back...', Array)
+#2 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/class-controllers/NullosAdmin/CrudController.php(72): PersistentRowCollection\QuickPdoPersistentRowCollection->create(Array)
+#3 [internal function]: Controller\NullosAdmin\CrudController->render()
+#4 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(86): call_user_func(Array)
+#5 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/RequestListener/Web/ControllerExecuterRequestListener.php(60): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->executeController(Array)
+#6 /Users/pierrelafitte/Documents/it/php/projects/universe/planets/Kamille/Architecture/Application/Web/WebApplication.php(132): Kamille\Architecture\RequestListener\Web\ControllerExecuterRequestListener->listen(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#7 /Users/pierrelafitte/Documents/it/php/projects/kamille-modules/Core/ApplicationHandler/WebApplicationHandler.php(93): Kamille\Architecture\Application\Web\WebApplication->handleRequest(Object(Kamille\Architecture\Request\Web\HttpRequest))
+#8 /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/www/index.php(17): Module\Core\ApplicationHandler\WebApplicationHandler->handle(Object(Kamille\Architecture\Application\Web\WebApplication))
+#9 {main}
+2017-05-11 20:24:49 - [sql.log]: select id, label from kamille.ek_lang
+2017-05-11 20:24:49 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/crudForm
+2017-05-11 20:24:49 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/crudForm (/config/laws/NullosAdmin/crudForm.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.notifications; tplName: Notification/default
+----- id: maincontent.crudForm; tplName: NullosAdmin/Main/Form/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:24:49 - [debug]: Rendering layout admin/default
+2017-05-11 20:25:24 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=Ekom.kamille.ek_lang
+2017-05-11 20:25:24 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:25:24 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:25:24 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-11 20:25:24 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:25:24 - [debug]: Rendering layout admin/default
+2017-05-11 20:25:25 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-11 20:25:25 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-11 20:25:25 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-11 20:25:25 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/Ekom/auto/kamille/ek_lang.php
+2017-05-11 20:25:25 - [sql.log]: 
+SELECT
+count(*) as count
+FROM kamille.ek_lang
+
+2017-05-11 20:25:26 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=form&prc=Ekom.kamille.ek_lang
+2017-05-11 20:25:26 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:25:26 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:25:26 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/crudForm
+2017-05-11 20:25:26 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/crudForm (/config/laws/NullosAdmin/crudForm.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.notifications; tplName: Notification/default
+----- id: maincontent.crudForm; tplName: NullosAdmin/Main/Form/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:25:26 - [debug]: Rendering layout admin/default
+2017-05-11 20:25:27 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=formPost&prc=Ekom.kamille.ek_lang
+2017-05-11 20:25:27 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:25:27 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:25:27 - [sql.log]: insert  into kamille.ek_lang set `label`=:label, `iso_code`=:iso_code
+2017-05-11 20:25:27 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/crudForm
+2017-05-11 20:25:27 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/crudForm (/config/laws/NullosAdmin/crudForm.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.notifications; tplName: Notification/default
+----- id: maincontent.crudForm; tplName: NullosAdmin/Main/Form/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:25:27 - [debug]: Rendering layout admin/default
+2017-05-11 20:28:09 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=list&prc=Ekom.kamille.ek_lang
+2017-05-11 20:28:09 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:28:10 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:28:10 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/dataTable
+2017-05-11 20:28:10 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/dataTable (/config/laws/NullosAdmin/dataTable.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.dataTable; tplName: NullosAdmin/Main/DataTable/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:28:10 - [debug]: Rendering layout admin/default
+2017-05-11 20:28:10 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /datatable-handler
+2017-05-11 20:28:10 - [debug]: ApplicationRoutsyRouter: routeId DataTable_ajaxHandler matched and controller is Controller\DataTable\DataTableController:handleAjax
+2017-05-11 20:28:10 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\DataTable\DataTableController
+2017-05-11 20:28:10 - [debug]: DataTableProfileFinder: fallback profile file found: /Users/pierrelafitte/Documents/it/php/projects/kaminos/app/config/datatable-profiles/Ekom/auto/kamille/ek_lang.php
+2017-05-11 20:28:10 - [sql.log]: 
+SELECT
+count(*) as count
+FROM kamille.ek_lang
+
+2017-05-11 20:28:11 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=form&prc=Ekom.kamille.ek_lang
+2017-05-11 20:28:11 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:28:11 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:28:11 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/crudForm
+2017-05-11 20:28:11 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/crudForm (/config/laws/NullosAdmin/crudForm.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.notifications; tplName: Notification/default
+----- id: maincontent.crudForm; tplName: NullosAdmin/Main/Form/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:28:11 - [debug]: Rendering layout admin/default
+2017-05-11 20:28:13 - [debug]: [Core module] - WebApplicationHandler.handle with uri: /crud?type=formPost&prc=Ekom.kamille.ek_lang
+2017-05-11 20:28:13 - [debug]: ApplicationRoutsyRouter: routeId NullosAdmin_crud matched and controller is Controller\NullosAdmin\CrudController:render
+2017-05-11 20:28:13 - [debug]: RouterRequestListener: Router matched: Kamille\Architecture\Router\Web\ApplicationRoutsyRouter, controller: Controller\NullosAdmin\CrudController
+2017-05-11 20:28:13 - [debug]: [Controller Controller\NullosAdmin\CrudController] - renderByViewId with viewId NullosAdmin/crudForm
+2017-05-11 20:28:13 - [trace]: LawsUtil trace with theme: nullosAdmin, viewId: NullosAdmin/crudForm (/config/laws/NullosAdmin/crudForm.conf.php):
+- layout: admin/default
+- widgets: 
+----- id: maincontent.notifications; tplName: Notification/default
+----- id: maincontent.crudForm; tplName: NullosAdmin/Main/Form/default
+----- id: sidebar.navTitle; tplName: NullosAdmin/NavTitle/default
+----- id: sidebar.menuProfileQuickInfo; tplName: NullosAdmin/MenuProfileQuickInfo/default
+----- id: sidebar.sidebarMenu; tplName: NullosAdmin/SidebarMenu/default
+----- id: sidebar.menuFooterButtons; tplName: NullosAdmin/MenuFooterButtons/default
+----- id: topbar_left.menuToggle; tplName: NullosAdmin/MenuToggle/default
+----- id: topbar_right.userMenuDropdown; tplName: NullosAdmin/UserMenuDropdown/default
+----- id: topbar_right.shopListDropDown; tplName: Ekom/ShopListDropDown/prototype
+2017-05-11 20:28:13 - [debug]: Rendering layout admin/default

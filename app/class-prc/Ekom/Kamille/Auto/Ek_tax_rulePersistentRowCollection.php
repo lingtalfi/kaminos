@@ -6,6 +6,7 @@ namespace Prc\Ekom\Kamille\Auto;
 
 
 
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 use FormModel\Control\InputTextControl;
 
@@ -46,7 +47,14 @@ inner join kamille.ek_tax on kamille.ek_tax.id=ek_tax_rule.tax_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("tax_id", "tax_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("condition", "condition", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)

@@ -6,6 +6,7 @@ namespace Prc\Ekom\Kamille\Auto;
 
 
 
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
 use Module\NullosAdmin\FormModel\Control\InputSwitchControl;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
@@ -53,7 +54,23 @@ left join kamille.ek_state on kamille.ek_state.id=ek_address.state_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("type", "type", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("city", "city", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("postcode", "postcode", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("address", "address", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("country_id", "country_id", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)

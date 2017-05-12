@@ -6,6 +6,7 @@ namespace Prc\Ekom\Kamille\Auto;
 
 
 
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use FormModel\Control\InputTextControl;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 
@@ -46,7 +47,14 @@ inner join kamille.ek_backoffice_user on kamille.ek_backoffice_user.id=ek_role_p
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("label", "label", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("backoffice_user_id", "backoffice_user_id", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)

@@ -63,9 +63,11 @@ class Hooks extends AbstractHooks
 
     protected static function Core_feedEarlyRouter(\Module\Core\Architecture\Router\EarlyRouter $router)
     {
-        // mit-start:Authenticate
-        $router->addRouter(\Module\Authenticate\Architecture\Router\AuthenticateRouter::create());
-        // mit-end:Authenticate
+		
+
+		// mit-start:Authenticate
+		$router->addRouter(\Module\Authenticate\Architecture\Router\AuthenticateRouter::create());
+		// mit-end:Authenticate
     }
 
     protected static function Core_autoLawsConfig(&$data)
@@ -134,8 +136,10 @@ class Hooks extends AbstractHooks
 
     protected static function NullosAdmin_layout_addTopBarRightWidgets(array &$topbarRightWidgets)
     {
-        // mit-start:Ekom
-        $prefixUri = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme");
+		
+
+		// mit-start:Ekom
+		$prefixUri = "/theme/" . \Kamille\Architecture\ApplicationParameters\ApplicationParameters::get("theme");
         $imgPrefix = $prefixUri . "/production";
 
         unset($topbarRightWidgets['topbar_right.userMessages']);
@@ -166,36 +170,12 @@ class Hooks extends AbstractHooks
                 ],
             ],
         ];
-        // mit-end:Ekom
+		// mit-end:Ekom
     }
 
     protected static function NullosAdmin_layout_sideBarMenuModel(array &$sideBarMenuModel)
     {
-        // mit-start:Ekom
-        $sideBarMenuModel['sections'][] = [
-            "label" => "Ekom",
-            "items" => [
-                [
-                    "icon" => "fa fa-home",
-                    "label" => "test",
-                    'badge' => [
-                        'type' => "success",
-                        'text' => "success",
-                    ],
-                    "items" => [
-                        [
-                            "icon" => "fa fa-but",
-                            "label" => "bug",
-                            "link" => "/pou",
-                            "items" => null,
-                        ],
-                    ],
-                ],
-            ],
-        ];
-        // mit-end:Ekom
-
-        // mit-start:AutoAdmin
+		// mit-start:AutoAdmin
         $allItems = [];
         $dir = \Module\AutoAdmin\AutoAdminHelper::getGeneratedSideBarMenuPath();
         $autoDir = $dir . "/auto";
@@ -219,6 +199,30 @@ class Hooks extends AbstractHooks
             ];
         }
         // mit-end:AutoAdmin
+
+		// mit-start:Ekom
+		$sideBarMenuModel['sections'][] = [
+            "label" => "Ekom",
+            "items" => [
+                [
+                    "icon" => "fa fa-home",
+                    "label" => "test",
+                    'badge' => [
+                        'type' => "success",
+                        'text' => "success",
+                    ],
+                    "items" => [
+                        [
+                            "icon" => "fa fa-but",
+                            "label" => "bug",
+                            "link" => "/pou",
+                            "items" => null,
+                        ],
+                    ],
+                ],
+            ],
+        ];
+		// mit-end:Ekom
     }
 
     protected static function DataTable_getRendererClassName(&$renderer)

@@ -6,6 +6,7 @@ namespace Prc\Ekom\Kamille\Auto;
 
 
 
+use FormModel\Validation\ControlTest\WithFields\RequiredControlTest;
 use Module\NullosAdmin\FormModel\Control\SqlQuerySelectControl;
 use Module\NullosAdmin\FormModel\Control\InputSwitchControl;
 
@@ -50,7 +51,14 @@ inner join kamille.ek_shop on kamille.ek_shop.id=ek_shop_has_product.shop_id
     //--------------------------------------------
     protected function decorateFormModelValidator(ControlsValidator $validator)
     {
-        
+        $validator
+			->setTests("shop_id", "shop_id", [
+                RequiredControlTest::create(),
+            ])
+			->setTests("product_id", "product_id", [
+                RequiredControlTest::create(),
+            ]);
+
     }
 
     protected function decorateFormModel(FormModel $model)

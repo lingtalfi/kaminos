@@ -35,10 +35,11 @@ class Hooks extends AbstractHooks
 //    }
 
 
-    protected static function Test_feedUri2Controller(array &$uri2Controller)
+    protected static function Core_configureRoutsyRouter(\Kamille\Utils\Routsy\RoutsyRouter $router)
     {
-        $uri2Controller["/login"] = "something";
+
     }
+
 
 
     protected static function Core_addLoggerListener(\Logger\LoggerInterface $logger)

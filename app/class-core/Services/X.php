@@ -156,6 +156,22 @@ class X extends AbstractX
         return $grantor;
     }
 
+    protected static function Core_RoutsyRouter()
+    {
+        $routsyRouter = \Kamille\Utils\Routsy\RoutsyRouter::create();
+        $routsyRouter
+            ->addCollection(\Kamille\Utils\Routsy\RouteCollection\RoutsyRouteCollection::create()->setFileName("routes"))
+            ->addCollection(\Kamille\Utils\Routsy\RouteCollection\PrefixedRoutsyRouteCollection::create()
+                ->setFileName("back")
+                ->setOnRouteMatch(function () {
+                    \Kamille\Architecture\ApplicationParameters\ApplicationParameters::set("theme", \Kamille\Services\XConfig::get("Core.themeBack"));
+                })
+                ->setUrlPrefix(\Kamille\Services\XConfig::get("Core.uriPrefixBackoffice"))
+            );
+        \Core\Services\Hooks::call("Core_configureRoutsyRouter", $routsyRouter);
+        return $routsyRouter;
+    }
+
 
 
 
